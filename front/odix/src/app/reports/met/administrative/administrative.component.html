@@ -1,0 +1,73 @@
+<section id="reporteAdministrativo">
+
+  <div class="titleSc">
+    <h2  >Reporte Administrativo</h2>
+    <span >Seleccione los parámetros a continuación para mostrar información</span>
+  </div>
+
+  <div class="dark-box-3 parametrosContainer">
+    <div class="divSelect" >
+      <span translate>Área</span>
+      <select (change)="onAssetChange($event.target.value)"  >
+        <option *ngFor="let value of arrayAsset" value= {{value.ID}} [selected]="value.ID == AssetId" >
+          {{value.Name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="divSelect" >
+      <span translate>Inspector</span>
+      <select (change)="onInspectorChange($event.target.value)"  >
+        <option *ngFor="let value of arrayInspector" value= {{value.ID}} [selected]="value.ID == inspectorId"  >
+          {{value.Name}}
+        </option>
+      </select>
+    </div>
+
+    <div class="divSelect" >
+      <span class="titleParameter" translate>Fecha</span>
+        <input class="form-control" placeholder="{{ 'Select a Date range' | translate}}" ngModel bsDaterangepicker [maxDate]="maxDate" [bsConfig]="{ containerClass: 'theme-blue' }"
+            (bsValueChange)="onDateSelection($event)" [(ngModel)]="bsRangeValue"  style="background: transparent; border: none; border-bottom: solid 1px #fff; font-family:Arial, FontAwesome; width: 200px; margin-left: 16px;">
+    </div>
+
+    <div class="divSelect" >
+      <span translate>Turno</span>
+      <select (change)="onShiftChange($event.target.value)"  >
+        <option *ngFor="let value of arrayShift" value= {{value.id}} [selected]="value.id == shiftId" >
+          {{value.name}}
+        </option>
+      </select>
+    </div>
+  </div>
+
+
+<app-loadereport [display] = "display"  ></app-loadereport>
+<!-- <button type="button" (click)="ExportPDF()" class="btn btn-primary">Export PDF</button> -->
+
+<div class="dark-box-3 graphContainer tableContainer quickReport" *ngIf="arrayQuickReport.length != 0"  >
+    <h2 class="title"> Reporte Rápido </h2>
+    <app-report [Title]="''"  [Values]='arrayQuickReport' [display] = "'none'" [clssImportXlsxParam] = "'importXlsxParam1'" [clsSearchParam] = "'searchParam1'" [clsCollg] = "''" ></app-report> 
+  </div>
+
+  <div class="dark-box-3 graphContainer " *ngIf="arrayMasterInformation.length != 0"  >
+    <h2 class="title"> Reporte Detallado </h2>
+    <app-report [Title]="'MasterInformation'"  [Values]='arrayMasterInformation' [display] = "'block'" [clssImportXlsxParam] = "'importXlsxParam2'" [clsSearchParam] = "'searchParam2'" [clsCollg] = "''" ></app-report> 
+  </div>
+
+  <div class="dark-box-3 graphContainer">
+      <h2 class="title"> {{TitleDefectParetos}} </h2>
+      <div class="grafica">
+        <div id="testAmchart4-1"></div>
+      </div>
+  </div>
+
+  <div class="dark-box-3 graphContainer">
+    <h2 class="title"> {{TitleDefectCordon}}</h2>
+    <div class="grafica">
+      <div id="testAmchart4-2"></div>
+    </div>
+</div>
+
+
+</section>
+

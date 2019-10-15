@@ -1,0 +1,29 @@
+.loader-container{
+    width: 100%;
+    height: 101vh;
+    background-color: rgba(black, .5);
+    position: absolute;
+    top: -2vh;
+    left: 0;
+    z-index: 999999;
+    overflow-y: hidden;
+}
+
+.loader {
+    border: 16px solid #6b6b6b; 
+    border-top: 16px solid #00B5A7; 
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 42%;
+    left: 47%;
+    transform:translate(-50%, -50%);
+    z-index: 999;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

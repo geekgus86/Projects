@@ -1,0 +1,101 @@
+<div class="admins-workspace__regionTitle">
+    <h1 translate>Items</h1>
+  </div>
+  <div class="admins-workspace__addLevel">
+    <button (click)="open()" >
+        <img src="assets/images/admins/add-new.svg" alt="" > &nbsp;<span translate>Create Item</span>
+    </button>
+  </div>
+  
+  <div class="admins-workspace__container">
+    <div class="admins-workspace__container--title">
+        <span translate>Filters</span>
+        <div class="admins-workspace__container--title__filters">
+            <input (input)="filterItems()" [(ngModel)]="filter.nameRegistered" type="text">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
+    <div class="admins-workspace__container--table">
+        <table class="adminsTable">
+            <tr>
+                <th translate> Name </th>
+                <th translate> Description </th>
+                <th translate> Linea </th>
+                <th translate> Family </th>
+                <th translate> Status </th>
+                <th>&nbsp;...</th>
+            </tr>
+  
+            <tr [class.trDisabled]="item.status == '0'" *ngFor="let item of itemsListFiltered | paginate: { itemsPerPage: 17, currentPage: p }; let ind = index;"  >
+                <td>{{item.number}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.lineText}}</td> 
+                <td>{{item.inspectionTypeText}}</td>
+                <td *ngIf="item.status == '1'" translate>Active</td>
+                <td *ngIf="item.status != '1'" translate>Inactive</td>                   
+                <td class="options">
+                    <!-- <img *ngIf="item.status == '1'"  (click)="editItem(item)" class="optionsImg" src="assets/images/admins/edit.svg" alt=""> -->
+                    <img *ngIf="item.status == '1'"  (click)="deleteItem(item)" class="optionsImg" src="assets/images/admins/garbage.svg" alt="">
+                    <img *ngIf="(item.status != '1')" (click)="activateItem(item)" class="optionsImg" src="assets/images/admins/recover.svg" alt="Activar">
+                </td>
+            </tr>
+  
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+  
+  <div [class.hiddenFC]="isFormHidden" class="formsContainer">
+    <div class="formsContainer__title">
+        <h2 *ngIf="!isEditing" translate>Create Item</h2>
+        <h2 *ngIf="isEditing" translate>Edit Item</h2>
+    </div>
+    <div class="formsContainer__forms">
+        <div class="odix-form">
+            <h5 translate>Linea</h5>
+            <select [(ngModel)]="selectedLineOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let line of lineCombo" [ngValue]="line"> {{line.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg"> 
+        </div>
+        <div class="odix-form">
+            <h5 translate>Family</h5>
+            <select [(ngModel)]="selectedFamilyOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let family of familyList" [ngValue]="family"> {{family.description}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div class="odix-form">
+            <h5 translate>Name</h5>
+            <input type="text" [(ngModel)]="itemName">
+        </div>
+        <div  class="odix-form">
+            <h5 translate>Description</h5>
+            <input type="text" [(ngModel)]="itemDescription">
+        </div> 
+    </div>
+    <hr>
+    <div class="formsContainer__actions">
+        <button (click)="closeForm()" class="cancel" translate>Cancel</button>
+        <ng-container *ngIf="!isEditing">
+          <button (click)="save()" class="active" translate>Add</button>
+        </ng-container>
+        <ng-container *ngIf="isEditing">
+          <button  (click)="edit()" class="active" translate>Accept</button>
+        </ng-container>
+    </div>
+  </div>
+  
+  <section class="wrapper dark" *ngIf="isLoading">
+      <div class="spinner">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+      </div>
+  </section>

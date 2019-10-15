@@ -1,0 +1,50 @@
+@import '../../../admins.component.scss';
+.metsTitle{
+    width: 922px;
+    display: flex;
+    justify-content: space-between;
+    .dropdowns{
+        display: flex;
+        .dropdown__container{
+            position: relative;
+            .downsideArrow{
+                position: absolute;
+                top: 15px;
+                right: 28px;            
+            }
+        }
+    }
+}
+
+.odix-dropdown{
+    background-color: rgba($primary-black, .5);
+    border-radius: 5px;
+    padding: 6px 6px 6px 10px;
+    min-width: 200px;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 14px;
+    border: none;
+    font-weight: 800;
+    transition: all .3s ease-in-out;
+    margin: 0 15px 0 0;
+}
+
+button{
+    @include button(white, $odix-blue1);
+}
+button.habilitar{
+    margin: 20px 0;
+}
+/deep/.mat-checkbox-layout{
+    margin: 0;
+}
+
+.danger{
+    @include buttonDanger();
+}
+
+::ng-deep .mat-checkbox .mat-checkbox-background {
+    border-color: green;
+    background: red;
+  }

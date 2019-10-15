@@ -1,0 +1,197 @@
+@import '~styles/colors.less';
+
+.MainContent{
+    height: 100vh;
+    background: @blue-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .CardSize{
+        height: 75vh;
+        width: 60%;
+        display: flex;
+        border-radius: 5px;
+        .ImgSpace{
+            padding: 0;
+            .BackLogin{
+                background: url(../../assets/Group3@2x.png); 
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 80vh;
+            }
+        }
+        .LoginMargin{
+            margin: 30% 4%;
+            text-align: center;
+            .FormLogin{
+                margin-top: 20px;
+                select{
+                    margin: 10px 0;
+                }
+                .MarginTop{
+                    margin-top: 20px;
+                    &.login{
+                        button{
+                            width: 100%;
+                            text-transform: none;
+                        }
+                    }
+                    &.adminbtn{
+                        display: flex;
+                        button{
+                            width: 50%;
+                            &:first-child{
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .selectPress{
+            font-family: "GothamRounded";
+            color: #323D50;
+            padding: 40px 16px;
+            .welcomeTitle{
+                text-align: left;
+                & > * {
+                    margin: 0;
+                    padding: 0;
+                }
+                h1{
+                    font-size: 24px;
+                    font-family: "GothamRoundedBold";
+                }
+                h2{
+                    font-size: 18px;
+                    font-family: "GothamRoundedBold";
+                    text-transform: uppercase;
+                    margin: 32px 0 0 0;
+                }
+            }
+            .planta{
+                margin: 24px 0;
+                &__region{
+                    padding: 10px;
+                    background: rgba(209,209,212,0.5);
+                    width: 100%;
+                    border-radius: 5px;
+                    font-family: "GothamRoundedBold";
+                    font-size: 14px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                }
+                &__prensas{
+                    width: 100%;
+                    &__card{
+                        padding: 16px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        cursor: pointer;
+                        transition: all .3s ease-in-out;
+                        border-radius: 2px;
+                        &:hover{
+                            .radio__checked{
+                                opacity: 1;
+                            }
+                            box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.23);
+                        }
+                        &:last-child{
+                            border-top: solid 1px rgba(209,209,212,0.5);
+                        }
+                        .radio{
+                            width: 30px;
+                            height: 30px;
+                            border: solid 2px #007aff;
+                            border-radius: 100px;
+                            position: relative;
+                            &__checked{
+                                width: 20px;
+                                height: 20px;
+                                background: linear-gradient(180deg, #0099ED 0%, #0071ED 100%);
+                                border-radius: 100px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                transition: all .3s ease-in-out;
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.Center{
+    text-align: center;
+}
+.ALeft{
+    text-align: left;
+}
+.fWhite{
+    color: #fff;
+}
+.ObjCenter{
+    margin: 0 auto;
+}
+.PaddingTitle{
+    padding: 18% 1% 2% 1%;
+    font-family: "GothamRoundedBold";
+}
+.LabelText{
+    font-family: "OpenSans";
+    margin-right: 10px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+.LabelInput{
+    font-family: "OpenSans";
+    background-color: transparent !important;
+    border: none;
+    border-bottom: 1.5px solid #fff;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.BtnLogin{
+    font-family: "GothamRounded";
+    width: 65%;
+    border-radius: 30px;
+    background: #46A5F9;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 5px 0px;
+    margin-top: 10px;
+}
+
+.arrowDown {
+    width: 0; 
+    height: 0; 
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #323D50;
+    margin: 0 5px 0 0;
+    transition: all .4s ease-in-out;
+    &:hover{
+        transform: rotate(180deg);
+    }
+  }
+
+  .arrowDownActive {
+    width: 0; 
+    height: 0; 
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #000000;
+    margin: 0 5px 0 0;
+    transition: all .4s ease-in-out;
+    transform: rotate(180deg);
+    
+  }

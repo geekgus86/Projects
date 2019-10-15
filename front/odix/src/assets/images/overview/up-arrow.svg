@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.2 25.251">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #70f06c;
+      }
+    </style>
+  </defs>
+  <path id="Arrow-green" class="cls-1" d="M26.154,6.013H36.978L26.154,16.833,14.129,4.81,0,18.937l4.208,4.21,9.921-9.92L26.154,25.251l15.032-15.03v10.82H47.2V0H26.154Z"/>
+</svg>

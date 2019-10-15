@@ -1,0 +1,181 @@
+[
+    {
+        "id": 1,
+        "type": "Schuler",
+        "name": "A",
+        "fullname": "Schuler A",
+        "schema": "apo_schulerA",
+        "plant": 1,
+        "andonURL": "/showroom-sa-chrome/build/"
+    },
+    {
+        "id": 2,
+        "type": "Schuler",
+        "name": "B",
+        "fullname": "Schuler B",
+        "schema": "apo_schulerB",
+        "plant": 1,
+        "andonURL": "/showroom-sb-chrome/build/"
+    },
+    {
+        "id": 3,
+        "type": "Fagor",
+        "name": "A",
+        "fullname": "Fagor A",
+        "schema": "apo_fagorA",
+        "plant": 1,
+        "andonURL": "/showroom-fa-chrome/build/"
+    },
+    {
+        "id": 4,
+        "type": "Fagor",
+        "name": "B",
+        "fullname": "Fagor B",
+        "schema": "apo_fagorB",
+        "plant": 1,
+        "andonURL": "/showroom-fb-chrome/build/"
+    },
+    {
+        "id": 5,
+        "type": "K",
+        "name": "1200",
+        "fullname": "K1200",
+        "schema": "apo_k1200",
+        "plant": 1,
+        "andonURL": "/showroom-k1200-chrome/build/"
+    },
+    {
+        "id": 6,
+        "type": "",
+        "name": "Jinan",
+        "fullname": "Jinan",
+        "schema": "apo_jinan",
+        "plant": 1,
+        "andonURL": "/showroom-jinan-chrome/build/"
+    },
+    {
+        "id": 7,
+        "type": "",
+        "name": "Aida",
+        "fullname": "Aida",
+        "schema": "apo_aida",
+        "plant": 1,
+        "andonURL": "/showroom-aida-chrome/build/"
+    },{
+        "id": 8,
+        "type": "E",
+        "name": "1500",
+        "fullname": "E1500",
+        "schema": "apo_e1500",
+        "plant": 1,
+        "andonURL": "/showroom-e1500-chrome/build/"
+    },
+    {
+        "id": 9,
+        "type": "D",
+        "name": "800",
+        "fullname": "D800",
+        "schema": "apo_d800",
+        "plant": 1,
+        "andonURL": "/showroom-d800-chrome/build/"
+    },
+    {
+        "id": 10,
+        "type": "K",
+        "name": "1",
+        "fullname": "K1",
+        "schema": "et_k1",
+        "plant": 2,
+        "andonURL": "/showroom-etk1-chrome/build/"
+    },
+    {
+        "id": 11,
+        "type": "K",
+        "name": "2",
+        "fullname": "K2",
+        "schema": "et_k2",
+        "plant": 2,
+        "andonURL": "/showroom-etk2-chrome/build/"
+    },
+    {
+        "id": 12,
+        "type": "K",
+        "name": "3",
+        "fullname": "K3",
+        "schema": "et_k3",
+        "plant": 2,
+        "andonURL": "/showroom-etk3-chrome/build/"
+    },
+    {
+        "id": 13,
+        "type": "K",
+        "name": "4",
+        "fullname": "K4",
+        "schema": "et_k4",
+        "plant": 2,
+        "andonURL": "/showroom-etk4-chrome/build/"
+    },
+    {
+        "id": 14,
+        "type": "K",
+        "name": "5",
+        "fullname": "K5",
+        "schema": "et_k5",
+        "plant": 2,
+        "andonURL": "/showroom-etk5-chrome/build/"
+    },
+    {
+        "id": 15,
+        "type": "K",
+        "name": "6",
+        "fullname": "K6",
+        "schema": "et_k6",
+        "plant": 2,
+        "andonURL": "/showroom-etk6-chrome/build/"
+    },
+    {
+        "id": 16,
+        "type": "K",
+        "name": "7",
+        "fullname": "K7",
+        "schema": "et_k7",
+        "plant": 2,
+        "andonURL": "/showroom-etk7-chrome/build/"
+    },
+    {
+        "id": 17,
+        "type": "K",
+        "name": "8",
+        "fullname": "K8",
+        "schema": "et_k8",
+        "plant": 2,
+        "andonURL": "/showroom-etk8-chrome/build/"
+    },
+    {
+        "id": 18,
+        "type": "K",
+        "name": "9",
+        "fullname": "K9",
+        "schema": "et_k9",
+        "plant": 2,
+        "andonURL": "/showroom-etk9-chrome/build/"
+    },
+    {
+        "id": 19,
+        "type": "K",
+        "name": "14",
+        "fullname": "K14",
+        "schema": "et_k14",
+        "plant": 2,
+        "andonURL": "/showroom-etk14-chrome/build/"
+    },
+    {
+        "id": 20,
+        "type": "K",
+        "name": "15",
+        "fullname": "K15",
+        "schema": "et_k15",
+        "plant": 2,
+        "andonURL": "/showroom-etk15-chrome/build/"
+    }
+]

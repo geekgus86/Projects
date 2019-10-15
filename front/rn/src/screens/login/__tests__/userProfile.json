@@ -1,0 +1,54 @@
+{
+    "id": 3,
+    "aro": {
+        "id": 2,
+        "alias": "Admin",
+        "parent": 1,
+        "createdAt": "2018-02-28 21:20:12.000000",
+        "createdBy": 1,
+        "extension": 1,
+        "updatedAt": "2018-02-28 21:24:07.000000"
+    },
+    "foto": {
+        "id": 5,
+        "path": "6f83d0ff-8aa5-4a13-921b-5a5417a53225/margaro.png",
+        "size": 348194,
+        "uuid": "6f83d0ff-8aa5-4a13-921b-5a5417a53225",
+        "createdAt": "2018-03-26 23:16:03.000000",
+        "createdBy": 1,
+        "updatedAt": "2018-03-26 23:16:03.000000",
+        "name": "margaro.png",
+        "thumbnailUrl": "file/get/5"
+    },
+    "nombre": "Aldo",
+    "apellidoPaterno": "Lopez",
+    "apellidoMaterno": "Viezca",
+    "telefono": null,
+    "fechaNacimiento": "1990-05-15T00:00:00.000Z",
+    "genero": "",
+    "extending": {
+        "id": 5,
+        "aro": 2,
+        "name": "Aldo",
+        "email": "aldo@x8bit.com",
+        "active": 1,
+        "createdAt": "2018-03-01 23:24:39.000000",
+        "createdBy": 1,
+        "updatedAt": "2018-04-17 20:54:02.000000"
+    },
+    "org": null,
+    "createdBy": {
+        "id": 1,
+        "name": "Superusuario",
+        "email": "admin@x8bit.com",
+        "active": 1,
+        "createdAt": "2018-02-26 16:33:21.000000",
+        "updatedAt": "2018-04-17 20:53:54.000000",
+        "superadmin": 1
+    },
+    "createdAt": "2018-03-01T23:24:39.000Z",
+    "updatedAt": "2018-03-27T22:40:03.000Z",
+    "canSolve": [],
+    "shifts": [],
+    "chatPass": "59962feb3656204eaba0185f15dd5ced"
+}

@@ -1,0 +1,367 @@
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.dashboardTabBar {
+  border-bottom: 1px solid #E8E8E8;
+}
+.dashboardTab {
+  display: inline-block;
+  font-family: "GothamRounded";
+  font-weight: 300;
+  font-size: 16px;
+  letter-spacing: normal;
+  line-height: 19px;
+  color: #323D50;
+  margin-left: 30px;
+  padding-top: 24px;
+  padding-bottom: 12px;
+  cursor: pointer;
+}
+.dashboardTabActive {
+  font-family: "GothamRoundedBold";
+  border-bottom: 3px solid #0099ED;
+}
+.dashboardContainer {
+  width: 100%;
+  background-color: #F7F8FA;
+  padding: 0px 60px;
+  padding-bottom: 60px;
+}
+.dashboardHeader {
+  border-bottom: 1px solid #E0E1E5;
+  padding-top: 30px;
+}
+
+.dashboardDateHeader {
+    padding-bottom: 15px;
+}
+
+.dashboardHeader {
+  border-bottom: 1px solid #E0E1E5;
+  padding-top: 30px;
+}
+
+.headerTitle {
+  color: #323D50;	
+  font-family: "GothamRoundedBold";
+  font-size: 20px;
+  line-height: 40px;
+  padding-bottom: 0px;
+  position: relative;
+  top: 5px;
+}
+.dashboardDateFilter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 4px;
+}
+.dateFilterLabel {
+  color: #323D50;
+  font-family: "OpenSans";
+  font-size: 16px;
+  line-height: 22px;
+  margin-right: 10px;
+}
+.dateFilterInput {
+  height: 30px;
+  width: 160px;
+  border: 1px solid rgba(50, 61, 80, 0.3);
+  border-radius: 3px;
+  background-color: #FFFFFF;		
+}
+.widgetLoader {
+  background: #FFFFFF;
+  position: absolute;
+  top: 85px;
+  left: 15px;
+  right: 15px;
+  bottom: 34px;
+  z-index: 9;
+  color: #323D50;
+  font-family: "OpenSans";
+  font-size: 16px;
+  line-height: 22px;
+}
+.widgetContainer {
+  border-radius: 5px;
+  background-color: #FFFFFF;	
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05), 0 3px 6px 0 rgba(5, 9, 18, 0.15);
+  margin-bottom: 30px;
+}
+.widgetHeader {
+  padding: 15px;
+  border-bottom: 1px solid #E0E1E5;
+}
+.widgetTitle {
+  color: #323D50;
+  font-family: "GothamRoundedBold";
+  font-size: 20px;
+  line-height: 24px;
+}
+.widgetLegend {
+  text-align: center;
+  margin-top: 5px;
+  font-family: "OpenSans";
+}
+.legendContainer {
+  margin: 0 4px;
+  display: inline-block;
+}
+.legendColor {
+  width: 22px;
+  height: 10px;
+  display: inline-block;
+}
+.empty-Widget {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 100%;
+  font-family: "GothamRoundedBold";
+  font-size: 20px;
+  line-height: 24px; 
+}
+.widgetFooter {
+  min-height: 34px;
+  border-top: 1px solid #E0E1E5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.widgetStats {
+  margin-left: 5px;
+}
+.widgetViews { padding: 0 10px; }
+.widgetComments {
+  padding: 0 10px;
+  border-left: 1px solid #E0E1E5;
+  border-right: 1px solid #E0E1E5;
+}
+.widgetDocs { padding: 0 10px; }
+.widgetAuthor {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 10px;
+}
+.authorNameContainer {
+  margin-right: 5px;
+  text-align: right;
+}
+.authorName {
+  font-weight: 600;
+  position: relative;
+  top: -3px;
+}
+.authorImg {
+  background: #E0E1E5;
+  width: 25px;
+  height: 25px;
+  border-radius: 13px;
+}
+/* .widget-body__max-height {
+  height: 577px;
+}
+.widget-body__min-height {
+  height: 320px;
+} */
+.widgetBodyPadding-10 {
+  padding: 10px;
+}
+.widgetBodyPadding-20 {
+  padding: 20px;
+}
+.widgetBodyPadding-30 {
+  padding: 30px;
+}
+.kpiTable {
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: "GothamRounded";
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: normal;
+  line-height: 16px;
+  color: #323D50;
+  border-bottom: 2px solid black;
+}
+.kpiTableBoldText {
+  font-family: "GothamRounded";
+}
+.kpiTableBoldRedText {
+  font-family: "GothamRounded";
+  color: #D25449;
+}
+.kpiTableBoldGreenText {
+  font-family: "GothamRounded";
+  color: #46B978;
+}
+.kpiTableHeader {
+  border-bottom: 1px solid #323D50;
+  tr{
+    td{
+      font-family: "GothamRoundedBold";
+    }
+  }
+}
+.kpiTableHeader tr {
+  height: 30px;
+  vertical-align: bottom;
+  padding-bottom: 4px;
+}
+.kpiTableWideCell {
+  width: 270px;
+}
+.kpiTable thead tr td {
+  border-right: 1px solid #EEEEEE;
+}
+.kpiTable tbody tr td {
+  padding-top: 6px;
+  padding-bottom: 4px;
+  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #EEEEEE;
+}
+.kpiTablePaddingLeft10 {
+  text-align: left;
+  padding-left: 10px;
+}
+.kpiTablePaddingLeft15 {
+  text-align: left;
+  padding-left: 15px;
+}
+.kpiTableCenterText {
+  text-align: center;
+}
+
+.shiftKpiTable {
+  width: 100%;
+  font-family: "GothamRounded";
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: normal;
+  line-height: 16px;
+  color: #323D50;
+  border: 1px solid #323D50;
+  text-align: center;
+}
+.shiftKpiTable td {
+  width: 20%;
+  border: 1px solid #323D50;
+}
+.shiftKpiTableHeader tr {
+  color: #FFFFFF;
+  font-family: "GothamRoundedBold";
+  background-color: #4D4F50;
+  padding: 20px;
+}
+.shiftKpiTableHeader tr td {
+  padding: 20px;
+}
+.ShiftTableMain{
+  tbody{
+    tr{
+      td{
+        &:first-child{
+          font-family: "GothamRoundedBold";
+        }
+      }
+    }
+  }
+}
+.MarginSpace{
+  margin: 0px 60px;
+}
+.shiftKpiTableBody td {
+  height: 100px;
+  background-color: #FFFFFF;
+}
+.shiftKpiTableBlue {
+  background-color: #38C0F2 !important;
+  font-family: "GothamRoundedBold";
+  color: #FFFFFF;
+}
+.shiftKpiTableOrange {
+  background-color: #F1641E !important;
+  font-family: "GothamRoundedBold";
+  color: #FFFFFF;
+}
+.widgetBody{
+    &.marg5000 {
+        margin-top: 0px !important;
+    } 
+    &.padd5030 {
+        padding: 30px;
+    } 
+  &.widgetBodyPadding20{
+    padding: 20px;
+  }
+  &.paddModify30 {
+    padding: 15px 30px;
+  }
+  &.heightAuto{
+    height: auto !important;
+  }
+}
+.afectationsTable{
+  canvas{
+    width: 120% !important;
+    margin: 0 auto !important;
+    height: auto !important;
+    position: relative;
+    bottom: 30px;
+    right: 40px;
+  }
+}
+.IndicadoresTurno{
+  table{
+    margin-bottom: 0;
+  }
+}
+.WidgetHeight{
+  padding: 50px 30px 43px 30px !important;
+  table{
+    margin-bottom: 40px;
+  }
+}
+.nopadd{
+  padding: 0;
+}
+@media (max-width: 3400px) and (min-width: 1281px) {
+  .WidgetHeight{
+    padding: 80px 30px 40px 30px !important;
+    table{
+      margin-bottom: 77px !important;
+    }
+  }
+  .afectationsTable{
+    canvas{
+      width: 100% !important;
+      position: relative;
+      bottom: 10px;
+    }
+    table{
+      margin: 30px 0 0 0;
+    }
+  }
+  .IndicadoresTurno{
+    table{
+      margin-bottom: 0;
+    }
+  }
+}
+@media (max-width: 1920px) and (min-width: 1281px) {
+  
+  .widgetBody{
+    .paddModify30 {
+      padding: 15px 30px;
+    }
+  }
+}
+

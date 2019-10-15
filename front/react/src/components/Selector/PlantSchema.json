@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "label": "Apodaca, Nuevo León",
+        "value": 1,
+        "region": 1
+    },
+    {
+        "id": 2,
+        "label": "Elizabethtown",
+        "value": 2,
+        "region": 2
+    }    
+]

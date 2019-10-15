@@ -1,0 +1,56 @@
+
+<div class="row">
+    <div id="basicContainer" class="col-lg-12 ">
+        <color-indicators></color-indicators>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="dark-box-3 weld-bg">
+                    <div class="map-plant">
+                        <div class="map-plant__title">
+                            <h1 *ngIf="namePlant == 'eltalar'">El Talar</h1>
+                            <h1 *ngIf="namePlant != 'eltalar'">{{namePlant}}</h1>
+                            <span class="translate" translate>- Plant map -</span>
+                        </div>
+
+                            <div class="map-plant__isometric">
+                                <img src="assets/images/mapPlants/{{namePlant}}/map-layout-2.png" alt="" width="1100" class="apo-map-plant" usemap="#features">
+                                
+                                <div *ngFor="let plant of plants">
+                                    <div id="poster-{{plant.name}}" class="tooltip_custom" style="display:none;" >
+                                        <div class="poster-rate poster-delayed" translate>{{plant.area}}</div>
+                                        <div class="poster-component-name">{{plant.description}}</div> 
+                                        <hr />
+                                        <div class="poster-current">
+                                            <span class="poster-current-title" translate>Value</span>
+                                            <span class="poster-current-value">{{plant.value}}</span>
+                                        </div>
+                                        <div class="poster-goal">
+                                            <span class="poster-goal-title" translate>Goal</span>
+                                            <span class="poster-goal-value">{{plant.goal}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="map-plant__{{plant.clas}} area_" id="line-{{plant.name}}">
+                                        <img 
+                                        [src]="'assets/images/mapPlants/'+namePlant+'/'+ plant.img"   
+                                        class="ensamble-dtl-1"
+                                        id="{{plant.name}}"
+                                        alt=""
+                                        (mouseenter)="showTooltip($event, plant.name)"
+                                        (mouseout)="hideTootltip(plant.name)"
+                                        (click)="openLinkOverview($event)">
+                                    </div>
+                                </div>
+                                <app-lines [plantName] = "plantName"  ></app-lines>
+                                <!-- <span class="ensamble" translate>Assembly</span>
+                                <span class="pintura" translate>Painting</span>
+                                <span class="ds" translate>Assembly DS</span>
+                                <span class="toyota" translate>Assembly Toyota</span>
+                                <span class="camiones" translate>Trucks</span> -->
+                            </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

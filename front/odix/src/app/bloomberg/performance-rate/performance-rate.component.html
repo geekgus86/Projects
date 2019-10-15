@@ -1,0 +1,212 @@
+<div class="white-container">
+    <main>
+        <section class="header">
+            <div class="header__title">
+                <h2>Performance Rate Monitor</h2>
+            </div>
+            <div class="header__filters">
+                <div class="indicators__forms">
+                    <div class="indicators__forms--input">
+                        <!-- <span>Process:</span> -->
+                        <div class="ngDropdown">
+                            <select (change)="loadLineCombo()" [(ngModel)]="filter.process">
+                                <option *ngFor="let proc of processList" [ngValue]="proc.Code">{{proc.Description}}</option>
+                            </select>
+                            <div class="arrow-container">
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="indicators__forms--input">
+                        <span>Line:</span>
+                        <div class="ngDropdown">
+                            <select (change)="changeLineCombo()" [(ngModel)]="filter.line">
+                                <option *ngFor="let line of lineList" [ngValue]="line.Code">{{line.Description}}</option>
+                            </select>
+                            <div class="arrow-container">
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="indicators__forms--input">
+                        <span>Group:</span>
+                        <div class="ngDropdown">
+                            <select (change)="performSearch()" [(ngModel)]="filter.group">
+                                <option *ngFor="let group of groupList" [ngValue]="group.Code">{{group.Description}}</option>
+                            </select>
+                            <div class="arrow-container">
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dateButtons">
+                        <button (click)="performSearchBy(0)" [class.active]="selectedRange == 0" class="odix-button active">Today</button>
+                        <button (click)="performSearchBy(1)" [class.active]="selectedRange == 1" class="odix-button">Yesterday</button>
+                        <button (click)="performSearchBy(7)" [class.active]="selectedRange == 7" class="odix-button">Last 7 days</button>
+                    </div>
+                    <div class="indicators__forms--input">
+                        <span>Date:</span>
+                        <div class="ngDropdown">
+                            <input class="form-control" placeholder="{{ 'Select a Date range' | translate}}" ngModel bsDaterangepicker 
+                            [maxDate]="maxDate" [minDate]="minDate" [bsConfig]="{ containerClass: 'theme-blue', rangeInputFormat: 'DD/MM/YYYY' }"
+                            (bsValueChange)="onDateSelection($event)" [(ngModel)]="fechaInicial">
+                            <div class="arrow-container">
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="indicators__forms--input">
+                        <span>Data:</span>
+                        <div class="ngDropdown">
+                            <select [(ngModel)]="filter.data" (change)="performSearch()">
+                                <option value="clean">Clean</option>
+                                <option value="atypical">Atypical</option>
+                                <option value="all">All</option>
+                            </select>
+                            <div class="arrow-container">
+                                <div class="arrow-down"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__lastUpdate">
+                <span> Last Update: </span>{{lastUpdateDate}}
+            </div>
+        </section>
+
+        <section class="indicators">
+            <div class="indicators__title">
+                <h3>Frames Lost by NBT</h3>
+            </div>
+            <div class="indicators__title--breadCrumbs">
+                {{processPlaceholder}} / {{linePlaceHolder}} / {{(filter.group == 'BOTH') ? 'All' : filter.group}} / {{fDate(fechaInicial[0])}} - {{fDate(fechaInicial[1])}} / {{filter.data | titlecase}}
+            </div> 
+            <div class="indicators__graphic">
+                <div class="indicators__graphic--container">
+                    <div id="frames1" class="amchart"></div>
+                    <div class="indicators__graphic--container--indicators">
+                        <h4>Most Critical Stations:</h4>
+                        <div class="stationsContainer">
+                            <div *ngFor="let crit of mostCriticalStations; let i = index" (click)="clickCriticalStations(crit,i)" class="stationsContainer__station">
+                                <span [style.background-color]="topColors[i]" >&nbsp;</span> <p style="font-size: 14px;">{{splitStation(crit.Station)}} ({{crit.NBT}})</p>     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="indicators">
+            <div class="indicators__title">
+                <div class="indicatorsTitle1">
+                    <h3>Stations by NBT </h3>
+                </div>
+            </div>
+            <div class="indicators__searchFilters">
+                <div class="ngDropdown">
+                    <div class="indicators__parameters--input">
+                        <span>NBT:</span>
+                        <div class="arrow-container">
+                            <div class="arrow-down"></div>
+                        </div>
+                        <select (change)="filterByEnn(false)" [(ngModel)]="ennFilter" name="" id="">
+                            <option *ngIf="ennList" value="all" >All</option>
+                            <option *ngFor="let enn of ennList" [ngValue]="enn.Code">{{enn.Description}}</option>
+                        </select>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                <div class="manufactureRules">
+                    <p>Manufacturing rules</p>
+                    <span class="tooltip1" data-html="true" data-tooltip="5. Critical – Lowest repeatable time over takt time &#013; &emsp; &bull; LRT out of target cycle time. &#013; &emsp; &bull; Fluctuation out of target cycle time."><div class="mrColor r5">&nbsp;</div> 5. Critical</span>
+                    <span class="tooltip1" data-tooltip="4. High Impact – Average cycle time over takt time &#013; &emsp; &bull; LRT within target cycle time. &#013; &emsp; &bull; Fluctuation out of target cycle time. &#013; &emsp; &bull; Mean out of target cycle time."><div class="mrColor r4">&nbsp;</div> 4. High Impact</span>
+                    <span class="tooltip1" data-tooltip="3. Medium Impact – Fluctuation over takt time &#013; &emsp; &bull; LRT within target cycle time. &#013; &emsp; &bull; Fluctuation out of target cycle time. &#013; &emsp; &bull; Mean within target cycle time."><div class="mrColor r3">&nbsp;</div> 3. Medium Impact</span>
+                    <span class="tooltip1" data-tooltip="2. Low Impact – Fluctuation under takt time &#013; &emsp; &bull; LRT within target cycle time. &#013; &emsp; &bull; Fluctuation within target cycle time."><div class="mrColor r2">&nbsp;</div> 2. Low Impact</span>
+                    <span class="tooltip1" data-tooltip="1. Ideal – Cycle time meets takt time &#013; &emsp; &bull; LRT equal to target cycle time. &#013; &emsp; &bull; Zero fluctuation"><div class="mrColor r1">&nbsp;</div> 1. Ideal</span>
+                </div>
+                <div class="indicators__parameters">
+                    <div class="indicators__parameters--search">
+                        <i class="fas fa-search"></i>
+                        <span>Stations:</span>
+                        <input type="text" (blur)="closeOptions()" (input)="comboSearch($event)" [(ngModel)]="searchParam" placeholder="All">
+                        <div [hidden]="acHidden" class="acompleteContainer">
+                            <div *ngFor="let opt of stationListCombo" (click)="selectOptionCombo(opt)" class="acompleteContainer__optionAC">
+                                {{opt.Station}}
+                            </div>
+                        </div>
+                        <div [hidden]="acNotFound" class="acompleteContainer">
+                            <div class="acompleteContainer__optionAC">
+                                No match found
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="indicators__graphicsContainer">
+                <div class="indicators__graphicsContainer--graphic" [class.scrollable] = "(ennFilter=='all') || scrollable">
+                    <div id="frames2" class="amchart"></div>
+                    <div class="amchart-container-2">
+                        <div id="manu" class="amchart"></div>
+                    </div>
+                </div>
+                <div class="indicators__graphicsContainer--graphic" [class.scrollable] = "(ennFilter=='all') || scrollable">
+                    <div id="frames3" class="amchart"></div>
+                </div>
+            </div>
+            <div class="indicators__graphicsTitle">
+                <h3>Line Balance</h3>
+                <h3>Standard Deviation - Time by Element</h3>
+            </div>
+            <div class="indicators__info">
+                <div class="lineBalance">
+                    <div class="lineBalance__station">
+                        <span>&nbsp;</span> <p>LRT</p>     
+                    </div>
+                    <div class="lineBalance__station">
+                        <span>&nbsp;</span> <p>Variation</p>     
+                    </div>
+                    <div class="lineBalance__station">
+                        <span>&nbsp;</span> <p>MeanCT</p>     
+                    </div>
+                    <div class="lineBalance__station">
+                        <span>&nbsp;</span> <p>Median</p>     
+                    </div>
+                    <div class="lineBalance__station">
+                        <span>&nbsp;</span> <p>Cycle Time Goal</p>     
+                    </div>
+                </div>
+
+                <div class="timeByElement">
+                    <div class="timeByElement__station">
+                        <span>&nbsp;</span> <p>&#963;<sup>2</sup> Load</p>     
+                    </div>
+                    <div class="timeByElement__station">
+                        <span>&nbsp;</span> <p>&#963;<sup>2</sup> Clamp</p>     
+                    </div>
+                    <div class="timeByElement__station">
+                        <span>&nbsp;</span> <p>&#963;<sup>2</sup> Process</p>     
+                    </div>
+                    <div class="timeByElement__station">
+                        <span>&nbsp;</span> <p>&#963;<sup>2</sup> Unclamp</p>     
+                    </div>
+                    <div class="timeByElement__station">
+                        <span>&nbsp;</span> <p>&#963;<sup>2</sup> Unload</p>     
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<div *ngIf="load" class="loader-container">
+    <div class="loader">
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__ball"></div>
+        <span>Hold on, we’re calculating your specific date range.</span>
+    </div>
+</div>

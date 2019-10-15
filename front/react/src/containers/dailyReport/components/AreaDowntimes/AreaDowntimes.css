@@ -1,0 +1,63 @@
+@media (max-width: 3400px) and (min-width:1281px) {
+  .Area-Container {
+    margin: 0 15px;
+  }
+}
+.Area-Container{
+  margin: 0 5px;
+  width: 20%;
+}
+.Area-Container:first-child{
+  margin-left: 20px;
+}
+.Area-Icon {
+  font-family: "GothamRoundedBold";
+  font-size: 29px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.Area-Info {
+  margin-left: 10px;
+}
+
+.Area-Name {
+  font-family: "GothamRoundedBold";
+  font-size: 16px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.Area-Table {
+  font-family: "GothamRounded";
+  font-size: 15px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+}
+
+.Area-Table-Label {
+  width: 115px;
+  color: #4a4a4a;
+  font-family: "GothamRoundedBold";
+}
+
+.Bold-Label {
+  font-family: "GothamRoundedBold";
+}
+
+.Uppercase-Label {
+  text-transform: uppercase;
+}

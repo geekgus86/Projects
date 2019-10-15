@@ -1,0 +1,62 @@
+.titlePastCycles{
+	text-align: center;
+	color: #00B5A7;
+	font-size: 12px;
+}
+
+.container{
+	margin-top:50px;
+	border-style: solid;
+	margin-left: 2%;
+	max-width: 97%;
+}
+
+.divSelect{
+	text-align: center;
+	color: #00B5A7;
+	float:left;
+	// width: 100%;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.titleParameter{
+	text-align: center;
+	color: #fff;
+	float: left;
+	font-size: 14px;
+}
+
+.divSelect select{
+	margin: 0 0 0 16px;
+}
+
+
+
+.divParameter{
+	// position:absolute;
+	border-style: solid;
+	margin-left: 1%;
+}
+
+.clsChartPastcycles{
+	// position:absolute;
+	margin-top:20px;
+	border-style: solid;
+	margin-left: 1%;
+	height:90%;
+}
+
+
+// .multiple-filter{
+// 	width: 100vw;
+// }
+
+select{
+	color: #00CAF2;
+  }
+
+/deep/.row.multiple-filter {
+    display: flex;
+    justify-content: space-evenly;
+}

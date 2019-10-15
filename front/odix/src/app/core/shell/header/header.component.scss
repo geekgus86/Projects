@@ -1,0 +1,125 @@
+
+@import "../../../../assets/scss/shell/variables";
+
+.login-options{
+    position: relative;
+    color: white;
+    margin: auto 25px;
+    font-size: 10pt;
+    text-align: center;
+    min-width: 190px;
+    cursor: pointer;
+      p{
+        margin: auto;
+      }
+      .btn-login{
+        margin-left: 120px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-size: 10px;
+        background-image:linear-gradient(to right,#00BBF1,#007AFF);
+        transition: ease-in-out .2s;
+        border-radius: 5px;
+        padding: 3px 20px;
+
+        
+        //background-color: lightgray;
+      }
+      .btn-login:hover{
+        background-image: linear-gradient(to right,#007AFF,#00BBF1);
+        transition: ease-in-out .2s;
+      }
+
+
+      .login-menu{
+        
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        top: -20px;
+        transition: all .5s ease-in-out;
+        opacity: 0;
+      }
+      .login-menu:hover{
+        top: -20px;
+        opacity: 1;
+      }
+
+        .login-option{
+          background-color: rgba(18, 18, 23, 0.6);
+          letter-spacing: 1px;
+          transition: all .5s ease-in-out;
+          color: white;
+          padding: 10px 5px;
+          margin: 0px;
+          transform: translateY(52px);
+        }
+        .login-option:hover{
+          color: rgba(#00CAF2, .5);
+        }
+
+}
+
+.upper-nav{
+    width: 100%;
+    margin: 0;
+    background: #1B1C20;
+    box-shadow: 0px 9px 10px rgba(0,0,0, 0.4);
+    position: fixed;
+    z-index: 200;
+
+    &__options{
+        height: 45px;
+
+        &--notifications{
+            background: $color-teal-dark;
+            color: #fff;
+            border-radius: 15px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            padding: 3px;
+            position: absolute;
+            top: 3px;
+            left: 54px;}}
+
+    &__logo {
+        display: flex;
+        justify-content: flex-end;}
+
+        img{
+          align-self: center;
+        }
+
+}
+
+/*Languages*/
+@import "src/theme/theme-variables";
+
+.navbar {
+  margin-bottom: $spacer;
+}
+
+.nav-link.dropdown-toggle {
+  cursor: pointer;
+}
+
+/deep/ .language-select {
+  margin-right: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
+  /* background-color: #00B5A7 */;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+#content {
+  display: flex;
+  justify-content: space-between;
+  img{
+    position: absolute;
+    left: 70px;
+    top: 10px;
+  }
+}

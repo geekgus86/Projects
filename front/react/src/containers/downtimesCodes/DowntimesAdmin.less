@@ -1,0 +1,103 @@
+@import '~styles/shadows.less';
+@import '~styles/fonts.less';
+@import '~styles/colors.less';
+
+.TableContainer{
+    padding: 20px;
+    .MainTable{
+        box-shadow: @box-shadow;
+        padding: 10px 0;
+        border-radius: 3px;
+        tbody{
+            overflow: auto;
+            &::-webkit-scrollbar {
+                display: none;
+            } 
+            td, tr{
+                word-wrap: break-word;
+            }
+        }
+        tbody{
+            width: calc( 100% - 1em );
+            tr{
+                &:first-child{
+                    background: @gray-dark-background;
+                    td{
+                        span{
+                            &:nth-child(2){
+                                &::before{
+                                    content: " ";
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                background: @background-layout;
+                td{
+                    font-family: "GothamRounded";
+                    border-top: 1px solid @border-color;
+                    label{
+                        margin: 0;
+                        span{
+                            span{
+                                svg{
+                                    color: @detail-color;
+                                }
+                            }
+                        }
+                    }
+                        span{
+                            font-family: "GothamRounded";
+                            &:first-child{
+                                span{
+                                    &::before{
+                                        content: " ";
+                                        display: none;
+                                    }
+                                }
+                            }
+                            &:nth-child(2){
+                                &::before{
+                                    height: 8px;
+                                    width: 8px;
+                                    background: @success;
+                                    position: absolute;
+                                    border-radius: 10px;
+                                    content: " ";
+                                    margin-top: 5px;
+                                    margin-left: -11px;
+                                }
+                            }
+                        }
+                    
+                }
+            }
+        }
+        thead, tbody{
+            tr{
+                width:100%;
+                td{
+                    &:first-child{
+                        padding-left: 20px;
+                    }
+                    &:last-child{
+                        padding:15px 20px 15px 20px;
+                        font-size: 17px;
+                    }
+                }
+            }
+        }
+        thead{
+            tr{
+                td{
+                    font-family: "GothamRoundedBold";
+                }
+            }
+        }
+    }
+}
+.iconedit{
+    width: 24px;
+    height: 24px;
+}

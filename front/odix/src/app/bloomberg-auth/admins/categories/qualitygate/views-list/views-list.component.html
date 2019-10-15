@@ -1,0 +1,111 @@
+<div class="admins-workspace__regionTitle">
+    <h1 translate>Edit Views</h1>
+  </div>
+  <div class="admins-workspace__addLevel">
+    <!-- <button (click)="open()" >
+        <img src="assets/images/admins/add-new.svg" alt="" > &nbsp;Crear Item
+    </button> -->
+  </div>
+  
+  <div class="admins-workspace__container">
+    <div class="admins-workspace__container--title">
+        <span translate>Filters</span>
+        <div class="admins-workspace__container--title__filters">
+            <input (input)="filterViews()" [(ngModel)]="filter.nameRegistered" type="text">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
+    <div class="admins-workspace__container--table">
+        <table class="adminsTable">
+            <tr>
+                <th translate> Nombre </th>
+                <th translate> Linea </th>
+                <th> ENN </th>
+                <th translate> Station </th>
+                <th translate> Operator Position </th>
+                <th translate> Items </th>
+                <th translate> Status </th>
+                <th>&nbsp;...</th>
+            </tr>
+  
+            <tr [class.trDisabled]="view.status == '0'" *ngFor="let view of viewsListFiltered | paginate: { itemsPerPage: 17, currentPage: p }; let ind = index;"  >
+                <td>{{view.name}}</td>
+                <td>{{view.lineName}}</td>
+                <td>{{view.ennName}}</td>
+                <td>{{view.stationName}}</td>
+                <td>{{view.opPosition}}</td>
+                <td>{{view.itemsCount}}</td>
+                <td *ngIf="view.status == '1'" translate>Active</td>
+                <td *ngIf="view.status != '1'" translate>Inactive</td>           
+                <td class="options">
+                    <img *ngIf="view.status == '1'"  (click)="open(view.id)" class="optionsImg" src="assets/images/admins/duplicate.svg" alt="">
+                    <img *ngIf="view.status == '1'"  (click)="editView(view)" class="optionsImg" src="assets/images/admins/edit.svg" alt="">
+                    <img *ngIf="view.status == '1'"  (click)="deleteView(view)" class="optionsImg" src="assets/images/admins/garbage.svg" alt="">
+                    <img *ngIf="(view.status != '1')" (click)="activateView(view)" class="optionsImg" src="assets/images/admins/recover.svg" alt="Activar">
+                </td>
+            </tr>
+  
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+  
+  <div [class.hiddenFC]="isFormHidden" class="formsContainer">
+    <div class="formsContainer__title">
+        <h2 translate>Duplicate View</h2>
+    </div>
+    <div class="formsContainer__forms">
+        <div class="odix-form">
+            <h5 translate>Linea</h5>
+            <select (change)="lineComboSelectionChange()" [(ngModel)]="selectedLineOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let line of lineCombo" [ngValue]="line"> {{line.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div class="odix-form">
+            <h5>ENN</h5>
+            <select (change)="ennComboSelectionChange()" [(ngModel)]="selectedEnnOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let enn of filterEnnsByLine()" [ngValue]="enn"> {{enn.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div class="odix-form">
+            <h5 translate>Station</h5>
+            <select [(ngModel)]="selectedStationOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let station of filterStationsByEnn()" [ngValue]="station"> {{station.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div class="odix-form">
+            <h5 translate>Operator Position</h5>
+            <select [(ngModel)]="selectedOperatorPosition">
+                <option value="undefined" disabled selected hidden></option>
+                <option [ngValue]="1">1</option>
+                <option [ngValue]="2">2</option>
+                <option [ngValue]="3">3</option>
+                <option [ngValue]="4">4</option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>    
+    </div>
+    <hr>
+    <div class="formsContainer__actions">
+        <button (click)="closeForm()" class="cancel" translate>Cancel</button>
+        <button class="active" (click)="duplicateView()" translate>Save</button>
+    </div>
+  </div>
+  
+  <section class="wrapper dark" *ngIf="isLoading">
+      <div class="spinner">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+      </div>
+  </section>

@@ -1,0 +1,39 @@
+@import "~styles/colors.less";
+@import "~styles/spacers.less";
+@import "~styles/fonts.less";
+
+.container {
+  padding: @spacer 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 20px;
+  font-family: "GothamRoundedBold";
+  color: @ui-color;
+}
+
+.selectContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.underline {
+  height: 2px;
+  background: @ui-color;
+  border-radius: 8px;
+}
+
+.filter {
+  padding: 0 @spacer;
+  select{
+    font-weight: 100;
+    font-family: "OpenSans";
+  }
+}
+.HeaderPadd{
+  padding: 15px 30px 0 30px;
+}

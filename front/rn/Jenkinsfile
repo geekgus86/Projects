@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    environment {
+        CI = 'true'
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh './scripts/test.sh'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}

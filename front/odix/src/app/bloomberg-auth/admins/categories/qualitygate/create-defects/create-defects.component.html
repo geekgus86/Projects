@@ -1,0 +1,130 @@
+<div class="admins-workspace__regionTitle">
+    <h1 translate>Families and Defects</h1>
+  </div>
+  <div class="admins-workspace__addLevel">
+    <button (click)="open()" >
+        <img src="assets/images/admins/add-new.svg" alt="" > &nbsp;<span translate>Add Family/Defect</span>
+    </button>
+  </div>
+  
+  <div class="admins-workspace__container">
+    <div class="admins-workspace__container--title">
+        <span translate>Filters</span>
+        <div class="admins-workspace__container--title__filters">
+            <input (input)="filterDefects()" [(ngModel)]="filter.nameRegistered" type="text">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
+    <div class="admins-workspace__container--table">
+        <table class="adminsTable">
+            <tr>
+                <th translate> Family </th>
+                <th> Color </th>
+                <th translate> Defect Code </th>
+                <th translate> Defect Description </th>
+                <th translate> Status </th>
+                <th>&nbsp;...</th>
+            </tr>
+  
+            <tr [class.trDisabled]="defect.status == '0'" *ngFor="let defect of defectsListFiltered | paginate: { itemsPerPage: 17, currentPage: p }; let ind = index;"  >
+                <td>{{defect.inspectionTypeDescription}}</td>
+                <td><div class="colorGrid" [style.backgroundColor]="defect.backgroundColor"></div></td>
+                <td>{{defect.defectCode}}</td>
+                <td>{{defect.defectDescription}}</td>        
+                <td *ngIf="defect.status == '1'" translate>Active</td>
+                <td *ngIf="defect.status != '1'" translate>Inactive</td>
+                <td class="options">
+                    <!-- <img *ngIf="defect.status == '1'" (click)="editDefect(defect)" class="optionsImg" src="assets/images/admins/edit.svg" alt=""> -->
+                    <img *ngIf="defect.status == '1'" (click)="deleteDefect(defect)" class="optionsImg" src="assets/images/admins/garbage.svg" alt="">
+                    <img *ngIf="(defect.status != '1')" (click)="activateDefect(defect)" class="optionsImg" src="assets/images/admins/recover.svg" alt="Activar">
+                </td>
+            </tr>
+  
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+  
+  <div [class.hiddenFC]="isFormHidden" class="formsContainer">
+    <div class="formsContainer__title">
+        <h2 *ngIf="!newFamily && !selectedFamily" translate>Add Family/Defect</h2>
+        <h2 *ngIf="newFamily && !selectedFamily" translate>Add Family</h2>
+        <h2 *ngIf="!newFamily && selectedFamily" translate>Add Defect to Existing Family</h2>
+    </div>
+    <div class="formsContainer__forms">
+        <!-- <div class="odix-form" *ngIf="!newFamily">
+            <h5>Nombre de Familia Existente</h5>
+            <input [disabled]="isEditing" (blur)="closeSearch()" (input)="performSearch()" [(ngModel)]="filter.name" type="text">
+            <div *ngIf="resultFamilyList && resultFamilyVisible" class="tableAutoComplete">
+                <table>
+                    <tr>
+                        <th>Nombre</th>
+                    </tr>
+                    <tr (click)="selectUserCombo(family,i)" *ngFor="let family of resultFamilyList; let i = index">
+                        <td>{{family.description}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div> -->
+        <div class="odix-form" *ngIf="!newFamily && !selectedFamily">
+            <h5 translate>Add Defect to Existing Family</h5>
+            <select (change)="familySelectionChanged()" [(ngModel)]="selectedFamily">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let fam of familyList" [ngValue]="fam"> {{fam.description}} </option>
+            </select>
+            <div style="text-align: center;">
+                <p *ngIf="!selectedFamily && !newFamily" style="font-size: 15px; margin-top: 10px; margin-bottom: 10px;" translate>or</p>
+                <button class="newFamilyButton" *ngIf="!selectedFamily && !newFamily" (click)="newFamilyClicked()" translate>Create New Family</button>  
+            </div>
+        </div>
+        <div class="odix-form" *ngIf="newFamily || selectedFamily">
+            <h5 translate>Family</h5>
+            <input type="text" [disabled]="selectedFamily" [(ngModel)]="familyName">
+        </div>
+        <div class="odix-form" *ngIf="selectedFamily">
+            <h5>Color</h5>
+            <div class="colorDiv" [style.backgroundColor]="selectedFamily.backgroundColor"></div>
+        </div>
+        <div class="odix-form" *ngIf="newFamily">
+            <h5>Color</h5>
+            <div style="display: flex;">
+                <color-hue-picker style="padding: 3px; margin-top: 14px;" (onChangeComplete)="changeColor($event)"></color-hue-picker>
+                <div class="colorDiv" [style.backgroundColor]="color"></div>
+            </div>       
+        </div> 
+
+        <div class="odix-form" *ngIf="selectedFamily">
+            <h5 translate>Defect Code</h5>
+            <input type="text" [(ngModel)]="defectCode">
+        </div>
+        <div class="odix-form" *ngIf="selectedFamily">
+            <h5 translate>Defect Description</h5>
+            <input type="text"  [(ngModel)]="defectDescription">
+        </div>
+    </div>
+    <hr>
+    <div class="formsContainer__actions">
+        <button (click)="closeForm()" class="cancel" translate>Cancel</button>
+        <ng-container *ngIf="!isEditing && selectedFamily">
+          <button (click)="saveDefect()" class="active" translate>Add</button>
+        </ng-container>
+        <ng-container *ngIf="!isEditing && newFamily">
+            <button (click)="saveFamily()" class="active" translate>Add</button>
+        </ng-container>
+        <ng-container *ngIf="isEditing">
+          <button  (click)="edit()" class="active" translate>Accept</button>
+        </ng-container>
+    </div>
+  </div>
+  
+  <section class="wrapper dark" *ngIf="isLoading">
+      <div class="spinner">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+      </div>
+  </section>

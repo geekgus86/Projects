@@ -1,0 +1,539 @@
+@import '../../../admin-variables';
+@import '../../../admins.component.scss';
+
+.operatorView{
+    background: $dark-bg;
+    min-height: 100vh;
+    padding: 16px 34px 24px 24px;
+    font-size: 16px;
+    color: white;
+    overflow: hidden;
+    max-height: 100vh;
+    user-select: none; 
+    &__header{
+        width: 978px;
+        display: flex;
+        align-items: center;
+        &--logo{
+            width: 118px;
+        }
+        &--families{
+            display: flex;
+            margin: 0 0 0 18px;
+            max-width: 723px;
+            overflow-x: scroll;        
+            .family{
+                margin: 0;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+                font-size: 12px;
+                white-space: nowrap;
+                &:first-child{
+                    margin: 0 10px 0 0;
+                }    
+            }
+            &_colorSpan{
+                border-radius: 30px;
+                width: 16px;
+                height: 16px;
+                margin: 0 10px;
+            }
+        }
+        &--ID{
+            margin-left: auto;
+            letter-spacing: .5px;
+            font-size: 16px;
+            font-weight: 100;
+            span{
+                font-weight: 500;
+            }
+        }
+        @include blueScrollBar();
+    }
+
+    .operatorViewContainer{
+        display: flex;
+        justify-content: space-between;
+        .chassDisplay{
+            &__mainView{
+                &--container{
+                    @include moduloVista();
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    margin: 0;              
+                }
+                position: relative;
+                border-radius: 5px;
+                // width: 997px;
+                // height: 463px;
+                width: 978px;
+                height: 462px;
+                background-color: rgba(white,.9);
+                margin: 9px 0 0 0;
+            }
+            &__secondaryViews{
+                margin: 20px 0 0 0;
+                h4{
+                    margin: 0px 0 -26px 0;
+                }
+                &--views{
+                    @include flexCenter();
+                    flex-wrap: wrap;
+                    max-width: 100%;
+                    margin: 20px 0 0 0;
+                    max-height: 300px;
+                    overflow-y: scroll;
+                    &__singleView{
+                        background: white;
+                        width: 319px;
+                        height: 133px;
+                        margin: 15px 0px 0 0;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        // &:nth-child(4){
+                        //     margin: 29px auto;
+                        // }
+                    }
+                }
+                &--defects{
+                    margin: 24px 0 0 0;
+                    padding: 16px 0 16px 5px;
+                    display: flex;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    max-height: 295px;
+                    overflow-y: scroll;
+                    .defectCard{
+                        border: solid 2px $odix-blue1;
+                        border-radius: 5px;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                        width: 101px;
+                        margin: 0 11px 20px 0;
+                        &__title{
+                            text-transform: uppercase;
+                            font-weight: 800;
+                            background: $odix-blue1;
+                            padding: 0px 6px;
+                            font-size: 20px;
+                            letter-spacing: .5px;
+                        }
+                        &__defect{
+                            font-size: 13px;
+                            padding: 15px 5px;
+                            color:rgba(white,.8);
+                        }
+                    }
+                    @include blueScrollBar();
+                }
+            }
+        }
+        .infoDisplay{
+            min-width: 500px;
+            padding: 16px 0px 20px 14px;
+            & > *{
+                padding: 0 0 30px 20px;
+            }
+            &__defectsTable{
+                position: relative;
+                border-left: solid .5px rgba(white,.5);
+                min-height: 460px;
+                padding: 0 0 0px 20px !important;
+                &--emptyMsg{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) scale(1.4);
+                    opacity: .7;
+                    text-align: center;
+                    font-size: 14px;
+                }
+                &--defects{
+                    text-align: center;
+                    .defectsTitle, .defects{
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        & > *{
+                            width: 40%;
+                        }
+                    }
+                    .defectsTitle{
+                        padding: 14px 0;
+                        font-weight: 700;
+                        display: flex;
+                        align-items: center;                    
+                        .null{
+                            width: 15%;
+                        }
+                    }
+                    .defectsContainer{
+                        max-height: 383px;
+                        overflow-y: scroll;
+                        @include blueScrollBar();
+                        .defects{
+                            font-size: 14px;
+                            font-weight: 100;
+                            margin: 0;
+                            align-items: center;
+                            padding: 0 10px 0 0;
+                            .removeCont{
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-end;
+                                width: 15%;
+                                .remove{
+                                    display: block;
+                                    width: 35px;
+                                    height: 35px;
+                                    border-radius: 100px;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    span{
+                                        width: 10px;
+                                        height: 3px;
+                                        background-color: white;
+                                    }
+                                }
+                            }
+                            &:not(:nth-child(1)){
+                                margin: 22px 0 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+            &__station{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 120px;
+                letter-spacing: .5px;
+                margin: 20px 0 0 0;
+                &--block{
+                    font-weight: 100;
+                    span{
+                        font-weight: 600;
+                    }
+                }
+            }
+            &__call2action{
+                margin: 26px 0 0 0;
+                display: flex;
+                flex-direction: column;         
+                button{
+                    width: 100%;
+                    border: solid 2px;
+                    border-radius: 8px;
+                    padding: 8px 10px;
+                    margin: 10px 0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: .5px;
+                    font-size: 16px;
+                    min-height: 60px;
+                }
+                .reprocess{
+                    border-color: $caution2;
+                    outline: 0;
+                    
+                }
+                .sendCarpa{
+                    border-color: $danger;
+                    outline: 0;
+                    
+                }
+                .reprocessActivated{
+                    border-color: $caution2;
+                    background-color: $caution2;
+                    outline: 0;
+                    animation-name: activeDefects;
+                    animation-duration: .5s;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: ease-in-out;
+                }
+                .sendCarpaActivated{
+                    border-color: $danger;
+                    background-color: $danger;
+                    outline: 0;
+                    animation-name: activeDefects;
+                    animation-duration: .5s;
+                    animation-fill-mode: forwards;
+                    animation-timing-function: ease-in-out;
+                }
+            }
+        }
+    }
+}
+  
+  .defRepLista{
+    border: solid 6px $caution;
+    animation-name: activeDefects;
+  }
+  
+  .defRecuperadoMayor{
+    border: solid 6px $danger;
+    animation-name: activeDefects;
+  }
+  
+  .def, .defRepLista, .defRecuperadoMayor{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 145px;
+    margin: 0 15px 11px 0;
+    background-color: $odix-blue1;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    min-height: 110px;
+}
+
+.def{
+    border: solid 6px $odix-blue1;
+    animation-name: unActiveDefects;
+    background-color: transparent;
+  }
+
+  .secondaryViews{
+      max-width: 100%;
+      max-height: 100%;
+  }
+
+.doneButton{
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    button{
+        background-color: #007aff;
+        width: 498px;
+        height: 45px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: .5px;
+        cursor: pointer;
+        outline: 0;
+    }
+}
+
+h4{
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFFFFF;
+    opacity: 0.5;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+button{
+    border: none;
+    background: transparent;
+    color: white;
+}
+
+.example{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    img{
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+.currentView{
+    border: solid 5px #007aff;
+}
+
+.removeRep{
+    background-color: rgba($caution,.8);
+}
+
+.activeBg{
+    animation-name: activeDefects;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.unActiveBg{
+    animation-name: unActiveDefects;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes activeDefects {
+    0%{
+        transform: scale(.9);
+    }
+    40%{
+        // transform: scale(1);
+        //background-color: transparent
+    }
+    50%{
+        // transform: scale(1);
+        // background-color: transparent
+    }
+    60%{
+        transform: scale(1.05);
+    }
+    100%{
+        //background-color: $odix-blue1;
+        //color: white !important;
+        transform: scale(1);
+    }
+  }
+
+  @keyframes unActiveDefects {
+    0%{
+        transform: scale(1.05);
+        //background-color: $odix-blue1;
+    }
+    100%{
+        transform: scale(1);
+        //background-color: transparent;
+    }
+  }
+
+  ::-webkit-scrollbar { 
+    display: none; 
+}
+
+.login{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: radial-gradient(573.82px at 55.73% 30.41%, #2D2E3F 0%, #19181A 100%);
+    color: #D6D6D9;
+    overflow: hidden;
+    .loginHead{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: black;
+        text-align: center;
+        padding: 10px 0;
+        box-shadow: 6px 7px 8px rgba(0, 0, 0, 0.4);
+    }
+    &__container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        &--head{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            margin: 0 0 60px 0;
+            .text{
+                margin: 0 0 0 20px;
+                h1{
+                    font-weight: bold;
+                    font-size: 40px;
+                }
+                p{
+                    font-weight: 400;
+                    font-size: 16px;
+                    letter-spacing: .5px;
+                }
+            }
+        }
+        &--error{
+            background: rgba(0,0,0,.5);
+            padding: 10px;
+            text-align: center;
+            border-radius: 100px;
+            letter-spacing: 1px;
+            font-size: 13px;
+            color: #ff3d57;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            bottom: -70px;
+            span{
+                font-size: 20px;
+                font-weight: bold;
+                margin: 0 16px 0 0;
+                opacity: .9;
+            }
+            p{
+                margin: 0;
+                font-size: 16px;
+            }
+        }
+        &--input{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            span{
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                font-weight: bold;
+                font-size: 24px;
+            }
+            input{
+                border: solid 2px rgba(#D4D9E2, .2);
+                background: rgba(#E8F0FE,.1);
+                border-radius: 6px;
+                color: white;
+                height: 70px;
+                padding: 15px;            
+                text-transform: uppercase;
+                font-weight: 800;
+                letter-spacing: 2px;
+                font-size: 30px;
+            }
+        }
+    }
+    .fadeLogo{
+        position: absolute;
+        left: 0;
+        bottom: -70px;
+        width: 400px;
+        pointer-events: none;
+        opacity: .5;
+    }
+    .footer{
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 360px;
+    }
+}
+
+.unselect{
+    width: 978px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -28px;
+    z-index: 2;
+}
+
+.example-box{
+    z-index: 3;
+}
+
+.admins-workspace__container--vista{
+    margin: 0 auto;
+}

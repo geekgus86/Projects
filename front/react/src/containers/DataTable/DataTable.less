@@ -1,0 +1,242 @@
+
+@import "~styles/colors.less";
+@import "~styles/fonts.less";
+@import "~styles/shadows.less";
+
+.Data-Table {
+    font-family: "GothamRounded";
+    color: @black;
+
+    .InputsRow{
+        margin: 20px 0px;
+        
+        .Input{
+            padding: 5px;
+            font-family: "OpenSans";
+            font-size: 13px;
+                &:nth-child(2){
+                    margin-left: -60px;
+                }
+                &:nth-child(3){
+                    margin-left: -40px;
+                }
+                &:last-child{
+                    position: relative;
+                    top: 7px;
+                }
+            input{
+                width: 70%;
+            }
+            .Boton{
+                &:first-child{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.DataTable{
+    font-family: "GothamRounded";
+    color: @black;
+    .headerPadd{
+        padding: 0 30px;
+    }
+    .InputsRow{
+        padding: 20px 28px !important;
+        .select{
+            width: 33%;
+            @media (max-width: 3400px) and (min-width: 1920px) {
+                width: 22%;
+            }
+        }
+        .inputs{
+            width: 19%;
+            position: relative;
+            right: 5px;
+            @media (max-width: 3400px) and (min-width: 1920px) {
+                width: 13%;
+            }
+            &:nth-child(3){
+                left: 10px !important;
+                @media (max-width: 3400px) and (min-width: 1920px) {
+                    left: 20px !important;
+                }
+            }
+        }
+        .buttonsArea{
+            width: 28%;
+            @media (max-width: 3400px) and (min-width: 1920px) {
+                width: 50%;
+            }
+            .ButtonsSearch{
+                width: 8%;
+                position: relative;
+                left: 60px;
+                @media (max-width: 3400px) and (min-width: 1920px) {
+                    left: 90px;
+                }
+            }
+            .ButtonsDownload{
+                width: 50%;
+                position: relative;
+                left: 160px;
+                @media (max-width: 3400px) and (min-width: 1920px) {
+                    left: 130px;
+                }
+            }
+        }
+    }
+    .TitleTable{
+        background: none !important;
+        span{
+            &:first-child{
+                border-bottom: 1px solid @border-color;
+            }
+            font-family: "GothamRoundedBold";
+            font-weight: 300;
+            padding: 0 10px;
+            &:nth-child(2){
+                font-family: "GothamRounded";
+                font-size: 17px;
+                margin-top: 5px;
+            }
+        }
+        button{
+            span{
+                border-bottom: none !important;
+            }
+        }
+    }
+    .Sortable{
+        width: 220%;
+    }
+    .SecondRow{
+        padding: 10px 20px;
+        background: @background-layout;
+        .InputsRow{
+            margin: 20px 0px;
+            .Input{
+                padding: 5px;
+                font-family: "OpenSans";
+                font-size: 13px;
+                &:nth-child(2){
+                    margin-left: -60px;
+                    max-width: 20%;
+                }
+                &:nth-child(3){
+                    margin-left: -40px;
+                    max-width: 20%;
+                }
+                &:last-child{
+                    position: relative;
+                    bottom: 8px;
+                }
+                input{
+                    width: 60%;
+                }
+                .Boton{
+                    &:first-child{
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        .ThirdRow{
+            background: @contrast-color;
+            padding: 10px 0;
+            .title{
+                margin-top: 0;
+                padding: 0;
+                h2{
+                    padding: 10px 10px 20px 10px;
+                    font-family: "GothamRoundedBold";
+                    border-bottom: 1px solid @border-color;
+                    font-size: 18px;
+                }
+            }
+            .Subtitle{
+                padding: 0;
+                margin-top: 10px;
+                h5{
+                    font-family: "GothamRoundedBold";
+                    font-weight: 300;
+                    padding: 10px 10px 20px 10px;
+                    font-size: 16px;
+                }
+            }
+            .Sortable{
+                width: 100%;
+                tbody.BodyTable{
+                    display: block;
+                    overflow: auto;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    } 
+                    td, tr{
+                        word-wrap: break-word;
+                    }
+                }
+                tbody{
+                    width: calc( 100% - 1em );
+                }
+                thead, tbody{
+                    tr{
+                        width:100%;
+                    }
+                }
+            }
+        }
+    }
+}
+.PaddNone{
+    padding: 0;
+}
+.title{
+    font-family: "GothamRoundedBold";
+    text-transform: uppercase;
+    color: @black;
+    margin-top: 30px;
+    h2{
+        font-size: 24px;
+        border-bottom: 1px solid @black;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+}
+.Bold{
+    font-weight: bolder;
+}
+input{
+    border: 1px solid;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+select{
+    margin-left: 5px;
+}
+.TableContent{
+    td{
+        padding: 5px 10px;
+        font-size: 12px;
+        font-family: "GothamRounded";
+        border-left: 1px solid @border-color;
+        &:first-child{
+          border-left: 0;
+        }
+    }
+    &:nth-child(odd){
+        background: @table-even-row-background;
+     }
+    &:nth-child(even){
+        background: @contrast-color;
+     }
+}
+.TableStyle{
+    padding: 24px 0px !important;
+    margin-left: 20px;
+    background: @contrast-color;
+    .MarginLeft{
+        margin-left: 20px;
+    }
+}

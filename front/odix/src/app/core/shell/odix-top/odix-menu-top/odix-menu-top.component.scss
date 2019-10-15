@@ -1,0 +1,215 @@
+.send-a-message {
+	position: fixed;
+	bottom: 16px;
+	left: -250px;
+	z-index: 999;
+	transition: .5s;
+}
+
+.send-a-message__form-container {
+	width: 230px;
+	height: 200px;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: -210px;
+	left: -100px;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+	transition: .5s;
+	transform: scale(0);
+	opacity: 0;
+}
+
+.send-a-message__form-container h1 {
+	color: white;
+	font-size: 12pt;
+	text-align: center;
+	padding: 16px 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+	border-bottom: solid 1px #00B5A7;
+	padding-bottom: 2px;
+	display: inline-block;
+	margin-left: 25px;
+}
+
+.send-a-message__form-container textarea {
+	background: transparent;
+	color: #fff;
+	border: none;
+	padding: 5px 16px;
+	font-size: 12px;
+  letter-spacing: 1px;
+  resize: none;
+}
+
+.send-a-message__form-container .primary-button {
+	display: inline-block;
+	padding: 10px;
+	border-radius: 6px;
+	margin-left: 65px;
+}
+
+.send-a-message__form-container button{
+  border: none;
+}
+
+.send-a-message__pop-up {
+	position: absolute;
+	width: 220px;
+	height: 200px;
+	background-color: rgba(0, 0, 0, 0.9);
+	color: #fff;
+	padding: 20px;
+	z-index: 99;
+	top: -210px;
+	display: flex;
+	border-radius: 20px;
+	transition: .5s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.send-a-message__pop-up h1 {
+	align-self: center;
+	font-size: 18px;
+	text-align: center;
+}
+
+.send-a-message__icon {
+	background-color: rgba(#00C9F1, 0.2);
+	padding: 10px;
+	border-radius: 50px;
+	transition: .5s;
+}
+
+.send-a-message__icon:hover {
+	transform: translatey(-3px);
+	background-color: rgba(#00C9F1, 0.8);
+	box-shadow: 7pt 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.send-a-message-closed {
+	left: 16px;
+}
+
+.show-messages {
+	transform: scale(1);
+	opacity: 1;
+	left: 0;
+}
+
+.messages-active {
+	transform: translatey(-3px);
+	background-color: rgba(#00C9F1, 0.8);
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.pop-up-shown {
+	opacity: 1;
+	visibility: visible;
+}
+
+.download-mobile {
+	position: fixed;
+	bottom: 16px;
+	left: -300px;
+	z-index: 999;
+	transition: all .4s ease-in-out;
+}
+
+.download-mobile__container {
+	width: 220px;
+	height: 200px;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: -210px;
+	left: -90px;
+	border-radius: 10px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+	transition: all .4s ease-in-out;
+	transform: scale(0);
+	opacity: 0;
+}
+
+.download-mobile__container--active {
+	transform: scale(1);
+	opacity: 1;
+}
+
+.download-mobile__container--os {
+	color: #fff;
+	letter-spacing: 1px;
+	font-size: 12px;
+	display: flex;
+	text-align: center;
+}
+
+.download-mobile__container--os > * {
+	padding: 8px;
+	margin: 10px;
+	color: rgba(255, 255, 255, 0.6);
+	cursor: pointer;
+	transition: all .3s ease-in-out;
+}
+
+.download-mobile__container--os > *:hover {
+	color: white;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+	transform: translateY(-1px);
+}
+
+.download-mobile__container--qr img {
+	margin: 0 auto;
+	position: absolute;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.download-mobile__icon {
+	background-color: rgba(#00C9F1, 0.2);
+	padding: 10px;
+	border-radius: 50px;
+	transition: .5s;
+}
+
+.download-mobile__icon:hover {
+	transform: translateY(-3px);
+	background-color: rgba(#00C9F1, 0.8);
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.os-active {
+	background-color: rgba(#00C9F1, 0.5);
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+	border-radius: 100px;
+	color: #fff;
+}
+
+.download-active {
+	transform: translateY(-3px);
+	background-color: rgba(#00C9F1, 0.8);
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.download-mobile-closed {
+	left: 100px;
+}
+
+//ESTILOS IOS UNICAMENTE - ELIMINAR PARA REVERTIR
+
+.download-mobile__container--os > * {
+    margin: 30px auto;
+    color: white;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    background: none;
+}
+
+.download-mobile__container--os > *:hover {
+	color: white;
+	text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+	transform: none;
+}

@@ -1,0 +1,70 @@
+@import "~styles/colors.less";
+@import "~styles/spacers.less";
+@import "~styles/fonts.less";
+
+.container {
+  border-left: 1px solid @border-color;
+  padding: @spacer-1-5x;
+  display: inline-block;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  padding-bottom: @spacer-2x;
+}
+
+.day {
+  padding-bottom: @spacer-0-5x;
+  font-family: "GothamRounded";
+  text-transform: uppercase;
+}
+
+.date {
+  font-family: "GothamRoundedBold";
+}
+
+.day, .date {
+  color: @ui-color;
+  font-size: 14px;
+  text-align: center;
+  //add GothamRounder font
+}
+
+.user {
+  width: @spacer-4x;
+  height: @spacer-4x;
+  background-color: @detail-color;
+  border-radius: 50%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.error {
+  width: @spacer-4x;
+  height: @spacer-4x;
+  background-color: @red-delete;
+  border-radius: 50%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.icon {
+  color: @contrast-color;
+  font-size: @spacer-2x;
+}
+.marginNull{
+  margin: 0;
+}
+.bold{
+  font-family: "OpenSansBold";
+}
+.TooltipBack{
+  background: @ui-color;
+}

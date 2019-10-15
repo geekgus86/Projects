@@ -1,0 +1,174 @@
+<div *ngIf="!loggedIn">
+  <div class="login">
+    <div class="loginHead">
+      <img src="assets/images/odix-logo.svg" alt="">
+    </div>
+    <div class="login__container">
+      <div class="login__container--head">
+        <img src="assets/images/qualityGate/odixapp.svg" alt="">
+        <div class="text">
+          <h1 translate>Sign into Quality Gate</h1>
+          <p translate>Place your badge on the reader</p>
+        </div>
+      </div>
+      <div class="login__container--input">
+        <span translate>Badge Number</span>
+        <input type="text" [(ngModel)]="userBadge" (keyup.enter)="readBadge()" autofocus>
+      </div>
+      <div class="login__container--error" *ngIf="errorLoginValue != 0 && errorLoginValue != undefined">
+          <span>X</span>
+          <p *ngIf="errorLoginValue == 1" translate>The IP of this machine is not assigned to any Station/Operator Location</p>
+          <p *ngIf="errorLoginValue == 2" translate>Badge does not exist</p>
+          <p *ngIf="errorLoginValue == 3" translate>User not trained on this Station/Operator Location</p>
+          <p *ngIf="errorLoginValue == 4" translate>There are no views assigned to this Station/Operator Location</p>
+      </div>
+    </div>
+    <img class="fadeLogo" src="assets/images/qualityGate/odixFadeLogo.png" alt="">
+    <img class="footer" src="assets/images/qualityGate/footer.png" alt="">
+  </div>
+</div>
+
+<div *ngIf="loggedIn" class="operatorView">
+
+  <header class="operatorView__header">
+    <div class="operatorView__header--logo">
+      <img src="assets/images/odix-logo.svg" alt="O D I X">
+    </div>
+    <div class="operatorView__header--families">
+      <div *ngFor="let type of inspectionPointTypes" class="family"> <span class="operatorView__header--families_colorSpan" [style.backgroundColor]="type.color">&nbsp;</span> {{type.name}} </div>
+    </div>
+    <div class="operatorView__header--ID" (click)="changeJSN()">
+      ID: <span>{{serialJSN}}</span>
+    </div>
+  </header>
+
+  <div class="doneButton">
+      <button *ngIf="!inspectionDone" (click)="saveInspection()"> 
+          <img src="assets/images/admins/check.svg" alt="" > &nbsp;<span translate>Finish Inspection</span>
+      </button>
+      <button *ngIf="inspectionDone"  (click)="updateInspection()">
+          <img src="assets/images/admins/check.svg" alt="" > &nbsp;<span translate>Update Inspection</span>
+      </button>
+  </div>
+  <main class="operatorViewContainer">
+      <div class="chassDisplay">
+          <div class="chassDisplay__mainView">
+
+            <!-- <div class="chassDisplay__mainView--container"> -->
+            <div class="admins-workspace__container--vista">
+                <div class="unselect" (click)="unselectButton()"></div>
+              <div id="Button_{{button.id}}" *ngFor="let button of Buttons" [class.activeButton]="buttonSelected?.id == button.id"  [style.background]="button.backgroundColor" [style.color]="button.foreColor" (click)="captureDefects(button)" [position]="button.coordinates" [ngDraggable]="false" class="example-box">
+                  {{button.name}}
+              </div>
+              <div id="Point_{{point.id}}" class="point" *ngFor="let point of Points"></div>
+              <img class="imgVistaOperator" [src]="selectedImage"/> 
+            </div>
+            
+          </div>
+          <div *ngIf="!isButtonSelected" class="chassDisplay__secondaryViews">
+              <h4 translate>Views</h4>
+              <div class="chassDisplay__secondaryViews--views">
+                <div class="chassDisplay__secondaryViews--views__singleView" *ngFor="let module of moduleJSON?.modules" (click)="changeModule(module.id)" [class.currentView]="selectedModule?.id == module.id">
+                  <img class="secondaryViews" [src]="module.imagePath" alt="" >
+                </div>
+              </div>
+          </div>
+          <div *ngIf="isButtonSelected" class="chassDisplay__secondaryViews">
+            <h4 translate>Defects <span>{{buttonSelected?.inspectionTypeDescription}}</span></h4>
+            <div class="chassDisplay__secondaryViews--defects">
+              <div *ngFor="let def of filteredDefects" [className]="def.class" (click)="selectDefect(def)">
+                <div class="defectCard__title">
+                  {{def.code}}
+                </div>
+                <div class="defectCard__defect">
+                  {{def.description}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="infoDisplay">
+          <div class="infoDisplay__defectsTable">
+            <h4 translate>Actual Defects</h4>
+            <div *ngIf="repairs?.length == 0" class="infoDisplay__defectsTable--emptyMsg">
+              <img src="assets/images/qualityGate/ok-chassis.svg" alt="">
+                <span translate>Select an inspection point </span> <br>
+                <span translate>to capture defects</span> 
+            </div>
+            <div class="infoDisplay__defectsTable--defects" *ngIf="repairs?.length > 0">
+              <div class="defectsTitle">
+                <span translate>Inspection Point</span>
+                <span translate>Defect</span>
+                <span class="null">&nbsp;</span>
+              </div>
+              <div class="defectsContainer">
+                <div *ngFor="let repair of repairs" class="defects">
+                  <span>{{repair.buttonName}}</span>
+                  <span>{{repair.defectDescription}}</span>
+                  <span class="removeCont">
+                    <span class="remove" [style.backgroundColor]="repair.repairTypeColor" (click)="deleteRepair(repair)">
+                      <span></span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="infoDisplay__station">
+            <h4 translate>Profile</h4>
+            <div class="infoDisplay__station--block">
+              <span translate>Operator</span> : <span>{{moduleJSON?.userName}}</span>
+            </div>
+            <div class="infoDisplay__station--block">
+              <span translate>Linea</span> : <span>{{moduleJSON?.lineName}}</span>
+            </div>
+            <div class="infoDisplay__station--block">
+                <span translate>Station</span> : <span>{{moduleJSON?.stationName}}</span>
+            </div>
+            <div class="infoDisplay__station--block">
+                <span translate>Operator Position</span> : <span>{{moduleJSON?.opPosition}}</span>
+            </div>
+          </div>
+          <div class="infoDisplay__call2action">
+            <h4 translate>Assign defects as </h4>
+            <button [ngClass]="{'reprocessActivated': isReprocesosListosButtonSelected == true, 'reprocess':isReprocesosListosButtonSelected == false }" (click)="changeRepairType(2)"><span translate>Repair</span></button>
+            <button [ngClass]="{'sendCarpaActivated': isEnviarACarpaButtonSelected == true, 'sendCarpa':isEnviarACarpaButtonSelected == false }" (click)="changeRepairType(3)"><span translate>Green Seal</span></button>
+          </div>
+        </div>
+  </main>
+
+
+  <section class="alert" [ngClass]="{'alertShown': successAlert}">
+      <div class="alert__container">
+          <img src="assets/images/admins/green-check.svg" alt="">
+          <span class="name" translate>INSPECTION FINISHED</span>
+      </div>
+  </section>
+
+  <section class="alert" [ngClass]="{'alertShown': editSuccessAlert}">
+      <div class="alert__container">
+          <img src="assets/images/admins/green-check.svg" alt="">
+          <span class="name" translate>INSPECTION UPDATED</span>
+      </div>
+  </section>
+
+  <section class="alert" [ngClass]="{'alertShown': newPartArrived}">
+      <div class="alert__container">
+        <div style="height: 70px;">
+          <ngx-loading [show]="newPartArrived" [template]="loadingTemplate"></ngx-loading>
+        </div>
+        <span class="name" style="margin-top: 40px;" translate>NEW INSPECTION BEGINS</span>
+      </div>
+  </section>
+  
+  <section class="alert alertShown" [ngClass]="{'alertShown': errorAlert}">
+      <div class="alert__container">
+          <img src="assets/images/admins/danger.svg" alt="">
+          <span translate>ERROR</span>
+          <span class="error" translate>An error occurred while saving the changes</span>
+          <button (click)="closeErrorAlert()" translate>Accept</button>
+      </div>
+  </section>
+
+</div>

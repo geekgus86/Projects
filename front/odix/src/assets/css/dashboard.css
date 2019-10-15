@@ -1,0 +1,66 @@
+
+
+		#reportContainer {
+			height: 870px;
+			width: 100%;
+			max-width: 1700px;
+			margin: 0 auto;
+			border: none;
+		}
+
+		#dashboardContainer {
+			height: 870px;
+			width: 100%;
+			max-width: 1320px;
+		}
+
+		#dashboardContainer iframe{
+			border: none;
+		}
+
+		#buttonsWrapper {
+			width: 100%;
+			text-align: center;
+		}
+
+		a:hover, a:visited, a:link, a:active {
+			text-decoration: none;
+			cursor: pointer;
+		}
+
+		#buttonsWrapper a {
+			background-color: rgb(36, 169, 225);
+			border: none;
+			color: white;
+			padding: 5px 30px;
+			margin: 5px;
+			width: 200px;
+			height: 30px;
+			display: inline-block;
+			text-align: center;
+		}
+
+		#buttonsWrapper a:hover {
+		   font-size: 120%;
+		}
+
+
+		.infoBox {
+			margin-top: 30px;
+		}
+
+		.explorationContainer .visualizationPane.isCollapsed{
+			visibility: hidden;
+		}
+
+		*{
+			border: none !important;
+		}
+
+		ul.pane.sections {
+			background: #fff;
+		}
+		.explorationContainer .exploreCanvas .backgroundContainer.outspaceContainer
+		{
+			height:0%;
+		}

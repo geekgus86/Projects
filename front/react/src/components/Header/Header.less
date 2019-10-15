@@ -1,0 +1,174 @@
+@import '~styles/colors.less';
+@import '~styles/fonts.less';
+
+.Header {
+  background-color: #323D50;
+  box-shadow: 0 1px 4px rgba(0,0,0,.3);
+  height: 50px;
+  user-select: none;
+  color: #ffffff;
+  padding: 0 20px;
+}
+
+.MenuIcon {
+  margin: 0 30px;
+}
+.MainHeader{
+  position: sticky !important;
+  top: 0;
+}
+.NotificationWrapper {
+  width: 75px;
+  height: 50px;
+  margin: 0 30px;
+  border-left: 1px solid #222A38;
+  border-right: 1px solid #222A38;
+}
+
+.RigthMenuContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.RigthMenuUser{
+  width: 75%;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  justify-content: space-evenly;
+  display: flex;
+  align-items: center;
+}
+
+.SchulerName{
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
+
+.RigthMenuUser:hover{
+  background-color: #212a39;
+}
+
+.UserCircleContainer{
+  display: inline-block;
+}
+
+.GrayCircle{
+  border-radius: 50%;
+  background: #D8D8D8;
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+  .txt{
+    font-size: 18px;
+    color: @blue-dark;
+  }
+}
+.MetalsaLogo{
+  @media (max-width:1919px) and (min-width:1600px) {
+    max-width: 75%;
+  }
+  @media (max-width:1050px) and (min-width:800px) {
+    max-width: 150%;
+    margin-left: 20px;
+  }
+  @media (max-width:799px) and (min-width:650px) {
+    max-width: 220% !important;
+    margin-left: 20px;
+  }
+  @media (max-width:649px) and (min-width:400px) {
+    display: none;
+  }
+}
+
+.Region {
+  p{
+    margin: 0;
+    font-family: "GothamRounded";
+    text-transform: uppercase;
+    text-align: center;
+    .bold{
+      font-weight: bold;
+    }
+  }
+}
+.RightAlign{
+  text-align: right;
+  @media (max-width:649px) and (min-width:400px){
+    max-width: 100% !important;
+  }
+}
+.UserPhoto {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 2px solid #647592;
+}
+.UserMin{
+  @media (max-width:850px) and (min-width:400px) {
+    padding: 35px !important;
+  }
+  .DataMin{
+    @media (max-width:850px) and (min-width:400px) {
+      display:none;
+    }
+  }
+}
+.NotificationsIcon{
+  text-align: center;
+  button{
+    @media (max-width:1050px) and (min-width:300px) {
+      display: none;
+    }
+  }
+}
+.UserInfo {
+  font-size: 15px;
+  margin:0 0 0 20px !important;
+}
+#Aside{
+  position: absolute;
+  top: 7%;
+  left: 0;
+}
+@media (min-width: 1281px) and (max-width: 1950px){
+  #Aside{
+    top: 5%;
+    width: 16%;
+  }
+}
+.Show{
+  transition-property: visibility, opacity;
+  transition-duration: 0.5s, 0.3s;
+}
+.Hide{
+  opacity: 0;
+  visibility: hidden;
+  transition-property: opacity, visibility;
+  transition-duration: 0.3s, 0.5s;
+  transition-delay: 0.5s, 0.3s;
+}
+.Overlay{
+  height: 100vh;
+  background:rgba(0, 0, 0, 0.4);
+  left: 300px;
+  position: fixed;
+}
+.Paddnone{
+  padding: 0;
+}
+.languageselect {
+  margin-right: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
+  background-color: #323D50 important;
+  color: white important;
+  font-size: 1.2em;
+  font-weight: 500;
+}

@@ -1,0 +1,39 @@
+<div class="example-container mat-elevation-z8">
+  <div *ngIf="withSorting" class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+  <mat-table *ngIf="withSorting" #table [dataSource]="dataSource" matSort>
+
+      <ng-container *ngFor="let column of settings.columns" [cdkColumnDef]="column.columnDef">
+        <mat-header-cell *cdkHeaderCellDef mat-sort-header [style.color]="'white'">{{ column.header }}</mat-header-cell>
+        <mat-cell *cdkCellDef="let row" [style.color]="column.color(row)" [style.background]="column.background(row)"
+        [style.border]="column.border(row)">{{ column.cell(row) }}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="settings.displayedColumns" [style.background]="'black'"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: settings.displayedColumns;"></mat-row>
+
+    </mat-table>
+
+    <mat-table *ngIf="!withSorting" #table [dataSource]="dataSource">
+
+        <ng-container *ngFor="let column of settings.columns" [cdkColumnDef]="column.columnDef">
+          <mat-header-cell *cdkHeaderCellDef [style.color]="'white'">{{ column.header }}</mat-header-cell>
+          <mat-cell *cdkCellDef="let row" [style.color]="column.color(row)" [style.background]="column.background(row)"
+          [style.border]="column.border(row)">{{ column.cell(row) }}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="settings.displayedColumns" [style.background]="'black'"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: settings.displayedColumns;"></mat-row>
+
+    </mat-table>
+
+    <mat-paginator *ngIf="settings.paginator.withPaginator" #paginator
+                  [pageSize]="settings.paginator.pageSize"
+                  [pageSizeOptions]="settings.paginator.pageSizeOptions"
+                  [showFirstLastButtons]="settings.paginator.showFirstLastButtons">
+    </mat-paginator>
+</div>
+

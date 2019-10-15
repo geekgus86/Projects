@@ -1,0 +1,9 @@
+<select name="Shift" (change)="onShiftChange($event.target.value)">
+    <option *ngFor="let value of objShift  | orderBy:order:reverse" value= {{value.id}} [selected]="value.id == selectShift"  >
+    {{value.name | translate}}
+  </option>
+</select>
+
+
+
+  

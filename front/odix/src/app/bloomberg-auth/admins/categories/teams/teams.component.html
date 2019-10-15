@@ -1,0 +1,194 @@
+
+    <div class="admins-workspace__regionTitle">
+        <div class="admins-workspace__regionTitle--planta">
+            <h1 translate>Planta:</h1><h1>{{plantName}}</h1>
+            <img src="assets/images/admins/arrow.svg" alt="">
+        </div>
+    </div>
+
+
+    <div class="admins-workspace__addLevel">
+        <button (click)="new_('new')" >
+            <img src="assets/images/admins/add-new.svg" alt=""> &nbsp;<span translate>Agregar Nivel de Escalamiento</span>
+        </button>
+    </div>
+
+    <div class="admins-workspace__container">
+        <div class="admins-workspace__container--title">
+            <span translate>Niveles de Escalamiento</span>            
+            <div class="tools-filtro-prensas">
+                <select class="prensa" (change)="changeAsset($event.target.value)" [(ngModel)]="assetSelected">
+                    <option value="-1" translate> Todas las prensas </option>
+                    <option *ngFor="let opt of dataAsset" value="{{opt.id}}"> {{opt.name}} </option>
+                </select>
+                <img class="downsideArrow" src="assets/images/admins/arrow-black.svg" alt="">
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="admins-workspace__container--title">
+                <span translate>Filtros</span>
+                <div class="admins-workspace__container--title__filters">
+                    <input [(ngModel)]="searchText" type="text" (keyup)="setSearchText($event)">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <!-- <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox"> -->
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="eliminar" *ngIf="arrDelete.size > 0" (click)="deleteSelected()">
+                <img src="assets/images/admins/garbage.svg" alt=""> &nbsp;
+                <span translate>Eliminar</span></button>
+        </div>
+
+        <div class="admins-workspace__container--table">
+            <table class="adminsTable">
+                <tr>
+                    <th><input [(ngModel)]="checkedAll" (click)="checkAll()" type="checkbox" name="line0"></th>
+                    <!-- <th><input type="checkbox" name="line1"></th> -->
+                    <th translate>Nombre</th>
+                    <th translate>Usuario</th>
+                    <th translate>Correo</th>
+                    <th>TADI</th>
+                    <th>Area</th>
+                    <th>Issue</th>
+                    <th translate>Regla de escalamiento</th>
+                    <th translate>Prensa</th>
+                    <th>&nbsp;</th>
+                  </tr>
+                  <tr [class.trDisabled]="!item.active" *ngFor="let item of dataEscalation | gridFilter: {username: searchText, name: searchText, email: searchText, tadi: searchText, issueTypeDesc: searchText} | paginate: { itemsPerPage: 17, currentPage: p }; let ind = index;"  >
+                       <td><input type="checkbox" [(ngModel)]="item.checked" (click)="selectCheckMultiple(item.id)" name="line1"></td>
+                        <!-- <td><input type="checkbox" name="line1"></td> -->
+                        <td>{{item.name}}</td>
+                        <td>{{item.username}}</td>
+                        <td>{{item.email}}</td>
+                        <td style="max-width: 150px;
+                        overflow: hidden;
+                        display: flex;">{{item.tadi}}</td>
+                        <td translate>{{item.issueTypeDesc}}</td>
+                        <td translate>{{item.escalationTypeDesc}}</td>
+                        <td translate>{{item.escalationRuleDesc}}</td>
+                        <td>{{item.assetDesc}}</td>
+                        <td class="options">
+                            <img *ngIf="(item.active)" (click)="edit_(item,'edit')" class="optionsImg" src="assets/images/admins/edit.svg" alt="">
+                            <img *ngIf="(item.active)" (click)="delete(item.id)" class="optionsImg" src="assets/images/admins/garbage.svg" alt="">
+                            <img *ngIf="(!item.active)" (click)="activate(item.id)" class="optionsImg" src="assets/images/admins/recover.svg" alt="Activar">
+                        </td>
+                    </tr>
+              </table>
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+          </div>
+      </div>
+
+
+
+      <div [class.hiddenFC]="isFormHidden" class="formsContainer">
+        <div class="formsContainer__title">
+            <h2 translate>{{action == 'new' ? 'Agregar' : 'Editar'}} Nivel</h2>
+        </div>
+        <div class="formsContainer__forms">
+            <div>
+                <span style="font-size: 14px;" translate>Buscar</span>
+                <!-- <input id="name" type="text" placeholder="Nombre del empleado" value="{{objectEdit.name}}"> -->
+
+                <input [disabled]="disabledName"  (blur)="closeSearch()" (input)="performSearch()" [(ngModel)]="filter.name" type="text">
+                <div *ngIf="resultUserList && resultUserVisible" class="tableAutoComplete">
+                        <table>
+                            <tr>
+                                <th translate>Nombre</th>
+                            </tr>
+                            <tr (click)="selectUser(user,i)" *ngFor="let user of resultUserList; let i = index">
+                                <td>{{user.fullName}} - {{user.username}}</td>
+                            </tr>
+                        </table>
+                </div>
+
+
+            </div>
+            <div>
+                <span style="font-size: 14px;" translate>Correo</span>
+                <input type="text" disabled value="@metalsa.com" name="mail" value="{{objectEdit.email}}">
+            </div>
+            <div>
+                <span style="font-size: 14px;">TADI</span>
+                <input class="tadi" type="text" disabled value="#####" value="{{objectEdit.tadi == null ? '-----' : objectEdit.tadi}}">
+            </div>
+            <div>
+                <span style="font-size: 14px;">Area</span>
+                <select  (change)="changeIssue($event.target.value)" [value]="objectEdit.issueTypeId">
+                   <option *ngFor="let data of dataIssue" value="{{data.id}}" translate> {{data.description}} </option>
+                </select>
+                <img class="downsideArrow" src="assets/images/admins/arrow.svg" alt="">
+            </div>
+        
+            <div>
+                <span style="font-size: 14px;">Issue</span>
+                <select  (change)="changeArea($event.target.value)" [value]="objectEdit.escalationTypeId">
+                   <option *ngFor="let area of dataArea" value="{{area.id}}" translate> {{area.descEscalationType}} </option>
+                </select>
+                <img class="downsideArrow" src="assets/images/admins/arrow.svg" alt="">
+            </div>
+            
+
+            <div>
+                <span style="font-size: 14px;" translate>Regla</span>
+                <select  (change)="changeRegla($event.target.value)" [value]="objectEdit.escalationRuleId">
+                    <option *ngFor="let area of dataRegla" value={{area.id}} translate>{{area.descEscalationRule}}</option>
+                </select>
+
+                <img class="downsideArrow" src="assets/images/admins/arrow.svg" alt="">
+            </div>
+            <div class="radioButtons">
+                <span style="font-size: 14px;" translate>Prensa</span>
+                <!-- <div class="radioOption" (change)="changeAsset($event.target.value)">
+                    <input type="radio" name="prensa" value={{objectEdit.assetID}} checked>{{objectEdit.assetDesc}}
+                </div> -->
+                <!--<div *ngFor="let asset of dataAsset" class="radioOption" (change)="changeAsset($event.target.value)" >
+                    <input type="radio" name="prensa" value= {{asset.id}}   >{{asset.name}}
+                </div>-->
+   
+
+
+                <!-- <ng-container *ngIf="action == 'new'">
+                    <div *ngFor="let asset of newAssets" class="radioOption"  >
+                        <input id={{asset.name}}  type="radio" name={{asset.name}} value={{asset.id}} [(ngModel)]="asset.checked" (click)="changeAsset(asset.checked)" >{{asset.name}}
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="action == 'edit'">
+                    <div *ngIf="action == 'edit'" class="radioOption">
+                        <input checked type="radio" name="prensa" [(ngModel)]="objectEdit.assetId">{{objectEdit.assetDesc}}
+                    </div>
+                </ng-container> -->
+
+                     <ng-container *ngIf="action == 'new'">
+                        <div *ngFor="let asset of newAssets" class="radioOption">
+                            <input [disabled]="disabledA" type="checkbox" name="prensa" value={{asset.id}} [(ngModel)]="asset.checked">&nbsp;{{asset.name}}
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="action == 'edit'">
+                        <div *ngIf="action == 'edit'" class="radioOption">
+                            <input [disabled]="true" type="checkbox" name="prensa" [(ngModel)]="objectEdit.assetID">&nbsp;{{objectEdit.assetDesc}}
+                        </div>
+                    </ng-container>
+                
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="formsContainer__actions">
+            <button  (click)="cancel()" class="cancel"><span translate>Cancelar</span></button>
+            <button  (click)="save()" class="active"><span translate>Agregar</span></button>
+        </div>
+
+    </div>
+    
+    
+<section class="wrapper dark" *ngIf="isLoading">
+    <div class="spinner">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+</section>

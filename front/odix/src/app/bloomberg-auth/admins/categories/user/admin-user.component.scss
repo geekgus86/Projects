@@ -1,0 +1,101 @@
+@import '../../admins.component.scss';
+.admin-btn{
+    width: 100px;
+    background-color: #b04343;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.admin-user-container{
+    margin: 10px;
+}
+
+.filter-section{
+    display: flex;
+}
+
+.input-section{
+    margin-bottom: 20px;
+}
+
+.user-table{
+    height: 500px;
+    overflow-y: scroll;
+}
+
+.user-element{
+    cursor: pointer;
+    height: 25px;
+    font-size: 12px;
+}
+
+.details-section{
+    display: flex;
+    margin-top: 15px;
+}
+
+.details-section div{
+    display: flex;
+}
+
+.details-section p{
+    margin: 0;
+}
+
+.confirm-button{
+    background-color: blue;
+}
+
+.btn-disabled{
+    opacity: 0.3;
+}
+
+.formsContainer{
+    width: 700px;
+}
+
+.hiddenFC{
+    right: -700px;
+}
+
+.lbl{
+    font-size: 14px;
+}
+
+.top15{
+    margin-top: 15px !important;
+}
+
+th{
+    text-align: left !important;
+}
+
+.passwordChange__window input{
+    margin-top: 15px !important;
+    text-transform: none;
+    margin-bottom: 15px !important;
+    font-size: 14px;
+}
+
+.trDisabled{
+    background-color: #c37a7a;
+    opacity: 0.7;
+    cursor: not-allowed !important;
+}
+
+.trDisabled:hover{
+    background-color: #c37a7a;
+    opacity: 0.7;
+    cursor: not-allowed !important;
+}
+
+.trTadi{
+    max-width: 150px;
+    overflow: hidden;
+    display: flex;
+}

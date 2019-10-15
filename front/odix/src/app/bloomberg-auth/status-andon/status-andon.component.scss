@@ -1,0 +1,67 @@
+.status-andon-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 50%;
+}
+
+.dark-box-3{
+    background-color: rgba(13, 14, 17, .5);
+}
+
+.title{
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    padding: 20px 0;
+    letter-spacing: 1px;
+}
+
+.content{
+    color: white;
+    margin: 30px 0 0 0;
+    font-size: 15px; 
+}
+
+.linea-parametros{
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+
+.switch-container{
+    max-width: 60%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 30px auto;
+    &__block{
+        color: #fff;
+        & > * {
+            padding: 10px 0;
+        }
+        ui-switch{
+            zoom: 110%;
+        }
+        &--title{
+            font-size: 16px;
+        }
+        &--value{
+            letter-spacing: .3px;
+            opacity: .5;
+        }
+        /deep/.switch{
+            border: 1px solid transparent;
+            transition: all .3s ease-in-out;
+            &:hover{
+                transform: translateY(-1px);
+                box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+            }
+        }
+    }
+}
+
+/deep/.switch.checked .switch-pane .switch-label-checked {
+    color: #fff;
+}

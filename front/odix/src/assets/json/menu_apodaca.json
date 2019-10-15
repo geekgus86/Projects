@@ -1,0 +1,180 @@
+[
+  {
+    "type":"menu",
+    "title":"Plant Apodaca",
+    "path":"/apodaca/plant",
+    "items": []
+  },
+  {
+    "type":"menu",
+    "title":"Assembly",
+    "path":"",
+    "items":[
+      {
+        "title":"DTL1",
+        "path":"/apodaca/overview/APO_EnsambleDTL1-DTL1",
+        "items": []
+      },
+      {
+        "title":"DTL2",
+        "path":"/apodaca/overview/APO_EnsambleDTL2-DTL2",
+        "items": []
+      }
+    ]
+  },
+  {
+    "type":"menu",
+    "title":"Ecoat",
+    "path":"",
+    "items":[
+      {
+        "title":"Ecoat 1",
+        "path":"/apodaca/overview/ecoat_1",
+        "items": []
+      },
+      {
+        "title":"Ecoat 2",
+        "path":"/apodaca/overview/ecoat_2",
+        "items": []
+      },
+      {
+        "title":"Ecoat 3",
+        "path":"/apodaca/overview/ecoat_3",
+        "items": []
+      }
+    ]
+  },
+  {
+    "type":"menu",
+    "title":"Dashboard",
+    "path":"",
+    "items":[
+      {
+        "title":"Production",
+        "path":"",
+        "items": [
+          {
+            "title":"Production KPI by Shift",
+            "path":"/apodaca/dashboard/ASSEMBLYKPI"
+          }
+        ]
+      },
+      {
+        "title":"CycleTimes",
+        "path":"",
+        "items": [
+          {
+            "title":"Top N CycleTimes",
+            "path":"/apodaca/dashboard/TOPNCYCLETIMES"
+          },
+          {
+            "title":"Fluctiocion vs Minimum",
+            "path":"/apodaca/dashboard/FLUCVSMIN"
+          },
+          {
+            "title":"Cycle Times Monthly Data Power Bi",
+            "path":"/apodaca/dashboard/CYCLETIMESMONTHLY"
+          },
+          {
+            "title":"Cycle Times Monthly Data",
+            "path":"/apodaca/dashboard/CYCLETIMESMONTHLYDATA"
+          } 
+        ]
+      },
+      {
+        "title":"Station Issues",
+        "path":"",
+        "items": [
+          {
+            "title":"Station Issues AVG Time By Department",
+            "path":"/apodaca/dashboard/ISSUESAVGDEPARTMENT"
+          },
+          {
+            "title":"Station Issues Count By Department",
+            "path":"/apodaca/dashboard/ISSUESCOUNTDEPARTMENT"
+          },
+          {
+            "title":"Station Issues Count By Station",
+            "path":"/apodaca/dashboard/ISSUESCOUNTSTATION"
+          },
+          {
+            "title":"Station Issues Count Detail By Department And Station",
+            "path":"/apodaca/dashboard/ISSUESCOUNTDETAIL"
+          },
+          {
+            "title":"Station Issues Time Detail By Department And Station",
+            "path":"/apodaca/dashboard/ISSUESTIMEDETAIL"
+          },
+          {
+            "title":"Station Issues Total Time By Department",
+            "path":"/apodaca/dashboard/ISSUESTOTALDEPARMENT"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type":"menu",
+    "title":"Reports",
+    "path":"",
+    "items":[
+      {
+        "title":"Production Average JPH",
+        "path":"/apodaca/reports/prodaveragejph",
+        "items": []
+      },
+      {
+        "title":"Production Average",
+        "path":"/apodaca/reports/prodaverage",
+        "items": []
+      },
+      {
+        "title":"Production by Date and Model",
+        "path":"/apodaca/reports/prodbydateandmodel",
+        "items": []
+      },
+      {
+        "title":"Production JPH",
+        "path":"/apodaca/reports/jobsperhour",
+        "items": []
+      },
+      {
+        "title":"Production List",
+        "path":"/apodaca/reports/prodlist",
+        "items": []
+      },
+      {
+        "title":"History Report",
+        "path":"/apodaca/reports/history",
+        "items": []
+      },
+      {
+        "title":"Over Cycle Times",
+        "path":"/apodaca/reports/overcycletimes",
+        "items": []
+      },
+      {
+        "title":"Slowest Cycles",
+        "path":"/apodaca/reports/slowestcycles",
+        "items": []
+      },
+      {
+        "title":"Past Cycles",
+        "path":"/apodaca/reports/pastcycles",
+        "items": []
+      }
+    ]
+  },
+  {
+    "type":"menu",
+    "title":"OEE",
+    "path":"",
+    "items": []
+  },
+  {
+    "type":"menu",
+    "title":"Squeaks",
+    "path":"/apodaca/extpage/site1",
+    "items": []
+  }
+]

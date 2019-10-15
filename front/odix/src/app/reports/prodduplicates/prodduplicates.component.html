@@ -1,0 +1,7 @@
+<app-multiple-filter [datepicker]="true" (event)="getData($event)" [AreaName] = "''" [Code] = "''" ></app-multiple-filter>
+<app-loadereport [display] = "display"  ></app-loadereport>
+<div *ngIf="values" class="row">
+  <div class="col-md-12">
+      <app-report [Title]="'Production Duplicates'| translate"  [Values]='values.VALUES' ></app-report>
+  </div>
+</div>

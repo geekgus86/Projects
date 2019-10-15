@@ -1,0 +1,24 @@
+.map-container{
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 10px;
+    background-image: linear-gradient( 360deg, rgba(35,40,50,.6) 0%, transparent 50% );
+    box-shadow: 0 3px 3px rgba(0,0,0,.3);
+
+    &__title{
+        color: #fff;
+        margin: 0 0 25px 50px;
+        letter-spacing: 1px;
+        span:not(.icon-world){
+            opacity: .5;
+            letter-spacing: 1px;
+            font-weight: 300;}}
+    
+    &__bottom-graphs{
+        display: flex;
+        margin-top: 30px;
+        justify-content: space-around;
+        &--plant{
+            color:#fff;
+            text-align: center;
+            font-size: 15px;}}}

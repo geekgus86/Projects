@@ -1,0 +1,127 @@
+<div class="admins-workspace__regionTitle">
+    <h1 translate>Train Operator</h1>
+  </div>
+  <div class="admins-workspace__addLevel">
+    <button (click)="open()" >
+        <img src="assets/images/admins/add-new.svg" alt="" > &nbsp;<span translate>Train Operator</span>
+    </button>
+  </div>
+  
+  <div class="admins-workspace__container">
+    <div class="admins-workspace__container--title">
+        <span translate>Filters</span>
+        <div class="admins-workspace__container--title__filters">
+            <input (input)="filterTrainings()" [(ngModel)]="filter.nameRegistered" type="text">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
+    <div class="admins-workspace__container--table">
+        <table class="adminsTable">
+            <tr>               
+                <th translate> Name </th>
+                <th translate> Role </th>
+                <th translate> Linea </th>
+                <th> ENN </th>
+                <th translate> Station </th>
+                <th translate> Operator Position </th>
+                <th>&nbsp;...</th>
+            </tr>
+  
+            <tr [class.trDisabled]="training.status == '0'" *ngFor="let training of trainedUsersListFiltered | paginate: { itemsPerPage: 17, currentPage: p }; let ind = index;"  >
+                <td>{{training.userName}}</td>
+                <td>{{training.roleDescription}}</td>
+                <td>{{training.lineName}}</td>
+                <td>{{training.ennName}}</td>
+                <td>{{training.stationName}}</td>    
+                <td>{{training.opPosition}}</td>         
+                <td class="options">
+                    <img (click)="editTraining(training)" class="optionsImg" src="assets/images/admins/edit.svg" alt="">
+                    <img (click)="deleteTraining(training)" class="optionsImg" src="assets/images/admins/garbage.svg" alt="">
+                </td>
+            </tr>
+  
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+  
+  <div [class.hiddenFC]="isFormHidden" class="formsContainer">
+    <div class="formsContainer__title">
+        <h2 translate>Train Operator</h2>
+    </div>
+    <div class="formsContainer__forms">
+        <div class="odix-form">
+            <h5 translate>Name</h5>
+            <input [disabled]="isEditing" (blur)="closeSearch()" (input)="performSearch()" [(ngModel)]="filter.name" type="text">
+            <div *ngIf="resultUserList && resultUserVisible" class="tableAutoComplete">
+                <table>
+                    <tr>
+                        <th translate>Name</th>
+                        <th translate>Badge</th>
+                    </tr>
+                    <tr (click)="selectUserCombo(user,i)" *ngFor="let user of resultUserList; let i = index">
+                        <td>{{user.name}}</td>
+                        <td>{{user.badge}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div *ngIf="selectedUser" class="odix-form">
+            <h5 translate>Linea</h5>
+            <select (change)="lineComboSelectionChange()" [(ngModel)]="selectedLineOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let line of lineCombo" [ngValue]="line"> {{line.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div *ngIf="selectedUser" class="odix-form">
+            <h5>ENN</h5>
+            <select (change)="ennComboSelectionChange()" [(ngModel)]="selectedEnnOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let enn of filterEnnsByLine()" [ngValue]="enn"> {{enn.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div *ngIf="selectedUser" class="odix-form">
+            <h5 translate>Station</h5>
+            <select [(ngModel)]="selectedStationOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let station of filterStationsByEnn()" [ngValue]="station"> {{station.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div *ngIf="selectedUser" class="odix-form">
+            <h5 translate>Operator Position</h5>
+            <select [(ngModel)]="selectedOperatorPosition">
+                <option value="undefined" disabled selected hidden></option>
+                <option [ngValue]="1">1</option>
+                <option [ngValue]="2">2</option>
+                <option [ngValue]="3">3</option>
+                <option [ngValue]="4">4</option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>   
+    </div>
+    <hr>
+    <div class="formsContainer__actions">
+        <button (click)="closeForm()" class="cancel" translate>Cancel</button>
+        <ng-container *ngIf="!isEditing">
+          <button (click)="save()" class="active" translate>Add</button>
+        </ng-container>
+        <ng-container *ngIf="isEditing">
+          <button  (click)="edit()" class="active" translate>Accept</button>
+        </ng-container>
+    </div>
+  </div>
+  
+  <section class="wrapper dark" *ngIf="isLoading">
+      <div class="spinner">
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+          <i></i>
+      </div>
+  </section>

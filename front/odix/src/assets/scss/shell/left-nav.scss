@@ -1,0 +1,49 @@
+.left-nav{
+    height: 100vh;
+    background-color: $color-nav-1;
+    padding-right: 0;
+    padding-left: 0;
+    box-shadow: 0 3px 3px rgba(0,0,0,.3);
+    position: fixed;
+    margin-top: 45px;
+    &__user{
+        padding: 40px;
+        text-align: center;
+        color: #fff;
+        img{
+            border-radius: 100px;}
+        
+        &--name{
+            font-size: 22px;
+            padding: 10px 0;}
+        
+        &--job{
+            font-size: 12px;
+            font-weight: 300;}}
+
+    &__menu{
+        width: 100%;
+        li{
+            background-color: $color-transparent-white;
+            border-top: solid 1px #fff;}
+            span{
+                font-size: 20px;
+                padding: 0 10px;}
+            a{
+                color: #fff;
+                display: block;
+                padding: 17px;
+                transition: all 400ms ease;
+                background-image: linear-gradient( 90deg, $color-teal-light 0%, transparent 50% );
+                background-size: 200% 100%;
+                background-position: 100% 0;
+                transition: background-position 500ms ease;
+                font-size: 13px;}}
+
+    &__menu li a:hover,
+    &__menu li a.current{ 
+        color: white;
+        background-position: 0 0;}}
+
+.main{
+    padding: 0;}

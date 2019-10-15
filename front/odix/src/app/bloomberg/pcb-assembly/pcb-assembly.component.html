@@ -1,0 +1,311 @@
+<div class="shopfloor-container">
+  <div class="headers-container">
+    <h1 class="line">Ensamble DT / Línea 1</h1>
+    <!-- Lunes 25 de Febrero 2019 -->
+    <h3 class="date">{{prodDate}}</h3>
+    <div class="area-info">
+      <h3><span>Turno:</span> {{framesData.shift}}</h3>
+      <h3><span>Grupo:</span> {{framesData.grupo}}</h3>
+      <h3><span>Group Leader:</span></h3>
+    </div>
+  </div>
+  <div class="body-container">
+    <section class="prodControl">
+      <div class="prodControl__title">
+        <h4>Control de Producción</h4>
+      </div>
+      <div class="prodControl__legends">
+        <div class="prodControl__legends--legend1">
+          <span>VSD:</span> {{framesData.vsd}}
+        </div>
+        <div class="prodControl__legends--legend1">
+          <span>VCD:</span> {{framesData.vcd}}
+        </div>
+        <div class="prodControl__legends--legend2">
+          <span>Obj. OA: {{framesData.oa}}%</span>
+        </div>
+        <div class="prodControl__legends--legend2">
+          <span>Obj. PR: {{framesData.pr}}%</span>
+        </div>
+      </div>
+
+      <table class="prodControl__board">
+        <tr class="headings">
+          <td>
+            Hora
+          </td>
+          <td>
+            Modelo
+          </td>
+          <td>
+            Prod. Objetivo
+          </td>
+          <td>
+            Prod. Real
+          </td>
+          <td>
+            %OA
+          </td>
+          <td>
+            %PR
+          </td>
+          <td class="paros">
+            Paros
+          </td>
+          <td class="microparos">
+            <div class="minContainer">
+                Microparos <span class="min">(min)</span>
+            </div>
+          </td>
+          <td>
+            <div class="minContainer">
+                Total <span class="min">(min)</span>
+            </div>
+          </td>
+          <td class="parosProgramados">
+            <div class="minContainer">
+                Paros <br> Programados <span class="min">(min)</span>
+            </div>
+          </td>
+          <td>
+            <div class="minContainer">
+                Firmas <span class="min">Area &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GL</span>
+            </div>
+          </td>
+        </tr>
+        <tr class="subHeadings">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>
+              <table class="innerInfo">
+                <tr>
+                  <td>HORA</td>
+                  <td>ACUM.</td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <table class="innerInfo">
+                <tr>
+                  <td>HORA</td>
+                  <td>ACUM.</td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <table class="innerInfo">
+                <tr>
+                  <td>HORA</td>
+                  <td>ACUM.</td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <table class="innerInfo">
+                <tr>
+                  <td>HORA</td>
+                  <td>ACUM.</td>
+                </tr>
+              </table>
+            </td>
+            <td>
+              <table class="dptos">
+                <tr>
+                  <td>OP</td>
+                  <td>MTTO</td>
+                  <td>LOG</td>
+                  <td>CAL</td>
+                  <td>SOL</td>
+                  <td>EXT</td>
+                  <td>TNR</td>
+                  <td>PR</td>
+                </tr>
+              </table>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+      <ng-container *ngFor="let frame of framesData.data; index as i;">
+        <tr  [className]="[(i % 2) === 0 ? 'uneven' : '']" (click)="showDetail(i)">
+          <td [class.active]="frame.shiftStart">{{frame.hourRange}}</td>
+          <td>{{frame.isProd ? frame.model : '-'}}</td>
+          <td>
+            <table class="innerInfo">
+              <tr>
+                <td>{{frame.isProd ? frame.goalHora : '-'}}</td>
+                <td>{{frame.isProd ? frame.goalAccum : '-'}}</td>
+              </tr>
+            </table>
+          </td>
+          <td>
+            <table class="innerInfo">
+                <tr>
+                  <td [class.redColored]="((100/frame.goalHora) * frame.realHour) <= 89"
+                      [class.yellowColored]="(((100/frame.goalHora) * frame.realHour) > 89) && (((100/frame.goalHora) * frame.realHour) < 100)"
+                      [class.greenColored]="((100/frame.goalHora) * frame.realHour) >= 100">
+                      {{frame.isProd ? frame.realHour : '-'}}
+                  </td>
+                  <td>{{frame.isProd ? frame.realAccum : '-'}}</td>
+                </tr>
+            </table>
+          </td>
+          <td>
+            <table class="innerInfo">
+                <tr>
+                  <td>{{frame.isProd ? (frame.oaHour+'%') : '0%'}}</td>
+                  <td>{{frame.isProd ? (frame.oaAccum+'%') : '0%'}}</td>
+                </tr>
+            </table>
+          </td>
+          <td>
+            <table class="innerInfo">
+                <tr>
+                  <td>{{frame.isProd ? (frame.prHour+'%') : '0%'}}</td>
+                  <td>{{frame.isProd ? (frame.prAccum+'%') : '0%'}}</td>
+                </tr>
+            </table>
+          </td>
+          <td>
+            <table class="innerInfo">
+                <tr>
+                  <td [ngClass]="frame.parosDeparments && (frame.parosDeparments.OP.mayor ? 'red': '')">{{frame.parosDeparments ? (frame.parosDeparments.OP.time > 0 ? frame.parosDeparments.OP.time : "-") : '-' }}</td>
+                  <td [ngClass]="frame.parosDeparments && (frame.parosDeparments.MTO.mayor ? 'red': '')">{{frame.parosDeparments ? (frame.parosDeparments.MTO.time > 0 ? frame.parosDeparments.MTO.time : "-") : '-' }}</td>
+                  <td [ngClass]="frame.parosDeparments && (frame.parosDeparments.LOG.mayor ? 'red': '')">{{frame.parosDeparments ? (frame.parosDeparments.LOG.time > 0 ? frame.parosDeparments.LOG.time : "-") : '-' }}</td>
+                  <td [ngClass]="frame.parosDeparments && (frame.parosDeparments.CAL.mayor ? 'red': '')">{{frame.parosDeparments ? (frame.parosDeparments.CAL.time > 0 ? frame.parosDeparments.CAL.time : "-") : '-' }}</td>
+                  <td [ngClass]="frame.parosDeparments && (frame.parosDeparments.SOL.mayor ? 'red': '')">{{frame.parosDeparments ? (frame.parosDeparments.SOL.time > 0 ? frame.parosDeparments.SOL.time : "-") : '-' }}</td>
+                  <td [ngClass]="frame.parosDeparments && (frame.parosDeparments.EXT.mayor ? 'red': '')" >{{frame.parosDeparments ? (frame.parosDeparments.EXT.time > 0 ? frame.parosDeparments.EXT.time : "-") : '-' }}</td>
+                  <td>{{frame.tnr > 0 ? frame.tnr : "-"}}</td>
+                  <td style="position: relative;">{{frame.pr > 0 ? frame.pr : "-"}} <div class="arrowDown"></div></td>
+                </tr>
+              </table>
+          </td>
+          <td>{{frame.microparos}}</td>
+          <td>{{frame.total}}</td>
+          <td>{{frame.parosProgramados}}</td>
+          <td>
+            <table class="innerInfo infoImage">
+                <tr>
+                  <td><img src="assets/images/pcb/user.svg" width="25px" alt=""></td>
+                  <td><img src="assets/images/pcb/user.svg" width="25px" alt=""></td>
+                </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- detalle paro -->
+        <tr class="appendTr">
+          <td class="detalleTd animated" *ngIf="detalle[i]">
+            <div class="detalleContainer">
+                <div *ngFor="let detail of frame.downtimesDetails; index as i;" class="detalle">
+                    <span [ngClass]="detail.isOut ? 'detalle__paroblack' : 'detalle__paro' "> <img [src]="detail.isOut ? 'assets/images/pcb/blockBlack.svg': 'assets/images/pcb/block.svg'" width="16" alt=""> {{detail.isPR ? "PR" : "Paro" }} <div *ngIf="detail.consecutive">&nbsp;#{{detail.consecutive}} {{detail.consecutiveSplited}} </div></span>
+                    <span [ngClass]="detail.isGroup ? (detail.isOut? 'pulse-black' : 'pulse') : ''" class="isPulse"></span>
+                    <span class="detalle__hora"> {{detail.hourRange}}</span>
+                    <span class="detalle__tiempo"> {{detail.time}} min</span>
+                    <span class="detalle__dpto" [ngStyle]="{'color': detail.departmentColor == '#FFFFFF'? '#9B9B9B' : detail.departmentColor}">
+                      <span [ngClass]="!detail.isSpecialCase? 'iconDpto icon_'+detail.departmentCode : ''" [ngStyle]="{'background-color': detail.departmentColor}" ></span>
+                      {{detail.departmentName}}
+                    </span>
+                    <span class="detalle__desc">{{detail.reasonDescription}}</span>
+                    <span class="detalle__comment">Comentario: "{{detail.comments}}"</span>
+                </div>
+
+                <!-- <div class="detalle">
+                    <span class="detalle__paro"> <img src="assets/images/pcb/block.svg" width="16" alt=""> Paro #32 </span>
+                    <span> 12:15 PM - 12:24 PM</span>
+                    <span> 9 min</span>
+                    <span class="detalle__dpto">Mantenimiento</span>
+                    <span>Falla en Piloto Gage</span>
+                    <span>Comentario: "Revisar la falla en piloto gage"</span>
+                </div>
+                <div class="detalle">
+                    <span class="detalle__paro"> <img src="assets/images/pcb/block.svg" width="16" alt=""> Paro #32 </span>
+                    <span> 12:15 PM - 12:24 PM</span>
+                    <span> 9 min</span>
+                    <span class="detalle__dpto">Mantenimiento</span>
+                    <span>Falla en Piloto Gage</span>
+                    <span>Comentario: "Revisar la falla en piloto gage"</span>
+                </div> -->
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+        <!-- <tr class="detalleTR">
+          <td>
+            <table class="detalleParo">
+              <tr>
+                <td>PARO #32</td>
+                <td>12:15PM - 12:24 PM</td>
+                <td>9 min</td>
+                <td>Mantenimiento</td>
+                <td>Falla en Piloto Gage</td>
+                <td>Comentario: "Revisar la falla en piloto gage"</td>
+              </tr>
+            </table>
+          </td>
+        </tr> -->
+      </table>
+    </section>
+    <div class="bigContainer">
+        <section class="prodPlan">
+          <div class="prodPlan__title">
+            <h4>Plan de Producción</h4>
+          </div>
+          <table>
+              <tr class="weekDays">
+                <td>&nbsp;</td>
+                <td>Lunes</td>
+                <td>Martes</td>
+                <td>Miércoles</td>
+                <td>Jueves</td>
+                <td>Viernes</td>
+                <td>Sábado</td>
+                <td>Domingo</td>
+              </tr>
+              <tr>
+                <td>Turno 1</td>
+                <td>{{this.weekProd[0] && this.weekProd[0]['1']}}</td>
+                <td>{{this.weekProd[1] && this.weekProd[1]['1']}}</td>
+                <td>{{this.weekProd[2] && this.weekProd[2]['1']}}</td>
+                <td>{{this.weekProd[3] && this.weekProd[3]['1']}}</td>
+                <td>{{this.weekProd[4] && this.weekProd[4]['1']}}</td>
+                <td>{{this.weekProd[5] && this.weekProd[5]['1']}}</td>
+                <td>{{this.weekProd[6] && this.weekProd[6]['1']}}</td>
+              </tr>
+              <tr>
+                <td>Turno 2</td>
+                <td>{{this.weekProd[0] && this.weekProd[0]['2']}}</td>
+                <td>{{this.weekProd[1] && this.weekProd[1]['2']}}</td>
+                <td>{{this.weekProd[2] && this.weekProd[2]['2']}}</td>
+                <td>{{this.weekProd[3] && this.weekProd[3]['2']}}</td>
+                <td>{{this.weekProd[4] && this.weekProd[4]['2']}}</td>
+                <td>{{this.weekProd[5] && this.weekProd[5]['2']}}</td>
+                <td>{{this.weekProd[6] && this.weekProd[6]['2']}}</td>
+              </tr>
+              <tr class="uneven">
+                <td><span><b>Total</b> /</span> Programado</td>
+                <td><span [class.verde]="(this.weekProd[0] && ((this.weekProd[0]['1'] ? this.weekProd[0]['1'] : 0) + (this.weekProd[0]['2'] ? this.weekProd[0]['2'] : 0))) >= prodPerDay[0]" [class.rojo]="(this.weekProd[0] && ((this.weekProd[0]['1'] ? this.weekProd[0]['1'] : 0) + (this.weekProd[0]['2'] ? this.weekProd[0]['2'] : 0))) < prodPerDay[0]">{{this.weekProd[0] && ((this.weekProd[0]['1'] ? this.weekProd[0]['1'] : 0) + (this.weekProd[0]['2'] ? this.weekProd[0]['2'] : 0))}} </span> <span>/</span> {{prodPerDay[0]}}</td>
+                <td><span [class.verde]="(this.weekProd[1] && ((this.weekProd[1]['1'] ? this.weekProd[1]['1'] : 0) + (this.weekProd[1]['2'] ? this.weekProd[1]['2'] : 0))) >= prodPerDay[1]" [class.rojo]="(this.weekProd[1] && ((this.weekProd[1]['1'] ? this.weekProd[1]['1'] : 0) + (this.weekProd[1]['2'] ? this.weekProd[1]['2'] : 0))) < prodPerDay[1]">{{this.weekProd[1] && ((this.weekProd[1]['1'] ? this.weekProd[1]['1'] : 0) + (this.weekProd[1]['2'] ? this.weekProd[1]['2'] : 0))}} </span> <span>/</span> {{prodPerDay[1]}}</td>
+                <td><span [class.verde]="(this.weekProd[2] && ((this.weekProd[2]['1'] ? this.weekProd[2]['1'] : 0) + (this.weekProd[2]['2'] ? this.weekProd[2]['2'] : 0))) >= prodPerDay[2]" [class.rojo]="(this.weekProd[2] && ((this.weekProd[2]['1'] ? this.weekProd[2]['1'] : 0) + (this.weekProd[2]['2'] ? this.weekProd[2]['2'] : 0))) < prodPerDay[2]">{{this.weekProd[2] && ((this.weekProd[2]['1'] ? this.weekProd[2]['1'] : 0) + (this.weekProd[2]['2'] ? this.weekProd[2]['2'] : 0))}} </span> <span>/</span> {{prodPerDay[2]}}</td>
+                <td><span [class.verde]="(this.weekProd[3] && ((this.weekProd[3]['1'] ? this.weekProd[3]['1'] : 0) + (this.weekProd[3]['2'] ? this.weekProd[3]['2'] : 0))) >= prodPerDay[3]" [class.rojo]="(this.weekProd[3] && ((this.weekProd[3]['1'] ? this.weekProd[3]['1'] : 0) + (this.weekProd[3]['2'] ? this.weekProd[3]['2'] : 0))) < prodPerDay[3]">{{this.weekProd[3] && ((this.weekProd[3]['1'] ? this.weekProd[3]['1'] : 0) + (this.weekProd[3]['2'] ? this.weekProd[3]['2'] : 0))}} </span> <span>/</span> {{prodPerDay[3]}}</td>
+                <td><span [class.verde]="(this.weekProd[4] && ((this.weekProd[4]['1'] ? this.weekProd[4]['1'] : 0) + (this.weekProd[4]['2'] ? this.weekProd[4]['2'] : 0))) >= prodPerDay[4]" [class.rojo]="(this.weekProd[4] && ((this.weekProd[4]['1'] ? this.weekProd[4]['1'] : 0) + (this.weekProd[4]['2'] ? this.weekProd[4]['2'] : 0))) < prodPerDay[4]">{{this.weekProd[4] && ((this.weekProd[4]['1'] ? this.weekProd[4]['1'] : 0) + (this.weekProd[4]['2'] ? this.weekProd[4]['2'] : 0))}} </span> <span>/</span> {{prodPerDay[4]}}</td>
+                <td><span [class.verde]="(this.weekProd[5] && ((this.weekProd[5]['1'] ? this.weekProd[5]['1'] : 0) + (this.weekProd[5]['2'] ? this.weekProd[5]['2'] : 0))) >= prodPerDay[5]" [class.rojo]="(this.weekProd[5] && ((this.weekProd[5]['1'] ? this.weekProd[5]['1'] : 0) + (this.weekProd[5]['2'] ? this.weekProd[5]['2'] : 0))) < prodPerDay[5]">{{this.weekProd[5] && ((this.weekProd[5]['1'] ? this.weekProd[5]['1'] : 0) + (this.weekProd[5]['2'] ? this.weekProd[5]['2'] : 0))}} </span> <span>/</span> {{prodPerDay[5]}}</td>
+                <td><span [class.verde]="(this.weekProd[6] && ((this.weekProd[6]['1'] ? this.weekProd[6]['1'] : 0) + (this.weekProd[6]['2'] ? this.weekProd[6]['2'] : 0))) >= prodPerDay[6]" [class.rojo]="(this.weekProd[6] && ((this.weekProd[6]['1'] ? this.weekProd[6]['1'] : 0) + (this.weekProd[6]['2'] ? this.weekProd[6]['2'] : 0))) < prodPerDay[6]">{{this.weekProd[6] && ((this.weekProd[6]['1'] ? this.weekProd[6]['1'] : 0) + (this.weekProd[6]['2'] ? this.weekProd[6]['2'] : 0))}} </span> <span>/</span> {{prodPerDay[6]}}</td>
+              </tr>
+            </table>
+        </section>
+        <div class="smallContainer">
+            <section class="defectos">
+                <div class="defectos__title">
+                  <h4>Defectos</h4>
+                </div>
+            </section>
+            <section class="fugas">
+                <div class="fugas__title">
+                  <h4>Fugas</h4>
+                </div>
+            </section>
+        </div>
+    </div>
+  </div>
+</div>

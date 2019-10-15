@@ -1,0 +1,17 @@
+{
+    "active": 1,
+    "aro": 2,
+    "createdAt": "2018-03-01T23:24:39.000Z",
+    "createdBy": 1,
+    "email": "aldo@x8bit.com",
+    "id": 5,
+    "name": "Aldo",
+    "org": null,
+    "organization_id": null,
+    "password": "$2a$10$LRa6A1jV5DkRa.0wDk.mzu6Wx/hC/L7NM9Z.07iTbvBR8CDHr.U6O",
+    "superadmin": null,
+    "token": "aacb890f21d0a537a217c4412366256c",
+    "tokenActivate": null,
+    "tokenRecovery": null,
+    "updatedAt": "2018-04-17T03:36:13.000Z"
+}

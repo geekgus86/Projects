@@ -1,0 +1,96 @@
+@import '~styles/colors.less';
+
+.MainContent{
+    height: 100vh;
+    background: @blue-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .CardSize{
+        height: 75vh;
+        width: 60%;
+        display: flex;
+        border-radius: 5px;
+        .ImgSpace{
+            padding: 0;
+            .BackLogin{
+                background: url(../../assets/Group3@2x.png); 
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 80vh;
+            }
+        }
+        .LoginMargin{
+            margin: 30% 4%;
+            text-align: center;
+            .FormLogin{
+                margin-top: 20px;
+                select{
+                    margin: 10px 0;
+                }
+                .MarginTop{
+                    margin-top: 20px;
+                    &.login{
+                        button{
+                            width: 100%;
+                            text-transform: none;
+                        }
+                    }
+                    &.adminbtn{
+                        display: flex;
+                        button{
+                            width: 50%;
+                            &:first-child{
+                                padding: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.Center{
+    text-align: center;
+}
+.ALeft{
+    text-align: left;
+}
+.fWhite{
+    color: #fff;
+}
+.ObjCenter{
+    margin: 0 auto;
+}
+.PaddingTitle{
+    padding: 18% 1% 2% 1%;
+    font-family: "GothamRoundedBold";
+}
+.LabelText{
+    font-family: "OpenSans";
+    margin-right: 10px;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+}
+.LabelInput{
+    font-family: "OpenSans";
+    background-color: transparent !important;
+    border: none;
+    border-bottom: 1.5px solid #fff;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.BtnLogin{
+    font-family: "GothamRounded";
+    width: 65%;
+    border-radius: 30px;
+    background: #46A5F9;
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 5px 0px;
+    margin-top: 10px;
+}

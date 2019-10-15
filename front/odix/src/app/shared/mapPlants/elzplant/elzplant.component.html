@@ -1,0 +1,853 @@
+
+
+<div class="row">
+  <div class="col-lg-12">
+      <div class="dark-box-1 etown-bg">
+          <div class="map-plant">
+              <div class="map-plant__title">
+                  <h1>Apodaca</h1>
+                  <span>- Plant map -</span>
+              </div>
+              <div class="overview">
+                <div class="overview__map">
+                    <img src="assets/images/mapPlants/apodaca/floor-big.png" width="1200" alt="">
+                    <!-- TOP LINES -->
+                    <div id="top-1" class="info top-line-1">
+                      
+                      <!--ngTemplate-->
+                      <ng-template #topLine1>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL1'].rate">{{plant['APO-DTL1'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL1'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL1'].rate">{{plant['APO-DTL1'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span> 
+                            <span class="poster-goal-value">{{plant['APO-DTL1'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/topLine1'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+
+                      <img
+                        [ngbTooltip]="topLine1"
+                        id="APO-DTL1"
+                        [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL1'].img"
+                        class="machine"
+                        width="156" 
+                        alt="">
+                    </div>
+                    <!--ngTemplate-->
+                    <ng-template #topLine2>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL2'].rate">{{plant['APO-DTL2'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL2'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL2'].rate">{{plant['APO-DTL2'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value">{{plant['APO-DTL2'].goal}}</span>
+                          </div>
+                          <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/topLine2'">More ifo...</a>
+                          </div>
+                          -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img 
+                      [ngbTooltip]="topLine2"
+                      id="APO-DTL2"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL2'].img"
+                      class="top-line-2 machine" 
+                      width="152" 
+                      alt="">
+      
+                        <!--ngTemplate-->
+                    <ng-template #topLine3>
+                      <div class="poster">
+                        <div class="poster-rate" [ngClass]="'poster-'+ plant['APO-DTL3'].rate">{{plant['APO-DTL3'].rateTitle}}</div>
+                        <div class="poster-component-name">{{plant['APO-DTL3'].name}}</div>
+                        <hr />
+                        <div class="poster-current">
+                            <span class="poster-current-title">Value</span>
+                            <span class="poster-current-value" [ngClass]="'poster-'+ plant['APO-DTL3'].rate">{{plant['APO-DTL3'].value}}</span>
+                        </div>
+                        <div class="poster-goal">
+                          <span class="poster-goal-title">Goal</span>
+                          <span class="poster-goal-value" [ngClass]="'poster-'+ plant['APO-DTL3'].rate">{{plant['APO-DTL3'].goal}}</span>
+                        </div>
+                          <!--
+                        <hr />
+                        <div class="more-info">
+                          <a [routerLink]="'/guest/overview/topLine3'">More ifo...</a>
+                        </div>
+                      -->
+                      </div>
+                    </ng-template>
+                    <!--end ngTemplate-->
+                    <img 
+                      [ngbTooltip]="topLine3"
+                      id="APO-DTL3"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL3'].img" 
+                      class="top-line-3 machine" 
+                      width="156" 
+                      alt="">
+                    <!-- /// TOP LINES  -->
+        
+                    <!-- MID FRAME -->
+                     <!--ngTemplate-->
+                     <ng-template #midFrame>
+                      <div class="poster">
+                        <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL4'].rate">{{plant['APO-DTL4'].rateTitle}}</div>
+                        <div class="poster-component-name">{{plant['APO-DTL4'].name}}</div>
+                        <hr />
+                        <div class="poster-current">
+                            <span class="poster-current-title">Value</span>
+                            <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL4'].rate">{{plant['APO-DTL4'].value}}</span>
+                        </div>
+                        <div class="poster-goal">
+                          <span class="poster-goal-title">Goal</span>
+                          <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL4'].rate">{{plant['APO-DTL4'].goal}}</span>
+                        </div>
+                          <!--
+                        <hr />
+                        <div class="more-info">
+                          <a [routerLink]="'/guest/overview/midFrame'">More ifo...</a>
+                        </div>
+                      -->
+                      </div>
+                    </ng-template>
+                    <!--end ngTemplate-->
+                    <img
+                      [ngbTooltip]="midFrame"
+                      id="APO-DTL4" 
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL4'].img" 
+                      class="mid-frame machine" 
+                      width="165" 
+                      alt="">
+                    <!-- /// MID FRAME  -->
+        
+                    <!-- BOTTOM LINES -->
+                     <!--ngTemplate-->
+                     <ng-template #botLine1>
+                      <div class="poster">
+                        <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL5'].rate">{{plant['APO-DTL5'].rateTitle}}</div>
+                        <div class="poster-component-name">{{plant['APO-DTL5'].name}}</div>
+                        <hr />
+                        <div class="poster-current">
+                            <span class="poster-current-title">Value</span>
+                            <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL5'].rate">{{plant['APO-DTL5'].value}}</span>
+                        </div>
+                        <div class="poster-goal">
+                          <span class="poster-goal-title">Goal</span>
+                          <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL5'].rate">{{plant['APO-DTL5'].goal}}</span>
+                        </div>
+                          <!--
+                        <hr />
+                        <div class="more-info">
+                          <a [routerLink]="'/guest/overview/botLine1'">More ifo...</a>
+                        </div>
+                      -->
+                      </div>
+                    </ng-template>
+                    <!--end ngTemplate-->
+                    <img
+                      [ngbTooltip]="botLine1"
+                      id="APO-DTL5" 
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL5'].img" 
+                      class="bot-line-1 machine" 
+                      width="145" 
+                      alt="">
+      <!--ngTemplate-->
+      <ng-template #botLineLong>
+        <div class="poster">
+          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL6'].rate">{{plant['APO-DTL6'].rateTitle}}</div>
+          <div class="poster-component-name">{{plant['APO-DTL6'].name}}</div>
+          <hr />
+          <div class="poster-current">
+              <span class="poster-current-title">Value</span>
+              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL6'].rate">{{plant['APO-DTL6'].value}}</span>
+          </div>
+          <div class="poster-goal">
+            <span class="poster-goal-title">Goal</span>
+            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL6'].rate">{{plant['APO-DTL6'].goal}}</span>
+          </div>
+            <!--
+          <hr />
+          <div class="more-info">
+            <a [routerLink]="'/guest/overview/botLineLong'">More ifo...</a>
+          </div>
+        -->
+        </div>
+      </ng-template>
+      <!--end ngTemplate-->
+                    <img
+                      [ngbTooltip]="botLineLong"
+                      id="APO-DTL6"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL6'].img" 
+                      class="bot-line-long machine" 
+                      width="445" 
+                      alt="">
+      
+                      <!--ngTemplate-->
+      <ng-template #botLine3>
+        <div class="poster">
+          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL7'].rate">{{plant['APO-DTL7'].rateTitle}}</div>
+          <div class="poster-component-name">{{plant['APO-DTL7'].name}}</div>
+          <hr />
+          <div class="poster-current">
+              <span class="poster-current-title">Value</span>
+              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL7'].rate">{{plant['APO-DTL7'].value}}</span>
+          </div>
+          <div class="poster-goal">
+            <span class="poster-goal-title">Goal</span>
+            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL7'].rate">{{plant['APO-DTL7'].goal}}</span>
+          </div>
+            <!--
+          <hr />
+          <div class="more-info">
+            <a [routerLink]="'/guest/overview/botLine3'">More ifo...</a>
+          </div>
+        -->
+        </div>
+      </ng-template>
+      <!--end ngTemplate-->
+                      <img
+                      id="APO-DTL7"
+                      [ngbTooltip]="botLine3" 
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL7'].img" 
+                      class="bot-line-3 machine" width="166" alt="">
+      
+                      <!--ngTemplate-->
+      <ng-template #botPia>
+        <div class="poster">
+          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL8'].rate">{{plant['APO-DTL8'].rateTitle}}</div>
+          <div class="poster-component-name">{{plant['APO-DTL8'].name}}</div>
+          <hr />
+          <div class="poster-current">
+              <span class="poster-current-title">Value</span>
+              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL8'].rate">{{plant['APO-DTL8'].value}}</span>
+          </div>
+          <div class="poster-goal">
+            <span class="poster-goal-title">Goal</span>
+            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL8'].rate">{{plant['APO-DTL8'].goal}}</span>
+          </div>
+            <!--
+          <hr />
+          <div class="more-info">
+            <a [routerLink]="'/guest/overview/botPia'">More ifo...</a>
+          </div>
+        -->
+        </div>
+      </ng-template>
+      <!--end ngTemplate-->
+                      <img
+                      id="APO-DTL8"
+                      [ngbTooltip]="botPia" 
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL8'].img" 
+                      class="bot-pia machine" width="200" alt="">
+       <!--ngTemplate-->
+       <ng-template #botFrame>
+        <div class="poster">
+          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL9'].rate">{{plant['APO-DTL9'].rateTitle}}</div>
+          <div class="poster-component-name">{{plant['APO-DTL9'].name}}</div>
+          <hr />
+          <div class="poster-current">
+              <span class="poster-current-title">Value</span>
+              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL9'].rate">{{plant['APO-DTL9'].value}}</span>
+          </div>
+          <div class="poster-goal">
+            <span class="poster-goal-title">Goal</span>
+            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL9'].rate">{{plant['APO-DTL9'].goal}}</span>
+          </div>
+            <!--
+          <hr />
+          <div class="more-info">
+            <a [routerLink]="'/guest/overview/botFrame'">More ifo...</a>
+          </div>
+        -->
+        </div>
+      </ng-template>
+      <!--end ngTemplate-->
+                      <img
+                      id="APO-DTL9"
+                      [ngbTooltip]="botFrame" 
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL9'].img"
+                      class="bot-frame machine" width="132" alt="">
+      
+                    <div id="bot-4" class="info-4 bot-line-4"> 
+                   <!--ngTemplate-->
+      <ng-template #botLine4>
+        <div class="poster">
+          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL10'].rate">{{plant['APO-DTL10'].rateTitle}}</div>
+          <div class="poster-component-name">{{plant['APO-DTL10'].name}}</div>
+          <hr />
+          <div class="poster-current">
+              <span class="poster-current-title">Value</span>
+              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL10'].rate">{{plant['APO-DTL10'].value}}</span>
+          </div>
+          <div class="poster-goal">
+            <span class="poster-goal-title">Goal</span>
+            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL10'].rate">{{plant['APO-DTL10'].goal}}</span>
+          </div>
+            <!--
+          <hr />
+          <div class="more-info">
+            <a [routerLink]="'/guest/overview/botLine4'">More ifo...</a>
+          </div>
+        -->
+        </div>
+      </ng-template>
+      <!--end ngTemplate-->
+                      <img
+                      class="machine"
+                        id="APO-DTL10"
+                        [ngbTooltip]="botLine4" 
+                        [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL10'].img"
+                        width="258" alt="">
+      
+                    </div>
+                    <div id="bot-5" class="info-5 bot-line-5"> 
+                          <!--ngTemplate-->
+                      <ng-template #botLine5>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL11'].rate">{{plant['APO-DTL11'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL11'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL11'].rate">{{plant['APO-DTL11'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL11'].rate">{{plant['APO-DTL11'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botLine5'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                      <img
+                      class="machine"
+                        id="APO-DTL11"
+                        [ngbTooltip]="botLine5"
+                        [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL11'].img"
+                        width="84" alt="">
+      
+                    </div>
+                    <div id="bot-6" class="info-6 bot-line-6"> 
+                <!--ngTemplate-->
+      <ng-template #botLine6>
+          <div class="poster">
+            <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL12'].rate">{{plant['APO-DTL12'].rateTitle}}</div>
+            <div class="poster-component-name">{{plant['APO-DTL12'].name}}</div>
+            <hr />
+            <div class="poster-current">
+                <span class="poster-current-title">Value</span>
+                <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL12'].rate">{{plant['APO-DTL12'].value}}</span>
+            </div>
+            <div class="poster-goal">
+              <span class="poster-goal-title">Goal</span>
+              <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL12'].rate">{{plant['APO-DTL12'].goal}}</span>
+            </div>
+              <!--
+            <hr />
+            <div class="more-info">
+              <a [routerLink]="'/guest/overview/botLine6'">More ifo...</a>
+            </div>
+          -->
+          </div>
+        </ng-template>
+        <!--end ngTemplate-->
+                      <img 
+                      class="machine"
+                        id="APO-DTL12"
+                        [ngbTooltip]="botLine6"
+                        [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL12'].img"
+                        width="103" alt="">
+      
+                    </div>
+                    <div id="bot-7" class="info-7 bot-line-7"> 
+                      <!--ngTemplate-->
+                      <ng-template #botLine7>
+                          <div class="poster">
+                            <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL13'].rate">{{plant['APO-DTL13'].rateTitle}}</div>
+                            <div class="poster-component-name">{{plant['APO-DTL13'].name}}</div>
+                            <hr />
+                            <div class="poster-current">
+                                <span class="poster-current-title">Value</span>
+                                <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL13'].rate">{{plant['APO-DTL13'].value}}</span>
+                            </div>
+                            <div class="poster-goal">
+                              <span class="poster-goal-title">Goal</span>
+                              <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL13'].rate">{{plant['APO-DTL13'].goal}}</span>
+                            </div>
+                              <!--
+                            <hr />
+                            <div class="more-info">
+                              <a [routerLink]="'/guest/overview/botLine7'">More ifo...</a>
+                            </div>
+                          -->
+                          </div>
+                        </ng-template>
+                        <!--end ngTemplate-->
+                      <img 
+                      class="machine"
+                        id="APO-DTL13"
+                        [ngbTooltip]="botLine7"
+                        [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL13'].img"
+                        width="134" alt="">
+      
+                    </div>
+                    <div id="bot-8" class="info-8 bot-line-8"> 
+                       <!--ngTemplate-->
+                       <ng-template #botLine8>
+                          <div class="poster">
+                            <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL14'].rate">{{plant['APO-DTL14'].rateTitle}}</div>
+                            <div class="poster-component-name">{{plant['APO-DTL14'].name}}</div>
+                            <hr />
+                            <div class="poster-current">
+                                <span class="poster-current-title">Value</span>
+                                <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL14'].rate">{{plant['APO-DTL14'].value}}</span>
+                            </div>
+                            <div class="poster-goal">
+                              <span class="poster-goal-title">Goal</span>
+                              <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL14'].rate">{{plant['APO-DTL14'].goal}}</span>
+                            </div>
+                              <!--
+                            <hr />
+                            <div class="more-info">
+                              <a [routerLink]="'/guest/overview/botLine8'">More ifo...</a>
+                            </div>
+                          -->
+                          </div>
+                        </ng-template>
+                        <!--end ngTemplate-->
+                      <img
+                      class="machine"
+                        id="APO-DTL14"
+                        [ngbTooltip]="botLine8"
+                        [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL14'].img"
+                        width="134" alt="">
+      
+                    </div>
+                    <!--ngTemplate-->
+                    <ng-template #botMassLines>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL16'].rate">{{plant['APO-DTL16'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL16'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL16'].rate">{{plant['APO-DTL16'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL16'].rate">{{plant['APO-DTL16'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botMassLines'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL16"
+                      [ngbTooltip]="botMassLines"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL16'].img"
+                      class="bot-mass-lines machine" width="341" alt="">
+      
+                       <!--ngTemplate-->
+                       <ng-template #botLine9>
+                          <div class="poster">
+                            <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL15'].rate">{{plant['APO-DTL15'].rateTitle}}</div>
+                            <div class="poster-component-name">{{plant['APO-DTL15'].name}}</div>
+                            <hr />
+                            <div class="poster-current">
+                                <span class="poster-current-title">Value</span>
+                                <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL15'].rate">{{plant['APO-DTL15'].value}}</span>
+                            </div>
+                            <div class="poster-goal">
+                              <span class="poster-goal-title">Goal</span>
+                              <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL15'].rate">{{plant['APO-DTL15'].goal}}</span>
+                            </div>
+                              <!--
+                            <hr />
+                            <div class="more-info">
+                              <a [routerLink]="'/guest/overview/botLine9'">More ifo...</a>
+                            </div>
+
+                          -->
+                          </div>
+                        </ng-template>
+                        <!--end ngTemplate-->
+                      <img
+                        id="APO-DTL15"
+                        [ngbTooltip]="botLine9"
+                        [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL15'].img"
+                        class="bot-line-9 machine" width="95" alt="">
+                      <!--ngTemplate-->
+                      <ng-template #botLine10>
+                          <div class="poster">
+                            <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL17'].rate">{{plant['APO-DTL17'].rateTitle}}</div>
+                            <div class="poster-component-name">{{plant['APO-DTL17'].name}}</div>
+                            <hr />
+                            <div class="poster-current">
+                                <span class="poster-current-title">Value</span>
+                                <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL17'].rate">{{plant['APO-DTL17'].value}}</span>
+                            </div>
+                            <div class="poster-goal">
+                              <span class="poster-goal-title">Goal</span>
+                              <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL17'].rate">{{plant['APO-DTL17'].goal}}</span>
+                            </div>
+                              <!--
+                            <hr />
+                            <div class="more-info">
+                              <a [routerLink]="'/guest/overview/botLine10'">More ifo...</a>
+                            </div>
+                          -->
+                          </div>
+                        </ng-template>
+                        <!--end ngTemplate-->
+                        <img
+                          id="APO-DTL17"
+                          [ngbTooltip]="botLine10"
+                          [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL17'].img"
+                          class="bot-line-10 machine" width="106" alt="">
+                     <!--ngTemplate-->
+                     <ng-template #botLine11>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL18'].rate">{{plant['APO-DTL18'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL18'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL18'].rate">{{plant['APO-DTL18'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL18'].rate">{{plant['APO-DTL18'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botLine11'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                        <img
+                          id="APO-DTL18"
+                          [ngbTooltip]="botLine11"
+                          [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL18'].img"
+                          class="bot-line-11 machine" width="121" alt="">
+                      <!--ngTemplate-->
+                      <ng-template #botLine12>
+                          <div class="poster">
+                            <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL19'].rate">{{plant['APO-DTL19'].rateTitle}}</div>
+                            <div class="poster-component-name">{{plant['APO-DTL19'].name}}</div>
+                            <hr />
+                            <div class="poster-current">
+                                <span class="poster-current-title">Value</span>
+                                <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL19'].rate">{{plant['APO-DTL19'].value}}</span>
+                            </div>
+                            <div class="poster-goal">
+                              <span class="poster-goal-title">Goal</span>
+                              <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL19'].rate">{{plant['APO-DTL19'].goal}}</span>
+                            </div>
+                              <!--
+                            <hr />
+                            <div class="more-info">
+                              <a [routerLink]="'/guest/overview/botLine12'">More ifo...</a>
+                            </div>
+                          -->
+                          </div>
+                        </ng-template>
+                        <!--end ngTemplate-->
+                        <img
+                          id="APO-DTL19"
+                          [ngbTooltip]="botLine12"
+                          [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL19'].img"
+                          class="bot-line-12 machine" width="117" alt="">
+                     <!--ngTemplate-->
+                     <ng-template #botRavne1>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL20'].rate">{{plant['APO-DTL20'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL20'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL20'].rate">{{plant['APO-DTL20'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL20'].rate">{{plant['APO-DTL20'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botRavne1'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL20"
+                      [ngbTooltip]="botRavne1"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL20'].img"
+                      class="ravne-a-1 machine" width="72" alt="">
+                    <!--ngTemplate-->
+                    <ng-template #botRavne2>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL21'].rate">{{plant['APO-DTL21'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL21'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL21'].rate">{{plant['APO-DTL21'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL21'].rate">{{plant['APO-DTL21'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botRavne2'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL21"
+                      [ngbTooltip]="botRavne2" 
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL21'].img"
+                      class="ravne-a-2 machine" width="72" alt="">
+                     <!--ngTemplate-->
+                     <ng-template #botRavne3>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL22'].rate">{{plant['APO-DTL22'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL22'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL22'].rate">{{plant['APO-DTL22'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL22'].rate">{{plant['APO-DTL22'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botRavne3'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL22"
+                      [ngbTooltip]="botRavne3"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL22'].img"
+                      class="ravne-a-3 machine" width="72" alt="">
+                    <!--ngTemplate-->
+                    <ng-template #botRavne4>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL23'].rate">{{plant['APO-DTL23'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL23'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL23'].rate">{{plant['APO-DTL23'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL23'].rate">{{plant['APO-DTL23'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botRavne4'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL23"
+                      [ngbTooltip]="botRavne4"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL23'].img"
+                      class="ravne-a-4 machine" width="72" alt="">
+                     <!--ngTemplate-->
+                     <ng-template #botRavne5>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL24'].rate">{{plant['APO-DTL24'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL24'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL24'].rate">{{plant['APO-DTL24'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL24'].rate">{{plant['APO-DTL24'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botRavne5'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL24"
+                      [ngbTooltip]="botRavne5"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL24'].img"
+                      class="ravne-a-5 machine" width="72" alt="">
+                    <!--ngTemplate-->
+                    <ng-template #botRavne6>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL25'].rate">{{plant['APO-DTL25'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL25'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL25'].rate">{{plant['APO-DTL25'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL25'].rate">{{plant['APO-DTL25'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botRavne6'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL25"
+                      [ngbTooltip]="botRavne6"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL25'].img"
+                      class="ravne-a-6 machine" width="72" alt="">
+                     <!--ngTemplate-->
+                     <ng-template #botRavne7>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL26'].rate">{{plant['APO-DTL26'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL26'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL26'].rate">{{plant['APO-DTL26'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL26'].rate">{{plant['APO-DTL26'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/botRavne7'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL26"
+                      [ngbTooltip]="botRavne7"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL26'].img"
+                      class="ravne-a-7 machine" width="72" alt="">
+                       <!--ngTemplate-->
+                     <ng-template #ravneB1>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL27'].rate">{{plant['APO-DTL27'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL27'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL27'].rate">{{plant['APO-DTL27'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL27'].rate">{{plant['APO-DTL27'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/ravneB1'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL27"
+                      [ngbTooltip]="ravneB1"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL27'].img" 
+                      class="ravne-b-1 machine" width="72" alt="">
+      
+                       <!--ngTemplate-->
+                     <ng-template #ravneB2>
+                        <div class="poster">
+                          <div class="poster-rate" [ngClass]="'poster-'+plant['APO-DTL28'].rate">{{plant['APO-DTL28'].rateTitle}}</div>
+                          <div class="poster-component-name">{{plant['APO-DTL28'].name}}</div>
+                          <hr />
+                          <div class="poster-current">
+                              <span class="poster-current-title">Value</span>
+                              <span class="poster-current-value" [ngClass]="'poster-'+plant['APO-DTL28'].rate">{{plant['APO-DTL28'].value}}</span>
+                          </div>
+                          <div class="poster-goal">
+                            <span class="poster-goal-title">Goal</span>
+                            <span class="poster-goal-value" [ngClass]="'poster-'+plant['APO-DTL28'].rate">{{plant['APO-DTL28'].goal}}</span>
+                          </div>
+                            <!--
+                          <hr />
+                          <div class="more-info">
+                            <a [routerLink]="'/guest/overview/ravneB2'">More ifo...</a>
+                          </div>
+                        -->
+                        </div>
+                      </ng-template>
+                      <!--end ngTemplate-->
+                    <img
+                      id="APO-DTL28"
+                      [ngbTooltip]="ravneB2"
+                      [src]="'assets/images/mapPlants/apodaca/' + plant['APO-DTL28'].img" 
+                      class="ravne-b-2 machine" width="72" alt="">
+                    <!-- /// BOTTOM LINES  -->
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

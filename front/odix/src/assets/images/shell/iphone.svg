@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24.455">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Group_41166" data-name="Group 41166" transform="translate(5014 -3579)">
+    <g id="Group_41165" data-name="Group 41165" transform="translate(-5014.972 3577.227)">
+      <path id="Path_42454" data-name="Path 42454" class="cls-1" d="M17.3,1.773H9.147a3.4,3.4,0,0,0-3.4,3.4V22.832a3.4,3.4,0,0,0,3.4,3.4H17.3a3.4,3.4,0,0,0,3.4-3.4V5.17A3.4,3.4,0,0,0,17.3,1.773ZM19.336,22.83A2.041,2.041,0,0,1,17.3,24.869H9.147A2.041,2.041,0,0,1,7.108,22.83V5.17A2.041,2.041,0,0,1,9.147,3.131H17.3A2.041,2.041,0,0,1,19.336,5.17Z" transform="translate(0 0)"/>
+      <circle id="Ellipse_67" data-name="Ellipse 67" class="cls-1" cx="1.358" cy="1.358" r="1.358" transform="translate(11.864 21.472)"/>
+      <path id="Path_42455" data-name="Path 42455" class="cls-1" d="M13.692,3.477H10.974a.679.679,0,0,0,0,1.358h2.717a.679.679,0,1,0,0-1.358Z" transform="translate(0.889 0.333)"/>
+    </g>
+    <rect id="Rectangle_1102" data-name="Rectangle 1102" class="cls-2" width="24" height="24" transform="translate(-5014 3579)"/>
+  </g>
+</svg>

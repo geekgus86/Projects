@@ -1,0 +1,169 @@
+
+//BODY BG PARALLAX    
+.parallax{
+    background-image: url(assets/images/shell/background.png);
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;}
+    
+//BUTTONS
+.primary-button-activated{
+    background-color: rgba( $color-teal-light, .6 );
+    color: #fff;
+    border-radius: 1px;
+    transition: .3s;
+    &:hover{
+         background-color: $color-teal-dark;}}
+
+.primary-button{
+    background-color: rgba( white, .1 );
+    color: #fff;
+    border-radius: 1px;
+    transition: .3s;
+    &:hover{
+         background-color: rgba($color-teal-light, .3);}}
+
+.main-button{
+    background: linear-gradient(90deg, $color-teal-light, $color-teal-dark);
+    border: none;
+    color: #fff;
+    transition: .3s ease-in-out;
+    &:hover{
+        box-shadow: 0 3px 3px rgba(0,0,0,.2);
+        transform: translateY(-1px);
+        color: #093336;}}
+
+//DARK CONTAINERS & BG's
+
+.dark-box-1{
+    background-color: $color-dark-box-1;
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.6);}
+
+.dark-box-3{
+    background-color: rgba($color-dark-box-1, .8);
+    border-radius: 10px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.6);}
+
+.etown-bg{
+    background-image: url(assets/images/shell/etown-bg-2.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;}
+
+.weld-bg {
+    background-image: url(assets/images/mapPlants/apodaca/fondo-2.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat; }
+
+// GOALS STATUSES
+.status{
+    padding: 3px 10px;
+    border-radius: 15px;
+    letter-spacing: .5px;
+    color: inherit;}
+    
+.on-goal{
+    color: $color-green;
+    background-color: $color-green-transparent;
+    &::before{
+        content: '\25B2';
+        padding: 0 2px;
+        font-size: 11px;}}
+.medium{
+    color: $color-yellow;
+    background-color: $color-yellow-transparent;
+    &::before{
+        content: '\25B2';
+        padding: 0 2px;
+        font-size: 11px;}}
+.delayed{
+    color: $color-red;
+    background-color: $color-red-transparent;
+    &::before{
+        content: '\25BC';
+        padding: 0 2px;
+        font-size: 11px;}}
+//TOOLTIP
+.map-plant__isometric--line-1 + .tooltip > .tooltip-inner{
+    background-color: #f00;}
+
+
+//SPACING, MARGINS & PADDINGS
+.spacer-1{
+    margin: 15px 30px;}
+.center{
+    margin: 0 auto;}
+
+
+//GENERIC CONTAINER
+.generic-graphic{
+    padding: 20px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    &__title-left{
+        span{
+            opacity: .5;
+            letter-spacing: 1px;
+            font-weight: 300;}}
+    &__title-right{
+        text-align: right;
+        & > *{
+            margin: 10px 3px;}}
+    &__graphic{
+        margin-right: 16px;}
+    &__graphics-container{
+        display: flex;
+        max-width: 1600px;
+        margin: 0 auto;
+        &--chassis{
+            margin: 0 auto;
+            position: relative;
+            &__attibute-1{
+                position: absolute;
+                top: 0;
+                left: 0;}}}}
+
+#donut-chart-oee{
+    .c3-line-data2{
+        stroke-width: 5px;
+        color: red;}}
+
+.dark-table-container{
+    padding: 20px;
+    color: #fff;
+    margin: 0 auto;}
+
+.dark-table{
+    table{
+        width: 100%;
+        tr{
+            td{
+                text-align: center;}}}}
+
+.navigation-spacer{
+    margin: 20px 0 !important;
+
+    .dark-box-1{
+        padding: 20px;
+    }
+}
+
+.dark-box-2{
+    background-color: rgba(0,0,0,.2);
+    box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}
+
+.dark-box-3{
+    background-color: rgba(#101015, .8);
+    box-shadow: 1px 1px 1px rgba(0,0,0,.2);
+}

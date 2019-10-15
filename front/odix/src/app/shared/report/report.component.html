@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-lg-11 dark-box-1 spacer-1" id="ctn" >
+
+            <!-- <div class="generic-graphic">
+                <div class="generic-graphic__title-left">
+                    <h2>{{ Title }}</h2>
+                    <span>Detailed report of the specified chassis</span>
+                </div>
+            </div> -->
+
+            <div class="generic-graphic__graphics-container report-table-container">
+                
+                <div class="{{clssImportXlsxParam}}" >
+                    <img src="assets/images/xlxs.png" width="100" class="imgXLXS" (click)="exportAsXLSX()"><span class="excel-download"  (click)="exportAsXLSX()" translate>Download as an Excel sheet</span>
+                </div>
+               <p-table #dt 
+                    [columns]="cols" 
+                    [value]="items" 
+                    [paginator]="true" 
+                    [rows]="10"
+                    selectionMode="multiple"
+                    [(selection)]="selectedItems"
+                >
+                    <ng-template pTemplate="caption">
+                        <div style="text-align: left" id="search" class="{{clsSearchParam}}" translate>
+                            <label for="search-input" (click)="searchActive=!searchActive">
+                                <i class="fa fa-search"></i>
+                            </label>        
+                            
+                            <input 
+                                id="search-input" 
+                                [class.searchActived]="searchActive"
+                                type="text" 
+                                pInputText 
+                                placeholder="{{'Global Filter'|translate}}" 
+                                (input)="dt.filterGlobal($event.target.value, 'contains')"
+                            >
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th *ngFor="let col of cols" [pSortableColumn]="col.field" translate>
+                                {{col.header}}
+                                <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-item let-columns="columns" let-rowData let-rowIndex="rowIndex">
+                        <tr [pSelectableRow]="rowData" [pSelectableRowIndex]="rowIndex">
+                            <td *ngFor="let col of cols">
+                                    {{item[col.field]}}
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            
+  <!-- 
+                <table id="myTable2" width="100%" class="report-table">
+                        <div>
+                           <input class="form-control" type="text" name="search" [(ngModel)]="filter" >
+                       </div>
+                      <tbody>
+                          <tr class="header">
+                           <td *ngFor="let head of Values[0] | keys;let i = index"
+                           [class.active]="order === head"
+                           (click)="setOrder(head)">{{head}}
+                           <span [hidden]="reverse">▼</span>
+                           <span [hidden]="!reverse">▲</span>                        
+                       </td>
+   
+                          </tr>
+   
+                           <tr *ngFor="let Value of Values | orderBy: order:reverse:'case-insensitive' | paginate: { itemsPerPage: 10, currentPage: p }; let i = index" [ngClass]="{'pair': i%2!=0}">
+                                   <td *ngFor="let list of Value | keys" >{{Value[list]}}</td>
+                           </tr>
+   
+                      </tbody>
+                      <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+                  </table>
+                ///TABLE -->
+            </div>
+    </div>
+</div>

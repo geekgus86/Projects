@@ -1,0 +1,36 @@
+<div class="row center-row" style="width: 100%; position: relative">
+  <div class="upper" style="width: 100%; justify-content: center;">
+    <div class="upper-dark-container">
+
+      <div class="upper__title stickyPlant">
+        <div class="plant-line">
+          <h2 *ngIf="plantName == 'eltalar'">El Talar</h2>
+          <h2 *ngIf="plantName != 'eltalar'">{{plantName}} Plant</h2>
+          <h2 id="navArrowDown">{{lineName}} <i *ngIf="lineName"></i></h2>
+        </div>
+      </div>
+
+      <!-- <div class="upper__monitor">
+        <a routerLink="/monitor/{{plantName}}/{{NameArea}}">Real Time Monitor</a>
+      </div> -->
+
+      <div class="upper__sort">
+        <span translate >Filter by</span>&nbsp;
+        <div class="btn primary-button">
+          <input  id="fc" class="form-control" ngModel bsDatepicker [value]="serviceDate" [maxDate]="maxDate" [bsValue]="today" [bsConfig]="{ containerClass: 'theme-blue' }" (bsValueChange)="onDateSelection($event)">
+        </div>
+      </div>
+
+      <!-- <div class="upper__spacer">
+        Real Time Monitor
+      </div> -->
+
+      <div class="upper__shift">
+        <app-shifts [objShift]= 'arrayShift' [selectShift] = "shift" (event)="onShiftChange($event)"  ></app-shifts>
+      </div>
+
+      <slider-nav [lines]='services' *ngIf="lineName"></slider-nav>
+
+    </div>
+  </div>
+</div>

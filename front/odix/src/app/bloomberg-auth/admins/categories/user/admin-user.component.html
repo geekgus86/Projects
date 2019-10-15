@@ -1,0 +1,164 @@
+<div class="admins-workspace__regionTitle">
+    <h1 translate>Usuarios</h1>
+</div>
+<div class="admins-workspace__addLevel">
+    <button (click)="open()" >
+        <img src="assets/images/admins/add-new.svg" alt="" > &nbsp; <span translate>Añadir Usuario</span>
+    </button>
+</div>
+
+<div class="admins-workspace__container">
+    <div class="admins-workspace__container--title">
+        <span translate>Filtros</span>
+        <div class="admins-workspace__container--title__filters">
+            <input (input)="filterRegisteredUsers()" [(ngModel)]="filter.nameRegistered" type="text">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
+    <div class="admins-workspace__container--table">
+        <table class="adminsTable">
+            <tr>
+                <th translate>Nombre</th>
+                <th translate>Usuario</th>
+                <th translate>Correo</th>
+                <th>Tadi</th>
+                <th translate>Planta</th>
+                <th translate>Idioma</th>
+                <th>&nbsp;...</th>
+            </tr>
+
+            <tr [class.trDisabled]="rus.enabled == '0'" *ngFor="let rus of registeredUsersList | paginate: { itemsPerPage: 17, currentPage: p }; let ind = index;"  >
+                <td>{{rus.fullName}}</td>
+                <td>{{rus.username}}</td>
+                <td>{{rus.email}}</td>
+                <td class="trTadi">{{rus.tadi || 'N/A'}}</td>
+                <td>{{getPlantName(rus.location)}}</td>
+                <td>{{getLocaleName(rus.locale)}}</td>
+                <td class="options">
+                    <img *ngIf="rus.enabled == '1'" (click)="editUser(rus,ind)" class="optionsImg" src="assets/images/admins/edit.svg" alt="">
+                    <img *ngIf="!rus.username.includes('@metalsa.com') && (rus.enabled == '1')" (click)="changePasswordModal(rus, ind)" class="optionsImg" src="assets/images/admins/key.svg" alt="Change password">
+                    <img *ngIf="rus.enabled == '1'" (click)="openDeleteForm(rus,id)" class="optionsImg" src="assets/images/admins/garbage.svg" alt="">
+                    <img *ngIf="(rus.enabled != '1')" (click)="changePasswordModal(rus, ind)" class="optionsImg" src="assets/images/admins/recover.svg" alt="Activate">
+                </td>
+            </tr>
+
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+<div [class.hiddenFC]="isFormHidden" class="formsContainer">
+    <div class="formsContainer__title">
+        <h2 translate>Añadir Usuario</h2>
+    </div>
+    <div class="formsContainer__forms">
+        <div>
+            <span style="font-size: 14px;" translate>Nombre</span>
+            <input [disabled]="isEditing" (blur)="closeSearch()" (input)="performSearch()" [(ngModel)]="filter.name" type="text">
+            <div *ngIf="resultUserList && resultUserVisible" class="tableAutoComplete">
+                <table>
+                    <tr>
+                        <th translate>Nombre</th>
+                        <th translate>Puesto</th>
+                        <th translate>Locación</th>
+                    </tr>
+                    <tr (click)="selectUserCombo(user,i)" *ngFor="let user of resultUserList; let i = index">
+                        <td>{{user.fullName}}</td>
+                        <td>{{user.position}}</td>
+                        <td>{{user.location}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div *ngIf="selectedUser">
+                <span style="font-size: 14px;" translate>Usuario</span>
+            <input nospaces maxlength="60" type="text" [(ngModel)]="userName">
+        </div>
+        <div *ngIf="selectedUser">
+                <span style="font-size: 14px;" translate>TADI</span>
+            <input numberonly maxlength="20" type="text" [(ngModel)]="tadi">
+        </div>
+         <div *ngIf="selectedUser">
+                <span style="font-size: 14px;" translate>Pais</span>
+            <select [(ngModel)]="locationId" [value]="1">
+               <option *ngFor="let constry of localeList" value="{{constry.id}}"> {{constry.country_name}} </option>
+            </select>
+        </div>
+        <div *ngIf="selectedUser">
+                <span style="font-size: 14px;" translate>Planta</span>
+            <select [(ngModel)]="locationId" [value]="1">
+               <option *ngFor="let locate of plantList | gridFilter:{id:locationId}" value="{{locate.id}}"> {{locate.description}} </option>
+            </select>
+        </div>
+        <div *ngIf="selectedUser && !isEditing">
+            <span style="font-size: 14px;" translate>Contraseña</span>
+            <br/>
+            <input type="password" [(ngModel)]='new_password_input' id="new_password_input" name="new_password_input" [value]='new_password_input' style="width: 80%;" required>
+            <i  (click)="copyMessage(new_password_input)" ngbTooltip="Password copied!" triggers="click:blur" class="far fa-copy"></i>
+        </div>
+        <div *ngIf="selectedUser && selectedUser.email">
+                <span style="font-size: 14px;" translate>Correo</span>
+            <input type="text" disabled value="{{selectedUser.email}}">
+        </div>
+        <div *ngIf="selectedUser && selectedUser.birth">
+                <span style="font-size: 14px;" translate>Fecha de nacimiento</span>
+            <input type="text" disabled value="{{selectedUser.birth}}">
+        </div>
+        <div *ngIf="selectedUser && selectedUser.coordinator">
+                <span style="font-size: 14px;" translate>Coordinador</span>
+            <input type="text" disabled value="{{selectedUser.coordinator}}">
+        </div>
+        <div *ngIf="selectedUser && selectedUser.position">
+                <span style="font-size: 14px;" translate>Posición</span>
+            <input type="text" disabled value="{{selectedUser.position}}">
+        </div>
+        <div *ngIf="selectedUser && selectedUser.location">
+                <span style="font-size: 14px;" translate>Localización</span>
+            <input type="text" disabled value="{{isEditing ? getPlantName(selectedUser.location) : selectedUser.location }}">
+        </div>
+    </div>
+    <hr>
+    <div class="formsContainer__actions">
+        <button (click)="closeForm()" class="cancel"><span translate>Cancelar</span></button>
+        <button (click)="isEditing ? saveUser('N/A') : saveUser(new_password_input)" class="disabled" [class.active]="(userName && ( userName.length >= 5 ))" translate>{{isEditing ? 'Editar' : 'Agregar'}}</button>
+    </div>
+</div>
+
+<section class="wrapper dark" *ngIf="isLoading">
+    <div class="spinner">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+</section>
+
+<div *ngIf="formPasswordVisible" class="passwordChange">
+    <div class="passwordChange__window">
+        <h3>{{selectedUserTbl.fullName}}</h3>
+        <h4 translate>Actualización de contraseña</h4>
+        <div class="passwordChange__window--passwordContainer">
+            <input type="password" [(ngModel)]='password_input' id="password_input" name="password_input" [value]='password_input' class="form-control inputText"  required>
+            <i (click)="copyMessage(password_input)" ngbTooltip="Password copied!" triggers="click:blur" class="far fa-copy"></i>
+        </div>
+        <div class="passwordChange__window--buttons">
+            <button (click)="formPasswordVisible=false" class="cancelar"><span translate>Cancelar</span></button>
+            <button (click)="savePassword(password_input)" class="aceptar"><span translate>Aceptar</span></button>
+        </div>
+    </div>
+</div>
+<div *ngIf="formDeleteVisible" class="passwordChange">
+    <div class="passwordChange__window">
+        <h3 translate>Quieres desactivar este usuario?</h3>
+        <div class="passwordChange__window--passwordContainer">
+            <h2>{{deleteUser_.fullName}}</h2>
+        </div>
+        <div class="passwordChange__window--buttons">
+            <button (click)="formDeleteVisible=false" class="cancelar"><span translate>Cancelar</span></button>
+            <button (click)="deleteUser()" class="aceptar"><span translate>Aceptar</span></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="reportTitle">
+        <h2 translate>Average Jobs per Hours</h2>
+        <span translate>Select parameters below to display information</span>
+</div>
+<div class="dark-box-3" style="margin: 0 0 0 10px; padding: 20px;">
+<app-multiple-filter [datepicker]="true" (event)="getData($event)" [AreaName] = "''" [Code] = "''" ></app-multiple-filter>
+
+<app-loadereport [display] = "display"  ></app-loadereport>
+</div>
+
+<div *ngIf="values && values?.VALUES?.length != 0" class="row">
+  <div class="col-md-12">
+      <app-report [Title]="'Production Average JPH'| translate"  [Values]='values.VALUES' ></app-report>
+  </div>
+</div>
+
+<div *ngIf="values?.VALUES?.length == 0">
+    <app-nodata ></app-nodata >
+</div> 
+

@@ -1,0 +1,29 @@
+@import '../../../admins.component.scss';
+
+.btn-disabled{
+    opacity: 0.3;
+}
+
+.formsContainer{
+    width: 700px;
+}
+
+.hiddenFC{
+    right: -700px;
+}
+
+th{
+    text-align: left !important;
+}
+
+.validIp{
+    font-size: 14px;
+    font-weight: bolder;
+    color: rgb(24, 197, 24);
+}
+
+.invalidIp{
+    font-size: 14px;
+    font-weight: bolder;
+    color: rgb(255, 29, 29);
+}

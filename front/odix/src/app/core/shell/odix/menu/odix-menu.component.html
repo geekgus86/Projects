@@ -1,0 +1,78 @@
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar" [ngClass]="{'active':activeSidebar}">
+        <div class="sidebar-header">
+            <img src="assets/images/home/odix-logo-min.png" width="80" height="80" alt="">
+            <!--<h3>John Doe</h3>
+            <p>Engenieer - Coordinator</p>-->
+        </div>
+
+        <ul class="list-unstyled components" >
+            <li routerLinkActive="" *ngFor="let menu of completeMenu; let i = index">
+                <ng-container *ngIf="menu.subMenus?.length > 0; else noChildren">
+                    <a translate id="{{ 'menu' + i }}" href="{{ '#pageSubmenu' + i }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <span class="{{menu.styleClass}}"></span>{{menu.title}}</a>
+                </ng-container>
+                <ng-template #noChildren>
+                        <ng-container *ngIf="menu.href == ''; else hrefEd">
+                                <a translate id="{{ 'menu' + i }}" [href]="menu.externalHref" aria-expanded="false"> <span class="menu.styleClass"></span>{{menu.title}}</a>                        </ng-container>
+                        <ng-template #hrefEd>
+                                <a translate id="{{ 'menu' + i }}" routerLink="{{menu.href}}" data-toggle="collapse" aria-expanded="false"> <span class="menu.styleClass"></span>{{menu.title}}</a>
+                        </ng-template>
+                </ng-template>
+                <ul class="collapse list-unstyled" id="{{ 'pageSubmenu' + i }}" *ngFor="let sub of menu.subMenus; let j = index">
+                    <li routerLinkActive="">
+                        <ng-container *ngIf="sub.subMenus?.length > 0; else noChildren2">
+                                <a translate id="{{ 'sub' + j }}" href="{{ '#pageSubmenu2' + j }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <span></span>{{sub.title}}</a>
+                        </ng-container>
+                        <ng-template #noChildren2>
+                                <a translate id="{{ 'sub' + j }}"  routerLink="{{sub.href}}" data-toggle="collapse" aria-expanded="false"> <span></span>{{sub.title}}</a>
+                        </ng-template>
+                        <ul class="collapse list-unstyled" id="{{ 'pageSubmenu2' + j }}" *ngFor="let sub2 of sub.subMenus; let k = index" >
+                            <li routerLinkActive="">
+                                <a translate id="{{ 'sub2' + k }}" routerLink="{{sub2.href}}">{{sub2.title}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="send-a-message">
+       <div class="send-a-message__form-container">
+           <h1>{{'Help us improve!' | translate }} </h1>
+           <textarea [(ngModel)]="suggestion" cols="30" rows="5" placeholder="{{'Your feedback is important! Share your experience with us' | translate }}"></textarea>
+           <button id="sendComment" class="primary-button" (click)="send()"  [disabled]="!suggestion" [ngStyle]="{'cursor': !suggestion ? 'not-allowed' : 'pointer'}"> {{ 'Send Comment' | translate }} </button>
+       </div>
+       <div class="send-a-message__pop-up">
+           <h1> {{ 'Thank you for your feedback!' | translate }} </h1>
+       </div>
+       <div class="send-a-message__icon">
+           <div href="" id="messagesForm">
+               <img src="assets/images/shell/message.png" width="30" alt="">
+           </div>
+       </div>
+   </div>
+
+   <div class="download-mobile">
+        <div class="download-mobile__container">
+            <div class="download-mobile__container--os">
+                <p id="downloadIos" class="os-active">{{'Download for iOS' | translate }}</p>
+                <p id="downloadAndroid">{{'Download for Android' | translate }}</p>
+            </div>
+
+            <div class="download-mobile__container--qr">
+                <div class="qr"> <img src="assets/images/shell/qr-code.png" width="100" alt="" id="qr-image"> </div>
+            </div>
+        </div>
+
+        <div id="downloadForm" class="download-mobile__icon">
+            <img src="assets/images/shell/iphone.svg" width="30" height="30" alt="">
+        </div>
+    </div>
+
+    <div class="black-options-container-closed">
+        &nbsp;
+    </div>
+
+</div>

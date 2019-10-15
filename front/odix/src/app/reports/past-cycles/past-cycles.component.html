@@ -1,0 +1,85 @@
+
+  <div class="row option-filter">
+
+    <div class="col-md-12 titlePastCycles">
+      <h2 translate >Past Cycles</h2>
+      <span translate>Select parameters below to display information</span>
+    </div>
+
+    <div class="row" style="width: 100%;">
+      <div class="dark-box-3 divSelectContainer">
+
+      
+      <div class="divSelect" >
+        <span translate>Select a Area</span>
+        <select  (change)="onAreaChange($event.target.value)"  >
+          <option *ngFor="let value of arrayArea" value= {{value.ID}}>
+            {{value.Name}}
+          </option>
+        </select>
+     </div>
+
+    
+     <div class="divSelect" >
+        <span translate>Select a Line</span>
+        <select (change)="onLineChange($event.target.value)"  >
+          <option *ngFor="let value of arrayLinea" value= {{value.ID}} [selected]="value.ID == LineAssetID" >
+            {{value.Name}}
+          </option>
+        </select>
+      </div>
+
+        <div class="divSelect" >
+            <span translate>Select a ENN</span>
+            <select  (change)="onEnnChange($event.target.value)"  >
+              <option *ngFor="let value of arrayENN" value= {{value.ID}}  [selected]="value.ID == EnnID" >
+                {{value.Name}}
+              </option>
+            </select>
+         </div>
+
+        <div class="divSelect" >
+            <span translate>Select a Shift</span>
+            <select class="Filter-1" (change)="onAreaShifts($event.target.value)"  >
+              <option *ngFor="let val of arrayShifts" value= {{val.value}} [selected]="val.value == idShift"  >
+                {{val.description | translate}}
+              </option>
+            </select>
+         </div>
+
+        <div class="divSelect" >
+          <span translate>Select a Station</span>
+          <select  (change)="onStationChange($event.target.value)"  >
+            <option *ngFor="let value of arrayStation" value= {{value.ID}}>
+              {{value.Name}}
+            </option>
+          </select>
+       </div>
+
+       <div class="divSelect" >
+          <span  class="titleParameter" translate>Select a Date</span>
+            <input class="form-control" placeholder="{{ 'Select a Date range' | translate}}" ngModel bsDaterangepicker [maxDate]="maxDate" [bsConfig]="{ containerClass: 'theme-blue' }"
+                (bsValueChange)="onDateSelection($event)" [(ngModel)]="bsRangeValue"  style="background: transparent; border: none; border-bottom: solid 1px #fff; color: #fff; font-family:Arial, FontAwesome; width: 200px; margin-left: 16px;">
+      </div>
+
+
+    <!-- [(ngModel)]="bsRangeValue" -->
+
+
+
+  </div>
+</div>
+
+
+<app-loadereport [display] = "display"  ></app-loadereport>
+<br><br><br><br><br><br><br>
+
+<div  *ngIf="isData" ></div>
+<div  id="chartdiv" ></div>
+
+<div *ngIf="!isData" class="col-md-12" >
+    <app-nodata ></app-nodata >
+</div>
+
+</div>
+

@@ -1,0 +1,38 @@
+<div class="status-andon-container dark-box-3">
+<div class="title"> 
+    <span>Status Andon</span> 
+</div>
+
+  <div class="linea-parametros">Linea:  
+    <select style="padding-left: 10px; width: 175px" name="line" [(ngModel)]="lineModel" (ngModelChange)="onChangeLine($event)">
+       <option [ngValue]="undefined" disabled  selected>Seleccione Linea</option>
+       <option *ngFor="let line of lines" [value]="line.Asset_ID">{{ line.Description }}</option>
+    </select>
+  </div>
+
+
+  <div class="switch-container">
+
+    <div class="switch-container__block">
+      <div class="switch-container__block--title"> 
+          <span>Andon</span> 
+        </div>
+        <ui-switch [(ngModel)]="andon" [checked]="andon" (valueChange)="openConfirmationDialogAndon($event)"></ui-switch>
+        <p class="switch-container__block--value">
+            Current Value: {{andon}}
+        </p>
+    </div>
+
+    <div class="switch-container__block">
+        <div class="switch-container__block--title"> 
+          <span>Sound Start/End Shift</span> 
+        </div>
+        
+        <ui-switch [(ngModel)]="activeShift" (valueChange)="openConfirmationDialogActiveShift($event)"></ui-switch>
+        
+        <p class="switch-container__block--value">
+            Current Value: {{activeShift}}
+        </p>
+    </div>
+  </div>
+</div>

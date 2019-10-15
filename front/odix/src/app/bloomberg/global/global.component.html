@@ -1,0 +1,275 @@
+<!--<nav class="row upper-nav">
+    <div class="upper-nav__options col-lg-2">
+        <img src="imgs/icons/mail.svg" width="25" alt=""> <span class="upper-nav__options--notifications">16</span>
+        <img src="imgs/icons/settings.svg" width="25" alt=""> 
+       </div>
+    <div class="upper-nav__logo col-lg-10">
+        <img src="assets/images/shell/odix-logo.png" height="30" alt="">
+    </div>
+    
+</nav>-->
+
+<div class="connect animated slideInLeft" data-wow-delay="5s">
+  Powered by <img src="assets/images/home/connect-logo-footer.svg" alt="C O N N E C T">
+</div>
+
+<section class="container-fluid">
+  <div class="row">
+    <!-- CONTENIDO -->
+    <div id="basicContainer" class="col-lg-12">
+      <div class="upper" style="justify-content: space-between;">
+        <div class="upper__title">
+          <h2> <span class="icon-world"></span> Global Real Time Production Rate</h2>
+          <span translate>World production values ​​are shown in the map. Select a country to get more detailed information</span>
+        </div>
+
+        <color-indicators></color-indicators>
+        <!-- <div class="upper__date-filters">
+                    <button type="button" class="btn primary-button-activated">Today</button>
+                    <div class="btn primary-button">Yesterday</div>
+                    <div class="btn primary-button">15 July 2018</div>
+                </div> -->
+        <!-- <div class="upper__general-filters">
+                    Filter by:
+                    <select name="Filter-1">
+                        <option value="country">Country</option>
+                        <option value="region">Region</option>
+                        <option value="goals">Plants</option>
+                    </select>
+
+                    <select name="Filter-1">
+                        <option value="goals">Performance</option>
+                        <option value="performance">Goals</option>
+                        <option value="nothing">Nothing</option>
+                    </select>
+                </div> -->
+      </div>
+
+      <div class="map-container">
+        <!-- here the map -->
+        <div id="chartdiv" style="height: 500px; width: 100%;"></div>
+
+        <div class="map-container__bottom-graphs">
+
+          <!-- here the carousel -->
+          <ngu-carousel [inputs]="carouselOne" (carouselLoad)="myfunc($event)">
+
+            <ngu-item NguCarouselItem *ngFor="let plant of plants">
+              <a routerLink='/plant/{{plant.name | lowercase | removewhite}}'>
+                <div class="map-container__bottom-graphs--plant">
+                  <p>{{plant.name}}</p>
+                  <app-gauge-chart [data]="plant" [gauge]="globalPlants.gaugeChart"></app-gauge-chart>
+                </div>
+              </a>
+            </ngu-item>
+
+            <button [hidden]="true" NguCarouselPrev class='leftRs'>&lt;</button>
+            <button [hidden]="true" NguCarouselNext class='rightRs'>&gt;</button>
+          </ngu-carousel>
+
+          <!-- <img src="imgs/icons/Export/graphic-bot.svg" alt=""> -->
+        </div>
+      </div>
+
+      <div class="row center-row" style="justify-content: space-around;">
+        <div class="col-lg-5">
+          <div class="dark-box-3" *ngIf="dataFramesByShiftAndHour && dataFramesByShiftAndHour?.length > 0">
+            <!-- BEST PLANT -->
+            <div class="best-plant">
+              <div class="best-plant__left-side">
+                <div class="best-plant__title">
+                  <!-- <img src="assets/images/global/stars.svg" width="20px"> -->
+                  <h2 translate>Best Factory based on Goals</h2> &nbsp;
+                    <span class="best-plant__winner"> {{plantName}}</span>
+                </div>
+                <div class="best-plant__title--h-results">
+                  <h2 translate><span translate>Line</span> {{type_Name}}</h2>
+                </div>
+                <div class="best-plant__results">
+                  <div class="result">
+                    <span id="spanDateValue">{{productionDateValue}} </span>
+                    <span translate>Current</span>
+                  </div>
+                  <div class="result">
+                    <span id="spanDiference">{{diference}} </span>
+                    <span translate>Diference</span>
+                  </div>
+                  <div class="result">
+                    <span id="spanGoal">{{productionDateGoal}} </span>
+                    <span translate>Goal</span>
+                  </div>
+                </div>
+                <div class="best-plant__graphic">
+                  <app-line-chart [data]='dataFramesByShiftAndHour'  [lenguaje]="lenguaje"  ></app-line-chart>
+                </div>
+              </div>
+            </div>
+
+            <div class="valuesBestFactory">
+              <div class="valuesBestFactory__container1">
+                <div class="valuesRate">
+                  <span translate>Current Model</span>
+                  <span> {{currentModel}} </span>
+                </div>
+                <div class="valuesRate">
+                  <span translate>Planned Rate</span>
+                  <span id="spamCurrentShiftRate">{{currentShiftRate}}</span>
+                </div>
+                <div class="valuesRate">
+                  <span translate>Designed Rate</span>
+                  <span id="spamDesignedRate">{{designedRate}}</span>
+                </div>
+
+              </div>
+              <div class="valuesBestFactory__container2">
+                <div class="valuesRate">
+                  <span translate>24-Hour Total</span>
+                  <span>{{oneDayTotal}}</span>
+                </div>
+                <div class="valuesRate">
+                  <span translate>24-Hour Median</span>
+                  <span>{{oneDayMedian}} </span>
+                </div>
+                <div class="valuesRate">
+                  <span translate>Forecast</span>
+                  <span>{{forecast}}</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="dark-box-3" *ngIf="dataFramesByShiftAndHour && dataFramesByShiftAndHour?.length == 0">
+            <app-nodata inputMsg="" inputHeight="80" inputPadding="150px 0"></app-nodata>
+          </div>
+
+        </div>
+
+        <!-- TOP 3 BY COUNTRY -->
+        <div class="col-lg-5 dark-box-3">
+          <div class="top-3-country">
+            <div class="top-3-country__title-left">
+              <h2 translate>Top 3 by country</h2>
+              <span translate>Percentage achived towards objective</span>
+            </div>
+          </div>
+          <div class="top-3-country__graphic">
+            <div id="bar-1"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row qn-container">
+        <div class="col-lg-12">
+          <h2 translate class="qn-title" >Quality KPI's <hr></h2>
+          <div class="row center-row" style="justify-content: space-around;">
+            <div class="col-lg-6">
+              <h2 translate>Customer notifications</h2>
+              <!-- TABS -->
+              <div class="tabs-container">
+                <div class="dark-box-tab active-tab" id="tab1">
+                <span translate>Notifications by country</span>
+                </div>
+                <div class="dark-box-tab" id="tab2">
+                  <span translate>Notifications by plant</span>
+                </div>
+              </div>
+              <!-- //TABS -->
+
+              <!-- QN GRAPHICS -->
+              <div class="dark-box-3 bf-t3-container">
+                <div id="tab1-content">
+                  <app-stackedcolumn-chart [data] = "dataQualityNotificationsPais" stackedcolumnchart ="charQualityNotificationsPais" [lenguaje]="lenguaje" > </app-stackedcolumn-chart>
+                </div>
+                <div id="tab2-content">
+                  <app-stackedcolumn-chart [data] = "dataQualityNotificationsPlanta" stackedcolumnchart ="charQualityNotificationsPlanta" [lenguaje]="lenguaje" > </app-stackedcolumn-chart>
+                </div>
+                <button class="aditional-info" (click)="showTable(TABLE_NOTIFICATION)" translate>{{AditionalinfNotification}}</button>
+              </div>
+            </div>
+
+            <!-- QN TABLE -->
+            <div class="col-lg-6">
+                <h2 translate>Internal alerts notifications</h2>
+                <!-- TABS -->
+                <div class="tabs-container">
+                  <!-- <div class="dark-box-tab active-tab" id="tab3">
+                    <span translate>Alert and Audit by Country</span>
+                  </div> -->
+                  <div class="dark-box-tab active-tab" id="tab4">
+                    <span translate>Alerts by plant</span>
+                  </div>
+                </div>
+                <!-- //TABS -->
+                <!-- QN GRAPHICS -->
+                <div class="dark-box-3 bf-t3-container">
+                  <!-- <div id="tab3-content">
+                    <app-stackedcolumn-chart [data] = "dataByCountry" stackedcolumnchart ="charCarsCountry" [lenguaje]="lenguaje" > </app-stackedcolumn-chart>
+                  </div> -->
+                  <div id="tab4-content">
+                    <app-stackedcolumn-chart [data] = "dataByPlant" stackedcolumnchart ="charCarsPlant" [lenguaje]="lenguaje" > </app-stackedcolumn-chart>
+                  </div>
+                  <button class="aditional-info" (click)="showTable(TABLE_ALERT)" translate >{{AditionalinfAlert}}</button>
+                </div>
+            </div>
+
+            
+            
+
+            <!-- <div class="col-lg-7 dark-box-3 qn-table-container">
+                <div class="tabs-container">
+                    <div class="dark-box-tab">
+                      <span translate>Top 10 Notifications</span>
+                    </div>
+                </div>
+                <app-report [Title]="lenguaje"  [Values]='dataQualityNotificationsTopTen' [display] = "'none'" [clssImportXlsxParam] = "'importXlsxParam1'" [clsSearchParam] = "'searchParam1'"  ></app-report> 
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- *ngIf="alertTabShown"  -->
+      <!-- [hidden]="alertTabShown" -->
+      <div class="row qn-container"  >
+          <div class="col-lg-12"  id="tblAlert" >
+              <div class="row center-row" style="justify-content: space-around;">
+              <!-- QN TABLE -->
+              <div class="col-lg-11 dark-box-3 qn-table-container">
+                  <div class="tabs-container">
+                      <div class="dark-box-tab">
+                        <!-- <span translate>Top 10 Alert and Audit</span> -->
+                        <span translate>Top 10 Alert</span>
+                      </div>
+                    </div>
+                  <div *ngIf = "dataCars && dataCars?.length > 0" >
+                    <app-report [Title]="lenguaje"  [Values]='dataCars' [display] = "'none'" [clssImportXlsxParam] = "'importXlsxParam2'" [clsSearchParam] = "'searchParam2'"  [clsCollg] = "'col-lg-12'" ></app-report> 
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- *ngIf="notiTabShown" -->
+        <!-- [hidden]="notiTabShown" -->
+        <div class="row qn-container">
+          <div class="col-lg-12"  id="tblNotifi" >
+              <div class="row center-row" style="justify-content: space-around;">
+              <!-- QN TABLE -->
+              <div class="col-lg-11 dark-box-3 qn-table-container">
+                <div class="tabs-container">
+                    <div class="dark-box-tab">
+                      <span translate>Top 10 Notifications</span>
+                    </div>
+                </div>
+                <app-report [Title]="lenguaje"  [Values]='dataQualityNotificationsTopTen' [display] = "'none'" [clssImportXlsxParam] = "'importXlsxParam1'" [clsSearchParam] = "'searchParam1'" [clsCollg] = "'col-lg-12'" ></app-report> 
+            </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+
+
+@charset "UTF-8";
+
+// 3rd party libraries
+@import "~bootstrap/scss/bootstrap";
+@import "assets/css/icon-font.css";
+
+@import "assets/scss/shell/variables";
+@import "assets/scss/shell/base";
+@import "assets/scss/shell/components";
+
+// @import "assets/scss/shell/top-nav";
+//@import "assets/scss/shell/left-nav";
+@import "assets/scss/shell/map";
+
+@import "assets/scss/shell/main-content";
+//@import "assets/scss/shell/isometric-map";
+@import "assets/scss/shell/menu";

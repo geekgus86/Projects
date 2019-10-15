@@ -1,0 +1,148 @@
+<div class="row cyc-container">
+
+  <div class="col-md-12">
+    <h2 class="title-m-data" translate >Cycle Times Monthly Data</h2>
+  </div>
+
+  <br><br><br>
+
+  <div class="col-md-2">
+      <div class="divSelect" >
+          <span translate>Select a Area</span>
+          <select  (change)="onAreaChange($event.target.value)"  >
+            <option *ngFor="let value of arrayArea" value= {{value.ID}}>
+              {{value.Name}}
+            </option>
+          </select>
+       </div>
+  </div>
+
+  <div class="col-md-2">
+      <div class="divSelect" >
+          <span translate>Select a Line</span>
+          <select id = "ListLine" (change)="onLineChange($event.target.value)"  >
+              <option *ngFor="let value of arrayLinea"  value= {{value.ID}} [selected]="value.ID == LineAssetID " >
+                {{value.Name}}
+              </option>
+          </select>
+      </div>
+  </div>
+
+  <div class="col-md-2">
+      <div class="divSelect" >
+        <span translate>Select a ENN</span>
+          <select id = "IDENN" (change)="onEnnChange($event.target.value)"  >
+              <option *ngFor="let value of arrayENN" value= {{value.ID}}   >
+                {{value.Name}}
+              </option>
+            </select>
+      </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="divSelect" >
+          <span translate>Select a Month</span>
+            <select name="Filter-1" (change)="onSelectMonth($event.target.value)">
+                <option *ngFor="let val of dataMonthNames" value = {{val.value}} [selected]="val.value == Month"  >
+                    {{ val.lbl | translate }}
+                </option>
+            </select>
+          </div>
+      </div>
+
+    <div class="col-md-2">
+        <div class="divSelect">
+          <span translate>Select a Year</span>
+            <select name="Filter-1" (change)="onSelectYear($event.target.value)">
+                <option value="Year">{{Year}}  </option>
+            </select>
+        </div>
+    </div>
+
+        
+    <div class="col-md-2">
+        <div class="divSelect">
+        <span translate>Select all ENN</span>
+            <select name="Filter-1" (change)="onSelectAllENN($event.target.value)">
+                <option value="No">No </option>
+                <option value="Yes">Yes </option>
+            </select>
+        </div>
+   </div>
+
+   <br><br>
+
+   
+   <div class="col-md-12">
+      <div class="divSelect">
+        <span translate>Ignore cycles with cycles time</span>
+          <select name="Filter-1" (change)="onSelectIgnoreCycles($event.target.value)">
+                <option *ngFor="let value of IgnoreCyclesTime" value= {{value}} [selected]="value == Cycletime"  >
+                    {{value}}
+                </option>
+          </select>
+        </div>
+   </div>
+
+
+   <br><br><br><br>
+
+   <div class="col-md-2">
+    
+  
+    <div *ngIf="arrayDate" class="dark-box-1">
+        <div class="div-checkbox" id="listDate" *ngIf="arrayDate?.length > 0">
+            <div class="">
+                <input id = "checkboxDateAll" type="checkbox" checked (change)="onFilterDate($event)" value= "0"  checklist-model="0" checklist-value="0"> All <br>
+                <ng-container *ngFor="let valueDate of arrayDate" id="checkboxes2">
+                <input id = "checkboxDate" type="checkbox" checked (change)="onFilterDate($event)" value= {{valueDate.date}}  checklist-model="valueDate.date" checklist-value="valueDate.date"> {{valueDate.date}}
+                <br>
+              </ng-container>
+                
+            </div>
+        </div>
+       
+    </div>
+
+
+  </div>
+  <div class="col-md-3">
+    <div class="dark-box-1">
+      <div class="div-checkbox" id="listModel" *ngIf="arrayModels?.length > 0">
+          <div class="">
+              <input id = "checkboxModelAll" type="checkbox" checked (change)="onFilterModel($event)" value= "0"  checklist-model="0" checklist-value="0"> All <br>
+              <ng-container *ngFor="let valuemModel of arrayModels">
+                  <input id = "checkboxModel"  type="checkbox" checked (change)="onFilterModel($event)" value= {{valuemModel.model}}  checklist-model="valuemModel.model" checklist-value="valuemModel.model"> {{valuemModel.model}}
+              <br>
+            </ng-container>
+
+
+          </div>
+      </div>
+  </div>
+
+  </div>
+
+
+  <div class="col-md-7">
+
+
+    
+    <div *ngIf="arrayStatistic && isData" class="row" style="width: 100%;">
+        <div class="col-md-12" style="margin-top:0px" >
+            <app-report [Title]="'Cycle Times Monthly Data'"  [Values]='arrayStatistic' ></app-report> 
+        </div>
+    </div>
+
+  </div>
+
+  <div class="report-select-container">
+      <app-loadereport [display] = "display"  ></app-loadereport>
+  </div>
+  
+  <div *ngIf="!isData" class="col-md-12" >
+      <app-nodata ></app-nodata >
+  </div>
+  
+  
+</div>

@@ -1,0 +1,72 @@
+
+.title{
+  color: white;
+  margin: 20px 0 0 0;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 5px;
+  span{
+    text-shadow: 3px 3px 3px rgba(0,0,0,.4);
+  }
+}
+
+
+/deep/.clsColumnChart {
+    width: 97%;
+    height: 90vh;
+    margin: 0 auto;
+    color: red;
+    /deep/.amcharts-value-axis {
+      & > * {
+          font-size: 16px;
+          text-anchor: middle;
+      }
+  }
+}
+
+.axis-y-variable{
+  position: fixed;
+  top: 40%;
+  left: -1%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transform: rotate(-90deg);
+  letter-spacing: 1px;
+}
+
+
+.typeAm{
+  color: white;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+
+/deep/.amcharts-chart-div a{
+  display: none !important;
+}
+
+.logo{
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  width: 160px;
+}
+/deep/text.amcharts-legend-label{
+  font-size: 35px !important;
+}
+/deep/.amChartsLegend.amcharts-legend-div{
+  margin: 50px 0px 0px -250px
+}

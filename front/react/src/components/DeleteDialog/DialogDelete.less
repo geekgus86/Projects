@@ -1,0 +1,43 @@
+@import "~styles/fonts.less";
+@import "~styles/colors.less";
+
+.dialogTitle {
+    text-align: left;
+    padding:15px 20px 6px 20px !important;
+    span{
+        font-size: 18px;
+        font-family: "GothamRounded";
+        font-weight: 800;
+    }
+}
+.closeBtn {
+    flex: 1;
+    margin-right: 10px;
+}
+.saveBtn {
+    flex: 1;
+    margin-left: 10px;
+}
+.ActionDialog{
+    justify-content: space-between;
+    padding: 10px 0px;
+    button{
+        padding: 10px 50px !important;
+        &:first-child{
+            margin-right: 15px;
+        }
+    }
+}
+.contentDialog{ 
+    text-align: left;
+    padding: 10px 10px 0px 10px !important;
+    .borders{
+        border-top: 1px solid @black;
+        border-bottom: 1px solid @black;
+        font-size: 16px;
+        font-family: "GothamRounded";
+        div{
+            padding: 25px 12px;
+        }
+    }
+}

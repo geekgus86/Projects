@@ -1,0 +1,133 @@
+.header {
+  background: #323D50;
+  padding: 0 30px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  margin-top: 30px;
+}
+
+.header h4 {
+  font-family: 'GothamRounded';
+  color: #fff;
+  font-size: 25px;
+  padding: 5px 0px;
+  text-transform: uppercase;
+  margin-top: 9px;
+  margin-bottom: 9px;
+}
+
+.digitalBinder {
+  margin-top: 30px;
+}
+
+.digitalBinder .accordionGroup {
+  border: 1px solid #979797;	
+  border-radius: 2px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.digitalBinder{
+  .accordionGroup{
+    .accordionHeader {
+     font-family: 'OpenSans';
+     font-size: 13px;
+     font-weight: 600;
+     cursor: pointer;
+     .folderLabel {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .folderIcon {
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+        background: tomato;
+        border-radius: 10px;
+      }
+      .folderNameContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .folderName {
+          font-family: 'OpenSans';
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+      }
+    }
+   }
+  }
+  .accordionGroupInner {
+    border-radius: 5px;	
+    background-color: rgba(209,209,212,0.5);
+    padding: 10px;
+    margin-bottom: 5px;
+    .accordionHeader {
+      font-family: 'GothamRounded';
+      font-size: 12px;
+      font-weight: 600;
+      .folderLabelInner {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .Icon{
+          font-size: 20px;
+          margin-right: 20px;
+        }
+        .folderName {
+          font-family: 'OpenSans';
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+      }
+    }
+  }  
+}
+.innerCollapse {
+  margin-top: 10px;
+}
+.fileContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.33);
+  padding: 5px;
+  margin-top: 15px;
+  min-height: 55px;
+  cursor: pointer;
+  .fileIcon{
+    .iconContainer {
+      width: 32px;
+      height: 32px;
+      background: #323D4F;
+      border-radius: 3px;
+      margin-right: 5px;
+      color: #ffffff;
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .fileName {
+    font-family: 'OpenSans';
+    font-size: 11px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    width: 80%;
+  }
+}
+.uppercase{
+  text-transform: uppercase;
+}
+.bold{
+  font-weight: bold;
+}

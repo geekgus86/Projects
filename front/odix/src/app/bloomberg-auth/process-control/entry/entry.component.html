@@ -1,0 +1,83 @@
+<!-- HEADER ESTATICO -->
+<div class="entry-container">
+
+  <div class="entry-container__title">
+    <span>Process Control Entry</span>
+  </div>
+
+  <div class="entry-container__parameters">
+
+    <div class="entry-container__parameters--block">
+        <span>Líneas:</span>
+        <select style="padding-left: 10px; width: 175px" name="line" [(ngModel)]="lineModel" (ngModelChange)="onChangeLine($event)">
+            <option [ngValue]="undefined" disabled  selected>Seleccione Linea</option>
+            <option *ngFor="let line of lines" [value]="line.ID">{{ line.Description }}</option>
+        </select>
+    </div>
+
+    <div class="entry-container__parameters--block">
+        <span>Fecha:</span>
+        <input class="fecha" name="date" [(ngModel)]="dateModel" (ngModelChange)="onChangeDate($event)" type="date">
+    </div>
+
+    <div class="entry-container__parameters--block">
+        <span>Turno:</span>
+        <select aria-placeholder="Seleccione Fecha" style="padding-left: 10px; width: 175px" name="shift" [(ngModel)]="shiftModel" (ngModelChange)="onChangeShift($event)">
+          <option [ngValue]="undefined" disabled selected>Seleccione Turno</option> 
+          <option *ngFor="let shift of shifts" [value]="shift.Id">{{ shift.Description }}</option>
+        </select>
+    </div>
+
+    <div class="entry-container__parameters--block">
+        <span>Grupo:</span>
+        <select  aria-placeholder="Seleccione Grupo de Trabajo" style="padding-left: 10px; width: 175px" name="group" [(ngModel)]="groupModel" (ngModelChange)="onChangeGroup($event)">
+          <option [ngValue]="undefined" disabled  selected>Seleccione Grupo</option> 
+          <option *ngFor="let group of groups" [value]="group.ID">{{ group.Description }}</option>
+        </select>
+    </div>
+
+  </div>
+
+  <button (click)="saveInfo()">Save Information</button>
+  
+</div>
+
+<div class="spacer"></div>
+
+<!-- TABLA -->
+
+
+<alert *ngIf="alertDataComboboxes" type="danger" dismissOnTimeout="5000" (onClosed)="alertDataComboboxes = false">
+  All comboboxes must have a selected option
+</alert>
+
+<alert *ngIf="alertDataSuccess" type="success" dismissOnTimeout="5000" (onClosed)="alertDataSuccess = false">
+  All changes have been saved
+</alert>
+
+<alert *ngIf="alertDataError" type="danger" dismissOnTimeout="5000" (onClosed)="alertDataErrir = false">
+  An error occurred, please contact your Administrator.
+</alert>
+
+<alert *ngIf="alertDataNoDataToEdit" type="warning" dismissOnTimeout="5000" (onClosed)="alertDataNoDataToEdit = false">
+  There are no changes to edit
+</alert>
+
+<span *ngIf="rowData?.length == 0" class="message">Deben completarse todos los campos para mostrar información</span>
+
+ <ag-grid-angular 
+    class="ag-theme-balham-dark"
+    style="width: 100%; height: 450px;"
+    (gridReady)="onGridReady($event)"
+    (cellValueChanged)="onCellValueChanged($event)"
+    [enableCellChangeFlash]="true"
+    [enableColResize]="true"
+    [pagination]="true"
+    [paginationPageSize]=16
+    [suppressDragLeaveHidesColumns]="true"
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs"
+    >
+</ag-grid-angular>
+
+<p>{{postJSON | json}}</p>

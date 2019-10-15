@@ -1,0 +1,61 @@
+<div class="row multiple-filter">
+    <div class="divSelect" >
+      <span class="titleParameter" translate >Select a Area</span>
+       <select class="" (change)="onAreaChange($event.target.value)"  >
+         <option *ngFor="let value of arrayArea" value= {{value.ID}}  [selected]="value.Name == AreaName"   >
+           {{value.Name | translate}}
+         </option>
+       </select>
+     </div>
+  
+
+  <div *ngIf="arrayLinea">
+    <div class="divSelect" >
+      <span class="titleParameter" translate>Select a Line</span>
+       <select class="" (change)="onLineChange($event.target.value)"  >
+         <option *ngFor="let value of arrayLinea" value= {{value.Code}}  [selected]="value.Code == Code"   >
+           {{value.Name}}
+         </option>
+       </select>
+     </div>
+  </div>
+  <!-- <div *ngIf="arrayENN" class="col-md-2">
+    <div class="divSelect" >
+      <span class="titleParameter" >ENN </span>
+      <select class="" (change)="onEnnChange($event.target.value)"  >
+        <option *ngFor="let value of arrayENN" value= {{value.ID}}>
+          {{value.Name}} 
+        </option>
+      </select>
+    </div>
+  </div>
+  <div *ngIf="arrayStation" class="col-md-2">
+    <div class="divSelect" >
+      <span class="titleParameter" >Station </span>
+      <select class="" (change)="onStationChange($event.target.value)"  >
+        <option *ngFor="let value of arrayStation" value= {{value.ID}}>
+          {{value.Name}}
+        </option>
+      </select>
+    </div>
+  </div> -->
+  <div *ngIf="arrayLinea && datepicker" class="col-md-4">
+      <!-- <span class="titleParameter" translate>Select a Date &nbsp; </span> -->
+      <span class="titleParameter" translate>Select a Date</span>
+      <div class="divSelect">
+        <input class="form-control" placeholder="{{ 'Select a Date range' | translate}}" ngModel bsDaterangepicker [maxDate]="maxDate" [bsConfig]="{ containerClass: 'theme-blue' }"
+            (bsValueChange)="onDateSelection($event)" [(ngModel)]="bsRangeValue" style="background: transparent; border: none; border-bottom: solid 1px #fff; color: #fff; font-family:Arial, FontAwesome; width: 150px; margin-left: 16px;">
+      </div>
+    </div>
+  <!-- <div *ngIf="arrayShifts" class="col-md-2">
+    <div class="divSelect">
+      <span class="titleParameter" >Shift </span>
+      <select class="" (change)="onAreaShifts($event.target.value)"  >
+        <option *ngFor="let SHIFTS of arrayShifts" value= {{SHIFTS.id}}>
+          {{SHIFTS.name}}
+        </option>
+      </select>
+    </div>
+  </div> -->
+
+</div>

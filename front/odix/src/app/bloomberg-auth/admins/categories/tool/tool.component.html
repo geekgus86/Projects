@@ -1,0 +1,142 @@
+<div class="admins-workspace__regionTitle">
+    <h1 translate>Planta:</h1><h1>{{plantName}}</h1>
+</div>
+
+<div class="admins-workspace__addLevel">
+    <button (click)="show_new()" >
+        <img src="assets/images/admins/add-new.svg" alt="" > &nbsp;<span translate>Agregar Herramienta</span>
+    </button>
+</div>
+
+<div class="admins-workspace__container">
+    <div class="admins-workspace__container--title">
+        <span translate>Herramienta</span>            
+        <div class="tools-filtro-prensas">
+            <select class="prensa" (change)="changeAsset($event.target.value)" [(ngModel)]="assetSelected">
+                <option value="-1" translate>Todas las Prensas</option>
+                <option *ngFor="let opt of dataAsset" value="{{opt.id}}"> {{opt.name}} </option>
+            </select>
+            <img class="downsideArrow" src="assets/images/admins/arrow-black.svg" alt="">
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="admins-workspace__container--title">
+            <span translate>Filtros</span>
+            <div class="admins-workspace__container--title__filters">
+                <input [(ngModel)]="searchText" type="text" (keyup)="setSearchText($event)">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="eliminar" *ngIf="arrDelete.size > 0" (click)="deleteSelected()">
+            <img src="assets/images/admins/garbage.svg" alt=""> &nbsp;
+            <span translate>Eliminar</span></button>
+    </div>
+    <div class="admins-workspace__container--table">
+        <table class="adminsTable">
+            <tr>
+                <th><input [(ngModel)]="checkedAll" (click)="checkAll()" type="checkbox" name="line0"></th>
+                <th translate>Nombre</th>
+                <th translate>Velocidad</th>
+                <th>Job N</th>
+                <th>Type</th>
+                <th translate>N de Rollo</th>
+                <th translate>Pieza x Golpe</th>
+                <th translate>Prensa</th>
+                <th>&nbsp;</th>
+            </tr>
+
+            <tr [class.trDisabled]="!item.active" *ngFor="let item of dataTool | gridFilter: {descTool: searchText, jobNumber: searchText} | paginate: { itemsPerPage: 17, currentPage: p }; let ind = index;"  >
+                <td><input type="checkbox" [(ngModel)]="item.checked" (click)="selectCheckMultiple(item.id)" name="line1"></td>
+                <td>{{item.descTool}}</td>
+                <td>{{item.designSpeed}}</td>
+                <td>{{item.jobNumber}}</td>
+                <td>{{item.toolType == 1 ? 'Destaker' : 'Coil' }}</td>
+                <td>{{item.noRollo}}</td>
+                <td>{{item.pzPerStroke}}</td>
+                <td>{{item.assetDesc}}</td>
+                <td *ngIf="item.active"  class="options">
+                    <img (click)="show_edit(item)" class="optionsImg" src="assets/images/admins/edit.svg" alt="">
+                    <img (click)="delete(item.id, item.descTool)" class="optionsImg" src="assets/images/admins/garbage.svg" alt="">
+                </td>
+                <td *ngIf="!item.active"  class="options">
+                    <img  (click)="active(item.id, item.descTool)"  class="optionsImg" src="assets/images/admins/recover.svg"  alt="">
+                </td>
+
+            </tr>
+        </table>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+<div [class.hiddenFC]="isFormHidden" class="formsContainer">
+    <div class="formsContainer__title">
+        <h2 translate>{{action == 'new' ? 'Agregar' : 'Editar'}} Herramienta</h2>
+    </div>
+    <div class="formsContainer__forms">
+        <div>
+            <span style="font-size: 14px;" translate>Nombre</span>
+            <input required minlength="1" type="text" [(ngModel)]="objEdit.descTool">
+        </div>
+        <div>
+            <span style="font-size: 14px;" translate>Velocidad</span>
+            <input type="number" min="0" name="speed" [(ngModel)]="objEdit.designSpeed">
+        </div>
+        <div>
+            <span style="font-size: 14px;">Job Number</span>
+            <input type="number" min="0" maxlength="2" name="jobNumber" [(ngModel)]="objEdit.jobNumber">
+        </div>
+        <div class="radioButtons">
+            <span style="font-size: 14px;" translate>Tipo</span>
+            <div class="radioOption" >
+                <input type="radio" (change)="changeRadioType($event.target.value)" [checked]="objEdit.toolType == 1" name="type" value="1"> <span> Destaker </span>
+            </div>
+            <div class="radioOption">
+                <input type="radio" (change)="changeRadioType($event.target.value)" [checked]="objEdit.toolType == null" name="type" value="2"> <span> Coil </span>
+            </div>
+        </div>
+        <div>
+            <span style="font-size: 14px;" translate>Piezas por golpe</span>   
+            <input type="number" name="piezaspg" [(ngModel)]="objEdit.pzPerStroke" min="0" onkeypress="return event.charCode >= 48">
+        </div>
+        <div *ngIf="objEdit.toolType == null || objEdit.toolType ==2">
+                <span style="font-size: 14px;" translate>N de Rollo</span>    
+            <input type="text" name="noRollos" maxlength="64"  [(ngModel)]="objEdit.noRollo">
+       </div>
+        <div class="radioButtons">
+                <span style="font-size: 14px;" translate>Prensa</span>  
+                <ng-container *ngIf="action == 'new'">
+                    <div *ngFor="let asset of newAssets" class="radioOption">
+                        <input type="checkbox" name="prensa" value={{asset.id}} [(ngModel)]="asset.checked"> <span> {{asset.name}} </span>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="action == 'edit'">
+                    <div *ngIf="action == 'edit'" class="radioOption">
+                        <input [disabled]="true" type="checkbox" name="prensa" [(ngModel)]="objEdit.assetId"> <span> {{objEdit.assetDesc}} </span> 
+                    </div>
+                </ng-container>
+        </div>
+    </div>
+    <hr>
+    <div class="formsContainer__actions">
+        <button (click)="cancel()" class="cancel"><span translate>Cancelar</span></button>
+        <ng-container *ngIf="action == 'new'">
+            <button (click)="save()" class="active"><span translate>Agregar</span></button>
+        </ng-container>
+        <ng-container *ngIf="action == 'edit'">
+            <button  (click)="edit()" class="active"><span translate>Aceptar</span></button>
+        </ng-container>
+    </div>
+</div>
+
+
+<section class="wrapper dark" *ngIf="isLoading">
+<div class="spinner">
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+    <i></i>
+</div>
+</section>

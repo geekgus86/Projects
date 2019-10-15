@@ -1,0 +1,33 @@
+@import "~styles/colors.less";
+@import "~styles/spacers.less";
+@import "~styles/shadows.less";
+@import "~styles/borders.less";
+
+.container {
+  padding: @spacer-3x;
+  background-color: @table-background;
+}
+
+.table {
+  box-shadow: @table-box-shadow;
+  background: @contrast-color;
+  border-radius: @table-border-radius;
+  padding: 0;
+}
+
+.empty {
+  font-size: 22px;
+  color: @ui-color;
+  background-color: @contrast-color;
+  box-shadow: @table-box-shadow;
+  padding: @spacer-2x;
+  text-transform: uppercase;
+}
+.Overflow{
+  overflow-y: overlay;
+  overflow-x: hidden;
+  height: 600px;
+  &::-webkit-scrollbar {
+    display: none;
+  } 
+}

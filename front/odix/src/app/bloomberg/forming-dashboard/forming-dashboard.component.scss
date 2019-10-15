@@ -1,0 +1,215 @@
+//VARIABLES
+$primary-teal: #00C9F1;
+$primary-black: #12161F;
+$primary-blue: #007AFF;
+$primart-white: #e8e8e8;
+
+    $status-green:#55D614;
+    $status-yellow: #FFB903;
+    $status-orange: #FF680A;
+    $status-red: #FF4954;
+
+$primary-blue: #007aff;
+$secondary-black: #232329;
+$secondary-grey: #2f2f31;
+
+$background: #101015;
+
+
+.fd-container{
+    background-color: $background;
+    width: 100%;
+    padding: 26px 0 0 0;
+    min-height: 100vh;
+}
+
+main{
+    padding: 30px 25px;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 600;
+    color: $primart-white;
+}
+h2{
+    font-size: 25px;
+    letter-spacing: 4px;
+}
+h3{
+    font-size: 20px;
+}
+
+h4{
+    font-size: 17px;
+}
+
+.header-activo{
+    width: 100%;
+    background-color: rgba($background,.95);
+    padding: 30px 70px 30px 40px;
+    position: fixed;
+    top: 41px;
+    left: 0;
+    z-index: 2;
+    box-shadow: 3px 3px 3px rgba($background,.9);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    width: 98%;
+    background-color: $background;
+    transition: all .3s ease-in-out;
+    .title-parameters{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .dateButtons{
+            margin: 0 0 0 20px;
+        }
+    }
+    .infoPress{
+        display: flex;
+        justify-content: space-between;
+        min-width: 350px;
+        transition: all .3s ease-in-out;
+        .press{
+            display: flex;
+            align-items: center;
+            span{
+                width: 8px;
+                height: 8px;
+                border-radius: 10px;
+                background-color: #fff;
+                margin: 0 5px;
+            }
+            &:nth-child(1){
+                span{
+                    background-color: rgba(178, 118, 31, 1);
+                }
+            }
+            &:nth-child(2){
+                span{
+                    background-color: rgba(10, 104, 164, 1);
+                }
+            }
+            &:nth-child(3){
+                span{
+                    background-color: rgba(173, 129, 255, 1);
+                }
+            }
+            &:nth-child(4){
+                span{
+                    background-color: rgba(205, 26, 3, 1);
+                }
+            }
+        }
+    }
+}
+
+.lineGraph{
+    margin: 30px 0 0 0;
+    background-color: $secondary-grey;
+    border-radius: 5px;
+    padding: 1px 16px 16px 16px;
+    .processDisplay{
+        margin: 20px 0;
+        .graphContainer{
+            border-radius: 5px;
+            background-color: $background;
+            min-height: 320px;
+            padding: 1px;
+        }
+        h3{
+            margin: 22px 0;
+        }
+    }
+}
+
+#oaxpr, #changeover, #strokes{
+    width: 100%;
+    height: 350px;
+    margin: 25px 0px 0px 0px;
+}
+
+
+//COMPONENTS
+.dateButtons{
+    display: flex;
+    justify-content: space-between;
+    button{
+        margin: 0 10px 0 0;
+        font-size: 12px;
+    }
+}
+
+.odix-button{
+    background-color: rgba(#007AFF, .1);
+    padding: 3px 10px;
+    min-width: 100px;
+    color: rgba(#fff,.5);
+    border: solid 1px rgba(#007AFF, .5);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    letter-spacing: 2px;
+    font-size: 11px;
+    &:hover{
+        background-color: rgba(#007AFF, .6);
+        border: solid 1px #007AFF;
+        box-shadow: 0px 0px 10px rgba(#007AFF, .9);
+        color: #fff;
+    }
+}
+.active{
+    background-color: rgba(#007AFF, .6);
+    border: solid 1px #007AFF;
+    transition: all .3s ease-in-out;
+    color: #fff;
+}
+
+/deep/.tooltipF{
+    color: black;
+    background-color: rgba(white,.8);
+    padding: 7px;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+//HIDES AMCHARTS4 ADVERTISING
+/deep/g[filter^="url"]{
+    display: none
+}
+/deep/g[stroke="#000000"]{
+    stroke: white;
+}
+/deep/tspan{
+    fill: white;
+}
+
+.marginTop{
+    margin: 72px 0 0 0;
+}
+
+/deep/svg /deep/g[role="tooltip"] /deep/g{
+    fill: rgba($background,.9);
+    stroke: white;
+    border-radius: 10px;
+}
+  //LOADER
+  .loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(#000, .79);
+    height: 100vh;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+@import 'app/bloomberg/performance-rate/loader.scss';

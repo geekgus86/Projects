@@ -1,0 +1,243 @@
+.map-plant {
+  padding: 20px;
+  text-align: center; }
+  .map-plant__title {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin: 30px 0; }
+    .map-plant__title h1 {
+      font-weight: 300;
+      letter-spacing: 3px;
+      font-size: 35px;
+      text-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); }
+    .map-plant__title span {
+      font-size: 20px;
+      opacity: .6;
+      text-shadow: 0 3px 3px rgba(0, 0, 0, 0.2); }
+  .map-plant__isometric {
+    position: relative;
+    min-height: 80vh; }
+
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif; }
+  
+  body {
+   // background: url(../../../../assets/images/isomentricmap/isometric-bg.png);
+    background-size: cover;
+    font-family: sans-serif; }
+  
+  .overview {
+    max-width: 90%;
+    // background-color: rgba(255, 255, 255, 0.3);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; }
+    .overview__head {
+      color: #ffffff;
+      font-weight: bold;
+      background-color: #3C8DBC;
+      padding: 20px 15px;
+      font-size: 20px; 
+    }
+    .overview .info {
+      position: absolute; }
+      .overview .info-4, .overview .info-5, .overview .info-6, .overview .info-7, .overview .info-8 {
+        position: absolute; }
+    .overview .globe {
+      position: absolute;
+      top: -150%;
+      left: -15px;
+      z-index: 99999; }
+    .overview .globe-2 {
+      position: absolute;
+      top: -90px;
+      left: 15px; }
+    .overview__map {
+      position: relative;
+      margin-left: 0px; //margin-left: 40px;
+    }
+    .overview img:not(:first-child) {
+      position: absolute; }
+    .overview .top-line-1 {
+      left: 96px;
+      top: 167px;
+      z-index: 2; }
+    .overview .top-line-2 {
+      left: 200px;
+      top: 137px;
+      z-index: 2; }
+    .overview .top-line-3 {
+      left: 272px;
+      top: 71.5px;
+      z-index: 1; }
+    .overview .mid-frame {
+      left: 650px;
+      top: 120px; }
+    .overview .bot-line-1 {
+      left: 440px;
+      top: 388.5px; }
+    .overview .bot-line-long {
+      left: 510px;
+      top: 385px; }
+    .overview .bot-line-3 {
+      left: 512px;
+      top: 334.5px; }
+    .overview .bot-line-4 {
+      left: 850px;
+      top: 137px; }
+    .overview .bot-line-5 {
+      left: 890px;
+      top: 266.5px; }
+    .overview .bot-line-6 {
+      left: 975px;
+      top: 209.5px;
+      z-index: 99; }
+    .overview .bot-line-7 {
+      left: 1015px;
+      top: 187.5px;
+      z-index: 98; }
+    .overview .bot-line-8 {
+      left: 1045px;
+      top: 170px; }
+    .overview .bot-line-9 {
+      left: 610px;
+      top: 494px; }
+    .overview .bot-line-10 {
+      left: 640px;
+      top: 469px; }
+    .overview .bot-line-11 {
+      left: 695px;
+      top: 521px; }
+    .overview .bot-line-12 {
+      left: 780px;
+      top: 569.5px; }
+    .overview .bot-mass-lines {
+      left: 740px;
+      top: 378px; }
+    .overview .bot-pia {
+      left: 730px;
+      top: 162px; }
+    .overview .bot-frame {
+      left: 900px;
+      top: 80px; }
+    .overview .ravne-a-1 {
+      top: 621px;
+      left: 870px;
+      z-index: 10; }
+    .overview .ravne-a-2 {
+      top: 592px;
+      left: 918px;
+      z-index: 9; }
+    .overview .ravne-a-3 {
+      top: 563px;
+      left: 965px;
+      z-index: 8; }
+   
+    .overview .ravne-a-4 {
+      top: 535px;
+      left: 1015px;
+      z-index: 7; }
+    .overview .ravne-a-5 {
+      top: 505px;
+      left: 1065px;
+      z-index: 6; }
+    .overview .ravne-a-6 {
+      top: 580px;
+      left: 875px;
+      z-index: 5; }
+    .overview .ravne-a-7 {
+      top: 561px;
+      left: 1042px;
+      z-index: 5; }
+    .overview .ravne-b-1 {
+      top: 594px;
+      left: 1000px;
+      z-index: 11; }
+    .overview .ravne-b-2 {
+      top: 523px;
+      left: 1100px;
+      z-index: 11; }
+  
+
+   // styles for tooltip
+      .machine { 
+        cursor: pointer;
+      }
+
+      
+
+      .poster {
+        font-size: 14px;
+        padding: 5px;
+        width: 183px;
+        text-align: left;
+      }
+
+      .poster-rate {
+        font-weight: bold;
+        font-size: 1.2em;
+        display: block;
+        width: 100%;
+        margin-bottom: 3px;
+        padding-left: 3px;
+      }
+
+      .poster-on-goal {
+        color: #48AF60;
+      }
+
+      .poster-delayed {
+        color: #EB4242;
+      }
+
+      .poster-medium {
+        color: #EBB742
+      }
+
+      .poster-component-name {
+        font-weight: 300;
+        width: 100%;
+        font-size: 1.8em;
+        color: black;
+        padding-left: 3px;
+      }
+
+      .poster-current, .poster-goal {
+        display: inline-block;
+        width: 48%;
+        text-align: center;
+        padding: 10px 0 5px 0;
+      }
+
+      .poster-current span { display: block; }
+      .poster-goal span { display: block; }
+
+      .poster-current-title, .poster-goal-title{
+        font-weight: bold;
+        font-size: .8em;
+        color: black;
+      }
+
+      .poster-current-value, .poster-goal-value {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-top: -2px;
+      }
+
+      .poster-goal-value {
+        color: #3C8DBC;
+      }
+      .poster-more-info {
+        margin-top: 3px;
+        color: #3C8DBC;
+        font-weight: bold;
+      }
+

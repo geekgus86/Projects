@@ -1,0 +1,66 @@
+<div class="login-container bg-light">
+  <div class="login-box">
+    <div class="container">
+      <div class="card-body">
+          <h1 class="animated zoomIn">WELCOME TO</h1>
+        <h4 class="card-title text-center animated zoomIn">
+          <i class="odix-logo"></i>
+        </h4>
+        
+        <form (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+          <div class="alert alert-danger" [hidden]="!error || isLoading" translate>
+            Username or password incorrect.
+          </div>
+
+          <div class="form-group">
+            <label class="d-block animated fadeInLeft" id="d-block1">
+              <img class="input-decorator" src="assets/images/home/login-user.png" alt="">
+              <input type="text" class="form-control" formControlName="username" autocomplete="username" [placeholder]="'Username' | translate" />
+              <span hidden translate>Username</span>
+              <small [hidden]="loginForm.controls.username.valid || loginForm.controls.username.untouched" class="text-danger"
+                translate>
+                Username is required
+              </small>
+            </label>
+            <label class="d-block animated fadeInLeft" id="d-block2">
+              <img class="input-decorator" src="assets/images/home/login-lock.png" alt="">
+              <input type="password" class="form-control" formControlName="password" autocomplete="current-password"
+                [placeholder]="'Password' | translate" required />
+              <span hidden translate>Password</span>
+              <small [hidden]="loginForm.controls.password.valid || loginForm.controls.password.untouched" class="text-danger"
+                translate>
+                Password is required
+              </small>
+            </label>
+          </div>
+
+          <div class="login-actions animated fadeInDown">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" class="form-check-input" formControlName="remember" />
+                <span translate>Keep me signed in</span>
+              </label>
+            </div>
+            <button class="btn btn-primary w-100" type="submit" [disabled]="loginForm.invalid || isLoading">
+              <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+              <span translate>GO</span>
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- <video id="video-background" playsinline muted autoplay="autoplay" loop onclick="this.play()">
+      <source src="https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761" type="video/mp4">
+  </video> -->
+
+  <!-- <video id="video-background" playsinline muted autoplay="autoplay" loop onclick="this.play()">
+    <source src="https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761" type="video/mp4">
+</video> -->
+<div class="bg-images">
+  <img class="login-bg animated fadeIn" src="assets/images/home/bg-2.png">
+</div>
+</div>

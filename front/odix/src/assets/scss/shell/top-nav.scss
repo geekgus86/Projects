@@ -1,0 +1,25 @@
+.upper-nav{
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(to right, rgba(22,24,29,.8), rgba(63,69,82,.8));
+    position: fixed;
+    z-index: 2;
+
+    &__options{
+        height: 45px;
+
+        &--notifications{
+            background: $color-teal-dark;
+            color: #fff;
+            border-radius: 15px;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            padding: 3px;
+            position: absolute;
+            top: 3px;
+            left: 54px;}}
+    
+    &__logo{
+        display: flex;
+        justify-content: flex-end;}}

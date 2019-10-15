@@ -1,0 +1,141 @@
+
+//VARIABLES
+$primary-black: #282A2F;
+$bg-black: #0D0E11;
+$light: #e8e8e8;
+$primary-grey: #A1A7BB;
+$odix-blue1: #007aff;
+$secondary-black: #1B1C21;
+$danger: #FF3D57;
+$terciary-black: #2B2D35;
+$caution: #FFC600;
+$caution2: #d6a606;
+$input-color: #3F424E;
+$unactive-button: rgba(#C4C4C4, .15);
+$formsContainerWidth: 440px;
+$light-bg: linear-gradient(206.62deg, rgba(#F4F5F7,.7) 6.23%, rgba(#F3F4F6,.7) 75%);
+$dark-bg: radial-gradient(597.34px at 55.73% 30.41%, rgba(#2B2E41,.9) 0%, rgba(#100F13,.9) 100%);
+$vistaWidth: 922px;
+
+//MIXINS
+@mixin beforeForms($name) {
+    content: $name;
+    color: $light;
+    position: absolute;
+    top: -26px;
+    left: -5px;
+    font-size: 14px;
+}
+
+@mixin inputStyle1(){
+    background-color: $input-color;
+    border-radius: 5px;
+    padding: 6px 6px 6px 10px;
+    min-width: 200px;
+    color: $light;
+    letter-spacing: 1px;
+    font-size: 14px;
+    border: none;
+    width: 100%;
+    font-weight: 800;
+    transition: all .3s ease-in-out;
+    &:disabled{
+        background-color: transparent;
+        opacity: .4;
+    }
+    &:focus{
+        box-shadow: 0px 0px 10px rgba($odix-blue1, 1);
+    }
+    &::placeholder {
+        color: gray;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}
+
+@mixin buttonStyle1(){
+    color: $light;
+    padding: 8px 17px;
+    border: solid .5px $light;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background-color: $unactive-button;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 2px 2px 3px rgba($bg-black, .3);
+        transform: translateY(-1px);
+    }
+}
+
+@mixin buttonDanger(){
+    color: $danger;
+    padding: 8px 17px;
+    border: solid .5px $danger;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background-color: rgba($danger, .2);
+    cursor: pointer;
+    &:hover{
+        box-shadow: 0px 0px 10px rgba($danger, 1);
+        transform: translateY(-1px);
+    }
+    &:focus{
+        box-shadow: 0px 0px 10px rgba($danger, 1);
+    }
+}
+
+@mixin button($color, $bg){
+    color: $color;
+    padding: 8px 17px;
+    border: solid .5px $bg;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    background-color: $bg;
+    cursor: pointer;
+    &:hover{
+        box-shadow: 2px 2px 3px rgba($bg-black, .3);
+        transform: translateY(-1px);
+    }
+}
+
+@mixin moduloVista(){
+    width: $vistaWidth;
+    height: 462px;
+    background: $light-bg;
+    position: relative;
+    margin: 10px 0 0 0;
+    color: rgba($primary-black,.8);
+    font-weight: 100;
+    user-select: none;
+}
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin blueScrollBar(){
+    &::-webkit-scrollbar {
+        display: block;
+        width: 10px;
+        border-radius: 100px;
+    }
+    &::-webkit-scrollbar-track {
+        background: rgba($odix-blue1,.2);
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgba($odix-blue1,.6);
+        border-radius: 100px;
+    }
+}

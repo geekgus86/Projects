@@ -1,0 +1,121 @@
+#chartdiv {
+    width: 100%;
+    height: 500px;
+  }
+  
+  .bg-light-blue-gradient{
+    background: #fff !important;
+  }
+  
+  .box.box-solid[class*='bg']>.box-header{
+    color: #3e3e3e;
+  }
+  
+  
+  .sign{
+    position: absolute;
+    left: 838px;
+    top: 278px;
+  }
+  
+  .home-1{
+    position: absolute ;
+    top: 380px;
+    left: 827px;
+    opacity: .1;
+  }
+  
+  #home{
+    position: absolute;
+    left: 873px;
+    top: 367px;
+    z-index: 99;
+  }
+  
+  .home-2{
+    position: absolute;
+    top: 370px;
+    left: 718px;
+  }
+  
+  .home-3{
+    position: absolute;
+    top: 335px;
+    left: 851px;
+  }
+  
+  .home-4{
+    position: absolute;
+    left: 873px;
+    top: 367px;
+  }
+  
+  .generalOverview{
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+  }
+  
+  .lines{
+   -webkit-animation-duration: 1.0s;
+   -webkit-animation-delay: .5s;
+  }
+  
+  
+  .btn-primary {
+      background-color: #3C8DBC;
+      border-color: #615da3;
+  }
+
+  .prueba{
+    color: #f10a0a;
+  }
+  
+  .map-container {
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 10px;
+    background-image: linear-gradient(360deg, rgba(35, 40, 50, 0.6) 0%, transparent 50%);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.map-container__title {
+    color: #fff;
+    margin: 0 0 25px 50px;
+    letter-spacing: 1px;
+}
+
+.map-container__title span:not(.icon-world) {
+    opacity: .1;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.map-container__plant-lines .plant-lines__mexico {
+    position: absolute;
+    top: 340px;
+    left: 134px;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+}
+
+.map-container__plant-lines .plant-lines__mexico span {
+    position: absolute;
+    left: -65px;
+    top: -7px;
+    border-radius: 10px;
+    padding: 2px 6px;
+}
+
+.map-container__bottom-graphs {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+.map-container__bottom-graphs--plant {
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+}

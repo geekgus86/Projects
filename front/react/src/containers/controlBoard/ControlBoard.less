@@ -1,0 +1,245 @@
+@import '~styles/colors.less';
+
+.ControlBoard {
+  font-family: 'OpenSans';
+  background: #323D50;
+  padding-bottom: 15px;
+  min-height: 100vh;
+  margin-top: 10px;
+}
+
+.ControlBoardHeader {
+  font-family: "GothamRounded";
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.RightMargin {
+  margin-right: 15px;
+}
+
+.HeaderLabel {
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.TryOutMessage {
+  color: #ffffff;
+  margin-right: 5px;
+  padding: 10px 30px;
+  font-family: "GothamRounded";
+  font-weight: 600;
+}
+
+.HeaderValue {
+  color: #F8E71C;
+}
+
+.HeaderIcon {
+  background-color: #4CB676;
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  margin-left: 5px;
+}
+
+.TableArea {
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 0 15px;
+  margin-top: 15px;
+}
+.ThisBack{
+  background-color: rgba(216,216,216,0.3);
+}
+tr.thisWhite{
+  background: #fff !important;
+}
+
+.ControlBoardTable {
+  width: 100%;
+}
+.headerTitle h4{
+  font-family: "GothamRoundedBold";
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.ControlBoardTable tbody td:first-child{
+  padding:  5px 0;
+}
+.MainTable{
+  tr.RowColor{
+    &:nth-child(even){
+      background: #fff;
+    }
+  }
+  tr.RowColor{
+    &:nth-child(odd){
+      background: rgba(216,216,216,0.3);
+      border-bottom: 1px solid @gray-dark-background;
+      &:nth-last-child(2){
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// .ControlBoardTable{
+//   .MainTable{
+//     tbody{
+//       tr{
+//         &:nth-child(even){
+//         background: #fff;
+//         }
+//       } 
+//     } 
+//   }
+// }
+// .ControlBoardTable .MainTable tbody tr:nth-child(odd){
+//   background-color: rgba(216,216,216,0.3);
+// }
+
+.ControlBoardTable thead {
+  font-family: "GothamRounded";
+  font-size: 10px;
+  text-align: center;
+  padding: 0 10px;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+.LeftTable thead tr td{
+  font-family: "GothamRounded";
+  font-size: 15px;
+  text-align: left;
+  padding: 5px 20px;
+  font-weight: 900;
+}
+
+.LeftTable tbody tr td{
+  font-size: 13px;
+  text-align: left;
+  padding: 5px 20px !important;
+  font-family: "OpenSansBold";
+}
+
+.ControlBoardTable tbody {
+  font-family: "GothamRounded";
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.BoldCell {
+  font-family: "GothamRoundedBold";
+}
+
+.GrayCell {
+  color: #A6A8AB;
+}
+
+.BlueCell {
+  color: #0C50A0;
+}
+
+.RedCell {
+  color: #FC2F27;
+}
+
+.GreenCell {
+  color: #4BB87A;
+}
+
+.OrangeCell {
+  color: #FD6D27;
+}
+
+.BlackCell {
+  color: #253745;
+}
+
+.CenteredCell {
+  text-align: center;
+}
+
+.CenteredCellTool {
+  text-align: center;
+  width: 200px;
+}
+
+.CenteredCellStrokeR {
+  text-align: center;
+  width: 150px;
+}
+
+.AreaIndicator {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  padding: 3px 0px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2px;
+}
+
+.GrayCircle {
+  background-color: #A6A8AB;
+}
+
+.BlueCircle {
+  background-color: #0C50A0;
+}
+
+.RedCircle {
+  background-color: #FC2F27;
+}
+
+.GreenCircle {
+  background-color: #4BB87A;
+}
+
+.OrangeCircle {
+  background-color: #FD6D27;
+}
+
+.BlackCircle {
+  background-color: #253745;
+}
+
+.ReportsContainer {
+  border-bottom: 1.5px solid #F5F6F6;
+  min-height: 30px;
+  padding-left: 15px;
+  padding-top: 5px;
+}
+
+.ReportIcon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  display: inline-block;
+}
+
+.ReportLabel {
+  text-transform: uppercase;
+  width: 100px;
+  display: inline-block;
+  margin-left: 5px;
+  font-family: "GothamRoundedBold";
+}
+
+.ReportDesc {
+  margin: 0 10px;
+  position: relative;
+  top: 5px;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  border-style: solid;
+  border-width: 1px;
+}

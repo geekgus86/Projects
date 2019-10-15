@@ -1,0 +1,17 @@
+
+<div class="dark-box-3 line-nav wow" data-wow-duration=".5s" id="sliderParent">
+    <div class="slider" id="slider">
+      <div class="slide" *ngFor="let line of lines; let idx = index" id="nav-slide-{{idx}}">
+        <h3>{{line.LevelName}}</h3>
+        <div class="slide__lines">
+          <span *ngFor="let child of line.Level"><a routerLink="{{child.Code}}">{{child.Description}}</a></span>
+        </div>
+      </div>
+  </div>
+  <div class="arrow-left">
+    <i class="arrow"></i>
+  </div>
+  <div class="arrow-right">
+    <i class="arrow"></i>
+  </div>
+</div>

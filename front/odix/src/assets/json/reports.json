@@ -1,0 +1,165 @@
+{
+  "NAME": "APO_EnsambleDTL1-DTL1",
+  "STATIONS": [
+    {
+      "station": "R322",
+      "minimum": 71.15,
+      "maximum": 79.44,
+      "avarage": 74.08,
+      "standarddeviation": 2.6,
+      "goal": 0
+    },
+    {
+      "station": "RN580B-RH",
+      "minimum": 41.78,
+      "maximum": 51.32,
+      "avarage": 43.97,
+      "standarddeviation": 2.26,
+      "goal": 0
+    },
+    {
+      "station": "R313A",
+      "minimum": 94.91,
+      "maximum": 109.43,
+      "avarage": 102.27,
+      "standarddeviation": 4.38,
+      "goal": 67
+    },
+    {
+      "station": "R313A",
+      "minimum": 87.3,
+      "maximum": 107.05,
+      "avarage": 99.83,
+      "standarddeviation": 7.06,
+      "goal": 67
+    },
+    {
+      "station": "I480-A",
+      "minimum": 139.21,
+      "maximum": 167.33,
+      "avarage": 155.35,
+      "standarddeviation": 8.08,
+      "goal": 138
+    },
+    {
+      "station": "R323B",
+      "minimum": 3.8,
+      "maximum": 93.64,
+      "avarage": 81.53,
+      "standarddeviation": 22.23,
+      "goal": 67
+    },
+    {
+      "station": "R592",
+      "minimum": 71.54,
+      "maximum": 98.92,
+      "avarage": 82.18,
+      "standarddeviation": 8.15,
+      "goal": 69
+    },
+    {
+      "station": "R470",
+      "minimum": 73.68,
+      "maximum": 98.12,
+      "avarage": 81.81,
+      "standarddeviation": 10.37,
+      "goal": 69
+    },
+    {
+      "station": "M630",
+      "minimum": 67.85,
+      "maximum": 99.57,
+      "avarage": 82.96,
+      "standarddeviation": 9.92,
+      "goal": 71
+    },
+    {
+      "station": "M620",
+      "minimum": 77.8,
+      "maximum": 94.42,
+      "avarage": 82.54,
+      "standarddeviation": 5.25,
+      "goal": 71
+    },
+    {
+      "station": "MH1594",
+      "minimum": 66.89,
+      "maximum": 98.71,
+      "avarage": 80.31,
+      "standarddeviation": 8.05,
+      "goal": 69
+    },
+    {
+      "station": "I593",
+      "minimum": 67.09,
+      "maximum": 94.1,
+      "avarage": 79.33,
+      "standarddeviation": 7.52,
+      "goal": 69
+    },
+    {
+      "station": "R460",
+      "minimum": 75.13,
+      "maximum": 84.28,
+      "avarage": 78.69,
+      "standarddeviation": 4.06,
+      "goal": 69
+    },
+    {
+      "station": "M591",
+      "minimum": 71.9,
+      "maximum": 90.19,
+      "avarage": 78.51,
+      "standarddeviation": 4.88,
+      "goal": 69
+    },
+    {
+      "station": "R590",
+      "minimum": 72.17,
+      "maximum": 82.21,
+      "avarage": 77.53,
+      "standarddeviation": 3.72,
+      "goal": 69
+    },
+    {
+      "station": "I480-B",
+      "minimum": 128.86,
+      "maximum": 165.81,
+      "avarage": 146.28,
+      "standarddeviation": 10.97,
+      "goal": 138
+    },
+    {
+      "station": "M690",
+      "minimum": 62.32,
+      "maximum": 91.16,
+      "avarage": 77.75,
+      "standarddeviation": 8.55,
+      "goal": 71
+    },
+    {
+      "station": "R440",
+      "minimum": 74.41,
+      "maximum": 76.28,
+      "avarage": 75.4,
+      "standarddeviation": 0.58,
+      "goal": 69
+    },
+    {
+      "station": "I670-B",
+      "minimum": 129.99,
+      "maximum": 168.99,
+      "avarage": 148.28,
+      "standarddeviation": 11.32,
+      "goal": 142
+    },
+    {
+      "station": "M750",
+      "minimum": 71.12,
+      "maximum": 93.3,
+      "avarage": 76.81,
+      "standarddeviation": 7.02,
+      "goal": 71
+    }
+  ]
+}

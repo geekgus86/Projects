@@ -1,0 +1,105 @@
+<img src="assets/images/home/odix-logo.svg" alt="O D I X" class="logo">
+
+<section >
+  
+    <div class="contenedor" style="color: white"  *ngIf="objData?.Top?.length > 0 && typeReport == 'defects'"  >
+        <h2 class="title">{{Name_code}}</h2>
+
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Top</th>
+                <th scope="col">Cordon</th>
+                <th scope="col">Status</th>
+                <th scope="col">Operacion</th>
+                <th scope="col">Defecto</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let item of objData.Top; let ind = index;" [class.active-tr]="item.Flag === 1" class="midInfo">
+                    <td>{{item.Top}}</td>
+                    <td>{{item.Seam}}</td>
+                    <td>{{item.Trend}}</td>
+                    <td>{{item.Operation}}</td>
+                    <td>{{item.Defect}}</td>
+                    <td>{{item.Total}}</td>
+                </tr>
+
+                <tr class="bottomInfo">
+                  <td colspan="3">% Calidad Soldadura</td>
+                  <td colspan="3">{{objData.QualityPercentage}}%</td>
+                </tr>
+
+                <tr class="bottomInfo">
+                  <td colspan="3">% Reparación</td>
+                  <td colspan="3">{{objData.Repaired}}%</td>
+                </tr>
+
+                <tr class="bottomInfo">
+                  <td colspan="3" >Promedio de Reparación (seg) OP. {{ope}}</td>
+                  <td colspan="3" [ngStyle]="{'background-color': objData.ColorTime }" >{{objData.Time}} seg</td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+      </div>
+
+      <div class="contenedor"  *ngIf="objData?.Top?.length > 0 && typeReport == 'defectsline'"  >
+        <h2 class="title">{{Name_code}}</h2>
+  
+          <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Top</th>
+                  <th scope="col">Cordon</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Operacion</th>
+                  <th scope="col">Defecto</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+  
+                  <tr *ngFor="let item of objData.Top; let ind = index;" [class.active-tr]="item.Flag === 1" class="midInfo">
+                      <td>{{item.Top}}</td>
+                      <td>{{item.Seam}}</td>
+                      <td>{{item.Trend}}</td>
+                      <td>{{item.Operation}}</td>
+                      <td>{{item.Defect}}</td>
+                      <td>{{item.Total}}</td>
+                  </tr>
+  
+                  <tr class="bottomInfo">
+                    <td colspan="3">% Total de Calidad Soldadura</td>
+                    <td colspan="3">{{objData.QualityPercentage}}%</td>
+                  </tr>
+  
+                  <tr class="bottomInfo">
+                    <td colspan="3">% Reparación Total</td>
+                    <td colspan="3">{{objData.Repaired}}%</td>
+                  </tr>
+  
+                  <tr class="bottomInfo">
+                    <td colspan="3">Promedio de Reparación (seg) OP. 35</td>
+                    <td colspan="3" [ngStyle]="{'background-color': objData.ColorTime035 }" >{{objData.Time035}} seg</td>
+                  </tr>
+
+                  <tr class="bottomInfo">
+                      <td colspan="3">Promedio de Reparación (seg) OP. 110</td>
+                      <td colspan="3" [ngStyle]="{'background-color': objData.ColorTime110 }" >{{objData.Time110}} seg</td>
+                  </tr>
+
+
+              </tbody>
+            </table>
+  
+  
+        </div>
+
+
+</section>
+          

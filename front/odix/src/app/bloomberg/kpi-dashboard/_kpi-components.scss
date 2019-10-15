@@ -1,0 +1,361 @@
+h1, h2, h3{
+    font-weight: 600;
+    font-family: inherit;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+h1{
+    font-size: 30px;
+}
+
+h2{
+    font-size: 21px;
+}
+
+h3{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+p{
+    margin: 0;
+}
+
+
+.kpi-indicatorContainer__cards--card{
+    h3, &--value, &--expand, p{
+        position: relative;
+        z-index: 10;
+    }
+}
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid $light;
+    pointer-events: none;
+  }
+
+//Contenedores de graficas por categoria
+.stackedAm4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -31%);
+}
+
+
+// ESTILOS PARA GRAFICAS DE AREA
+/deep/.test1, .test2{
+    width: 100%;
+    height: 131px;
+    /deep/.amcharts-chart-div{
+        g[role="menuitem"]{
+            display: none;
+        }
+        rect[fill="#888888"]{
+            display: none;
+        }
+        /deep/g[transform="translate(0,0)"]{
+            display: none !important;
+        }
+        /deep/path[cs="100,100"] {
+            display: none !important;
+        }
+        g[visibility="visible"]{
+            display: none !important;
+        }
+        path[fill="none"]{
+            display: none;
+        }
+        g[clip-path^="url(#AmChartsEl"]{
+            transform: scale(1.7) translateY(2px) translateX(41px);
+            transform-origin: center;
+            path{
+                fill: #1b2a2e !important;
+                fill-opacity: 1;
+                &:not(:first-child){
+                    stroke: #264f5b;
+                    fill: transparent !important;
+                    display: block;
+                    stroke-width: 1;
+                }
+            }
+        }
+        tspan{
+            display: none;
+        }
+    }
+}
+
+.longChart{
+    width: 100%;
+    height: 227px;
+}
+
+/deep/#downtimeMTTR{
+    width: 100%;
+    height: 160px;
+    transform: translateY(-24px);
+    path{
+        stroke: #ffffff;
+    }
+}
+
+.stacked, .stackedAm4{
+    width: 100%;
+    height: 155px;
+}
+
+.bar {
+    width: 100%;
+    height: 150px;
+    font-size: 11px;
+    color: $light;
+  }
+
+/deep/.expanded{
+    g[clip-path^="url(#AmChartsEl"]{
+        path{
+            fill: rgba(#264f5b,.9) !important;
+            fill-opacity: 1;
+            &:not(:first-child){
+                stroke: #1b2a2e;
+                fill: transparent !important;
+                display: block;
+                stroke-width: 4;
+            }
+        }
+    }
+    g{
+        path[stroke="#000000"]{
+            stroke: white;
+        }
+    }
+}
+
+//HIDES AMCHARTS4 ADVERTISING
+/deep/g[filter^="url"]{
+    display: none
+}
+//HIDES AMCHARTS3 ADVERTISING
+/deep/.amcharts-chart-div{
+    /deep/a[title="JavaScript charts"]{
+        display: none !important;
+    }
+}
+
+/deep/.amChartsLegend.amcharts-legend-div{
+    svg{
+        display: none;
+    }
+}
+
+//CHANGE OVER POR HERRAMIENTA
+#timeCOByTools{
+    //Resize
+    width: 105%;
+    height: 131px;
+    //Position Adjustment
+    transform: translate(-50.5%, -32%);
+    //Font Size of text
+    /deep/text{
+        font-size: 8px;
+    }
+    //Select left labels
+    // /deep/g[stroke="#bbbbbb"][stroke-opacity="0.15"][fill="none"][opacity="0"][visibility="hidden"][aria-hidden="true"] + g {
+    //     display: none;
+    // }
+    /deep/g[stroke="#bbbbbb"][stroke-opacity="0.15"][fill="none"][opacity="0"][visibility="hidden"][aria-hidden="true"][transform^="translate"] + g {
+        display: block !important;
+    }
+    /deep/g[stroke="#bbbbbb"] [stroke-opacity="0.15"] fill[fill="none"]{
+        path[d=" M0,0  L0,105 "]{
+            display: none;
+        }
+    }
+    /deep/g[role="button"]{
+        display: none;
+    }
+}
+    
+//GRAFICAS EXPANDIDAS
+/deep/.amcharts-main-div{
+    text{
+        font-size: 9px;
+    }
+}
+#miniHistoricVCD{
+    /deep/rect[fill-opacity="0.005"]{
+        fill-opacity: 1;
+    }
+}
+
+//CHANGE OVER POR DEPARTAMENTO
+#timeCOByDeparment{
+    /deep/g{
+        text[y="6"][text-anchor="end"]{
+            display: none;
+        }
+        /deep/path{
+            stroke: white;
+        }
+        path[stroke-opacity="0.3"]{
+            display: none;
+        }
+    }
+}
+
+//MINUTOS MTTR POR AREA
+/deep/#miniDowntimeMTTR{
+    text{
+        fill: white;
+    }
+    .amcharts-chart-div{
+        transform: translate(-3px,-19px);
+    }
+    /deep/path[fill="none"] {
+        stroke: #ffffff;
+    }
+    /deep/path[stroke-opacity="0.3"]{
+        display: none;
+    }
+}
+
+//AFECTACIÓN POR HERRAMIENTA
+/deep/#barDowntimeByTool{
+    width: 108%;
+    transform: translate(-51%, -34%); 
+    /deep/text{
+        font-size: 10px;
+    }
+    /deep/path[stroke-opacity="0.3"]{
+        display: none;
+    }
+    /deep/g[stroke-opacity="1"]{
+        stroke-opacity: 0;
+    }
+    /deep/g[role="button"]{
+        display: none;   
+    }
+}
+
+//AFECTACIÓN POR DEPARTAMENTO
+#barDowntimeByDeparment{
+    transform: translate(-11px, 10px);
+}
+/deep/#barDowntimeByDeparment{
+    /deep/path[fill="none"] {
+        stroke: #ffffff;
+    }
+    /deep/path[stroke-opacity="0.3"]{
+        display: none;
+    }
+}
+
+//Elimina borde de tooltip en graficas
+/deep/.amcharts-chart-div{
+    /deep/path[stroke-opacity="0.4"][stroke-width="2"][fill-opacity="0"]{
+        display: none;
+    }
+}
+
+//HORA POR HORA
+/deep/#productivityChart{
+    /deep/g{
+        /deep/path[stroke-width="1"][stroke-width="1"][stroke-opacity="1"][stroke="#000000"]{
+            display: none;
+        }
+        /deep/path[stroke-width="1"][stroke-width="1"][stroke-opacity="0.3"][stroke="#000000"]{
+            display: none;
+        }
+    }
+}
+
+/deep/.textoGraficaAreaExpandida{
+    /deep/text{
+        display: none;
+    }
+}
+
+//TOOLTIPS
+/deep/.tooltip1{
+    background-color: rgba(black,.8);
+    color: white;
+    font-family: sans-serif;
+    padding: 5px;
+    letter-spacing: 1px;
+    font-size: 12px;
+    line-height: 26px;
+    border-radius: 5px;
+    max-width: 800px;
+    text-align: left;
+    border: none;
+        /* These are technically the same, but use both */
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+
+        -ms-word-break: break-all;
+        /* This is the dangerous one in WebKit, as it breaks things wherever */
+        word-break: break-all;
+        /* Instead use this non-standard one: */
+        word-break: break-word;
+
+        /* Adds a hyphen where the word breaks, if supported (No Blink) */
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+      span{
+        color: #007aff;
+        }
+        p{
+            font-size: 10px;
+            opacity: .8;
+        }
+  }
+
+  .classToAdd{
+      color: blue;
+  }
+
+  .blue{
+      color: blue;
+  }
+
+  .hbhLegend{
+      color: white;
+      font-size: 20px;
+      @include labelObj();
+  }
+
+  //LOADER
+  .loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(#000, .79);
+    height: 100vh;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+/deep/#expanded{
+    /deep/svg{
+        /deep/g[style="touch-action: none;"]{
+            display: none !important;
+        }
+    }
+}
+
+/deep/g[stroke-opacity="1"][fill-opacity="1"][role="menuitem"][focusable="true"]{
+    stroke: rgba(black,.1);
+}
+
+/deep/.amcharts-balloon-div > *{
+    max-width: 320px !important;
+}

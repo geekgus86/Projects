@@ -1,0 +1,41 @@
+<nav class="row upper-nav">
+  <div class="upper-nav__options col-lg-2">
+    <!-- <img src="imgs/icons/mail.svg" width="25" alt=""> <span class="upper-nav__options--notifications">16</span>
+        <img src="imgs/icons/settings.svg" width="25" alt=""> -->
+    <div id="content">
+      <button type="button" id="sidebarCollapse" class="navbar-btn unactive" (click)="toggleSidebar()" [ngClass]="{'active':activeSidebar}">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <img src="assets/images/home/logo-odix.svg" width="100" height="auto" alt="O D I X">
+    </div>
+  </div>
+
+  <div class="nav-item upper-nav__logo col-lg-10">
+    <!-- <div class="nav-item" ngbDropdown placement="bottom-right">
+      <a id="language-dropdown" class="nav-link" ngbDropdownToggle>{{currentLanguage}}</a>
+      <div ngbDropdownMenu aria-labelledby="language-dropdown">
+        <button class="dropdown-item" *ngFor="let language of languages" (click)="setLanguage(language)">
+          {{language}}
+        </button>
+      </div>
+    </div> -->
+    <div class="login-options">
+      <div *ngIf="token; else loginBtn">
+        <p>{{userName}}</p>
+      </div>
+      <div *ngIf="token;" class="login-menu">
+        <div (click)="logout()" class="login-option">Log out</div>
+      </div>
+      <ng-template #loginBtn class="login-button">
+        <div routerLink="/login" class="btn-login">Log in</div>
+      </ng-template>
+    </div>
+    <img src="{{countryFlag}}" width="20">
+    <select [(ngModel)]="currentLanguage" class="language-select" (change)="setLanguage($event.target.value)">
+        <option *ngFor="let language of languages" value= {{language}}>{{language}}</option>
+    </select>
+  </div>
+ 
+</nav>

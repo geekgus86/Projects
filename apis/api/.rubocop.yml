@@ -1,0 +1,73 @@
+
+Metrics/LineLength:
+  Max: 250
+
+Metrics/MethodLength:
+  Max: 70
+
+Metrics/AbcSize:
+  Max: 80
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/ExpandPathArguments:
+  Enabled: false
+
+# TODO: Change to true (Delete this cop)
+Naming/AccessorMethodName:
+  Enabled: false
+
+# TODO: Change to true (Delete this cop)
+Style/Documentation:
+  Enabled: false
+
+# TODO: Change to true (Delete this cop)
+Naming/MethodName:
+  Enabled: false
+
+# TODO: Change to true (Delete this cop)
+Style/RedundantSelf:
+  Enabled: false
+
+Layout/CommentIndentation:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+Style/Next:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/ConditionalAssignment:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Lint/RequireParentheses:
+  Enabled: false

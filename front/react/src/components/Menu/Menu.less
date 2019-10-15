@@ -1,0 +1,195 @@
+@import '~styles/fonts.less';
+@import '~styles/colors.less';
+
+.MenuItem{
+    width: 100%;
+    a{
+        &:hover{
+            text-decoration: none !important;
+        }
+    }
+    .MenuObjs{
+        padding: 12px 20px 12px 15px !important;
+        img{
+            margin-right: 6px !important;
+        }
+        .MenuContent{
+            float: right;
+            width: 100%;
+            a{
+                float: right;
+                margin-left: 10px; 
+                text-decoration: none;
+                color: @ui-color;
+            }
+            .txt{
+                font-family: "OpenSans";
+                color: @ui-color;
+                font-weight: 600;
+                font-size: 15px;
+                margin-right: 12px;
+            }
+        }
+    }
+}
+
+a.MenuItem{
+    &:hover{
+        text-decoration: none !important;
+    }
+}
+
+.Bold{
+    span{
+        font-family: "OpenSansBold";
+    }
+}
+
+.feedback{
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    width: 90%;
+
+    &__comment{
+        background-color: #fff;
+        
+        &__title{
+            color: #323D50;
+            font-family: "OpenSans";
+            font-weight: 600;
+            font-size: 16px;
+            padding-bottom: 1.5em;
+        }
+        &__textArea{
+            transition: all .3s ease-in;
+            padding-top: 1em;
+            textarea{
+                background: 0 0;
+                border: none;
+                color: #323D50;
+                font-size: 10px;
+                letter-spacing: 1px;
+                resize: none;
+                &::placeholder{
+                    color: rgba(#323D50, .5);
+                    font-family: "OpenSans";
+                    font-weight: 600;
+                }
+            }
+        }
+        &__button > *{
+            transition: all .3s ease-in;
+            // opacity: .3;
+            font-size: 12px;
+            background: #0099ed;
+            border-radius: 20px;
+            padding: 5px 30px;
+            border: none;
+            color: #fff;
+        }
+    }
+
+    &__item{
+        display: flex;
+        align-items: center;
+        transition: all .3s ease-in;
+        cursor: pointer;
+        &__text{
+            font-family: "OpenSans";
+            color: #243746;
+            font-weight: 600;
+            margin: 0 0 0 9px;
+            font-size: 16px;
+        }
+        &:hover {
+            transform: translateY(-2px)
+        }
+    }
+
+    .active-selected{
+        border-bottom: solid 3px #0099ed;
+        transform: translateY(-2px);
+        border-radius: 2px;
+        transition: all .3s ease;
+    }
+    
+}
+
+.report{
+    position: absolute;
+    bottom: 20px;
+    left: 31px;
+    height: 160px;
+
+    &__comment{
+        background-color: #fff;
+        position: absolute;
+        left: 0px;
+        transition: all .3s ease-in;
+        &__title{
+            color: #323D50;
+            font-family: "OpenSans";
+            font-weight: 600;
+            font-size: 16px;
+            padding: 0 0 5px 0;
+        }
+        &__textArea{
+            textarea{
+                background: 0 0;
+                border: none;
+                color: #323D50;
+                font-size: 10px;
+                letter-spacing: 1px;
+                resize: none;
+                &::placeholder{
+                    color: rgba(#323D50, .5);
+                    font-family: "OpenSans";
+                    font-weight: 600;
+                }
+            }
+        }
+        &__button > *{
+            opacity: .3;
+            font-size: 12px;
+            background: #0099ed;
+            border-radius: 20px;
+            padding: 5px 30px;
+            border: none;
+            color: #fff;
+        }
+    }
+
+    &__item{
+        display: flex;
+        position: absolute;
+        bottom: 0px;
+        right: -60px;
+        z-index: 2;
+        align-items: center;
+        transition: all .3s ease-in;
+        cursor: pointer;
+        &__text{
+            font-family: "OpenSans";
+            color: #243746;
+            font-weight: 600;
+            margin: 0 0 0 9px;
+            font-size: 16px;
+        }
+        &:hover {
+            transform: translateY(-2px)
+        }
+    }
+
+    .away{
+        left: -120px;
+        opacity: 0;
+        transition: all .3s ease;
+    }
+    .active-selected{
+        border-bottom: solid 3px #0099ed;
+        transform: translateY(-2px);
+        border-radius: 2px;
+        transition: all .3s ease;
+    }
+}

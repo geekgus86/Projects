@@ -1,0 +1,157 @@
+<!-- <div class="upper">
+  <div class="upper__title">
+    <span class="icon-factories"></span>
+    <h2>{{plantName}}</h2>
+  </div>
+  <div class="upper__date-filters">
+    <div class="btn primary-button" [class.primary-button-activated]="todayActive" (click)="onTodayClick()"><span translate>Today</span></div>
+    <div class="btn primary-button" [class.primary-button-activated]="yesterdayActive" (click)="onYesterdayClick()"><span translate>Yesterday</span></div>
+    <div class="btn primary-button" [class.primary-button-activated]="otherActive">
+      <input id="fc" class="form-control" placeholder="{{ 'Select a Date' | translate }}" ngModel bsDatepicker [maxDate]="maxDate" [bsConfig]="{ containerClass: 'theme-blue' }"
+        (bsValueChange)="onDateSelection($event)">
+    </div>
+  </div>
+  <div class="upper__general-filters">
+    <span translate>Filter by</span>
+    <app-shifts [objShift]= 'arrayShift' [selectShift] = "shift" (event)="onShiftChange($event)"  ></app-shifts>
+  </div>
+</div> -->
+
+  <app-date-and-shift [plantName] = 'plantName' [services]='' [AssetID]="1"  (event)="onDateShiftChange($event)"></app-date-and-shift>
+  
+  <div class="row" id="plantMapContainer">
+
+
+      <div style="color: rgba(255, 255, 255, .6); position: fixed; bottom: 0px; right: 0px; z-index: 9999; font-size: 12px; padding: 5px; background-color: rgba(0,0,0,.9);">
+          <span translate>Last refresh</span> {{Hour}}
+      </div>
+
+    <div id="basicContainer" class="col-lg-12">
+                <div class="dark-box-3 weld-bg">
+                  <div class="row" style="margin: 20px 0 0 0;">
+                    <div class="col-lg-12">
+                        <div class="map-plant">
+                            <div *ngIf="mapPlant"><app-apoplant [mapPlant]="mapPlant" [namePlant]="plantName"></app-apoplant></div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-4">
+                        <div class="goals dark-box-2">
+                          <div class="goals__title">
+                            <div class="goals__title--line">
+                              <span class="icon-assembly"></span>
+                              <span translate>Assembly</span>
+                            </div>
+                            <div translate class="goals__title--filter">
+                              <select name="Filter-1" (change)="setOrder('Assembly',$event.target.value)">
+                                <option value="LineOrder" translate>Line order</option>
+                                <option value="HighestGoals" translate>Highest Goals</option>
+                                <option value="LowestGoals" translate>Lowest Goals</option>
+                              </select>
+                              <i class="down"></i>
+                            </div>
+                          </div>
+                          <div class="goals__content-container">
+
+                              <div class="no-data"  *ngIf="dataAssembly?.length == 0" >
+                                  <img src="assets/images/mapPlants/apodaca/no-data-1.png" />
+                                  <p translate>No data found</p>
+                              </div>
+                            
+                              <ng-container *ngFor="let area of dataAssembly">
+                              <div class="goals__content" *ngIf="area.area == 'Assembly'" (click)="openLinkOverview(area.name)" style="cursor: pointer;" id="{{area.name}}">
+                                <div class="goals__content--line">
+                                  {{area.description}}
+                                  <span>{{plantdate}}</span>
+                                </div>
+                                <div class="goals__content--goal">
+                                  <div class="status" [ngClass]="area.rate">
+                                    {{area.percent}}
+                                  </div>
+                                </div>
+                              </div>
+                            </ng-container>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-4">
+                          <div class="goals dark-box-2">
+                              <div class="goals__title">
+                                <div translate class="goals__title--line">
+                                    <span class="icon-press"></span>
+                                    <span translate>Press</span>
+                                </div>
+                                <div translate class="goals__title--filter">
+                                    <!-- <span translate>Filter by</span> -->
+                                  <select name="Filter-1" (change)="setOrder('Press',$event.target.value)">
+                                    <option value="LineOrder" translate>Line order</option>
+                                    <option value="HighestGoals" translate>Highest Goals</option>
+                                    <option value="LowestGoals" translate>Lowest Goals</option>
+                                  </select>
+                                  <i class="down"></i>
+                                </div>
+                              </div>
+                              <div class="goals__content-container">
+                                <div class="no-data"  *ngIf="dataPress?.length == 0" >
+                                    <img src="assets/images/mapPlants/apodaca/no-data-1.png" />
+                                    <p translate>No data found</p>
+                                </div>
+                                
+                                <ng-container *ngFor="let area of dataPress" >
+                                  <div class="goals__content" *ngIf="area.area == 'Press'" (click)="openLinkOverview(area.name)" style="cursor: pointer;" id="{{area.name}}">
+                                    <div class="goals__content--line">
+                                      {{area.description}}
+                                      <span>{{plantdate}}</span>
+                                    </div>
+                                    <div class="goals__content--goal">
+                                      <div class="status" [ngClass]="area.rate">
+                                        {{area.percent}}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </ng-container>
+                              </div>
+                            </div>
+                      </div>
+
+                      <div class="col-lg-4">
+                          <div class="goals dark-box-2">
+                              <div class="goals__title">
+                                <div translate class="goals__title--line">
+                                  <span class="icon-roll-former"></span>
+                                  <span translate>Painting</span>
+                                </div>
+                                <div translate class="goals__title--filter">
+                                  
+                                  <select name="Filter-1" (change)="setOrder('Painting',$event.target.value)">
+                                    <option value="LineOrder" translate>Line order</option>
+                                    <option value="HighestGoals" translate>Highest Goals</option>
+                                    <option value="LowestGoals" translate>Lowest Goals</option>
+                                  </select>
+                                  <i class="down"></i>
+                                </div>
+                              </div>
+                              <div class="goals__content-container">
+                                <ng-container *ngFor="let area of dataPainting">
+                                  <div class="goals__content" *ngIf="area.area == 'Painting'" (click)="openLinkOverview(area.name)" style="cursor: pointer;" id="{{area.name}}">
+                                    <div class="goals__content--line">
+                                      {{area.description}}
+                                      <span>{{plantdate}}</span>
+                                    </div>
+                                    <div class="goals__content--goal">
+                                      <div class="status" [ngClass]="area.rate">
+                                        {{area.percent}}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </ng-container>
+                              </div>
+                            </div>
+                      </div>
+
+                    </div>
+                </div>
+        </div>
+    </div>

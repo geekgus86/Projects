@@ -1,0 +1,117 @@
+{
+    "PLANTNAME": "Apodaca",
+    "DATE": "2018-08-21T00:00:00",
+    "SHIFT": 1,
+    "AREAS": [
+      {
+        "area": "Assembly",
+        "id": 1,
+        "name": "APO_ToyotaTundra-LTE091",
+        "description": "LTE091 Tundra",
+        "value": 311,
+        "goal": 372,
+        "percent": 83.6,
+        "rate": "medium",
+        "ratecolor": "#ffff00"
+      },
+      {
+        "area": "Assembly",
+        "id": 2,
+        "name": "APO_ToyotaTacoma-LTE092",
+        "description": "LTE092 Tacoma",
+        "value": 233,
+        "goal": 495,
+        "percent": 47.07,
+        "rate": "delayed",
+        "ratecolor": "#ff0000"
+      },
+      {
+        "area": "Assembly",
+        "id": 3,
+        "name": "APO_ToyotaTacoma-LTE093",
+        "description": "LTE093 Tacoma",
+        "value": 134,
+        "goal": 204,
+        "percent": 65.69,
+        "rate": "delayed",
+        "ratecolor": "#ff0000"
+      },
+      {
+        "area": "Assembly",
+        "id": 4,
+        "name": "APO_EnsambleDSL1-DSL1",
+        "description": "DSL1",
+        "value": 396,
+        "goal": 456,
+        "percent": 86.84,
+        "rate": "medium",
+        "ratecolor": "#ffff00"
+      },
+      {
+        "area": "Assembly",
+        "id": 5,
+        "name": "APO_EnsambleDSL2-DSL2",
+        "description": "DSL2",
+        "value": 1,
+        "goal": 508,
+        "percent": 0.2,
+        "rate": "delayed",
+        "ratecolor": "#ff0000"
+      },
+      {
+        "area": "Assembly",
+        "id": 6,
+        "name": "APO_EnsambleDTL1-DTL1",
+        "description": "LENSDT1",
+        "value": 367,
+        "goal": 470,
+        "percent": 78.09,
+        "rate": "delayed",
+        "ratecolor": "#ff0000"
+      },
+      {
+        "area": "Assembly",
+        "id": 7,
+        "name": "APO_EnsambleDTL2-DTL2",
+        "description": "LENSDT2",
+        "value": 345,
+        "goal": 470,
+        "percent": 73.4,
+        "rate": "delayed",
+        "ratecolor": "#ff0000"
+      },
+      {
+        "area": "Painting",
+        "id": 8,
+        "name": "APO_PinturaToyota-PINTL2",
+        "description": "PINTL2",
+        "value": 448,
+        "goal": 816,
+        "percent": 54.9,
+        "rate": "delayed",
+        "ratecolor": "#ff0000"
+      },
+      {
+        "area": "Painting",
+        "id": 9,
+        "name": "APO_PinturaToyota-PINTL3",
+        "description": "PINTL3",
+        "value": 285,
+        "goal": 516,
+        "percent": 55.23,
+        "rate": "delayed",
+        "ratecolor": "#ff0000"
+      },
+      {
+        "area": "Painting",
+        "id": 10,
+        "name": "APO_PinturaChrysler-PINTL1",
+        "description": "PINTL1",
+        "value": 184,
+        "goal": 192,
+        "percent": 95.83,
+        "rate": "on-goal",
+        "ratecolor": "#00ff00"
+      }
+    ]
+  }

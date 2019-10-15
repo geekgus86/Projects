@@ -1,0 +1,104 @@
+<div class="admins-component">
+    <div class="sideMenu">
+        <div class="sideMenu__options">
+            <!-- <div *ngFor="let menu of adminList" (click)="selectedAdmin = menu.name" class="sideMenu__item"><p>{{menu.description}}</p></div> -->
+            <div class="">
+                <a routerLink="/global" class="sideMenu__options--odix"><img src="assets/images/icon-odix.svg" alt="ODiX"></a>
+            </div>
+            <!-- <div class="sideMenu__options--item">
+                <i class="fas fa-chess-knight"></i>
+                <span>Admins</span>
+            </div> -->
+
+            <div *ngFor="let menu of adminList" class="sideMenu__options--item qa" >
+                <!-- routerLink="/admin/user/Apodaca" -->
+                <div *ngIf="menu.name == 'tool'" (click)="selectedAdmin = menu.name; typeReport = undefined; openLinkOverview(menu.name)" [ngClass]="{'active':selectedAdmin == 'tool'}"  class="sideMenu__options--item">
+                    <i class="fas fa-wrench"></i>
+                    <span translate>Herramientas</span>
+                </div>
+
+                <div *ngIf="menu.name == 'user'" (click)="selectedAdmin = menu.name; typeReport = undefined; openLinkOverview(menu.name)" [ngClass]="{'active':selectedAdmin == 'user'}" class="sideMenu__options--item"  >
+                    <i class="fas fa-user-plus"></i>
+                    <span translate>Usuarios</span>
+                </div>
+
+                <div *ngIf="menu.name == 'team'" (click)="selectedAdmin = menu.name; typeReport = undefined; openLinkOverview(menu.name)" [ngClass]="{'active':selectedAdmin == 'team'}" class="sideMenu__options--item" (mouseover)="teamSub=true" (mouseout)="teamSub=false">
+                    <i class="fas fa-users"></i>
+                    <span translate>Equipos</span>
+                </div> 
+
+                <div *ngIf="menu.name == 'qualitygate'" [ngClass]="{'active':selectedAdmin == 'qualitygate'}" class="sideMenu__options--item" ng-mouseover="count = count + 1" ng-init="count=0" (mouseover)="qualitySub=true" (mouseout)="qualitySub=false">
+                    <i class="fab fa-codepen"></i>
+                    <span>{{menu.description}}</span>
+                    <div class="subMenu" [ngClass]="{'show': qualitySub, 'subMenuWrap': wrap}">
+                        <div class="subMenu__item" *ngFor="let sub of menu.submenus; let i = index;" (click)="selectedAdmin = menu.name; typeReport = sub.name; openSubMenu(menu.name); sub.activa = !sub.activa" [ngClass]="sub.name === typeReport ? 'subActive' : ''">
+                            <i class="{{sub.cls}}"></i>
+                            <span>{{sub.description}}</span>
+                            <div *ngIf="i > 5 ? addWrap(true): addWrap(false)"></div>
+                        </div>
+                    </div>
+                </div> 
+                
+             </div>
+
+             <img src="{{countryFlag}}" width="20">
+                <select [(ngModel)]="currentLanguage" class="language-select" style="font-size: 12px;" (change)="setLanguage($event.target.value);lastChoice()">
+                    <option *ngFor="let language of languages" value= {{language}}>{{language}}</option>
+                </select>
+         
+            <!-- <div class="sideMenu__options--item">
+                <i class="far fa-calendar-check"></i>
+                <span routerLink=" admin/teams/Apodaca">Teams</span>
+            </div>  -->
+           
+
+            <!-- <div class="sideMenu__options--item">
+                <i class="far fa-chart-bar"></i>
+                <span>Charts</span>
+            </div>
+            <div class="sideMenu__options--item">
+                <i class="fas fa-chart-pie"></i>
+                <span>Statistic</span>
+            </div>
+            <div class="sideMenu__options--item">
+                <i class="fas fa-chess-knight"></i>
+                <span>Strategy</span>
+            </div> -->
+            
+        </div>
+    </div>
+
+    <!-- SUBMENU -->
+    <!-- <div class="subMenu subQuality" [ngClass]="{'subMenuActive' : qualitySub}" (mouseover)="qualitySub=true" (mouseout)="qualitySub=true">
+            <div class="subMenu__item">
+                <i class="fab fa-codepen"></i>
+                <span>Reports</span>
+            </div>
+            <div class="subMenu__item">
+                <i class="fab fa-codepen"></i>
+                <span>Users</span>
+            </div>
+            <div class="subMenu__item">
+                <i class="fab fa-codepen"></i>
+                <span>Positions</span>
+            </div>
+        </div> -->
+
+    <div class="admins-workspace">
+        <app-tool  *ngIf="selectedAdmin == 'tool'" ></app-tool>
+        <admin-user *ngIf="selectedAdmin == 'user'" ></admin-user>
+        <app-teams  *ngIf="selectedAdmin == 'team'" ></app-teams>
+        <app-create-modulet *ngIf="selectedAdmin == 'qualitygate' && typeReport == 'createview'"></app-create-modulet> 
+        <app-create-operator *ngIf="selectedAdmin == 'qualitygate'  && typeReport == 'createoperator'"></app-create-operator>
+        <app-train-operator *ngIf="selectedAdmin == 'qualitygate' && typeReport == 'trainoperator'"></app-train-operator>
+        <app-create-defects *ngIf="selectedAdmin == 'qualitygate' && typeReport == 'createdefects'"></app-create-defects>
+        <app-create-items *ngIf="selectedAdmin == 'qualitygate' && typeReport == 'createitems'"></app-create-items> 
+        <app-ip-assignment *ngIf="selectedAdmin == 'qualitygate' && typeReport == 'ipassignment'"></app-ip-assignment> 
+        <app-views-list (typeReportEvent)="receiveTypeReport($event)" (idViewEvent)="receiveIdView($event)" *ngIf="selectedAdmin == 'qualitygate' && typeReport == 'viewslist'"></app-views-list> 
+        <app-edit-view  (typeReportEvent)="receiveTypeReport($event)" (idViewEvent)="receiveIdView($event)" *ngIf="selectedAdmin == 'qualitygate' && typeReport == 'editview' && idView "></app-edit-view> 
+    </div>
+    
+</div>
+
+
+

@@ -1,0 +1,83 @@
+{
+    "areas": [
+        { "id": "AU" },
+        { "id": "US" },
+        { "id": "FR" },
+        { "id": "MX" }
+    ],
+    "markers": [
+        {
+            "groupId":"US",
+            "plant":"ElizabethTown",
+            "latitude": 37.433950,
+            "longitude": -78.656905,
+            "imageURL": "../../../../assets/images/worldmap/home-icon.svg",
+            "scale": 0.5,
+            "labelShiftY": 2,
+            "percentHeight": 5,
+            "percentWidth":2,
+            "zoomLevel": 5
+        },
+        {
+            "groupId":"US",
+            "plant":"CherryTown",
+            "latitude": 34.431742,
+            "longitude": -92.949861,
+            "imageURL": "../../../../assets/images/worldmap/home-icon.svg",
+            "scale": 0.5,
+            "labelShiftY": 2,
+            "percentHeight": 5,
+            "percentWidth":2,
+            "zoomLevel": 5
+        },
+        {
+            "groupId":"US",
+            "plant":"TrinityTown",
+            "latitude": 43.979041,
+            "longitude": -114.490989,
+            "imageURL": "../../../../assets/images/worldmap/home-icon.svg",
+            "scale": 0.5,
+            "labelShiftY": 2,
+            "percentHeight": 5,
+            "percentWidth":2,
+            "zoomLevel": 5
+        },
+        {
+            "groupId":"FR",
+            "plant":"ChefTown",
+            "latitude": 47.450590,
+            "longitude": 2.244369,
+            "imageURL": "../../../../assets/images/worldmap/home-icon.svg",
+            "scale": 0.5,
+            "labelShiftY": 2,
+            "percentHeight": 5,
+            "percentWidth":2,
+            "zoomLevel": 5
+        },
+        {
+            "groupId":"FR",
+            "plant":"ProvenceTown",
+            "latitude": 44.056712,
+            "longitude": 5.596972,
+            "imageURL": "../../../../assets/images/worldmap/home-icon.svg",
+            "scale": 0.5,
+            "labelShiftY": 2,
+            "percentHeight": 5,
+            "percentWidth":2,
+            "zoomLevel": 5
+        },
+        {
+            "groupId":"MX",
+            "plant":" Apodaca",
+            "latitude": 25.7482334,
+            "longitude": -100.203852,
+            "imageURL": "../../../../assets/images/worldmap/apodaca-factory.svg",
+            "scale": 0.5,
+            "labelShiftY": 2,
+            "percentHeight": 5,
+            "percentWidth":2,
+            "zoomLevel": 5
+        }
+    ]
+
+}

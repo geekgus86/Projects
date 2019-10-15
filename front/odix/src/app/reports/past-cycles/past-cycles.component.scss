@@ -1,0 +1,127 @@
+
+
+.option-filter {
+	margin: 55px 0 0 10px;
+}
+
+.titlePastCycles{
+	text-align: left;
+	color:white;
+	padding: 16px 0;
+	letter-spacing: 1px;
+	h2{
+		font-size: 30px;
+	}
+	span{
+		opacity: .5;
+		font-size: 16px;
+	}
+}
+
+.titleParameter{
+	color: #fff;
+	float: left;
+	font-size: 14px;
+}
+
+.divSelectContainer{
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	select{
+		color: #00CAF2;
+	}
+}
+
+app-nodata{
+	/deep/a{
+		display: none;
+	}
+}
+
+.divSelect{
+	color: #fff;
+	font-size: 14px;
+	padding: 10px;
+	margin: 0 10px;
+	span{
+		font-size: 15px;
+	}
+}
+.divSelect select{
+	margin: 0 0 0 16px;
+}
+
+
+
+
+.theme-blue .bs-datepicker-head {
+    background-color: blue !important;
+}
+
+.theme-green .bs-datepicker-head {
+    background-color: orange !important;
+}
+
+:host /deep/ .theme-green .bs-datepicker-head {
+	background-color: #f58025 !important;
+	}
+
+	.theme-green .bs-datepicker-head {
+		background-color:re;
+	}
+
+	/deep/ .c3 text{
+		fill: #fff;
+	}
+	
+
+	/deep/ .c3-line-Average{
+		stroke-width:0px;
+	}
+
+	/deep/ .c3-line-Minimum{
+		stroke-width:0px;
+	}
+
+	/deep/ .c3-line-Maximum{
+		stroke-width:0px;
+	}
+
+	/deep/ .c3-line-Goal{
+		stroke-width:0px;
+	}
+
+	/deep/ .c3-line-Standard_Deviation{
+		stroke-width:0px;
+	}
+
+	/deep/ .amcharts-chart-div a {
+		display: none !important;
+	}
+
+
+	#chartdiv {
+		width: 100%;
+		height: 500px;
+	  }
+	  
+
+
+	  /deep/ .amcharts-bg, .amcharts-plot-area {
+		display: none;
+	  }
+
+	  /deep/ .amcharts-bg, .amcharts-plot-area {
+		stroke-width: 0!important;
+	  }
+
+	/*Amchart*/
+	// /deep/[clip-path] path {
+	// 	d: path('M 180.5 82.5 L 250.5 82.5');
+	// }
+
+	// /deep/  text {
+	// 	fill:white
+	// }

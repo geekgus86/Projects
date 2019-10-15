@@ -1,0 +1,9 @@
+{
+  "plants": [
+    { "nickName": "ELZ", "name": "Elizabethtown" },
+    { "nickName": "APO", "name": "Apodaca" }
+  ],
+  "assemblies": [
+    { "plantNickName": "APO", "nickName": "DTL1" }
+  ]
+}

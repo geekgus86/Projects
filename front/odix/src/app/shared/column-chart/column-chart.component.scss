@@ -1,0 +1,75 @@
+
+.columnChart{
+	width		: 100%;
+	height		: 400px;
+	font-size	: 11px;
+}
+
+.dark-box-3{
+	padding: 10px 40px;
+}
+
+.flowOuts{
+    margin: 50px 0 0 0;
+    h2{
+        font-size: 23px;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+    span{
+        font-size: 16px;
+        opacity: .5;
+		left: 1px;
+		color: #fff;
+    }
+    &__title{
+        margin: 20px 0;
+	}
+}
+
+.contentionsGraphs{
+    margin: 50px 0 0 0;
+    h2{
+        font-size: 23px;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+    span{
+        font-size: 15px;
+        opacity: .5;
+		left: 1px;
+		color: #fff;
+    }
+    &__title{
+        margin: 20px 0;
+	}
+	/deep/path.amcharts-graph-stroke {
+		/* fill: #fff; */
+		stroke: #fff;
+	}
+	
+	/deep/circle.amcharts-graph-bullet {
+		fill: #fff;
+		stroke: #fff;
+	}
+}
+
+.hbhTop5{
+	margin: 50px 0;
+	padding: 0px 30px;
+    h2{
+        font-size: 23px;
+        letter-spacing: 2px;
+        color: #fff;
+    }
+    span{
+        font-size: 16px;
+        opacity: .5;
+		left: 1px;
+		color: #fff;
+    }
+    &__title{
+        margin: 20px 0;
+	}
+	
+}

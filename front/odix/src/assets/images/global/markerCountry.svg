@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="MarkerCountry" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="96.645px" height="19.297px" viewBox="0 0 96.645 19.297" enable-background="new 0 0 96.645 19.297"
+	 xml:space="preserve">
+<rect id="MarkerCoutryRectangle" fill="#C52026" width="32.933" height="19.297"/>
+<text id="MarkerCoutryName" transform="matrix(1 0 0 1 6.2603 12.4082)" font-family="'MyriadPro-Regular'" font-size="12">Pais</text>
+<line fill="none" x1="33.018" y1="6.055" x2="74.699" y2="6.055"/>
+<line fill="none" stroke="#000000" stroke-miterlimit="10" x1="32.933" y1="5.805" x2="88.26" y2="5.805"/>
+<line stroke="#000000" stroke-miterlimit="10" x1="88.082" y1="5.888" x2="95.887" y2="15.406"/>
+</svg>

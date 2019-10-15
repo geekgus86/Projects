@@ -1,0 +1,169 @@
+<div class="admins-workspace__regionTitle">
+    <h1>Quality Gate Monitor</h1>
+</div>
+<div class="admins-workspace__addLevel">
+    <button (click)="open()" *ngIf="imgURL" >
+        <img src="assets/images/admins/check.svg" alt="" > &nbsp;<span translate>Save View</span>
+    </button>
+</div>
+
+<div class="admins-workspace__container">
+    <div class="admins-workspace__container--title metsTitle">
+        <span translate>Create View</span>
+        <div class="dropdowns" *ngIf="imgURL">
+            <div class="dropdown__container">
+                <select (change)="refreshInspectionPointFamilies()" [(ngModel)]="selectedLine" class="odix-dropdown">
+                    <option value="undefined" disabled selected hidden translate>Linea</option>
+                    <option *ngFor="let line of lines" [ngValue]="line"> {{line.Text}} </option>
+                </select>
+                <img alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+            </div>
+            <div class="dropdown__container">
+                <select [(ngModel)]="selectedInspectionType" class="odix-dropdown">
+                    <option value="undefined" disabled selected hidden translate>Family</option>
+                    <option *ngFor="let type of filterInspectionTypesByLine()" [ngValue]="type"> {{type.Text}} </option>
+                </select>
+                <img alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+            </div>
+        </div>
+    </div>
+    <div class="admins-workspace__container--vista dragNdrop" *ngIf="!imgURL">
+        <img class="imgPlaceholder" width="100%" height="100%">
+        <input type="file" class="file" #file accept='image/*' (change)="preview(file.files)" value="" (click)="file.value = null"/>
+      <div class="emptyContainer">
+          <img src="assets/images/admins/add-img.svg" alt="">
+          <p translate>Drag an Image for editing or</p>
+          <p class="loadImg" translate>Upload an Image</p>
+      </div>
+        <div class="imageConditions">
+            <p class="imageInstructions" translate><span>*</span>Only images are supported</p>
+            <p class="imageInstructions" translate><span>*</span>Maximum size for images is 2mb</p>
+            <p class="imageInstructions" translate><span>*</span>Maximum height of image is 462px</p>
+        </div>
+        <span class="imageErrorAlert" *ngIf="imageTypeMessageAlert" translate>Only images are supported</span>
+        <span class="imageErrorAlert" *ngIf="imageSizeMessageAlert" translate>Maximum size for images is 2mb</span>
+        <span class="imageErrorAlert" *ngIf="imageResolutionMessageAlert" translate>Maximum height of image is 462px</span>
+    </div>
+    <div class="admins-workspace__container--vista" *ngIf="imgURL" (click)="assignCoordinate($event)" #myBounds>
+        <div id="Button_{{button.ID}}" [class.activeButton]="button.Active" *ngFor="let button of Buttons" [style.background]="button.BackgroundColor" [style.color]="button.ForeColor" (click)="selectItem(button)" [position]="button.Coordinates" [ngDraggable]="true" class="example-box" [bounds]="myBounds" [inBounds]="inBounds" (movingOffset)="onMoving($event,button)" (stopped)="onMoveEnd($event,button)">
+            {{button.Number}}
+        </div>
+        <div id="Point_{{point.ID}}" class="point" *ngFor="let point of Points">
+        
+        </div>
+        <img class="imgVista" [src]="imgURL">  
+    </div>
+    <div class="admins-workspace__container--vistaPropiedades" *ngIf="!imgURL">
+      <div class="vistaPropiedadesContainer">
+        <img src="assets/images/admins/inspect.svg" alt="">
+        <p translate>Load an Image to show items</p>
+      </div>
+    </div>
+    <div class="admins-workspace__container--vistaPropiedades2" *ngIf="imgURL">
+        <div class="items">
+            <h3 translate>Items</h3>
+            <div class="items__search">
+                <img src="assets/images/admins/search.svg" alt="">
+                <input type="text" name="" [(ngModel)]="searchText" placeholder="{{'Search Item' | translate}}">
+            </div>
+            <div class="items__points">
+                <div class="items__points--container" *ngFor="let item of filterItemsByLineAndInspectionType() | filter : searchText">
+                    <mat-checkbox (change)="inspectionPointsToBeAddedSelectionChange()" [(ngModel)]="item.Checked"></mat-checkbox>
+                    <div class="itemLegend">
+                        <span class="name">{{item.Number}}</span>
+                        <span class="desc">{{item.Description}}</span>
+                    </div>
+                </div>
+            </div>
+            <button [disabled]="isAddInspectionPointsButtonDisabled" (click)="addButtonsToCanvas()" translate>Add</button>
+        </div>
+        <div class="items">
+            <h3 translate>Current Items</h3>
+            <div class="items__points">
+                <div class="items__points--container" *ngFor="let button of Buttons">
+                    <mat-checkbox (change)="inspectionPointsToBeRemovedSelectionChange($event,button)"></mat-checkbox>
+                    <div class="itemLegend">
+                        <span class="name">{{button.Number}}</span>
+                        <span class="desc">{{button.Description}}</span>
+                    </div>
+                </div>
+            </div>
+            <button class="remove" [disabled]="isRemoveInspectionPointsButtonDisabled" (click)="removeButtonsFromCanvas()" translate>Remove</button>
+        </div>
+    </div> 
+
+    <div class="asignacipnContainer">
+        <button class="habilitar" [ngClass]="{'habilitarActive': habilitarButton, 'habilitarUnactive': !imgURL}" [disabled]="chosenButton == undefined" (click)="enableCoordinateToButton()" translate>Enable Line Assignment</button>
+        <div class="clickAlert" [ngClass]="{'clickAlertShown': isAssignCoordinateEnabled}">
+            <span translate>Next click will assign coordinate</span>
+        </div>
+        <div class="clickAlert" [ngClass]="{'clickAlertShown': isLineDuplicated}">
+            <span translate>Button already has a line assigned</span>
+        </div>
+    </div>
+</div>
+
+<div [class.hiddenFC]="isFormHidden" class="formsContainer">
+    <div class="formsContainer__title">
+        <h2 translate>Save View</h2>
+    </div>
+    <div class="formsContainer__forms">
+        <div class="odix-form">
+            <h5 translate>Linea</h5>
+            <select (change)="lineComboSelectionChange()" [(ngModel)]="selectedLineOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let line of lineCombo" [ngValue]="line"> {{line.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div class="odix-form">
+            <h5>ENN</h5>
+            <select (change)="ennComboSelectionChange()" [(ngModel)]="selectedEnnOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let enn of filterEnnsByLine()" [ngValue]="enn"> {{enn.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div class="odix-form">
+            <h5 translate>Station</h5>
+            <select [(ngModel)]="selectedStationOnCombo">
+                <option value="undefined" disabled selected hidden></option>
+                <option *ngFor="let station of filterStationsByEnn()" [ngValue]="station"> {{station.Text}} </option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>
+        <div class="odix-form">
+            <h5 translate>Operator Position</h5>
+            <select [(ngModel)]="selectedOperatorPosition">
+                <option value="undefined" disabled selected hidden></option>
+                <option [ngValue]="1">1</option>
+                <option [ngValue]="2">2</option>
+                <option [ngValue]="3">3</option>
+                <option [ngValue]="4">4</option>
+            </select>
+            <img _ngcontent-c4="" alt="" class="downsideArrow" src="assets/images/admins/arrow.svg">
+        </div>    
+    </div>
+    <hr>
+    <div class="formsContainer__actions">
+        <button (click)="closeForm()" class="cancel" translate>Cancel</button>
+        <button class="active" (click)="saveModule()" translate>Save</button>
+    </div>
+</div>
+
+<section class="alert" [ngClass]="{'alertShown': successAlert}">
+    <div class="alert__container">
+        <img src="assets/images/admins/green-check.svg" alt="">
+        <span class="name">{{saveModuleMessage}}</span>
+        <span translate>Saved successfully</span>
+    </div>
+</section>
+
+<section class="alert alertShown" [ngClass]="{'alertShown': errorAlert}">
+    <div class="alert__container">
+        <img src="assets/images/admins/danger.svg" alt="">
+        <span translate>An error occurred while saving the view</span>
+        <span class="error">{{saveModuleMessage}}</span>
+        <button (click)="closeErrorAlert()" translate>Accept</button>
+    </div>
+</section>

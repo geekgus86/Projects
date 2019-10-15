@@ -1,0 +1,21 @@
+
+ <div class="titleSlowestCycles">
+    <h2 translate >Slowest Cycles</h2>
+    <span translate>Select parameters below to display information</span>
+  </div>
+
+    <div class="dark-box-3 slowestCyclesData">
+        <app-multiple-filter [datepicker]="false" (event)="getData($event)" [AreaName] = "''"  [Code] = "''" ></app-multiple-filter>
+    </div>
+
+
+<app-loadereport [display] = "display" scroll="no" style="overflow: hidden" ></app-loadereport>
+<div *ngIf="values && values?.STATIONS?.length != 0" class="row" >
+  <div class="col-md-12">
+      <app-report [Title]="'Slowest Cycles'| translate"  [Values]='values.STATIONS' ></app-report>
+  </div>
+</div>
+
+<div *ngIf="values?.STATIONS?.length == 0">
+    <app-nodata ></app-nodata>
+</div>

@@ -1,0 +1,43 @@
+//COLORS
+$black-1: #1a1a1a;
+$black-2: #2A2B30;
+$odix-blue-1: #007aff;
+$light: white;
+$goal: #008A00;
+$delayed: #D31D00;
+
+$background: $black-1;
+
+@mixin labelObj {
+    .objectives-label{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        &__objective{
+            &-1{
+                span{
+                    background-color: #0099ED
+                }
+            }
+            &-2{
+                margin: 0 0 0 20px;
+                span{
+                    background-color: #FF1F00
+                }
+            }
+            &-1, &-2{
+                display: flex;
+                align-items: center;
+                p{
+                    font-size: 10px;
+                    margin: 0;
+                }
+            }
+        }
+        span{
+            width: 16px;
+            height: 8px;
+            margin: 0 5px 0 0;
+        }
+    }
+}

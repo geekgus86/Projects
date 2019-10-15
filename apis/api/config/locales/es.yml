@@ -1,0 +1,325 @@
+es:
+  Checklist_wasnt_sent: "No Se Envio Ningún Checklist"
+  checklist_status: "Estatus Del Checklist"
+  TADI_not_found: "Numero De Tadi No Encontrado"
+  DWO_not_found: "Daily Workorder No Encontrado"
+  downtime: "Paro"
+  work_order: "Work order"  
+  changeover: "Changeover"
+  changeover_abbr: "C/O"
+  low_speed: "Baja Velocidad"
+  low_speed_abbr: "Baja Vel."
+  user_level_restrict: "Usuario No Pertenece Al Nivel Actual o a Un Nivel Superior"
+  user_area_restrict: "Usuario No Pertenece al Area de la Falla"
+  NBT: "ENN"
+  press: "Prensa"
+  tool: "Herramienta"
+  date: "Fecha"
+  shift: "Turno"
+  group: "Grupo"
+  type: "Tipo"
+  event: "Evento"
+  duration: "Duración"
+  code: "Codigo"
+  reason: "Razón"
+  area: "Area"
+  week: "Semana"
+  month: "Mes"
+  year: "Año"
+  day: "Día"
+  objective: "Objetivo"
+  comment: "Comentario"
+  comments: "Comentarios"
+  instrument: "Instrumento"
+  specification: "Especificación"
+  characteristic: "Caracteristica"
+  start_shift: "Turno Inicio"
+  start_hour: "Hora Inicio"
+  end_hour: "Hora Fin"
+  category: "Categoria"
+  revision: "Revisión"
+  confirmation: "Confirmación"
+  time: "Tiempo"
+  time_minutes: "Tiempo Minutos"
+  changeover_quantity_abbr: "Cant C/O"
+  out_time: "Out Time"
+  NAT: "TND"
+  design_speed: "Velocidad de Diseño"
+  design_speed_abbr: "Vel Diseño"
+  real_strokes: "Golpes Reales"
+  potential_strokes: "Golpes Potenciales"
+  gspm: "GSPM"
+  uptime: "Uptime"
+  oapr: "OAPR"
+  changeover_prom_abbr: "Prom de C/O (mins)"
+  gsph: "GSPH"
+  fail_type: "Tipo Falla"
+  fail_code: "Codigo Falla"
+  fail_description: "Descripción Falla"
+  team_member: "Team Member"
+  group_leader: "Group Leader"
+  team_leader: "Team Leader"
+  responsible_area: "Area Responsable"
+  responsible_area_abbr: "Area Resp."
+  first_combat_user: "Usuario 1er Combate"
+  second_combat_user: "Usuario 2do Combate"
+  third_combat_user: "Usuario 3er Combate"
+  fourth_combat_user: "Usuario 4to Combate"
+  solution_level: "Nivel Solución"
+  downmtime_start: "Inicio de Paro"
+  error_identification_record: "Registro de Identificación de Error"
+  identification_time: "Tiempo de Identificación"
+  first_combat_start: "Inicio 1er Combate"
+  second_combat_start: "Inicio 2do Combate"
+  third_combat_start: "Inicio 3er Combate"
+  fourth_combat_start: "Inicio 4to Combate"
+  first_combat_checkin: "Check in 1er Combate"  
+  second_combat_checkin: "Check in 2do Combate"
+  third_combat_checkin: "Check in 3er Combate"
+  fourth_combat_checki: "Check in 4to Combate"
+  first_combat_timecheck: "Tiempo Check 1er Combate"
+  second_combat_timecheck: "Tiempo Check 2do Combate"
+  third_combat_timecheck: "Tiempo Check 3er Combate"
+  fourth_combat_timecheck: "Tiempo Check 4to Combate"
+  solution_time: "Tiempo de Solución"
+  total_solution_time: "Tiempo total de Solución"
+  downmtime_end: "Fin de Paro"
+  inspection_number: "Número de Inspección"
+  inspection_number_abbr: "No Inspección"
+  inspection_result: "Resultado de Inspección"
+  process: "Proceso"
+  operation: "Operacion"
+  product_under_review: "Producto en Revisión"
+  review_date: "Fecha Revisión"
+  quality_inspector: "Inspector de Calidad"
+  review_type: "Tipo de Revisión"
+  reference: "Referencia"
+  numeric_value: "Valor Numerico"
+  result_of_review: "Resultado Revisión"
+  approved: "Aprobada"
+  dont_approved: "No aprobada"
+  downtime: "Paro"
+  microdowntime: "Microparo"
+  comment: "Comentario"
+  no_reported_time: "Tiempo no reportado"
+  events: "Eventos"
+  unassigned: "Sin asignar"
+  changeover_dim: "CO"
+
+  activerecord:
+    errors:
+      messages:
+        record_invalid: "La validación falló: %{errors}"
+        restrict_dependent_destroy:
+          has_one: No se puede eliminar el registro porque existe un %{record} dependiente
+          has_many: No se puede eliminar el registro porque existen %{record} dependientes
+  date:
+    abbr_day_names:
+    - dom
+    - lun
+    - mar
+    - mié
+    - jue
+    - vie
+    - sáb
+    abbr_month_names:
+    -
+    - ene
+    - feb
+    - mar
+    - abr
+    - may
+    - jun
+    - jul
+    - ago
+    - sep
+    - oct
+    - nov
+    - dic
+    day_names:
+    - domingo
+    - lunes
+    - martes
+    - miércoles
+    - jueves
+    - viernes
+    - sábado
+    formats:
+      default: "%-d/%-m/%Y"
+      long: "%-d de %B de %Y"
+      short: "%-d de %b"
+    month_names:
+    -
+    - enero
+    - febrero
+    - marzo
+    - abril
+    - mayo
+    - junio
+    - julio
+    - agosto
+    - septiembre
+    - octubre
+    - noviembre
+    - diciembre
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: alrededor de 1 hora
+        other: alrededor de %{count} horas
+      about_x_months:
+        one: alrededor de 1 mes
+        other: alrededor de %{count} meses
+      about_x_years:
+        one: alrededor de 1 año
+        other: alrededor de %{count} años
+      almost_x_years:
+        one: casi 1 año
+        other: casi %{count} años
+      half_a_minute: medio minuto
+      less_than_x_minutes:
+        one: menos de 1 minuto
+        other: menos de %{count} minutos
+      less_than_x_seconds:
+        one: menos de 1 segundo
+        other: menos de %{count} segundos
+      over_x_years:
+        one: más de 1 año
+        other: más de %{count} años
+      x_days:
+        one: 1 día
+        other: "%{count} días"
+      x_minutes:
+        one: 1 minuto
+        other: "%{count} minutos"
+      x_months:
+        one: 1 mes
+        other: "%{count} meses"
+      x_years:
+        one: 1 año
+        other: "%{count} años"
+      x_seconds:
+        one: 1 segundo
+        other: "%{count} segundos"
+    prompts:
+      day: Día
+      hour: Hora
+      minute: Minutos
+      month: Mes
+      second: Segundos
+      year: Año
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: debe ser aceptado
+      blank: no puede estar en blanco
+      present: debe estar en blanco
+      confirmation: no coincide
+      empty: no puede estar vacío
+      equal_to: debe ser igual a %{count}
+      even: debe ser par
+      exclusion: está reservado
+      greater_than: debe ser mayor que %{count}
+      greater_than_or_equal_to: debe ser mayor que o igual a %{count}
+      inclusion: no está incluido en la lista
+      invalid: no es válido
+      less_than: debe ser menor que %{count}
+      less_than_or_equal_to: debe ser menor que o igual a %{count}
+      model_invalid: "La validación falló: %{errors}"
+      not_a_number: no es un número
+      not_an_integer: debe ser un entero
+      odd: debe ser impar
+      required: debe existir
+      taken: ya está en uso
+      too_long:
+        one: "es demasiado largo (1 carácter máximo)"
+        other: "es demasiado largo (%{count} caracteres máximo)"
+      too_short:
+        one: "es demasiado corto (1 carácter mínimo)"
+        other: "es demasiado corto (%{count} caracteres mínimo)"
+      wrong_length:
+        one: "no tiene la longitud correcta (1 carácter exactos)"
+        other: "no tiene la longitud correcta (%{count} caracteres exactos)"
+      other_than: debe ser distinto de %{count}
+    template:
+      body: 'Se encontraron problemas con los siguientes campos:'
+      header:
+        one: No se pudo guardar este/a %{model} porque se encontró 1 error
+        other: No se pudo guardar este/a %{model} porque se encontraron %{count} errores
+  helpers:
+    select:
+      prompt: Por favor seleccione
+    submit:
+      create: Crear %{model}
+      submit: Guardar %{model}
+      update: Actualizar %{model}
+  number:
+    currency:
+      format:
+        delimiter: "."
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: "€"
+    format:
+      delimiter: "."
+      precision: 3
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: mil millones
+          million:
+            one: millón
+            other: millones
+          quadrillion: mil billones
+          thousand: mil
+          trillion:
+            one: billón
+            other: billones
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+          pb: PB
+          eb: EB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n %"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " y "
+      two_words_connector: " y "
+      words_connector: ", "
+  time:
+    am: am
+    formats:
+      default: "%A, %-d de %B de %Y %H:%M:%S %z"
+      long: "%-d de %B de %Y %H:%M"
+      short: "%-d de %b %H:%M"
+    pm: pm

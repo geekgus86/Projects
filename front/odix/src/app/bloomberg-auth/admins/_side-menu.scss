@@ -1,0 +1,189 @@
+@import 'admin-variables';
+
+.sideMenu{
+    background-color: $primary-black;
+    width: 10%;
+    max-width: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 10;
+
+    &__header{
+        color: $light;
+        text-align: center;
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    &__options{
+        color: $light;
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        min-height: 400px;
+        align-items: center;
+        font-size: 20px;
+        position: relative;
+        &--item{
+            background-color: transparent;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+            width: 100%;
+            height: 100%;
+            min-height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: $primary-grey;
+            position: relative;
+            z-index: 3;
+            .far, .fas, .fab, i, svg, span{
+                transition: all .5s ease-in-out;
+                position: relative;
+                z-index: 3;
+            }
+            &:hover{
+                //background-color: $odix-blue1;
+                .far, .fas, .fab, i, svg, span{
+                    color: white;
+                    text-shadow: rgba(black, .5);
+                }
+                &::before{
+                    transform: scaleY(1);
+                    width: 100%;
+                }
+            }
+            span{
+                font-size: 9px;
+                padding: 5px 0;
+                text-align: center;
+                letter-spacing: 1px;
+                position: relative;
+                z-index: 3;
+            }
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 3px;
+                background-color: $odix-blue1;
+                transform: scaleY(0);
+                transform-origin: bottom;
+                transition: transform .2s,
+                            width .4s cubic-bezier(1,0,0,1) .2s;
+                z-index: 0;
+            }
+            &:not(:last-child){
+                margin-bottom: 5px;
+            }
+        }
+        .active{
+            background-color: $odix-blue1;
+            .far, .fas, .fab, i, svg, span{
+                color: white;
+                text-shadow: rgba(black, .5);
+            }
+        }
+        &--odix{
+            display: flex;
+            cursor: pointer;
+            min-height: 65px;
+            transition: all .3s ease-in-out;
+            &:hover{
+                transform: scale(1.06)
+            }
+        }
+    }
+}
+
+//SUBMENU
+.subMenu{
+    color: $light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    width: 70px;
+    background: #1e2023;
+    transition: visibility .1s,
+                opacity .3s cubic-bezier(.17,.67,.83,.67),
+                top .3s cubic-bezier(.17,.67,.83,.67);
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 63px;
+        padding: 0px 0 0px 0px;
+        margin: 0 0 3px 0;
+        justify-content: space-evenly;
+        transition: all .3s ease-in-out;
+        opacity: .5;
+        transform: scale(.95);
+        cursor: pointer;
+        span{
+            font-size: 9px;
+            margin: -5px 0;
+            letter-spacing: 1px;
+        }
+        &:hover{
+            opacity: 1;
+            transform: scale(1)
+        }
+    }
+    .subActive{
+        color: white;
+        opacity: 1;
+        transform: scale(1);
+        background: $odix-blue1;
+        border-radius: 5px;
+        svg, span, i{
+            
+        }
+    }
+    &Wrap{
+        width: 230px;
+        max-height: 270px;
+        flex-wrap: wrap;
+        .subMenu__item{
+            margin: 0 3px 3px 0;
+            width: 90px;
+        }
+    }
+}
+
+.subQuality{
+    top: 275px;
+}
+
+.subMenuActive{
+    left: 60px;
+}
+
+.show{
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+}
+
+@keyframes show {
+    1%{
+        display: block;
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        left: 60px;
+    }
+}

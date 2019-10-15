@@ -1,0 +1,59 @@
+<div class="fd-container">
+    <main>
+
+      <header [class.header-activo]="fixedScroll">
+        <div class="title-parameters">
+          <h1>Forming Dashboard</h1>
+          <div class="dateButtons">
+              <button (click)="performSelect(1)" [class.active]="selectedRange == 1" class="odix-button">Last 15 days</button>
+              <button (click)="performSelect(2)" [class.active]="selectedRange == 2" class="odix-button">Last 30 days</button>
+              <button (click)="performSelect(3)" [class.active]="selectedRange == 3" class="odix-button">Last 3 months</button>
+          </div>
+        </div>
+          <div class="infoPress">
+            <div class="press" *ngFor="let pres of press">
+              <span [ngStyle]="{'background-color': pres.color}">&nbsp;</span> {{pres.description}}
+            </div>
+          </div>
+        </header>
+
+      <section class="lineGraph" [class.marginTop]="fixedScroll">
+
+        <div class="processDisplay">
+          <h3>OAxPR</h3>
+          <div class="graphContainer">
+            <div id="oaxpr"></div>
+          </div>
+        </div>
+
+        <div class="processDisplay">
+          <h3>Changeover</h3>
+          <div class="graphContainer">
+            <div id="changeover"></div>
+          </div>
+        </div>
+
+        <div class="processDisplay">
+          <h3>Strokes</h3>
+          <div class="graphContainer">
+            <div id="strokes"></div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Loader -->
+    <div *ngIf="loader" class="loader-container">
+      <div class="loader">
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__ball"></div>
+        <span>Hold on, we’re calculating your specific date range.</span>
+      </div>
+    </div>
+
+    </main>
+</div>

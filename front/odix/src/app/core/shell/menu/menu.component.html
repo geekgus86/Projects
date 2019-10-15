@@ -1,0 +1,150 @@
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar" [ngClass]="{'active':activeSidebar}">
+        <div class="sidebar-header">
+            <img src="assets/images/shell/logo-profile.png" width="80" height="80" alt="">
+            <!--<h3>John Doe</h3>
+            <p>Engenieer - Coordinator</p>-->
+        </div>
+
+        <ul class="list-unstyled components" >
+            <li routerLinkActive="active" *ngFor="let area of completeMenu; let i = index">
+                <ng-container *ngIf="area.Level?.length > 0; else noChildren">
+                        <ng-container *ngIf="area.LevelName == 'Dashboard'; else normal">
+                                <a translate id="{{ 'area' + i }}" href="{{ '#pageSubmenu' + i }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fa fa-tachometer-alt" style="font-size: 20px; margin: 0px 9px 0 9px;"></i>{{area.LevelName}}</a>
+                        </ng-container>
+                        <ng-template #normal2>
+                                <a translate id="{{ 'area' + i }}" href="{{ '#pageSubmenu' + i }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i class="fa fa-chart-line" style="font-size: 20px; margin: 0px 9px 0 9px;"></i>{{area.LevelName}}</a>
+                        </ng-template>
+                        <ng-template #normal>
+                                <ng-container *ngIf="area.LevelName != 'Reports'; else normal2">
+                                <a translate id="{{ 'area' + i }}" href="{{ '#pageSubmenu' + i }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <span [ngClass]="{'icon-world': area.LevelName=='Global Overview', 'icon-home': area.LevelName=='Apodaca Plant', 'icon-press': area.LevelName=='Assembly' || area.LevelName=='Ecoat', 'icon-oee': area.LevelName=='OEE' || area.LevelName=='Squeaks'}"></span>{{area.LevelName}}</a>
+                                </ng-container>
+                        </ng-template>
+
+                </ng-container>
+                <ng-template #noChildren>
+                        <a translate id="{{ 'area' + i }}" routerLink="{{area.FolderPathLevel}}" data-toggle="collapse" aria-expanded="false"> <span [ngClass]="{'icon-world': area.LevelName=='Global Overview', 'icon-home': area.LevelName=='Apodaca Plant', 'icon-press': area.LevelName=='Assembly' || area.LevelName=='Ecoat', 'icon-oee': area.LevelName=='OEE' || area.LevelName=='Squeaks'}"></span>{{area.LevelName}}</a>
+                </ng-template>
+                <ul class="collapse list-unstyled" id="{{ 'pageSubmenu' + i }}" *ngFor="let sub of area.Level; let j = index">
+                    <li routerLinkActive="active">
+                        <ng-container *ngIf="sub.Level?.length > 0; else noChildren2">
+                                <a translate id="{{ 'sub' + j }}" href="{{ '#pageSubmenu2' + j }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <span></span>{{sub.LevelName}}</a>
+                        </ng-container>
+                        <ng-template #noChildren2>
+                                <a translate id="{{ 'sub' + j }}" routerLink="{{sub.FolderPathLevel}}" data-toggle="collapse" aria-expanded="false"> <span></span>{{sub.LevelName}}</a>
+                        </ng-template>
+                        <ul class="collapse list-unstyled" id="{{ 'pageSubmenu2' + j }}" *ngFor="let sub2 of sub.Level; let k = index" >
+                            <li routerLinkActive="active">
+                                <a translate id="{{ 'sub2' + k }}" routerLink="{{sub2.FolderPathLevel}}">{{sub2.LevelName}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!-- <li routerLinkActive="active">
+                <a routerLink="{{area.FolderPathLevel}}"> <span class="icon-world"></span>{{area.LevelName}}</a>
+            </li> -->
+
+            <!--<li routerLinkActive="active">
+                <a routerLink="/report"> <span class="icon-"></span> Report</a>
+            </li>
+
+            <li routerLinkActive="active">
+                    <a href="#factoriesSecondmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <span class="icon-factories"></span> Factories</a>
+                    <ul class="collapse list-unstyled" id="factoriesSecondmenu">
+                        <li routerLinkActive="active">
+                            <a href="#factoriesThirdmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Third Level</a>
+                            <ul class="collapse list-unstyled" id="factoriesThirdmenu">
+                                <li routerLinkActive="active">
+                                    <a href="#">THIS IS THE THIRD LEVEL</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a href="#">Elizabethtown</a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a href="#">Apodaca</a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a href="#">Roanoke</a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a href="#">Hopkinsville</a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a href="#">Tuscaloosa</a>
+                        </li>
+                    </ul>
+            </li>-->
+            <!--<li routerLinkActive="active">
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <span class="icon-press"></span> Press</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li routerLinkActive="active">
+                        <a href="#">Press 1</a>
+                    </li>
+                    <li routerLinkActive="active">
+                        <a href="#">Press 2</a>
+                    </li>
+                    <li routerLinkActive="active">
+                        <a href="#">Press 3</a>
+                    </li>
+                </ul>
+            </li>-->
+
+            <!--<li routerLinkActive="active">
+                <a routerLink="/overview"> <span class="icon-oee"></span> Overview</a>
+            </li>-->
+
+            <!--<li routerLinkActive="active">
+                <a href="#"> <span class="icon-assembly"></span> Assembly</a>
+            </li>
+            <li routerLinkActive="active">
+                <a href="#"> <span class="icon-roll-former"></span> Roll Former</a>
+            </li>-->
+
+          <!--  <li routerLinkActive="active">
+                <a routerLink="/global"> <span class="icon-oee"></span> Test Global</a>
+            </li>-->
+        </ul>
+    </nav>
+
+    <div class="send-a-message">
+       <div class="send-a-message__form-container">
+           <h1>{{'Help us improve!' | translate }} </h1>
+           <textarea [(ngModel)]="suggestion" cols="30" rows="5" placeholder="{{'Your feedback is important! Share your experience with us' | translate }}"></textarea>
+           <button id="sendComment" class="primary-button" (click)="send()"  [disabled]="!suggestion" [ngStyle]="{'cursor': !suggestion ? 'not-allowed' : 'pointer'}"> {{ 'Send Comment' | translate }} </button>
+       </div>
+       <div class="send-a-message__pop-up">
+           <h1> {{ 'Thank you for your feedback!' | translate }} </h1>
+       </div>
+       <div class="send-a-message__icon">
+           <div href="" id="messagesForm">
+               <img src="assets/images/shell/message.png" width="30" alt="">
+           </div>
+       </div>
+   </div>
+
+   <div class="download-mobile">
+        <div class="download-mobile__container">
+            <div class="download-mobile__container--os">
+                <p id="downloadIos" class="os-active">{{'Download for iOS' | translate }}</p>
+                <p id="downloadAndroid">{{'Download for Android' | translate }}</p>
+            </div>
+
+            <div class="download-mobile__container--qr">
+                <div class="qr"> <img src="assets/images/shell/qr_code_ios.png" width="100" alt="" id="qr-image"> </div>
+            </div>
+        </div>
+
+        <div id="downloadForm" class="download-mobile__icon">
+            <img src="assets/images/shell/iphone.svg" width="30" height="30" alt="">
+        </div>
+    </div>
+
+    <div class="black-options-container-closed">
+        &nbsp;
+    </div>
+
+</div>

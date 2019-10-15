@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <!-- Sidebar -->
+  <nav id="sidebar" [ngClass]="{'active':activeSidebar}">
+      <div class="sidebar-header">
+          <img src="assets/images/home/odix-logo-min.png" width="80" height="80" alt="">
+      </div>
+
+      <ul>
+          <li routerLinkActive="">
+              <a href="#assembly" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Assembly</a>
+              <ul class="collapse list-unstyled" id="assembly">
+                  <li>
+                        <a routerLink="/performance/apodaca" routerLinkActive="active">Apodaca / Performance Monitor</a>
+                  </li>
+                  <li>
+                    <a routerLink="/powerbi/embedded/Mttrdashboard" routerLinkActive="active">Apodaca / MTTR Dashboard</a>
+                  </li>
+              </ul>
+              <a href="#forming" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Stamping</a>
+              <ul class="collapse list-unstyled" id="forming">
+                  <li>
+                        <a routerLink="/forming" routerLinkActive="active">Assets Report</a>
+                        <a routerLink="/powerbi/embedded/A3" routerLinkActive="active">Apodaca / A3</a>
+                        <a href="http://odix.metalsa.com/odix/kpi/apodaca" routerLinkActive="active">Apodaca / KPI Dashboard</a>
+                        <a href="http://odix.metalsa.com/odix/kpi/etown" routerLinkActive="active">Etown / KPI Dashboard</a>
+                        
+                        <a href="https://sfms.metalsa.com" routerLinkActive="active">SFMS</a>
+                  </li>
+              </ul>
+              <a href="#extras" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Extras</a>
+              <ul class="collapse list-unstyled" id="extras">
+                  <li>
+                        <a routerLink="/powerbi/embedded/UsabilityInshigts" routerLinkActive="active">Stamping / Usability inshigts</a>
+                    
+                  </li>
+                  <li>
+                    <a routerLink="/powerbi/embedded/UsabilityInshigtsAssembly" routerLinkActive="active">Assembly / Usability insights </a>
+                
+                  </li>
+              </ul>
+          </li>
+      </ul>
+  </nav>
+  
+    <div class="download-mobile">
+         <div class="download-mobile__container">
+             <div class="download-mobile__container--os">
+                 <p id="downloadIos" class="os-active">{{'Download for iOS' | translate }}</p>
+                 <!-- <p id="downloadAndroid">{{'Download for Android' | translate }}</p> -->
+             </div>
+ 
+             <div class="download-mobile__container--qr">
+                 <div class="qr"> <img src="assets/images/qr/qriossfms.png" width="100" alt="" id="qr-image"> </div>
+             </div>
+         </div>
+ 
+         <div id="downloadForm" class="download-mobile__icon">
+             <img src="assets/images/shell/iphone.svg" width="30" height="30" alt="">
+         </div>
+     </div>
+
+  <div class="black-options-container-closed">
+      &nbsp;
+  </div>
+
+</div>
+

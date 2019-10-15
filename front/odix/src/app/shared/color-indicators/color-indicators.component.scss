@@ -1,0 +1,35 @@
+.colorIndContainer{
+    display: flex;
+    color: white;
+    font-size: 13px;
+    padding: 8px 3px;
+    border: solid 1.5px rgba(white, .2);
+    border-radius: 5px;
+    font-weight: 300;
+    & > *{
+        margin: 0 16px;
+    }
+    &__block{
+        display: flex;
+        align-items: center;
+    & > *:first-child{
+        width: 25px;
+        height: 7px;
+        border-radius: 2px;
+    }
+    & > *{
+        margin: 0 6px;
+    }
+        &--red-bar{
+            background-image:linear-gradient(#FF4954,#EF122D);
+        }
+
+        &--yellow-bar{
+            background-image:linear-gradient(#FFE203,#FFB903); 
+        }
+
+        &--green-bar{
+            background-image:linear-gradient(#70F06C,#49BF0D); 
+        }
+    }
+}

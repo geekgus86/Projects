@@ -1,0 +1,15 @@
+<section [ngSwitch]="plantName" class="line-cont">
+    <section *ngSwitchCase="'apodaca'">
+        <span class="ensamble" translate>Assembly</span>
+        <span class="pintura" translate>Painting</span>
+        <span class="ds" translate>Assembly DS</span>
+        <span class="toyota" translate>Assembly Toyota</span>
+        <span class="camiones" translate>Trucks</span>
+    </section>
+
+    <section *ngSwitchCase="'saltillo'">
+        <span class="salt--pintura" translate>Pintura</span>
+        <span class="salt--d2-dj" translate>D2-DJ</span>
+        <span class="salt--dddp" translate>DDDP</span>
+    </section>
+</section>  

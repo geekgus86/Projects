@@ -1,0 +1,30 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { PlantComponent } from '@app/bloomberg/plant/plant.component';
+
+describe('PlantComponent', () => {
+  let component: PlantComponent;
+  let fixture: ComponentFixture<PlantComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ PlantComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(PlantComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
+
+
+
+
+

@@ -1,0 +1,247 @@
+
+<!-- <div class="line-monitor-container">
+  <h2 translate>{{title}}</h2>
+  <p>
+    Palacios! Pon aquí el header
+  </p>
+</div> -->
+<div style="margin-top: 50px;"></div>
+<div style="color: rgba(255, 255, 255, .6); position: fixed; bottom: 0px; right: 0px; z-index: 9999; font-size: 12px; padding: 5px; background-color: rgba(0,0,0,.9);">
+    <span translate>Last refresh</span> {{lastUpdate}}
+</div>
+<section class="container-fluid">
+    <div class="row">
+      <div id="basicContainer" class="col-lg-12">
+
+          <!-- <app-date-and-shift [plantName] = 'plantName' [lineName]= 'nameLinea' [services]='lines' [AssetID]="Asset_ID" (event)="onDateShiftChange($event)" ></app-date-and-shift> -->
+
+        <div class="dark-box-3 rtm">
+          <div class="rtm__info">
+            <div class="rtm__info--title">
+              <img src="assets/images/overview/rtm-icon.svg" width="26px" alt="">
+              <h2 translate> Real Time Monitor
+              <span> CHRYSLER DT NBT8 LINE 1 </span> </h2>
+            </div>
+            <div class="rtm__info--paragraph">
+                <p translate>The Real Time Monitor is a drill through real-time visualization of the current line Condition. Because of that, the access to the monitor should be in the Line KPI/OEE Drillthrough for NBT8</p> <br>
+            </div>
+          </div>
+
+          <div class="rtm__container">
+
+            <div class="rtm__container--layout">
+              <div class="background">
+                  <img src="assets/images/overview/rtm-layout-bg.png" alt="">
+              </div>
+              <div class="blueprint">
+                <img src="assets/images/overview/rtm-stations-layout.png" alt="">
+              </div>
+              <!-- <div *ngIf="stations">
+                <div *ngFor="let station of stations; let iss = index;" class="tooltip-{{iss}}" style="text-align:center;display: none;">
+                  <div id="{{iss}}"></div>
+                  <p>
+                    {{ station.stationName }} - {{station.status}}
+                  </p>
+                </div>
+              </div> -->
+             
+              <div *ngIf="stations && stations.length >= 11" class="station animated fadeIn">
+                <div (click)="fetchReportFromService(0)" [class.station-1]="true" [ngClass]="getStationStyle(0)" >
+                    <!-- <div *ngIf="stations[0].working" class="workingRn"></div> -->
+                    <img [class.station-selected]="reportSelected==0" src="assets/images/overview/robot-0.png" class="robot-0 swap" alt="">
+                    <div class="status-square"></div>
+                    <div *ngIf="stations[0].ProcessActive" class="gear animated fadeIn"><div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[0].ProcessActive" class="workingId">{{stations[0].JSN}}</div>
+                    <div class="status-info">{{stations[0].RealThroughput}}pz <br>{{getStatus(0)}} <br> {{stations[0].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(1)" [class.station-2]="true" [ngClass]="getStationStyle(1)">
+                    <!-- <div *ngIf="stations[1].working" class="workingRn"></div> -->
+                    <img [class.station-selected]="reportSelected==1" src="assets/images/overview/robot-1.png" (click)="imageSwap($event, 1)" class="robot-1 swap" alt="">
+                    <div class="status-square"></div>
+                    <div *ngIf="stations[1].ProcessActive" class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[1].ProcessActive" class="workingId">{{stations[1].JSN}}</div>
+                    <div class="status-info">{{stations[1].RealThroughput}}pz <br>{{getStatus(1)}} <br> {{stations[1].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(2)" [class.station-3]="true" [ngClass]="getStationStyle(2)">
+                    <!-- <div *ngIf="stations[2].working" class="workingRn"></div> -->
+                    <img [class.station-selected]="reportSelected==2" src="assets/images/overview/robot-1.png" (click)="imageSwap($event, 1)" class="robot-1 swap" alt="">
+                    <div class="status-square"></div>
+                    <div *ngIf="stations[2].ProcessActive" class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[2].ProcessActive" class="workingId">{{stations[2].JSN}}</div>
+                    <div class="status-info">{{stations[2].RealThroughput}}pz <br>{{getStatus(2)}} <br> {{stations[2].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(3)" [class.station-4]="true" [ngClass]="getStationStyle(3)">
+                    <!-- <div *ngIf="stations[3].working" class="workingRn"></div> -->
+                    <img [class.station-selected]="reportSelected==3" src="assets/images/overview/robot-1.png" (click)="imageSwap($event, 1)" class="robot-1 swap" alt="">
+                    <div class="status-square"></div>
+                    <div *ngIf="stations[3].ProcessActive" class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[3].ProcessActive" class="workingId">{{stations[3].JSN}}</div>
+                    <div class="status-info">{{stations[3].RealThroughput}}pz <br>{{getStatus(3)}} <br> {{stations[3].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(4)" [class.station-5]="true" [ngClass]="getStationStyle(4)">
+                    <!-- <div *ngIf="stations[4].working" class="workingRn"></div> -->
+                    <img [class.station-selected]="reportSelected==4" src="assets/images/overview/robot-1.png" (click)="imageSwap($event, 1)" class="robot-1 swap" alt="">
+                    <div class="status-square"></div>
+                    <div *ngIf="stations[4].ProcessActive" class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[4].ProcessActive" class="workingId">{{stations[4].JSN}}</div>
+                    <div class="status-info">{{stations[4].RealThroughput}}pz {{getStatus(4)}} <br> {{stations[4].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(5)" [class.station-6]="true" [ngClass]="getStationStyle(5)">
+                    <!-- <div *ngIf="stations[5].working" class="workingRn"></div> -->
+                    <img [class.station-selected]="reportSelected==5" src="assets/images/overview/robot-2.png" (click)="imageSwap($event, 2)" class="robot-2 swap" alt="">
+                    <div class="status-square"></div>
+                    <div *ngIf="stations[5].ProcessActive" class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[5].ProcessActive" class="workingId">{{stations[5].JSN}}</div>
+                    <div class="status-info">{{stations[5].RealThroughput}}pz - {{getStatus(5)}}<br>{{stations[5].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(6)" [class.station-7]="true" [ngClass]="getStationStyle(6)">
+                    <!-- <div *ngIf="stations[6].working" class="workingRn"></div> -->
+                    <img [class.station-selected]="reportSelected==6" src="assets/images/overview/robot-2.png" (click)="imageSwap($event, 2)" class="robot-2" alt="">
+                    <div class="status-square"></div>
+                    <div *ngIf="stations[6].ProcessActive" class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[6].ProcessActive" class="workingId">{{stations[6].JSN}}</div>
+                    <div class="status-info">{{stations[6].RealThroughput}}pz <br>{{getStatus(6)}} - {{stations[6].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(7)" [class.station-8]="true" [ngClass]="getStationStyle(7)">
+                    <!-- <div *ngIf="stations[7].working" class="workingRn"></div> -->
+                    <div [class.station-selected]="reportSelected==7" (click)="unselect()" class="chassis-station" ><div></div><div></div><div></div><div></div><div></div></div>
+                    <div *ngIf="stations[7].ProcessActive" class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[7].ProcessActive" class="workingId">{{stations[7].JSN}}</div>
+                    <div class="status-info">{{stations[7].RealThroughput}}pz<br>{{getStatus(7)}} <br>{{stations[7].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(8)" [class.station-9]="true" [ngClass]="getStationStyle(8)">
+                    <!-- <div *ngIf="stations[8].working" class="workingRn"></div> -->
+                    <div [class.station-selected]="reportSelected==8" (click)="unselect()" class="chassis-station" ><div></div><div></div><div></div><div></div><div></div></div>
+                    <div *ngIf="stations[8].ProcessActive" class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[8].ProcessActive" class="workingId">{{stations[8].JSN}}</div>
+                    <div class="status-info">{{stations[8].RealThroughput}}pz <br>{{getStatus(8)}} <br>{{stations[8].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(9)" [class.station-10]="true" [ngClass]="getStationStyle(9)">
+                    <!-- <div *ngIf="stations[9].working" class="workingRn"></div> -->
+                    <div [class.station-selected]="reportSelected==9" (click)="unselect()" class="status-square"></div>
+                    <div *ngIf="stations[9].ProcessActive" class="gear animated fadeIn"><div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[9].ProcessActive" class="workingId">{{stations[9].JSN}}</div>
+                    <div class="status-info">{{stations[9].RealThroughput}}pz <br>{{getStatus(9)}} <br>{{stations[9].Station}}</div>
+                </div>
+                <div (click)="fetchReportFromService(10)" [class.station-11]="true" [ngClass]="getStationStyle(10)">
+                    <!-- <div *ngIf="stations[10].working" class="workingRn"></div> -->
+                    <div [class.station-selected]="reportSelected==10" (click)="unselect()" class="chassis-station" ><div></div><div></div><div></div><div></div><div></div></div>
+                    <div *ngIf="stations[10].ProcessActive" class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div *ngIf="stations[10].ProcessActive" class="workingId">{{stations[10].JSN}}</div>
+                    <div class="status-info">{{stations[10].RealThroughput}}pz <br>{{getStatus(10)}} <br>{{stations[10].Station}}</div>
+                </div>
+              </div>
+              <!-- <div class="info"><img src="assets/images/overview/info-icon.svg" id="info-icon" width="22" alt=""></div>   -->
+
+              <!-- <div id="tooltip-info">
+                  <div class="tt-block">
+                    <div class="tt-block-color green"></div>
+                    <div class="tt-block-info">Process Mode</div>
+                  </div>
+                  <div class="tt-block">
+                     <div class="tt-block-color yellow"></div>
+                     <div class="tt-block-info">Load - Unload - Manual</div>
+                  </div>
+                  <div class="tt-block">
+                     <div class="tt-block-color orange"></div>
+                     <div class="tt-block-info">Process > 10% of standard time</div>
+                  </div>
+                  <div class="tt-block">
+                    <div class="tt-block-color red"></div>
+                    <div class="tt-block-info">Blocked - Failure - Starved</div>
+                  </div>
+                  <div class="tt-block blue">
+                    <div class="gear animated fadeIn"> <div class="center"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div><div class="tooth"></div></div>
+                    <div class="tt-block-info">Working</div>
+                  </div>
+                </div> -->
+
+            </div>
+
+            <div *ngIf="reportList" class="rtm__container--hbh">
+              <div class="title">
+                  <h2 id="turururu">Shift Production Report</h2>
+                  <h2 class="load"><u><span>{{reportStationName}}</span> - <span>{{reportStatus}}</span></u></h2>
+              </div>
+              <div class="rtm-hbh-table">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                  <thead>
+                    <td>HOUR</td>
+                    <td>Target Throughput</td>
+                    <td>Real Throughput</td>
+                    <td>Acc Target</td>
+                    <td>Acc Real</td>
+                    <td>Dif</td>
+                  </thead>
+                  <tr *ngFor="let item of reportList.Station; let ind = index;" [class.active-tr]="item.Flag === 1">
+                    <td>{{item.Hours}}</td>
+                    <td>{{item.TargetThroughput}}</td>
+                    <td>{{item.RealThroughput}}</td>
+                    <td>{{item.AccTarget}}</td>
+                    <td>{{item.AccReal}}</td>
+                    <td>{{item.Dif}}</td>
+                  </tr>
+                </table>
+              </div>
+
+              <!-- EMPTY ICON -->
+              <!-- <div class="empty-table-img">
+                <img src="assets/images/overview/empty.png" width="90" alt="">
+                <span> Select a station to <br> show a report </span>
+              </div> -->
+
+              <div *ngIf="reportIsLoading" class="reportLoader">
+                <div class="workingRn"></div>
+              </div>
+
+            </div>
+
+            <div *ngIf="!reportList" class="rtm__container--hbh-empty">
+              <img src="assets/images/overview/empty-icon.svg" class="emptyIcon" alt="">
+              <p class="emptyMessage" translate>Select a station to show a report</p>
+              <img src="assets/images/overview/rtm-small-bg.svg" class="smallBg" alt="">
+            </div>
+
+          </div>
+
+        </div>
+        <div class="dark-box-3 rtm">
+            <div class="rtm__info">
+              <div class="rtm__info--title">
+                <img src="assets/images/overview/list-icon.svg" width="16px" alt="">
+                <h2>Information Table</h2>
+              </div>
+            </div>
+            <div class="rtm__table">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <thead>
+                  <td translate>Station</td>
+                  <td translate>Cycle Time <br><span translate>Real / Target</span></td>
+                  <td translate>Real Throughput <br> <span translate>Real / Target</span></td>
+                  <td translate>Average Block & <br> Starve Time</td>
+                  <td translate>Average Load & <br> Unload Time</td>
+                  <td translate>Availability</td>
+                  <td translate>Performance</td>
+                  <td translate>Quality</td>
+                </thead>
+
+                <tr *ngFor="let ter of tableData; let ind = index;" [class.even]="(ind % 2) != 0">
+                  <td>&nbsp;{{ter.Name}}</td>
+                  <td [class.red-status]="ter.ColorCycleTime">{{ter.Average}} &nbsp; / &nbsp; {{ter.Goal}}</td>
+                  <td [class.red-status]="ter.ColorThroughput">{{ter.RealThroughput}} &nbsp; / &nbsp; {{ter.TargetThroughput}}</td>
+                  <td>{{ter.Block}}</td>
+                  <td>{{ter.Load}}</td>
+                  <td [class.red-status]="ter.ColorAvailability">{{ter.Availability}}%</td>
+                  <td [class.red-status]="ter.ColorPerformance">{{ter.Performance}}%</td>
+                  <td [class.red-status]="ter.ColorQuality">{{ter.Quality}}%</td>
+                </tr>
+
+                
+                
+              </table>
+            </div>
+        </div>
+     </div>
+     
+   </div>
+</section>

@@ -1,0 +1,870 @@
+//VARIABLES
+$primary-teal: #00C9F1;
+$primary-black: #12161F;
+$primary-blue: #007AFF;
+
+    $status-green:#55D614;
+    $status-yellow: #FFB903;
+    $status-orange: #FF680A;
+    $status-red: #FF4954;
+
+$primary-blue: #007aff;
+
+//ANIMATE.CSS
+// @import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css";
+
+//MIXINS
+@mixin square1(){
+    width: 30px;
+    height: 28px;
+    top: -5px;
+    left: -6.5px;
+  }
+
+@mixin chassis-station-1(){
+    width: 39px;
+    height: 170px;
+    position: absolute;
+    top: 36px;
+    left: 5px;
+    transition: all .3s ease-in-out;
+    & > * {
+        position: absolute;
+        border-width: .3px !important;
+    }
+    div:nth-child(1){
+        width: 39px;
+        height: 10px;
+    }
+    div:nth-child(2){
+        width: 15px;
+        height: 4px;
+        top: 11px;
+        left: 12px;
+    }
+    div:nth-child(3){
+        width: 4px;
+        height: 148px;
+        top: 9px;
+        left: 5px;
+    }
+    div:nth-child(4){
+        width: 15px;
+        height: 4px;
+        top: 151px;
+        left: 12px;
+    }
+    div:nth-child(5){
+        width: 37px;
+        height: 10px;
+        top: 156px;
+        left: 1px;
+    }
+}
+
+@mixin chassis-station-2(){
+    width: 39px;
+    height: 170px;
+    position: absolute;
+    top: 36px;
+    left: 5px;
+    & > * {
+        position: absolute;
+        border-width: .3px !important;
+    }
+    div:nth-child(1){
+        width: 33px;
+        left: 3px;
+        height: 10px;
+    }
+    div:nth-child(2){
+        width: 15px;
+        height: 4px;
+        top: 11px;
+        left: 17px;
+    }
+    div:nth-child(3){
+        width: 5px;
+        height: 148px;
+        top: 9px;
+        left: 5px;
+    }
+    div:nth-child(4){
+        width: 16px;
+        height: 4px;
+        top: 151px;
+        left: 17px;
+    }
+    div:nth-child(5){
+        width: 33px;
+        height: 10px;
+        top: 156px;
+        left: 3px;
+    }
+}
+
+@mixin titleStatus() {
+    .inProgress{
+        color: $status-green;
+    }
+    .manual, .load, .unload{
+            color: $status-yellow;
+    }
+    .processTime{
+        color: $status-orange;
+    }
+    .failure, .blocked, .starved{
+        color: $status-red;
+    }
+}
+
+@mixin workingPosition($top, $left){
+    top: $top;
+    left:$left;
+}
+
+@mixin squareInfo ($top, $left, $text){
+    position: absolute;
+    top: $top;
+    left:$left;
+    text-align: $text;
+    background: rgba(#12161F, .8);
+    padding: 3px;
+    font-size: 12px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.3);
+    min-width: 50px;
+    white-space: nowrap;
+}
+//BASE STYLES
+
+.line-monitor-container{
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+}
+.dark-box-3{
+    padding: 20px 30px 10px 30px;
+    width:100%;
+    margin: 20px 0;
+    &:first-child{
+        min-height: 620px;
+        overflow-y: auto;
+    }
+}
+
+//REAL TIME MONITOR 
+
+.rtm{
+    color: #fff;
+    font-size: 14px;
+    @include titleStatus();
+    &__info{
+        &--title{
+            margin: 0 0 10px 0;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            h2{
+                font-size: 20px;
+                font-weight: 500;
+                margin: 0 0 0 10px;
+            }
+            span{
+                color: $primary-teal;
+                font-weight: 700;
+            }
+        }
+        &--paragraph{
+            max-width: 60%;
+            line-height: 20px;
+            letter-spacing: 1px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+    }
+
+    &__container{
+        position: relative;
+        &--layout{
+            position: relative;
+            max-width: 70%;
+            & > * {
+                position: absolute;
+            }
+            .background{
+                opacity: .2;
+                width: 100%;
+                img{
+                    width: 100%;
+                }
+            }
+            .blueprint{
+                width: 100%;
+                top: 70px;
+                img{
+                    width: 924px;
+                }
+            }
+            .station{
+                .workingId{
+                    color: $primary-blue;
+                    position: absolute;
+                    padding: 3px;
+                    letter-spacing: 1px;
+                    font-size: 11px;
+                    background: rgba(black, .8);
+                    transition: all .3s ease-in-out;
+                    white-space: nowrap;
+                    &:hover{
+                        color: $primary-teal;
+                    }
+                }
+                &-1{
+                    top: 140px;
+                    left: 5px;    
+                    .status-square{
+                        width: 33px;
+                        height: 68px;
+                        top: -5px;
+                        left: -4.5px;
+                    }
+                    .status-info{
+                        @include squareInfo(62px,-3px, left);
+                    }
+                    .workingRn:after{
+                        background: #15161e;
+                    }
+                    .gear{
+                        @include workingPosition(-30px, 4px);
+                    }
+                    .workingId{
+                        @include workingPosition(-60px, -16px);
+                    }
+                }
+                &-2{
+                    top: 180px;
+                    left: 93px;
+                    .status-square{
+                        @include square1();
+                    }
+                    .status-info{
+                        @include squareInfo(88px,-12px, center);
+                    }
+                    .gear{
+                        @include workingPosition(-34px, 2px);
+                    }
+                    .workingId{
+                        @include workingPosition(-65px, -18px);
+                    }
+                }
+                &-3{
+                    top: 180px;
+                    left: 183px;
+                    .status-square{
+                        @include square1();
+                    }
+                    .status-info{
+                        @include squareInfo(88px,-12px, center);
+                    }
+                    .gear{
+                        @include workingPosition(-34px, 2px);
+                    }
+                    .workingId{
+                        @include workingPosition(-64px, -18px);
+                    }
+                }
+                &-4{
+                    top: 150px;
+                    left: 263px;
+                    .status-square{
+                        @include square1();
+                    }
+                    .status-info{
+                        @include squareInfo(88px,-12px, center);
+                    }
+                    .gear{
+                        @include workingPosition(-32px, 3px);
+                    }
+                    .workingId{
+                        @include workingPosition(-64px, -18px);
+                    }
+                }
+                &-5{
+                    top: 150px;
+                    left: 355px;
+                    .status-square{
+                        @include square1();
+                    }
+                    .status-info{
+                        @include squareInfo(88px,-12px, left);
+                    }
+                    .gear{
+                        @include workingPosition(-33px, 0);
+                    }
+                    .workingId{
+                        @include workingPosition(-64px, -18px);
+                    }
+                }
+                &-6{
+                    top: 288px;
+                    left: 372px;
+                    .workingRn{
+                        @include workingPosition(34px,9px);
+                    }
+                    .status-info{
+                        @include squareInfo(30px,0px, left);
+                    }
+                    .status-square{
+                        width: 33px;
+                        height: 28px;
+                        top: -2px;
+                        left: 6.5px;
+                    }
+                    .gear{
+                        @include workingPosition(86px, 2px);
+                    }
+                    .workingId{
+                        @include workingPosition(82px, 27px);
+                    }
+                }
+                &-7{
+                    top: 94px;
+                    left: 458px;
+                    .workingRn{
+                        @include workingPosition(-34px,9px);
+                    }
+                    .status-info{
+                        @include squareInfo(34px,-15px, center);
+                    }
+                    .robot-2{
+                        transform: rotate(-30deg);
+                    }
+                    .status-square{
+                        width: 35px;
+                        height: 30px;
+                        top: -1px;
+                        left: 6.5px;
+                    }
+                    .gear{
+                        @include workingPosition(-29px, 17px);
+                    }
+                    .workingId{
+                        @include workingPosition(-60px, -3px);
+                    }
+                }
+                &-8{
+                    top: 94px;
+                    left: 559px;
+                    .workingRn{
+                        @include workingPosition(0,9px);
+                    }
+                    .chassis-station{
+                        @include chassis-station-2();
+                    }
+                    .status-info{
+                        @include squareInfo(205px,5px, left);
+                    }
+                    .gear{
+                        @include workingPosition(8px, 19px);
+                    }
+                    .workingId{
+                        @include workingPosition(-24px, -4px);
+                    }
+                }
+                &-9{
+                    top: 94px;
+                    left: 664.5px;
+                    .workingRn{
+                        @include workingPosition(0px ,10px);
+                    }
+                    .chassis-station{
+                        @include chassis-station-2();
+                    }
+                    .status-info{
+                        @include squareInfo(205px,5px, center);
+                    }
+                    .gear{
+                        @include workingPosition(8px, 20px);
+                    }
+                    .workingId{
+                        @include workingPosition(-23px, -4px);
+                    }
+                }
+                &-10{
+                    @include workingPosition(142px, 782px);
+                    .workingRn{
+                        @include workingPosition(-36px ,3px);
+                    }     
+                    .status-info{
+                        @include squareInfo(139px,-5px, center);
+                    }       
+                    .status-square{
+                        width: 38px;
+                        height: 138px;
+                        background: none;
+                        border-radius: 0;
+                        &:hover{
+                            background: rgba($primary-blue, .5);
+                        }
+                    }
+                    .gear{
+                        @include workingPosition(-25px, 12px);
+                    }
+                    .workingId{
+                        @include workingPosition(-57px, -11px);
+                    }
+                }
+                &-11{
+                    @include workingPosition(94px, 878px);
+                    .workingRn{
+                        @include workingPosition(-1px ,10px);
+                    }
+                    .status-info{
+                        @include squareInfo(203px,-6px, right);
+                    }
+                    .chassis-station{
+                        @include chassis-station-2();
+                    }
+                    .gear{
+                        @include workingPosition(10px, 17px);
+                    }
+                    .workingId{
+                        @include workingPosition(-20px, -7px);
+                    }
+                }
+                position: relative;
+                & > *{
+                    position: absolute;
+                    cursor: pointer;
+                }
+                & > div img{
+                    position: relative;
+                    z-index: 2;
+                    transition: all .3s ease-in-out;
+                    border-radius: 3px;
+                    &:hover{
+                        background: rgba($primary-blue, .5);
+                        box-shadow: 3px 3px 3px rgba(black, .3);
+                    }
+                }
+                .active{
+                    width: 25px;
+                    height: 6px;
+                    margin: 10px auto;
+                    border-radius: 10px;
+                    background-color: $primary-blue;
+                }
+                .robot-0{
+                    width: 25px;
+                }
+                .robot-1{
+                    width: 20px;
+                }
+                .robot-2{
+                    width: 50px;
+                }
+                //STATUS
+                .inProgress{
+                    .status-square, .chassis-station > *{
+                        border: solid 2px $status-green;
+                    }
+                }
+                .manual, .load, .unload{
+                    .status-square, .chassis-station > *{
+                        border: solid 2px $status-yellow;
+                    }
+                }
+                .processTime{
+                    .status-square, .chassis-station > *{
+                        border: solid 2px $status-orange;
+                    }
+                }
+                .failure, .blocked, .starved{
+                    .status-square, .chassis-station > *{
+                        border: solid 2px $status-red;
+                    }
+                }
+                .chassis-station{
+                    transition: all .3s ease-in-out;
+                    &:hover{ background: rgba($primary-blue, .3);}
+                }
+            }
+            .status-square{
+                border-radius: 4px;
+                background-color: #12161F;
+                position: absolute;
+                transition: all .3s ease-in-out;
+            }
+        }
+        &--hbh{
+            width: 30%;
+            min-height: 400px;
+            padding: 0 20px 0px 0px;
+            position: absolute;
+            top: -80px;
+            right: -10px;
+            border-left: solid 2px rgba(white, .5);
+            transition: all .5 ease-in-out;
+            .title{
+                text-align: center;
+                letter-spacing: 2px;
+                h2{
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+            .rtm-hbh-table{
+                margin: 10px 0 0 0;
+                overflow-x: auto;
+                max-width: 390px;
+                table{
+                    font-size: 12px;
+                    overflow-x: auto;
+                    width: 560px;
+                    thead{
+                        text-align: center;
+                        word-spacing: 10vw;
+                        position: relative;
+                        td{
+                            font-size: 12px;
+                        }
+                    }
+                    tr{
+                        text-align: center;
+                        transition: all .2s ease-in-out;
+                        &:hover{
+                            background: rgba(#0479D0, .5);
+                        }
+                    }
+                    td{
+                        width: 14%;
+                        padding: 8px 0;
+                        &:first-child{
+                            padding: 0 0 0 10px;
+                        }
+                        &:not(:first-child){
+                            font-size: 15px;
+                        }
+                    }
+                    .active-tr{
+                        background-image: linear-gradient(141deg, rgba(#0479D0,.8) 50%, rgba(#11E0D4 ,.8) 75%);
+                        &:hover{
+                            background-image: linear-gradient(141deg, #0479D0 50%, #11E0D4 75%);
+                        }
+                    }
+                }
+            }
+            .reportLoader{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: rgba(black, .8);
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                .workingRn{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+            &{
+                -ms-overflow-style: none;  // IE 10+
+                overflow: -moz-scrollbars-none;  // Firefox
+            }
+            &::-webkit-scrollbar{
+                display: none;  // Safari and Chrome
+            }
+
+            &-empty{
+                position: absolute;
+                width: 300px;
+                right: 30px;
+                & > * {
+                    position: absolute;
+                }
+                .emptyIcon{
+                    top: 130px;
+                    right: 100px;
+                    opacity: .82;
+                }
+                .emptyMessage{
+                    top: 220px;
+                    right: 17px;
+                    font-size: 16px;
+                    text-align: center;
+                    opacity: .45;
+                }
+                .smallBg{
+                    top: 20px;
+                    right: 0;
+                    z-index: 0;
+                    opacity: .5;
+                }
+            }
+            
+        }
+        .empty-table-img{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            img{
+                text-align: center;
+            }
+            span{
+                color: rgba(#fff, .7);
+                text-align: center;
+                font-size: 14px;
+
+            }
+        }
+    }
+    &__table{
+        margin: 16px 0;
+        table{
+            letter-spacing: 1px;
+            thead{
+                font-size: 16px;
+            }
+            td{
+                text-align: center;
+                width: 13%;
+                padding: 5px 0;
+                height: 50px;
+                &:last-child{
+                    font-weight: bold;
+                }
+                span{
+                    font-size: 12px;
+                    opacity: .5;
+                }
+            }
+            td:first-child{
+                text-align: left;
+            }
+            .even{
+                background-color: rgba(#007AFF,.18);
+            }
+        }
+    }
+}
+
+//TOOLTIP INFORMATION
+/deep/#tooltip-info{
+    display: flex;
+    width: 940px;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .tt-block{
+        display: flex;
+        align-items: center;
+        &-color{
+            border-radius: 10px;
+            width: 20px;
+            height: 6px;
+        }
+        .green{
+            background-color: $status-green;
+        }
+        .yellow{
+            background-color: $status-yellow;
+        }
+        .orange{
+            background-color: $status-orange;
+        }
+        .red{
+            background-color: $status-red;
+        }
+        .workingRn {
+            position: static;
+            zoom: 65%;
+          }
+        &-info{
+            color: #fff;
+            letter-spacing: .5px;
+            margin: 0 0 0 5px;
+            font-size: 11px;
+        }
+    }
+}
+
+
+//WORKING ICON
+.workingRn {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: -42px;
+    left: -4px;
+  }
+  .workingRn:after {
+    content: " ";
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin: .5px;
+    border-radius: 50%;
+    border: 3px solid $primary-blue;
+    border-color: $primary-blue transparent $primary-blue transparent;
+    animation: workingRn 1.2s linear infinite;
+  }
+  @keyframes workingRn {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.info{
+    bottom: 30px;
+    right: 5px;
+    opacity: .7;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    &:hover{
+        opacity: 1;
+        transform: translateY(-1px)
+    }
+}
+
+//TIPPY FONT-SIZE & OTHER PARAMETERS GOES HERE
+
+/deep/.tippy-tooltip {
+    font-size: 1.1rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+
+// MEDIA QUERIES
+
+@media only screen and (min-width: 1441px) {
+    .rtm__container{
+        zoom: 110%;
+    }
+}
+
+@media only screen and (min-width: 1641px) {
+    .rtm__container{
+        zoom: 120%;
+    }
+}
+
+@media only screen and (min-width: 1741px) {
+    .rtm__container{
+        zoom: 125%;
+    }
+}
+
+@media only screen and (max-width: 1530px) and (min-width: 1530px) {
+    // .rtm__container--hbh{
+    //     top: 420px;
+    //     left: 0px;
+    //     border: none;
+    // }
+    
+    // .rtm__container--hbh .rtm-hbh-table{
+    //     overflow-x: visible;
+    // }
+
+    // .dark-box-3:first-child {
+    //     height: 150vh;
+    // }
+
+    .rtm__container--layout{
+        transform: scale(0.9) translateX(-33px);
+     }
+  }
+
+  @media only screen and (max-width: 1440px) and (min-width: 1440px) {
+    .rtm__container--layout{
+        transform: scale(0.96);
+     }
+  }
+
+
+// GEAR STUFF
+.gear{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    margin: auto;
+    background: $primary-blue;
+    border-radius: 50%;
+    animation-name: spin;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    opacity: .9;
+    transition: all .3s ease-in-out;
+    &:hover{
+        background: $primary-teal;
+        .tooth{
+            background: $primary-teal;
+        }
+    }
+    .center{
+        position: absolute;
+        top: 3.5px;
+        left: 3.5px;
+        z-index: 10;
+        width: 8px;
+        height: 8px;
+        background: rgba(21,22,28,1);
+        border-radius: 50%;
+    }
+    .tooth{
+        position: absolute;
+        top: -3px;
+        left: 6px;
+        z-index: 1;
+        width: 3.5px;
+        height: 21px;
+        background:$primary-blue;
+        transition: all .3s ease-in-out;
+        &:nth-child(2){
+            transform: rotate(45deg);
+        }
+        &:nth-child(3){
+            transform: rotate(90deg);
+        }
+        &:nth-child(4){
+            transform: rotate(135deg);
+        }
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 
+
+.tt-block{
+    position: relative;
+    .gear{
+        left: -20px;
+    }
+}
+
+.station-selected{
+    background: rgba($primary-blue, .5) !important;
+}
+
+.red-status{
+    color: $status-red;
+}

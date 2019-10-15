@@ -1,0 +1,48 @@
+
+.cyc-container{
+	margin: 40px 0 0 0;
+}
+
+.report-select-container{
+	margin: 0 auto;
+}
+
+
+.divSelect{
+	color: #fff;
+	font-size: 14px;
+}
+.divSelect select{
+	margin: 0 0 0 16px;
+}
+
+.title-m-data{
+	text-align: center;
+	color:white;
+}
+
+.container{
+	margin-top:50px;
+	margin-left: 2%;
+	max-width: 97%;
+	float: left;
+}
+
+  .div-checkbox{
+    padding: 10px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    &__title-left{
+        span{
+            opacity: .5;
+            letter-spacing: 1px;
+            font-weight: 300;}}
+    &__title-right{
+        text-align: right;
+        & > *{
+            margin: 10px 3px;}}
+    &__graphic{
+		margin-right: 16px;}}
+		

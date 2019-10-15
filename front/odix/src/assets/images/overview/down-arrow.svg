@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.2 25.251">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #afbdd1;
+      }
+    </style>
+  </defs>
+  <path id="Arrow-green" class="cls-1" d="M21.046,6.013H10.222l10.824,10.82L33.071,4.81,47.2,18.937l-4.208,4.21-9.921-9.92L21.046,25.251,6.014,10.221v10.82H0V0H21.046Z" transform="translate(47.2 25.251) rotate(-180)"/>
+</svg>

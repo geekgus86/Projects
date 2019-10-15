@@ -1,0 +1,466 @@
+$shopfloor-blue: #243746;
+
+.shopfloor-container{
+    width: 100%;
+    background-color: $shopfloor-blue;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    z-index: 999999;
+    font-size: 14px;
+    min-height: 100vh;
+    .headers-container{
+        color: white;
+        height: 2.8cm;
+        width: 100%;
+        position: relative;
+        .line{
+            position: absolute;
+            top: 33px;
+            left: 15px;
+            font-weight: bold;
+        }
+        .date{
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .area-info{
+            position: absolute;
+            top: 62px;
+            right: 30px;
+            text-align: right;
+            display: flex;
+            width: 450px;
+            justify-content: space-between;
+            span{
+                font-weight: bold;
+            }
+        }
+    }
+    .body-container{
+        width: 100%;
+        .prodControl{
+            width: 100%;
+            background-color: white;
+            padding: 0 0 5px 0;
+            &__title{
+                padding: 16px 0 0 20px;
+                h4{
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    letter-spacing: .1px;
+                    font-size: 16px;
+                }
+            }
+            &__legends{
+                display: flex;
+                width: 36%;
+                justify-content: space-between;
+                margin: 20px 0 0 13%;
+                & > * {
+                    padding: 5px 16px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    letter-spacing: .5px;
+                }
+                &--legend1{
+                    border: solid 1px $shopfloor-blue;
+                    span{
+                        font-weight: bold;
+                        margin: 0 16px 0 0;
+                    }
+                }
+                &--legend2{
+                    background-color: #F3F3F3;
+                    font-weight: bold;
+                }
+            }
+            &__board{
+                width: 100%;
+                margin: 20px 0;
+                table{
+                    width: 100%;
+                }
+                td{
+                    text-align: center;
+                    padding: 3px 0;
+                    border-right: solid .5px $shopfloor-blue;
+                }
+                tr{
+                    position: relative;
+                }
+                .headings{
+                    cursor: default;
+                    &:hover{
+                        background: transparent;
+                    }
+                    td{
+                        font-weight: bold;
+                        color: $shopfloor-blue;
+                        text-align: center;
+                        text-transform: uppercase;
+                        border: none;
+                    }
+                    .paros{
+                        width: 30%;
+                    }
+                    .microparos, .parosProgramados{
+                        font-size: 10px;
+                        font-weight: 600;
+                    }
+                    .minContainer{
+                        position: relative;
+                        min-height: 30px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        .min{
+                            font-size: 11px;
+                            font-weight: 100;
+                            text-transform: none;
+                            position: absolute;
+                            bottom: -20px;
+                            left: 50%;
+                            transform: translate(-50%,0);
+                            width: 100%;
+                        }
+                    }
+                }
+                .subHeadings{
+                    font-weight: 100;
+                    cursor: default;
+                    &:hover{
+                        background: transparent;
+                    }
+                    .dptos{
+                        width: 100%;
+                        td{
+                            width: 12.5%;
+                            text-align: center;
+                            font-weight: bold;
+                            color: $shopfloor-blue;
+                            border: none;
+                            &:nth-child(1){
+                                color: #002FEE;
+                            }
+                            &:nth-child(2){
+                                color: #FF1F00;
+                            }
+                            &:nth-child(3){
+                                color: orange;
+                            }
+                            &:nth-child(4){
+                                color: #9B9B9B;
+                            }
+                        }
+                    }
+                }
+                .uneven{
+                    background-color: rgba(216,216,216,0.3);
+                }
+                tr{
+                    cursor: pointer;
+                    transition: all .3s ease-in-out;
+                    &:hover{
+                        background-color: rgba(#243746,.2);
+                    }
+                }
+                .active{
+                    font-weight: bold;
+                }
+                .innerInfo{
+                    width: 100%;
+                    tr{
+                        &:hover{
+                            background: transparent;
+                        }
+                        td{
+                            text-align: center;
+                            border: none;
+                            width: 60px;
+                        }
+                    }
+                }
+                .infoImage{
+                    tr{
+                        td{
+                            width: 40px;
+                        }
+                    }
+                }
+                .detalleTR{
+                    height: 200px;
+                    position: relative;
+                    .detalleParo{
+                        position: absolute;
+                        width: 100%;
+                        top:0;
+                        left: 0;
+                    }
+                }
+                .appendTr{
+                    cursor: default;
+                    &:hover{
+                        background-color: transparent;
+                    }
+                }
+                .detalleTd{
+                    border: none;
+                    .detalleContainer{
+                        position: relative;
+                        width: 10px;
+                        .detalle{
+                            width: 100vw;
+                            display: flex;
+                            border-bottom: solid 1px black;
+                            padding: 11px 15px;
+                            position: relative;
+                            & > *{
+                                min-width: 7%;
+                                max-width: 10%;
+                                word-break: break-all;
+                                text-align: left;
+                            }
+                            &__paro, &__dpto{
+                                color: #FF2C18;
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                display: flex;
+                                align-items: end;
+                                img{
+                                    margin: 0 5px 0 0;
+                                    position: relative;
+                                    z-index: 1;
+                                }
+                            }
+                            &__paro{
+                                display: flex;
+                                align-items: center;
+                            }
+                            &__paroblack{
+                                color: rgb(0, 0, 0);
+                                font-weight: bold;
+                                text-transform: uppercase;
+                                display: flex;
+                                align-items: center;
+                                img{
+                                    margin: 0 5px 0 0;
+                                    position: relative;
+                                    z-index: 1;
+                                }
+                            }
+                            &__hora{
+                                margin-left: 10px;
+                                min-width: 12% !important;
+                                max-width: 12% !important;
+                            }
+                            &__tiempo{
+                                margin: 0 5px;
+                                padding: 0 0 0 15px;
+                            }
+                            &__dpto{
+                                color: #D0021B;
+                                min-width: 13% !important;
+                                display: flex;
+                                align-items: center;
+                                .iconDpto{
+                                    width: 10px;
+                                    height: 10px;
+                                    border: solid 1px black;
+                                    border-radius: 10px;
+                                    margin: 0 5px 0 0;
+                                }
+                            }
+                            &__desc{
+                                width: 16%;
+                                max-width: 16% !important;
+                            }
+                            &__comment{
+                                max-width: 44% !important;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bigContainer{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            .prodPlan{
+                width: 70%;
+                background-color: white;
+                padding: 0 0 5px 0;
+                margin: 10px 0 0 0;
+                &__title{
+                    padding: 16px 0 0 20px;
+                    h4{
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        letter-spacing: .1px;
+                        font-size: 16px;
+                    }
+                }
+                table{
+                    width: 100%;
+                    tr{
+                        td{
+                            text-align: center;
+                            padding: 5px 0;
+                            &:first-child{
+                                text-align: left;
+                                padding: 0 0 0 5px;
+                            }
+                        }
+                    }
+                    .weekDays{
+                        td{
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            color: $shopfloor-blue;
+                        }
+                    }
+                }
+            }
+            .smallContainer{
+                width: 29%;
+                .defectos, .fugas{
+                    width: 100%;
+                    background-color: white;
+                    padding: 0 0 5px 0;
+                    margin: 10px 0 0 0;
+                    height: 60px;
+                    &__title{
+                        padding: 16px 0 0 20px;
+                        h4{
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            letter-spacing: .1px;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+h4{
+    color: $shopfloor-blue;
+}
+
+//ARROW
+.arrowDown {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid grey;
+    position: absolute;
+    top: 13px;
+    right: 5px;
+  }
+
+  .red {
+    color: #D0021B;
+    font-weight: bold;
+  }
+
+
+.greenColored{
+    color: green;
+}
+
+.yellowColored{
+    color: orange;
+}
+
+.redColored{
+    color: #D0021B;
+}
+
+.blackColored{
+  color: #000000;
+}
+
+.isPulse{
+    position: absolute;
+}
+
+.pulse {
+    width: 21px !important;
+    height: 21px;
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    border-radius: 50%;
+    background: rgba(255, 0, 0, .5);
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(#D0021B, 0.4);
+    animation: pulse 3s infinite;
+    min-width: auto !important;
+    transform: translateY(-50%);
+  }
+
+  @keyframes pulse {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(#D0021B, 0.4);
+      box-shadow: 0 0 0 0 rgba(#D0021B, 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(#D0021B, 0);
+        box-shadow: 0 0 0 10px rgba(#D0021B, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(#D0021B, 0);
+        box-shadow: 0 0 0 0 rgba(#D0021B, 0);
+    }
+  }
+
+  .pulse-black {
+    width: 21px !important;
+    height: 21px;
+    position: absolute;
+    top: 11.5px;
+    left: 12px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, .5);
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(rgb(0, 0, 0), 0.4);
+    animation: pulse-black 3s infinite;
+  }
+
+  @keyframes pulse-black {
+    0% {
+      -moz-box-shadow: 0 0 0 0 rgba(rgb(0, 0, 0), 0.4);
+      box-shadow: 0 0 0 0 rgba(rgb(0, 0, 0), 0.4);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px rgba(rgb(0, 0, 0), 0);
+        box-shadow: 0 0 0 10px rgba(rgb(0, 0, 0), 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(rgb(0, 0, 0), 0);
+        box-shadow: 0 0 0 0 rgba(rgb(0, 0, 0), 0);
+    }
+  }
+
+  .hide{
+      display: none;
+  }
+
+.verde{
+    color: green;
+    font-weight: 400;
+}
+
+.rojo{
+    color: #D0021B;
+    font-weight: 400;
+}

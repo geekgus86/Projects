@@ -1,0 +1,58 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, 'sans-serif';
+    font-size: 14px;
+}
+.Left{
+    float: left;
+}
+.W-4{
+    width: 40%;
+}
+.Image{
+    width: 13%;
+}
+.ImageOut{
+    width: 10%;
+}
+.ImageOut-txt{
+    padding-left: 0;
+}
+a{
+    color: black;
+    text-decoration: none;
+    padding: 0;
+}
+ul{
+    padding: 0;
+}
+#AsideInter{
+    padding-top: 25px;
+    height: 100vh;
+}
+.Icons{
+    color: #000;
+}
+.Icons:first-child{
+    margin-right: 5px;
+}
+.Padd-none{
+    padding: 0;
+}
+.Txt{
+    position: absolute;
+    width: 70%;
+    padding: 5px;
+}
+
+.Menu-Item a {
+    margin-right: 20px;
+}
+
+.Menu-Item a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.Menu-Item a:last-child {
+    margin-right: 0px;
+}

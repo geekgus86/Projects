@@ -1,0 +1,211 @@
+<div class="mttr-container">
+    <main>
+
+      <header>
+            <h1 translate>Response Optimizer Dashboard / Formado <span class="breadcrumby">{{tittle}}</span></h1>
+            <div class="dateButtons">
+                <div class="prensa">
+                    <span translate>Prensa:</span>
+                    <div class="prensa__select">
+                        <select [(ngModel)]="nrSelect" [value]='1' name="prensa" (change)="setAsset($event.target)">
+                            <option *ngFor="let asset of assets" value="{{asset.id}}"> {{asset.name}} </option>
+                        </select>
+                        <div class="arrow-down"></div>
+                    </div>
+                </div>
+                
+                <div class="calendar">
+                    <span translate>Fecha</span><input placeholder="{{ 'Select a Date range' | translate}}" ngModel bsDaterangepicker
+                    (bsValueChange)="onDateSelection($event)" [maxDate]="maxDate" [minDate]="minDate" id = "datapickerId"
+                    style="font-family:Arial, FontAwesome; width: 240px; font-weight: 400; font-size: 14px;"
+                    [bsConfig]="{ containerClass: 'theme-blue'}"
+                    [ngClass]="{'input-active' : selectedDate == 4}">
+                    <img src="assets/images/icon-calendar.svg" width="18" alt="">
+                </div>
+
+                <button class="odix-button" [ngClass]="{'odix-button-active' : selectedDate == 1}" (click)="getSevenDays()" translate>ultimos 7 dias</button>
+                <button class="odix-button" [ngClass]="{'odix-button-active' : selectedDate == 2}" (click)="getThisMonth()" translate>Mes Actual</button>
+                <button class="odix-button" [ngClass]="{'odix-button-active' : selectedDate == 3}" (click)="getThisYear()" translate>Año Actual</button>
+            </div>
+            <div class="infoPress" >
+               <!-- <span class="eqes"> EQES: <input type="checkbox" name="eqes"> <span class="checkmark"></span> Todos </span> 
+               <div class="dpto" *ngFor="let item of departments"> <div [ngStyle]="{'background-color':item.color}">&nbsp;</div> {{item.descIssueType}} </div>-->
+               <div class="dpto" translate> <div>&nbsp;</div>Operaciones</div>
+               <div class="dpto" translate> <div>&nbsp;</div>Mantenimiento</div>
+               <div class="dpto" translate> <div>&nbsp;</div>Herramientas</div>
+               <div class="dpto" translate> <div>&nbsp;</div>Logística</div>
+               <div class="dpto" translate> <div>&nbsp;</div>Calidad</div>
+
+            </div>
+        </header>
+        <section class="mtt-container">
+            <div class="leftColumn">
+                <section class="lineGraph m10">
+                    <h3 translate>MTTA - Tiempo Promedio Para Asistir</h3>
+                    <div class="combates">
+                        <div class="combate"><input id="combat1" [checked]="true" (click)="setCombat()" type="checkbox" name="c1"> <span class="checkmark"></span> <span class="txt" translate>1er Combate</span></div>
+                        <div class="combate"><input id="combat2" [checked]="true" (click)="setCombat()" type="checkbox" name="c2"> <span class="checkmark"></span> <span class="txt" translate>2do Combate</span></div>
+                        <div class="combate"><input id="combat3" [checked]="true" (click)="setCombat()" type="checkbox" name="c3"> <span class="checkmark"></span> <span class="txt" translate>3er Combate</span></div>
+                        <div class="combate"><input id="combat4" [checked]="true" (click)="setCombat()" type="checkbox" name="c4"> <span class="checkmark"></span> <span class="txt" translate>4to Combate</span></div>
+                    </div>
+                    <div id="mtta"></div>
+                </section>
+
+                <section class="lineGraph">
+                    <h3 translate>MTTR - Tiempo Promedio Para Reparar</h3>
+                    <div id="mttr"></div>
+                </section>
+
+                <section class="lineGraph">
+                    <h3 translate>MTBF - Tiempo Promedio Entre Fallas</h3>
+                    <div id="mtbf"></div>
+                </section>
+            </div>
+            <div class="rightColumn">
+
+                <section class="lineGraph lg2 m10">
+                    <h4 translate>MTTI – Tiempo Promedio para Identificar</h4>
+                    <span translate>Precisión</span> <span>{{presition.precision}}%</span>
+                    <div id="mtti"></div>
+                </section>
+
+                <section class="lineGraph lg2">
+                    <h3 translate>MTTR por Herramienta</h3>
+                    <div id="mttrTool"></div>
+                </section>
+                <section class="lineGraph lg2">
+                    <h3 translate>MTTR por Falla</h3>
+                    <div class="sliders">
+                        <h6 class="afterSlider">{{sliderMin}} min</h6>
+                        <input type="range" min="0" max="{{maxSlider}}" value="{{sliderMin}}" (change)="setSliderMin($event.target)" class="slider s1">
+                        <input type="range" min="0" max="{{maxSlider}}" value="{{sliderMax}}" (change)="setSliderMax($event.target)" class="slider s2">
+                        <h6 class="beforeSlider">{{sliderMax}} min</h6>
+                    </div>
+                    <div id="mttrFail"></div>
+                </section>
+                <section class="lineGraph lg2">
+                    <h3 translate>MTBF por Falla</h3>
+                    <div id="mtbfFail"></div>
+                </section>
+            </div>
+        </section>
+
+        <section class="lineGraph">
+            <table class="tablaCombates" cellpadding="0" cellspacing="0">
+                <tr class="tablaCombates__titles">
+                    <td translate>
+                        Asistencia
+                    </td>
+                    <td translate>
+                        1er Combate
+                    </td>
+                    <td translate>
+                        2do Combate
+                    </td>
+                    <td translate>
+                        3er Combate
+                    </td>
+                    <td translate>
+                        4to Combate
+                    </td>
+                </tr>
+                <tr class="tablaCombates__statusTitle">
+                    <td>
+                        &nbsp;
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td translate>Solicitado</td>
+                                <td>Check-in</td>
+                                <td>%</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td translate>Solicitado</td>
+                                <td>Check-in</td>
+                                <td>%</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td translate>Solicitado</td>
+                                <td>Check-in</td>
+                                <td>%</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td translate>Solicitado</td>
+                                <td>Check-in</td>
+                                <td>%</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="tablaCombates__info" *ngFor="let item of assistances">
+                    <td class="infoPress">
+                        <div class="dpto"> <div [ngStyle]="{'background-color':item.color}">&nbsp;</div> {{item.department}} </div>
+                    </td>
+                    <td>
+                        <table>
+                            <tr class="tablaCombates__info--resultados">
+                                <td>{{item.solicutado1}}</td>
+                                <td>{{item.checkin1}}</td>
+                                <td [ngStyle]="{'color': item.percentage1 == 100 ? 'green' : 'red'}">{{formatPercentage(item.percentage1)}}%</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr class="tablaCombates__info--resultados">
+                                <td>{{item.solicutado2}}</td>
+                                <td>{{item.checkin2}}</td>
+                                <td [ngStyle]="{'color': item.percentage2 == 100 ? 'green' : 'red'}">{{formatPercentage(item.percentage2)}}%</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr class="tablaCombates__info--resultados">
+                                <td>{{item.solicutado3}}</td>
+                                <td>{{item.checkin3}}</td>
+                                <td [ngStyle]="{'color': item.percentage3 == 100 ? 'green' : 'red'}">{{formatPercentage(item.percentage3)}}%</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr class="tablaCombates__info--resultados">
+                                <td>{{item.solicutado4}}</td>
+                                <td>{{item.checkin4}}</td>
+                                <td [ngStyle]="{'color': item.percentage4 == 100 ? 'green' : 'red'}">{{formatPercentage(item.percentage4)}}%</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </section>
+  </main>
+</div>
+<!-- Loader -->
+<!-- <div *ngIf="loader" class="loader-container">
+  <div class="loader">
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__ball"></div>
+      <span>Hold on, we’re calculating your specific date range.</span>
+  </div>
+</div> -->
+
+<!-- <g focusable="true" opacity="1" transform="translate(410,16.8)"><g><g><circle r="5"></circle></g></g></g> -->

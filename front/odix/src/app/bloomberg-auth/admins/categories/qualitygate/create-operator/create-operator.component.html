@@ -1,0 +1,106 @@
+<div class="admins-workspace__regionTitle">
+  <h1 translate>Operators</h1>
+</div>
+<div class="admins-workspace__addLevel">
+  <button (click)="open()" >
+      <img src="assets/images/admins/add-new.svg" alt="" > &nbsp;<span translate>Add Operator</span>
+  </button>
+</div>
+
+<div class="admins-workspace__container">
+  <div class="admins-workspace__container--title">
+      <span translate>Filters</span>
+      <div class="admins-workspace__container--title__filters">
+          <input (input)="filterUsers()" [(ngModel)]="filter.nameRegistered" type="text">
+          <i class="fa fa-search"></i>
+      </div>
+  </div>
+  <div class="admins-workspace__container--table">
+      <table class="adminsTable">
+          <tr>
+              <th translate> Name </th>
+              <th translate> Badge </th>
+              <th translate> Role </th>
+              <th translate> Status </th>
+              <th>&nbsp;...</th>
+          </tr>
+
+          <tr [class.trDisabled]="user.status == '0'" *ngFor="let user of usersListFiltered | paginate: { itemsPerPage: 17, currentPage: p }; let ind = index;"  >
+              <td>{{user.name}}</td>
+              <td>{{user.badge}}</td>
+              <td>{{user.roleDescription}}</td>  
+              <td *ngIf="user.status == '1'" translate>Active</td>
+              <td *ngIf="user.status != '1'" translate>Inactive</td>           
+              <td class="options">
+                  <img *ngIf="user.status == '1'" (click)="editUser(user)" class="optionsImg" src="assets/images/admins/edit.svg" alt="">
+                  <img *ngIf="user.status == '1'" (click)="deleteUser(user)" class="optionsImg" src="assets/images/admins/garbage.svg" alt="">
+                  <img *ngIf="(user.status != '1')" (click)="activateUser(user)" class="optionsImg" src="assets/images/admins/recover.svg" alt="Activar">
+              </td>
+          </tr>
+
+      </table>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>
+
+<div [class.hiddenFC]="isFormHidden" class="formsContainer">
+  <div class="formsContainer__title">
+      <h2 *ngIf="!isEditing" translate>Add Operator</h2>
+      <h2 *ngIf="isEditing" translate>Edit Operator</h2>
+  </div>
+  <div class="formsContainer__forms">
+      <div class="odix-form">
+          <h5 translate>Name</h5>
+          <input [disabled]="isEditing" (blur)="closeSearch()" (input)="performSearch()" [(ngModel)]="filter.name" type="text">
+          <div *ngIf="resultUserList && resultUserVisible" class="tableAutoComplete">
+              <table>
+                  <tr>
+                      <th translate>Name</th>
+                      <th translate>Location</th>
+                      <th translate>Badge</th>
+                  </tr>
+                  <tr (click)="selectUserCombo(user,i)" *ngFor="let user of resultUserList; let i = index">
+                      <td>{{user.fullName}}</td>
+                      <td>{{getPlantName(user.location)}}</td>
+                      <td>{{user.tadi}}</td>
+                  </tr>
+              </table>
+          </div>
+      </div>
+      <div *ngIf="selectedUser" class="odix-form">
+          <h5 translate>Badge</h5>
+          <input type="text" disabled value="{{selectedUser.tadi}}" [(ngModel)]="userTadi">
+
+      </div>
+      <div *ngIf="selectedUser" class="odix-form">
+          <h5 translate>Role</h5>
+          <div class="radioButtons">
+            <div class="radioOption" *ngFor="let role of roleList">
+                <input type="radio" name="type" [value]="role" (change)="radioButtonSelectionChanged(role)" [(ngModel)]="userRole"> <span> {{role.description}} </span>
+            </div>
+          </div>
+      </div> 
+  </div>
+  <hr>
+  <div class="formsContainer__actions">
+      <button (click)="closeForm()" class="cancel" translate>Cancel</button>
+      <ng-container *ngIf="!isEditing && selectedUser">
+        <button (click)="save()" class="active" translate>Add</button>
+      </ng-container>
+      <ng-container *ngIf="isEditing">
+        <button  (click)="edit()" class="active" translate>Accept</button>
+      </ng-container>
+  </div>
+</div>
+
+<section class="wrapper dark" *ngIf="isLoading">
+    <div class="spinner">
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+        <i></i>
+    </div>
+</section>

@@ -1,0 +1,177 @@
+.container-ag-Grid{
+    margin: 30px 0 0 0px;
+    #quickFilter{
+        font-size: 12px;
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        border-bottom: solid 1px white;
+        margin: 0 0 16px 0;
+        color: #fff;
+    }
+
+    /deep/#quickFilter::placeholder{
+         color: #028eec;
+     }
+
+    .buttons{
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        display: flex;
+        width: 330px;
+        justify-content: space-evenly;
+    }
+
+}
+
+// BORDE VERTICAL ENTRE TD'S
+/deep/.ag-theme-balham-dark .ag-header-cell::after, .ag-theme-balham-dark .ag-header-group-cell::after {
+    border-right: 0px;
+}
+
+// BG COLOR TR-1
+/deep/.ag-theme-balham-dark .ag-row-even {
+    background-color: rgba(#00CAF2, .3);
+    transition: all .3s ease-in-out;
+    &:hover{
+        background-color: rgba(#00CAF2, .6);
+    }
+}
+//BG COLOR TR-2
+/deep/.ag-theme-balham-dark .ag-row-odd {
+    background-color: rgba(#0b679e, .3);
+    transition: all .3s ease-in-out;
+    &:hover{
+        background-color: rgba(#00CAF2, .6);
+    }
+}
+
+
+//BG COLOR - PAGINACION 
+/deep/.ag-theme-balham-dark{
+    // background-color: rgba(#2d3436, .5);
+    background-color: rgba(#000, .5);
+}
+
+
+//BORDE HORIZONTAL ENTRE TR'S
+/deep/.ag-theme-balham-dark .ag-row {
+    border: none
+}
+
+//INDIVIDUAL FILTER BGCOLOR
+/deep/.ag-theme-balham-dark input, .ag-theme-balham-dark select {
+    background-color: #061c1e;
+}
+
+
+//INDIVIDUAL FILTER BORDER
+/deep/.ag-theme-balham-dark .ag-floating-filter-body input {
+    border: none;
+    border-bottom: solid 1px;
+    background-color: #074755;
+}
+
+//TABLE BORDER
+/deep/.ag-theme-balham-dark .ag-root {
+    border: none;
+}
+
+//COLOR DE BOTTOM NAV
+    //TEXTO
+    /deep/.ag-theme-balham-dark .ag-paging-panel > span {
+        color: #fff;
+    }
+    BOTONES
+    /deep/.ag-theme-balham-dark button[ref="btFirst"][disabled] {
+        opacity: 1;
+    }
+    /deep/.ag-theme-balham-dark button[ref="btPrevious"][disabled] {
+        opacity: 1;
+    }
+    /deep/.ag-paging-button{
+        opacity: 1 !important;
+    }
+
+// //SELECCION DE ROWS
+/deep/.ag-theme-balham-dark .ag-row-selected {
+    background-color:#159586  !important;
+}
+
+
+ //COLOR HEADER
+/deep/ .ag-theme-balham-dark .ag-header {
+    background-color: #11847b;
+    color:white;
+}
+
+//new cell
+/deep/ .ag-theme-balham-dark input, .ag-theme-balham-dark[_ngcontent-c5] select[_ngcontent-c5] {
+    background-color: #061c1e;
+}
+
+ //ag grid body //checar
+/deep/.ag-body {
+    background-color: #000506;
+}
+
+/deep/ .btnH:hover {
+    background-color: red;
+}
+
+/deep/ .rag-red {
+    background-color: #bd1616 ;
+}
+
+
+/deep/.ag-theme-balham-dark .ag-header-row{
+    border: none;
+}
+
+.btn-primary{
+    border: none;
+}
+
+//ROWS
+/deep/.ag-theme-balham-dark .ag-row-even {
+    background-color: rgba(19, 19, 19, 0.5);
+    transition: all .3s ease-in-out;
+}
+
+/deep/.ag-theme-balham-dark .ag-row-odd {
+    background-color: rgba(11, 103, 158, 0.3);
+    transition: all .3s ease-in-out;
+}
+/deep/.ag-body {
+    background-color: transparent;
+}
+
+/deep/.ag-theme-balham-dark .ag-header {
+    background-color: rgba(#007aff, .3);
+}
+
+/deep/.ag-theme-balham-dark .ag-floating-filter-body input {
+    background-color: rgba(21, 25, 26, 0.65);
+}
+
+/deep/.ag-theme-balham-dark .ag-row-selected {
+    background-color: #007aff !important;
+}
+
+/deep/.ag-theme-balham-dark .ag-row-even:hover{
+    background-color: #028eec;
+}
+/deep/.ag-theme-balham-dark .ag-row-odd:hover{
+    background-color: #028eec;
+}
+
+/deep/.btn.btn-info.btnH{
+    background: transparent;
+    border: solid 1px #ff4954;
+    transition: all .3s ease-out;
+    &:hover{
+        background: #ff4954;
+    }
+}
+

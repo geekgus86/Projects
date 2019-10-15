@@ -1,0 +1,252 @@
+@import 'kpi-variables';
+@import 'kpi-components';
+
+.kpi{
+    color: $light;
+    padding: 15px;
+    margin: 30px -15px 0 -15px;
+    min-height: 100vh;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    background: $background;
+    &-header{
+        width: 100%;
+        margin: 10px 0;
+        &__title{
+            display: flex;
+            align-items: center;
+            &--breadcrumb{
+                font-size: 21px;
+                letter-spacing: 1px;
+                margin: 0 0 0 16px;
+            }
+        }
+        &__filters{
+            display: flex;
+            color: rgba($light, .75);
+            margin: 8px 0;
+            &--item{
+                position: relative;
+                &:not(:first-child){
+                    margin: 0 0 0 33px;
+                }
+                select, input{
+                    margin: 0 0 0 5px;
+                    color: rgba($light, .75);
+                    font-size: 14px;
+                    font-family: inherit;
+                    min-width: 130px;
+                    padding: 0 0 0 3px;
+                    font-weight: 400;
+                }
+                .arrow-down{
+                    position: absolute;
+                    top: 9px;
+                    right: 2px;
+                }
+            }
+            .date{
+                display: flex;
+                align-items: center;
+            }
+            &--button{
+                margin: 0 0 0 33px;
+                button{
+                    border: 0;
+                    background-color: $odix-blue-1;
+                    padding: 4px 10px;
+                    text-transform: uppercase;
+                    letter-spacing: 3px;
+                    color: inherit;
+                    border-radius: 5px;
+                    font-size: 9px;
+                    cursor: pointer;
+                    transition: all .3s ease-in-out;
+                    &:hover{
+                        transform: translateY(-1px);
+                        box-shadow: 0 0 5px rgba($odix-blue-1,.4)
+                    }
+                }
+            }
+        }
+    }
+    &-indicatorContainer{
+        padding: 16px;
+        border-radius: 5px;
+        background-color: $black-2;
+        margin: 20px 0 0 0;
+        position: relative;
+        &__cards{
+            display: flex;
+            margin: 16px 0 0 0 ;
+            justify-content: space-between;
+            &--card{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0 16px 0;
+                width: 326px;
+                height: 131px;
+                border-radius: 5px;
+                position: relative;
+                background-color: $black-1;
+                &:hover .kpi-indicatorContainer__cards--card--expand{
+                    opacity: 1;
+                }
+                &--value{
+                    font-size: 40px;
+                    font-weight: 800;
+                    text-shadow: 0 2px 4px rgba(black,.5);
+                    .status{
+                        &-onGoal{
+                            color: $goal;
+                        }
+                        &-delayed{
+                            color: $delayed;
+                        }
+                    }
+                }
+                &--expand{
+                    position: absolute;
+                    top: 8px;
+                    right: 8px;
+                    opacity: .3;
+                    cursor: pointer;
+                    transition: all .3s ease-in-out;
+                    &:hover{
+                        opacity: 1;
+                        transform: translateY(-2px)
+                    }
+                }
+                &--graphic{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 131px;
+                    z-index: 1;
+                    pointer-events: none;
+                    .type-3 > &{
+                        position: static;
+                    }
+                }
+                @include labelObj();
+                //ChangeOver Por Herramienta DATOS
+                .coHerramienta{
+                    width: 90%;
+                    display: flex;
+                    justify-content: space-around;
+                    margin: 127px 0 0 33px;
+                    position: relative;
+                    &__events{
+                        font-size: 14px;
+                    }
+                    span{
+                        position: absolute;
+                        left: -20px;
+                        bottom: 0px;
+                    }
+                }
+            }
+            .type{
+                &-2{
+                    width: 422px;
+                    height: 131px;
+                }
+                &-3{
+                    width: 422px;
+                    height: 181px;
+                    align-items: start;
+                    h3{
+                        margin: 0 0 0 10px;
+                    }
+                    .kpi-indicatorContainer__cards--card--graphic{
+                        pointer-events: auto;
+                    }
+                }
+                &-4{
+                    width: 100%;
+                    height: 227px;
+                    h3{
+                        align-self: start;
+                        margin: 0 0 0 13px;
+                    }
+                    /deep/.amChartsLegend.amcharts-legend-div{
+                        display: none;
+                    }
+                }
+            }
+        }
+        &__message{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            line-height: 32px;
+            width: 100%;
+            img{
+                margin: 0 0 10px 0;
+            }
+        }
+    }
+    .flexColumn{
+        min-width: 454px;
+        width: 32%;
+        .kpi-indicatorContainer__cards{
+            flex-direction: column;
+            min-height: 800px;
+            align-items: center;
+        }
+    }
+    .flexColumnsContainer{
+        width: 100%;
+        justify-content: space-between;
+        display: flex;
+    }
+}
+
+.expanded{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(black,.75);
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    color: $light;
+    &__container{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 1164px;
+        min-height: 541px;
+        padding: 16px 24px;
+        border-radius: 5px;
+        background-color: $black-1;
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.5);
+        &--graphic{
+            width: 100%;
+            min-width: 1200px;
+            #expanded{
+                width: 100%;
+                height: 450px;
+            }
+        }
+        &--close{
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover{
+                transform: translateY(-2px)
+            }
+        }
+    }
+}
+
+@import 'kpi-responsive';
+@import 'app/bloomberg/performance-rate/loader.scss';

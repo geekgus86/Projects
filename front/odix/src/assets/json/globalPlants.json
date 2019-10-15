@@ -1,0 +1,151 @@
+{
+    "areas": [
+        { "id": "US" },
+        { "id": "MX" }
+    ],
+    "markers": [
+        {
+            "groupId":"US",
+            "title":"ElizabethThown",
+            "showMe": true,
+            "rateValue": 99.4,
+            "rate": "green",
+            "latitude": 37.6726356,
+            "longitude": -85.9224851,
+            "imageURL": "../../../../assets/images/global/apodaca-factory.svg",
+            "scale": 0.5,
+            "labelShiftY": 2,
+            "percentHeight": 5,
+            "percentWidth":2,
+            "zoomLevel": 5
+        },
+        {
+            "groupId":"MX",
+            "title":"Apodaca",
+            "typeImage":"plant",
+            "showMe": true,
+            "rateValue": 79.4,
+            "rate": "yellow",
+            "latitude": 25.7482334,
+            "longitude": -100.203852,
+            "imageURL": "../../../../assets/images/global/apodaca-factory.svg",
+            "scale": 0.5,
+            "labelShiftY": 2,
+            "percentHeight": 5,
+            "percentWidth":2,
+            "zoomLevel": 5
+        },
+        {
+            "groupId":"unknow",
+            "title":"Roanoke",
+            "typeImage":"plant",
+            "showMe": false,
+            "rateValue": 49.4,
+            "rate": "orange"
+        },
+        {
+            "groupId":"unknow",
+            "title":"Hopkinsville",
+            "typeImage":"plant",
+            "showMe": false,
+            "rateValue": 80.5,
+            "rate": "yellow"
+        },
+        {
+            "groupId":"unknow",
+            "title":"Tuscaloosa",
+            "typeImage":"plant",
+            "showMe": false,
+            "rateValue": 68.9,
+            "rate": "yellow"
+        },
+        {
+            "groupId":"unknow",
+            "title":"Saltillo",
+            "typeImage":"plant",
+            "showMe": false,
+            "rateValue": 20,
+            "rate": "red"
+        },
+        {
+            "groupId":"unknow",
+            "title":"El Talar",
+            "typeImage":"plant",
+            "showMe": false,
+            "rateValue": 86.9,
+            "rate": "yellow"
+        },
+        {
+            "groupId":"unknow",
+            "title":"other test1",
+            "typeImage":"plant",
+            "showMe": false,
+            "rateValue": 56.9,
+            "rate": "orange"
+        },
+        {
+            "groupId":"unknow",
+            "title":"other test2",
+            "typeImage":"plant",
+            "showMe": false,
+            "rateValue": 70,
+            "rate": "yellow"
+        },
+        {
+            "groupId":"unknow",
+            "title":"other test3",
+            "typeImage":"plant",
+            "showMe": false,
+            "rateValue": 10,
+            "rate": "red"
+        },
+        {
+            "groupId":"unknow",
+            "title":"other test4",
+            "typeImage":"plant",
+            "showMe": false,
+            "rateValue": 59.8,
+            "rate": "orange"
+        },
+        {
+            "groupId":"countries",
+            "title": "markerUnitedStates",
+            "typeImage":"country",
+            "rate": "yellow",
+            "showMe": false,
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "percentHeight": 7,
+            "percentWidth":10,
+            "latitude": 42.886313,
+            "longitude": -128.063927
+        },
+        {
+            "groupId":"countries",
+            "title": "markerMexico",
+            "typeImage":"country",
+            "rate": "red",
+            "showMe": false,
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "percentHeight": 7,
+            "percentWidth":10,
+            "latitude": 24.628147,
+            "longitude": -122.517107
+        }
+
+    ],
+    "gaugeChart": {
+        "color": {
+            "pattern": ["#FF0000", "#F97600", "#F6C600", "#60B044"],
+            "threshold": {
+                "values": [30, 60, 90, 100]
+            }
+        },
+        "size": {
+            "width": 140,
+            "height": 100
+        }
+    }
+
+}

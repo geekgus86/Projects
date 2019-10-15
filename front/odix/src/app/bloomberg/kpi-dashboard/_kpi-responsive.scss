@@ -1,0 +1,19 @@
+@media only screen and (max-width: 1366px) {
+    .kpi-indicatorContainer__cards--card{
+        width: 290px;
+    }
+    /deep/.test1, .test2{
+        /deep/.amcharts-chart-div{
+            g[clip-path^="url(#AmChartsEl"]{
+                transform: scale(1.9) translateY(2px) translateX(41px);
+            }
+        }
+    }
+    .type-2, .type-3 {
+        width: 366px !important;
+    }
+    .kpi .flexColumn {
+        min-width: 400px;
+    }
+
+  }

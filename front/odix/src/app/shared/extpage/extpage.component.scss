@@ -1,0 +1,11 @@
+::ng-deep .main-body .page-wrapper{
+    padding: 0;
+}
+
+iframe{
+    border: none;
+}
+
+::ng-deep section{
+    height: 100%;
+}

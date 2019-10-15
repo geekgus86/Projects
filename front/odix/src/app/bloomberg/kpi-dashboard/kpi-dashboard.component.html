@@ -1,0 +1,290 @@
+<div class="kpi">
+  <!-- HEADER -->
+  <div class="kpi-header">
+    <div class="kpi-header__title">
+         <h1 translate>Reporte Diario de Producción</h1>
+         <div class="kpi-header__title--breadcrumb">
+            <span translate>Estampado</span> / <span>{{ showPress}}</span> / {{ showDate }} / <span *ngIf="translateService.currentLang == 'en-US' && herramienta== 'Tooling'"><span>{{ showToolFake == "0" ? showTool : showToolFake }}</span> <span>{{herramienta}} </span></span> <span *ngIf="translateService.currentLang == 'en-US' && herramienta != 'Tooling'"> <span>{{herramienta}} </span> <span>{{ showToolFake == "0" ? showTool : showToolFake }}</span></span> <span *ngIf="translateService.currentLang != 'en-US' && herramienta != 'Tooling'"><span>{{herramienta}} </span> <span>{{ showToolFake == "0" ? showTool : showToolFake }}</span></span>
+         </div>
+    </div>
+    <div class="kpi-header__filters">
+      <div class="kpi-header__filters--item">
+        <span translate>Prensa</span><span>:</span>
+        <select id="selectPress" [(ngModel)]="press" (ngModelChange)="pressChanged($event)" >
+            <!-- <option [value]="pressSel.id" *ngFor="let pressSel of pressOptions">{{pressSel.name}}</option>
+            <option value="todas">Todas</option> -->
+            <option *ngFor="let pressSel of pressOptions" [ngValue]="pressSel.id">{{pressSel.name}}</option>
+            <!--<option *ngIf="pressOptions" value="todas" >Todas</option>-->
+
+          <!-- <option value="schuler a">Shuler A</option>
+          <option value="schuler b">Shuler B</option> -->
+        </select>
+        <div class="arrow-down"></div>
+      </div>
+      <div class="kpi-header__filters--item date">
+        <span translate>Fecha(s)</span><span>:</span>
+        <input class="form-control" placeholder="{{ 'Select a Date range' | translate}}" ngModel bsDaterangepicker
+        [maxDate]="maxDateFake" [minDate]="minDate" [bsConfig]="{ containerClass: 'theme-blue', rangeInputFormat: inputFormat }"
+        (bsValueChange)="onDateSelection($event)" [(ngModel)]="fechas"
+        style="background: transparent; border: none; font-family:Arial, FontAwesome; width: 220px; border-radius: 0px; font-weight: 400; font-size: 14px; border-bottom: solid 1px #e8e8e8; font-family: 'Open Sans', sans-serif;"
+        >
+        <div class="arrow-down"></div>
+      </div>
+      <div class="kpi-header__filters--item">
+        <span translate>Herramienta</span><span>:</span>
+        <select id="selectTool" [(ngModel)]="tool">
+          <!-- <option value="todas">Todas</option> -->
+          <option *ngIf="toolOptions" value="todas" translate>Todas</option>
+          <option *ngFor="let toolSel of toolOptions" [ngValue]="toolSel.id">{{toolSel.name}}</option>
+
+          <!-- <option [value]="toolSel.id" *ngFor="let toolSel of toolOptions">{{toolSel.name}}</option> -->
+        </select>
+        <div class="arrow-down"></div>
+      </div>
+      <div class="kpi-header__filters--button">
+        <button  (click)="revisarClick($event)" type="button" translate>Revisar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INDICADORES -->
+  <div class="kpi-indicatorContainer flexRow">
+    <div class="kpi-indicatorContainer__title">
+      <h2 translate>Indicadores Principales</h2>
+    </div>
+
+    <div class="kpi-indicatorContainer__cards">
+        <div class="kpi-indicatorContainer__cards--card">
+          <h3 translate>Número de golpes</h3>
+          <span class="kpi-indicatorContainer__cards--card--value" [ngStyle]="{'color': strokesIndicatorStyle}">{{formatNum(primaryIndicatorData.strokesNumber)}}</span>
+          <p><span translate>Objetivo</span><span>:{{primaryIndicatorData.strokeGoal}}</span></p>
+          <div class="kpi-indicatorContainer__cards--card--expand">
+            <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGraficaHistory($event,primaryIndicatorData.historic,'stroke')">
+          </div>
+          <div class="kpi-indicatorContainer__cards--card--graphic">
+            <div id="miniHistoricStrokes" class="test1"></div>
+          </div>
+        </div>
+
+          <div class="kpi-indicatorContainer__cards--card">
+            <h3 style="text-transform:none;">OAxPR</h3>
+            <span class="kpi-indicatorContainer__cards--card--value"  [ngStyle]="{'color': oaxprIndicatorStyle}">
+              {{primaryIndicatorData.oaxpr}}%</span>
+            <p translate>Objetivo<span>:</span> <span>{{primaryIndicatorData.oaxprGoal}}% </span></p>
+            <div class="kpi-indicatorContainer__cards--card--expand">
+              <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGraficaHistory($event,primaryIndicatorData.historic,'oaxpr')">
+            </div>
+            <div class="kpi-indicatorContainer__cards--card--graphic">
+               <div id="miniHistoricOaxpr"  class="test1"></div>
+            </div>
+          </div>
+
+          <div class="kpi-indicatorContainer__cards--card">
+            <h3 translate>VCD</h3>
+            <span class="kpi-indicatorContainer__cards--card--value">{{primaryIndicatorData.vcd}} GPM</span>
+            <div class="kpi-indicatorContainer__cards--card--expand">
+              <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGraficaHistory($event,primaryIndicatorData.historic,'vcd')">
+            </div>
+            <span>&nbsp;</span>
+            <div class="kpi-indicatorContainer__cards--card--graphic">
+              <div id="miniHistoricVCD" class="test1"></div>
+            </div>
+          </div>
+
+          <div class="kpi-indicatorContainer__cards--card">
+            <h3 translate>VSD</h3>
+            <span class="kpi-indicatorContainer__cards--card--value">{{primaryIndicatorData.vsd}} GPM</span>
+            <div class="kpi-indicatorContainer__cards--card--expand">
+              <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGraficaHistory($event,primaryIndicatorData.historic,'vsd')">
+            </div>
+            <span>&nbsp;</span>
+            <div class="kpi-indicatorContainer__cards--card--graphic">
+              <div id="miniHistoricVSD" class="test1"></div>
+            </div>
+          </div>
+    </div>
+
+  </div>
+
+  <div class="flexColumnsContainer">
+    <div class="kpi-indicatorContainer flexColumn">
+        <div class="kpi-indicatorContainer__title">
+          <h2 translate>Disponibilidad</h2>
+        </div>
+          <div class="kpi-indicatorContainer__cards">
+
+              <div class="kpi-indicatorContainer__cards--card type-2">
+                <h3>% Downtime</h3>
+                <span class="kpi-indicatorContainer__cards--card--value" [ngStyle]="{'color': downtimeIndicatorStyle}">{{secondaryIndicatorData.dt}}%</span>
+                <p translate>Objetivo<span>:</span> <span>{{secondaryIndicatorData.dtGoal}}%</span></p>
+                <div class="kpi-indicatorContainer__cards--card--expand">
+                  <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGraficaHistory($event,secondaryIndicatorData?.downtimePorHerramientaHistoric,'downtime')">
+                </div>
+                <div class="kpi-indicatorContainer__cards--card--graphic">
+                  <div id="miniHistoricDowntime" class="test1"></div>
+                </div>
+              </div>
+                
+                <div class="kpi-indicatorContainer__cards--card type-3">
+                  <h3 translate>AFECTACIÓN POR DEPARTAMENTO</h3>
+                  <div class="kpi-indicatorContainer__cards--card--expand">
+                    <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGrafica($event,secondaryIndicatorData?.afectacionPorDepartamentoHist,'stackDowntimeByDeparment')">
+                  </div>
+                  <div class="kpi-indicatorContainer__cards--card--graphic">
+                      <div id="barDowntimeByDeparment" class="bar"></div>
+                  </div>
+                </div>
+
+                <div class="kpi-indicatorContainer__cards--card type-3">
+                  <h3 translate>AFECTACIÓN POR HERRAMIENTA</h3>
+                  <div class="kpi-indicatorContainer__cards--card--expand">
+                    <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGrafica($event,secondaryIndicatorData?.afectacionPorHerramientaHistoric,'stackDowntimeByTool')">
+                  </div>
+                  <span>&nbsp;</span>
+                  <div class="kpi-indicatorContainer__cards--card--graphic afectacionPorHerramienta">
+                    <div id="barDowntimeByTool" class="stackedAm4"></div>
+                  </div>
+                </div>
+                
+                <div class="kpi-indicatorContainer__cards--card type-3">
+                  <h3 translate>MINUTOS MTTR POR ÁREA</h3>
+                  <div class="kpi-indicatorContainer__cards--card--expand">
+                    <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGrafica($event,secondaryIndicatorData?.mttr,'downtimeMTTR1')">
+                  </div>
+                  <span>&nbsp;</span>
+                  <div class="kpi-indicatorContainer__cards--card--graphic">
+                    <div id="miniDowntimeMTTR" class="bar"></div>
+                  </div>
+                </div>
+          </div>
+      </div>
+
+      <div class="kpi-indicatorContainer flexColumn">
+          <div class="kpi-indicatorContainer__title">
+            <h2 translate>Cambio de Herramienta</h2>
+          </div>
+            <div class="kpi-indicatorContainer__cards">
+
+                <div class="kpi-indicatorContainer__cards--card type-2">
+                  <h3 translate>MINUTOS C/O PROMEDIO</h3>
+                  <span class="kpi-indicatorContainer__cards--card--value" [ngStyle]="{'color': changeoverIndicatorStyle}">{{changeOverNew?.average}} Min</span>
+                  <p translate>Objetivo<span>:</span> <span>{{changeOverNew?.goal}} Min</span></p>
+                  <div class="kpi-indicatorContainer__cards--card--expand">
+                    <img src="assets/images/kpi/fullsize.png"   width="32" (click)="expandirGraficaHistory($event,changeOverNew?.historic,'changeover')">
+                  </div>
+                  <div class="kpi-indicatorContainer__cards--card--graphic">
+                    <div id="miniHistoricChangeover"  class="test1"></div>
+                  </div>
+                </div>
+                
+                  <div class="kpi-indicatorContainer__cards--card type-3">
+                    <h3 translate>TIEMPO C/O POR DEPARTAMENTO</h3>
+                    <div class="kpi-indicatorContainer__cards--card--expand">
+                      <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGrafica($event,changeOverNew?.tiempoCoPorDepartamento,'barCOPorDepartamento')">
+                    </div>
+                    <div class="kpi-indicatorContainer__cards--card--graphic">
+                        <div id="timeCOByDeparment" [ngClass]="'bar'"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="kpi-indicatorContainer__cards--card type-3">
+                    <h3 translate>C/O POR HERRAMIENTA</h3>
+                    <div class="kpi-indicatorContainer__cards--card--expand">
+                      <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGrafica($event,changeOverNew?.changeoverPorHerramienta,'stackCOByTools')">
+                    </div>
+                    <div class="kpi-indicatorContainer__cards--card--graphic">
+                      <div id="timeCOByTools" class="stackedAm4"></div>
+                    </div>
+                    <div class="coHerramienta">
+                      <span>#C/0:</span>
+                      <div *ngFor="let events of changeOverNewArray" class="coHerramienta__events">{{events}}</div>
+                    </div>
+                  </div>
+
+                  <div class="kpi-indicatorContainer__cards--card type-3" style="background-color: transparent;">
+                    &nbsp;
+                  </div>
+                
+            </div>
+        </div>
+
+        <div class="kpi-indicatorContainer flexColumn">
+            <div class="kpi-indicatorContainer__title">
+              <h2 translate>Calidad</h2>
+            </div>
+            <div class="kpi-indicatorContainer__message">
+              <img src="assets/images/kpi/gear.svg" alt="" width="110">
+              <h3 translate>EN DESARROLLO</h3>
+              <p translate>Esta sección estará disponible pronto</p>
+            </div>
+          </div>
+  </div>
+
+  <div class="kpi-indicatorContainer flexRow">
+    <div class="kpi-indicatorContainer__title">
+      <h2 translate>Productividad</h2>
+    </div>
+    <div class="kpi-indicatorContainer__cards">
+      <div class="kpi-indicatorContainer__cards--card type-4">
+        <h3 translate>HORA POR HORA</h3>
+          <div id="productivityChart" [ngClass]="'bar'"></div>
+          <div class="objectives-label">
+            <div class="objectives-label__objective-1">
+              <span>&nbsp;</span>
+              <p translate>Objetivo Cumplido</p>
+            </div>
+            <div class="objectives-label__objective-2">
+                <span>&nbsp;</span>
+                <p translate>Objetivo No Cumplido</p>
+            </div>
+          </div>
+          <div class="kpi-indicatorContainer__cards--card--expand">
+            <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGrafica($event,productivityData?.graphicData,'productivityChartExpanded')">
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Expansion -->
+<div class="expanded animated fadeIn" *ngIf="expandedFull">
+  <div class="expanded__container">
+    <div class="expanded__container--title">
+        <h2>{{expandedTitle}}</h2>
+      </div>
+      <div class="expanded__container--graphic">
+        <div class="animated fadeIn" id="expanded"></div>
+      </div>
+      <div class="expanded__container--close">
+        <img src="assets/images/kpi/fullsize.png" width="32" (click)="expandirGrafica($event,primaryIndicatorData.strokesHistory)">
+      </div>
+      <div class="hbhLegend" *ngIf="hbhLegend">
+        <div class="objectives-label">
+          <div class="objectives-label__objective-1">
+            <span>&nbsp;</span>
+            <p>Objetivo Cumplido</p>
+          </div>
+          <div class="objectives-label__objective-2">
+              <span>&nbsp;</span>
+              <p>Objetivo No Cumplido</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+<!-- Loader -->
+<div *ngIf="loader" class="loader-container">
+  <div class="loader">
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__bar"></div>
+      <div class="loader__ball"></div>
+      <span>Hold on, we’re calculating your specific date range.</span>
+  </div>
+</div>

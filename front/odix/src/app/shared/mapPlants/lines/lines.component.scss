@@ -1,0 +1,64 @@
+.line-cont{
+  section > *{
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    font-weight: 400;
+    letter-spacing: 1px;
+    opacity: .8;
+    text-shadow: 1px 1px 4px rgba(0,0,0,1);
+    background-color: rgba(black, .8);
+    pointer-events: none;
+    padding: 3px 7px;
+    border-radius: 3px;
+  }
+} 
+
+
+//APODACA
+.pintura{
+  top: 109px;
+  left: 400px;
+  background-color: rgba(black, 1);
+  opacity: .9;
+    }
+
+.ensamble{
+  top: 427px;
+  left: 346px;
+  }
+  
+.camiones{
+  top: 167px;
+  left: 810px;
+  }
+  
+.toyota{
+  top: 234px;
+  left: 504px;
+  }
+  
+.ds{
+  top: 194px;
+  left: 249px;
+  }
+
+
+
+ // SALTILLO
+ .salt--{
+    &pintura{
+      top: 290px;
+      left: 519px;
+    }
+
+    &dddp{
+      top: 255px;
+      left: 705px;
+    }
+
+    &d2-dj{
+      top: 250px;
+      left: 838px;
+    }
+ }

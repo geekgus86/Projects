@@ -1,0 +1,5612 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "basePath": "/api/v1",
+  "paths": {
+    "/auth/verify/": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Auth",
+        "tags": [
+          "Auth"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Auth found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Auth not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "Login",
+        "tags": [
+          "Auth"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Login",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "email",
+                "password"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/auth/checkLogin": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "checkLogin",
+        "tags": [
+          "Auth"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Login",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sessionData": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/api/v1/checklists": {
+      "post": {
+        "summary": "Creates a Checklist",
+        "tags": [
+          "Checklist"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Checklist",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "sections": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "type",
+                "title"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Checklist created"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/checklist/1?group={group}&start_date={start_date}&end_date={end_date}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Checklist",
+        "tags": [
+          "Checklist"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "group",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "start_date",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "end_date",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "datos": {
+                      "type": "object",
+                      "properties": {
+                        "header": {
+                          "type": "object",
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                              }
+                            }
+                          }
+                        },
+                        "datos": {
+                          "type": "object",
+                          "properties": {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/checklist/2?type={type}&tool={tool}&end_date={end_date}&start_date={start_date}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Checklist",
+        "tags": [
+          "Checklist"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "tool",
+            "in": "path",
+            "type": "integer",
+            "required": true
+          },
+          {
+            "name": "end_date",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "start_date",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Checklist found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "datos": {
+                      "type": "object",
+                      "properties": {
+                        "header": {
+                          "type": "object",
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                              }
+                            }
+                          }
+                        },
+                        "datos": {
+                          "type": "object",
+                          "properties": {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/checklist/save": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "get Machine Checklist",
+        "tags": [
+          "Checklist"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Checklist",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user_id": {
+                  "type": "integer"
+                },
+                "checklist_id": {
+                  "type": "integer"
+                },
+                "machine_id": {
+                  "type": "integer"
+                },
+                "shift": {
+                  "type": "integer"
+                },
+                "answers": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/checklist/getChecklistShift": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "get Check list Shift",
+        "tags": [
+          "Checklist"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Checklist",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "shift": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/checklist/saveLog": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "save log",
+        "tags": [
+          "Checklist"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Checklist",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tadi": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "string"
+                },
+                "end": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "machine": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/daily_production_reports/get_om?val1={val1}&val2={val2}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get om",
+        "tags": [
+          "Daily Production Report"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "val1",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "val2",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API found",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "color": {
+                    "type": "string"
+                  },
+                  "downtime": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "downtime_co": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "dt_count": {
+                    "type": "integer"
+                  },
+                  "co_count": {
+                    "type": "integer"
+                  },
+                  "setup": {
+                    "type": "integer"
+                  }
+                }
+              },
+              "required": [
+                "val1",
+                "val2"
+              ]
+            }
+          },
+          "404": {
+            "description": "Daily not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/daily_production_reports/get_real_strokes_header?val1={val1}&val2={val2}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "GET Real Strokes Header",
+        "tags": [
+          "Daily Production Report"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "val1",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "val2",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "time_tnr": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "workorder": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "ID": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "tool": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "golpes": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "golpesp": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "scrap": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "retrabajo": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "Minutos": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "RealSpeed": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "ShiftID": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "gspm": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "percentageOaPr": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "minCo": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "percentageCo": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "eventCo": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "paros": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "IssueID": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "IssueTypeID": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "changeover": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "OutTime": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "tnd": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "veldis": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "dateperiod": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "ttaSum": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "percentageTtaSum": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "percentageTnr": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "mttrProm": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "totalMcp": {
+                  "type": "number",
+                  "format": "float"
+                },
+                "percentageMcp": {
+                  "type": "number",
+                  "format": "float"
+                }
+              },
+              "required": [
+                "val1",
+                "val2"
+              ]
+            }
+          },
+          "404": {
+            "description": "Daily not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/daily_production_reports/get_shift_detail?val1={val1}&val2={val2}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "GET Shift Detail",
+        "tags": [
+          "Daily Production Report"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "val1",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "val2",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "API found",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "workOrderID": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "tools": {
+                    "type": "string"
+                  },
+                  "paros": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "golpes": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "scrap": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "retrabajo": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "Minutos": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "RealSpeed": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "changeover0": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "OutTime": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "veldis": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "tnd": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "gspm": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "golpesP": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "percentageOaPr": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "changeover": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "velRealTT": {
+                    "type": "integer"
+                  },
+                  "num_juliano": {
+                    "type": "integer"
+                  },
+                  "dateperiod": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "val1",
+                "val2"
+              ]
+            }
+          },
+          "404": {
+            "description": "Daily not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/dailyreport/prepareProduction": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a DailyReport",
+        "tags": [
+          "DailyReport"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "DailyReport found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "ID": {
+                      "type": "integer"
+                    },
+                    "WorkOrderID": {
+                      "type": "integer"
+                    },
+                    "WorkOrderDetailID": {
+                      "type": "integer"
+                    },
+                    "UnitAuto": {
+                      "type": "integer"
+                    },
+                    "UnitManual": {
+                      "type": "integer"
+                    },
+                    "UnitPotential": {
+                      "type": "integer"
+                    },
+                    "UnitScrap": {
+                      "type": "integer"
+                    },
+                    "UnitRework": {
+                      "type": "integer"
+                    },
+                    "ToolID": {
+                      "type": "integer"
+                    },
+                    "DesignSpeed": {
+                      "type": "integer"
+                    },
+                    "JulianCode": {
+                      "type": "integer"
+                    },
+                    "RolledSteelID": {
+                      "type": "integer"
+                    },
+                    "RolledNo": {
+                      "type": "integer"
+                    },
+                    "RolledLot": {
+                      "type": "integer"
+                    },
+                    "DailyStatusID": {
+                      "type": "string"
+                    },
+                    "StartAt": {
+                      "type": "string"
+                    },
+                    "EndAt": {
+                      "type": "string"
+                    },
+                    "CreatedAt": {
+                      "type": "string"
+                    },
+                    "CreatedBy": {
+                      "type": "string"
+                    },
+                    "UpdatedAt": {
+                      "type": "string"
+                    },
+                    "UpdatedBy": {
+                      "type": "string"
+                    },
+                    "Active": {
+                      "type": "boolean"
+                    },
+                    "LoteBlanco": {
+                      "type": "string"
+                    },
+                    "OpenSecond": {
+                      "type": "string"
+                    },
+                    "WorkOrderDetail": {
+                      "type": "integer"
+                    },
+                    "tool": {
+                      "type": "object",
+                      "properties": {
+                        "ID": {
+                          "type": "integer"
+                        },
+                        "DescTool": {
+                          "type": "string"
+                        },
+                        "ParentCode": {
+                          "type": "string"
+                        },
+                        "DesignSpeed": {
+                          "type": "integer"
+                        },
+                        "ObjectiveID": {
+                          "type": "integer"
+                        },
+                        "JobNumber": {
+                          "type": "integer"
+                        },
+                        "CreatedAt": {
+                          "type": "string"
+                        },
+                        "CreatedBy": {
+                          "type": "string"
+                        },
+                        "UpdatedAt": {
+                          "type": "string"
+                        },
+                        "UpdatedBy": {
+                          "type": "string"
+                        },
+                        "Active": {
+                          "type": "boolean"
+                        },
+                        "ToolType": {
+                          "type": "integer"
+                        },
+                        "NoRollo": {
+                          "type": "integer"
+                        },
+                        "PzPerStroke": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/dailyreport/editValidatedProduction": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "editValidatedProduction",
+        "tags": [
+          "DailyReport"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "DailyReport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/dailyreport/getValidatedProduction": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "getValidatedProduction",
+        "tags": [
+          "DailyReport"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "DailyReport found",
+            "schema": {
+              "type": "object",
+              "properties": {
+              }
+            }
+          },
+          "404": {
+            "description": "Daily not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/dailyreport/getVerifiedProduction": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "getVerifiedProduction",
+        "tags": [
+          "DailyReport"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "DailyReport found",
+            "schema": {
+              "type": "object",
+              "properties": {
+              }
+            }
+          },
+          "404": {
+            "description": "Daily not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/dailyreport/validateProduction": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "validateProduction",
+        "tags": [
+          "DailyReport"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "DailyReport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "production_id": {
+                  "type": "string"
+                },
+                "setup_status": {
+                  "type": "string"
+                },
+                "report_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/dailyreport/verifyProduction": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "verifyProduction",
+        "tags": [
+          "DailyReport"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "DailyReport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "production": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/dailyreport/getLog": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "getLog",
+        "tags": [
+          "DailyReport"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "DailyReport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "day": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/dailyreport/setCurrentTool": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "setCurrentTool",
+        "tags": [
+          "DailyReport"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "DailyReport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "production": {
+                  "type": "string"
+                },
+                "tool": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/dailyreport/closeProduction": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "closeProduction",
+        "tags": [
+          "DailyReport"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "DailyReport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "production": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/dailyreport/setChangeoverReqs": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "setChangeoverReqs",
+        "tags": [
+          "DailyReport"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "DailyReport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "production": {
+                  "type": "string"
+                },
+                "reqs": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/dailyreport/setToolsParams": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "setToolsParams",
+        "tags": [
+          "DailyReport"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "DailyReport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "production": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/datatables/checkExternalCheckList?day={day}&type={type}&start_date={start_date}&end_date={end_date}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Datatables",
+        "tags": [
+          "Datatables"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "day",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "start_date",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "end_date",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Datatables found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "datos": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "Work_order": {
+                        "type": "integer"
+                      },
+                      "ENN": {
+                        "type": "integer"
+                      },
+                      "Prensa": {
+                        "type": "string"
+                      },
+                      "Turno": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "Grupo": {
+                        "type": "string"
+                      },
+                      "Team_Member": {
+                        "type": "string"
+                      },
+                      "Team_Leader": {
+                        "type": "string"
+                      },
+                      "Group_Leader": {
+                        "type": "string"
+                      },
+                      "Hora_Inicio": {
+                        "type": "string"
+                      },
+                      "Hora_Fin": {
+                        "type": "string"
+                      },
+                      "Categoria": {
+                        "type": "string"
+                      },
+                      "Revision": {
+                        "type": "string"
+                      },
+                      "Confirmacion": {
+                        "type": "string"
+                      },
+                      "Comentarios": {
+                        "type": "string"
+                      },
+                      "Estatus_Del_Checklist": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/forum/newComment": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "Forum new comment",
+        "tags": [
+          "Forum"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Forum",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "data": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Forum"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/hourproduction/getInfoShift": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "Get new comment",
+        "tags": [
+          "hourproduction"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "hourproduction",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "day": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "hourproduction"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/inspection_check_lists/{tool_ID} ": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a inspection_check_lists",
+        "tags": [
+          "Tool"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "tool_ID",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "ID": {
+                        "type": "integer"
+                      },
+                      "DescTool": {
+                        "type": "string"
+                      },
+                      "ParentCode": {
+                        "type": "string"
+                      },
+                      "DesignSpeed": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ObjectiveID": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "JobNumber": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "CreatedAt": {
+                        "type": "string"
+                      },
+                      "CreatedBy": {
+                        "type": "string"
+                      },
+                      "UpdatedAt": {
+                        "type": "string"
+                      },
+                      "UpdatedBy": {
+                        "type": "string"
+                      },
+                      "Active": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ToolType": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "NoRollo": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "PzPerStroke": {
+                        "type": "number",
+                        "format": "float"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/hourproduction/getReportsOfTheDay": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "get Reports Of The Day",
+        "tags": [
+          "Inspections"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Inspections found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "reportId": {
+                        "type": "integer"
+                      },
+                      "id": {
+                        "type": "integer"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "closedAt": {
+                        "type": "string"
+                      },
+                      "limitMin": {
+                        "type": "string"
+                      },
+                      "limitMax": {
+                        "type": "string"
+                      },
+                      "report_type": {
+                        "type": "integer"
+                      },
+                      "report_status": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "desc": {
+                        "type": "string"
+                      },
+                      "code": {
+                        "type": "string"
+                      },
+                      "diff": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "report_number": {
+                        "type": "integer"
+                      },
+                      "report_division": {
+                        "type": "string"
+                      },
+                      "has_parent": {
+                        "type": "boolean"
+                      },
+                      "is_grouped": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Integration not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/hourproduction/getWeekProduction": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Inspections",
+        "tags": [
+          "Inspections"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Inspections found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "fecha": {
+                        "type": "string"
+                      },
+                      "diaFinal": {
+                        "type": "string"
+                      },
+                      "turno": {
+                        "type": "string"
+                      },
+                      "sumPiezas": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Integration not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/hourproduction/getLastRecordProduction": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Inspections",
+        "tags": [
+          "Inspections"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Inspections found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "fecha": {
+                      "type": "string"
+                    },
+                    "gspm": {
+                      "type": "integer"
+                    },
+                    "golpes": {
+                      "type": "integer"
+                    },
+                    "oaxpr_perc": {
+                      "type": "integer"
+                    },
+                    "dataql": {
+                      "type": "object",
+                      "properties": {
+                        "fechaInicio": {
+                          "type": "string"
+                        },
+                        "fechaProduccion": {
+                          "type": "string"
+                        },
+                        "fechaCierre": {
+                          "type": "string"
+                        },
+                        "sumPiezas": {
+                          "type": "integer"
+                        },
+                        "sumPiezasPotenciales": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "dataq2": {
+                      "type": "object",
+                      "properties": {
+                        "tnd": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Integration not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/inspections/{toolID}/actual": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a actual",
+        "tags": [
+          "Inspections actual"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "toolID",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Inspections found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "fecha": {
+                      "type": "string"
+                    },
+                    "gspm": {
+                      "type": "integer"
+                    },
+                    "golpes": {
+                      "type": "integer"
+                    },
+                    "oaxpr_perc": {
+                      "type": "integer"
+                    },
+                    "dataql": {
+                      "type": "object",
+                      "properties": {
+                        "fechaInicio": {
+                          "type": "string"
+                        },
+                        "fechaProduccion": {
+                          "type": "string"
+                        },
+                        "fechaCierre": {
+                          "type": "string"
+                        },
+                        "sumPiezas": {
+                          "type": "integer"
+                        },
+                        "sumPiezasPotenciales": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "dataq2": {
+                      "type": "object",
+                      "properties": {
+                        "tnd": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Integration not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/inspections/{toolID}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a actual",
+        "tags": [
+          "Inspections"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "toolID",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Inspections found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "fecha": {
+                      "type": "string"
+                    },
+                    "gspm": {
+                      "type": "integer"
+                    },
+                    "golpes": {
+                      "type": "integer"
+                    },
+                    "oaxpr_perc": {
+                      "type": "integer"
+                    },
+                    "dataql": {
+                      "type": "object",
+                      "properties": {
+                        "fechaInicio": {
+                          "type": "string"
+                        },
+                        "fechaProduccion": {
+                          "type": "string"
+                        },
+                        "fechaCierre": {
+                          "type": "string"
+                        },
+                        "sumPiezas": {
+                          "type": "integer"
+                        },
+                        "sumPiezasPotenciales": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "dataq2": {
+                      "type": "object",
+                      "properties": {
+                        "tnd": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Integration not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/inspections/{id}/approval": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a approval",
+        "tags": [
+          "Inspections"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Inspections found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "fecha": {
+                      "type": "string"
+                    },
+                    "gspm": {
+                      "type": "integer"
+                    },
+                    "golpes": {
+                      "type": "integer"
+                    },
+                    "oaxpr_perc": {
+                      "type": "integer"
+                    },
+                    "dataql": {
+                      "type": "object",
+                      "properties": {
+                        "fechaInicio": {
+                          "type": "string"
+                        },
+                        "fechaProduccion": {
+                          "type": "string"
+                        },
+                        "fechaCierre": {
+                          "type": "string"
+                        },
+                        "sumPiezas": {
+                          "type": "integer"
+                        },
+                        "sumPiezasPotenciales": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "dataq2": {
+                      "type": "object",
+                      "properties": {
+                        "tnd": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Integration not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/inspections/report/{work_order_id}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a report",
+        "tags": [
+          "Inspections"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "work_order_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Inspections found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "fecha": {
+                      "type": "string"
+                    },
+                    "gspm": {
+                      "type": "integer"
+                    },
+                    "golpes": {
+                      "type": "integer"
+                    },
+                    "oaxpr_perc": {
+                      "type": "integer"
+                    },
+                    "dataql": {
+                      "type": "object",
+                      "properties": {
+                        "fechaInicio": {
+                          "type": "string"
+                        },
+                        "fechaProduccion": {
+                          "type": "string"
+                        },
+                        "fechaCierre": {
+                          "type": "string"
+                        },
+                        "sumPiezas": {
+                          "type": "integer"
+                        },
+                        "sumPiezasPotenciales": {
+                          "type": "integer"
+                        }
+                      }
+                    },
+                    "dataq2": {
+                      "type": "object",
+                      "properties": {
+                        "tnd": {
+                          "type": "integer"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Integration not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/issue/110": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Issue",
+        "tags": [
+          "Issue"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Issue found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ID": {
+                  "type": "integer"
+                },
+                "IssueTypeID": {
+                  "type": "integer"
+                },
+                "DescIssue": {
+                  "type": "string"
+                },
+                "DTCode": {
+                  "type": "string"
+                },
+                "COCode": {
+                  "type": "string"
+                },
+                "SBU": {
+                  "type": "string"
+                },
+                "CreatedAt": {
+                  "type": "string"
+                },
+                "CreatedBy": {
+                  "type": "string"
+                },
+                "UpdatedAt": {
+                  "type": "string"
+                },
+                "UpdatedBy": {
+                  "type": "string"
+                },
+                "Active": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Issue not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/issue/getAllIssues": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "getAllIssues",
+        "tags": [
+          "Issue"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Issue found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ID": {
+                  "type": "integer"
+                },
+                "IssueTypeID": {
+                  "type": "integer"
+                },
+                "DescIssue": {
+                  "type": "string"
+                },
+                "DTCode": {
+                  "type": "string"
+                },
+                "COCode": {
+                  "type": "string"
+                },
+                "SBU": {
+                  "type": "string"
+                },
+                "CreatedAt": {
+                  "type": "string"
+                },
+                "CreatedBy": {
+                  "type": "string"
+                },
+                "UpdatedAt": {
+                  "type": "string"
+                },
+                "UpdatedBy": {
+                  "type": "string"
+                },
+                "Active": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Issue not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/issue/getIssuesByIssueType": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "getIssuesByIssueType",
+        "tags": [
+          "Issue"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "DailyReport",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "issue_type_id": {
+                  "type": "string"
+                },
+                "report_type": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/julian_numbers/{toolID}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a julian numbers",
+        "tags": [
+          "julian numbers"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "ID": {
+                        "type": "integer"
+                      },
+                      "DescTool": {
+                        "type": "string"
+                      },
+                      "ParentCode": {
+                        "type": "string"
+                      },
+                      "DesignSpeed": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ObjectiveID": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "JobNumber": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "CreatedAt": {
+                        "type": "string"
+                      },
+                      "CreatedBy": {
+                        "type": "string"
+                      },
+                      "UpdatedAt": {
+                        "type": "string"
+                      },
+                      "UpdatedBy": {
+                        "type": "string"
+                      },
+                      "Active": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ToolType": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "NoRollo": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "PzPerStroke": {
+                        "type": "number",
+                        "format": "float"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/kpi/getKpis?startDay={startDay}&endDay={endDay}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a KPIs",
+        "tags": [
+          "KPI"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "startDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "endDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "totalOutTime": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "totalStrokes": {
+                      "type": "integer"
+                    },
+                    "potentialStrokes": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "oapr": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "tpco": {
+                      "type": "integer"
+                    },
+                    "tcr": {
+                      "type": "string"
+                    },
+                    "gsph": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "coEvents": {
+                      "type": "integer"
+                    },
+                    "coMinutes": {
+                      "type": "integer"
+                    },
+                    "avgCoMins": {
+                      "type": "integer"
+                    },
+                    "percentageCo": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "dtMinutes": {
+                      "type": "integer"
+                    },
+                    "percentageDt": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "tnr": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "tnd": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "mttrProm": {
+                      "type": "integer"
+                    },
+                    "ansAvgTime": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/kpi/getShiftKpis?startDay={startDay}&endDay={endDay}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get shift KPIs",
+        "tags": [
+          "KPI"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "startDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "endDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs shift found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "oapr": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "gspm": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "strokes": {
+                        "type": "integer"
+                      },
+                      "avgCo": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "potentialStrokes": {
+                        "type": "integer"
+                      },
+                      "tnd": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "minCo": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "eventCo": {
+                        "type": "integer"
+                      },
+                      "title": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/kpi/getAfectacionEqes?startDay={startDay}&endDay={endDay}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get Afectaciones Eqes",
+        "tags": [
+          "KPI"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "startDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "endDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs shift found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "afect": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "objectiveDt": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "dt_minutes": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "co_minutes": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "tnrPct": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "tnrMin": {
+                        "type": "number",
+                        "format": "float"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/kpi/getGlobalIndicators?startDay={startDay}&endDay={endDay}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get Global Indicators",
+        "tags": [
+          "KPI"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "startDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "endDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs shift found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "oapr": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "co": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "dt": {
+                      "type": "number",
+                      "format": "float"
+                    },
+                    "microparos": {
+                      "type": "number",
+                      "format": "float"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/kpi/getParetosDowntime?startDay={startDay}&endDay={endDay}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get Paretos Downtime",
+        "tags": [
+          "KPI"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "startDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "endDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "issue": {
+                        "type": "integer"
+                      },
+                      "dtCode": {
+                        "type": "string"
+                      },
+                      "coCode": {
+                        "type": "string"
+                      },
+                      "desc": {
+                        "type": "string"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "issue_count": {
+                        "type": "integer"
+                      },
+                      "issue_minutes": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "percentage": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "tools": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "issue": {
+                              "type": "integer"
+                            },
+                            "tool_code": {
+                              "type": "string"
+                            },
+                            "issue_minutes": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "percentage": {
+                              "type": "number",
+                              "format": "float"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/kpi/getParetosChangeover?startDay={startDay}&endDay={endDay}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get Paretos Changeover",
+        "tags": [
+          "KPI"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "startDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "endDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs shift found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "issue": {
+                        "type": "integer"
+                      },
+                      "dtCode": {
+                        "type": "string"
+                      },
+                      "coCode": {
+                        "type": "string"
+                      },
+                      "desc": {
+                        "type": "string"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "issue_count": {
+                        "type": "integer"
+                      },
+                      "issue_minutes": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "percentage": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "tools": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "issue": {
+                              "type": "integer"
+                            },
+                            "tool_code": {
+                              "type": "string"
+                            },
+                            "issue_minutes": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "percentage": {
+                              "type": "number",
+                              "format": "float"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/kpi/getToolsChangeover?startDay={startDay}&endDay={endDay}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "get Tools Changeover",
+        "tags": [
+          "KPI"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "startDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "endDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tool_id": {
+                        "type": "integer"
+                      },
+                      "tool_code": {
+                        "type": "string"
+                      },
+                      "coCode": {
+                        "type": "string"
+                      },
+                      "items": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "issue_type": {
+                              "type": "string"
+                            },
+                            "issue_type_color": {
+                              "type": "string"
+                            },
+                            "issue_minutes": {
+                              "type": "number",
+                              "format": "float"
+                            },
+                            "issue_type_id": {
+                              "type": "integer"
+                            }
+                          }
+                        }
+                      },
+                      "total_issue_minutes": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "total_events": {
+                        "type": "integer"
+                      },
+                      "percentageTime": {
+                        "type": "number",
+                        "format": "float"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/kpi/getToolsPerformance?startDay={startDay}&endDay={endDay}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get Tools Performance",
+        "tags": [
+          "KPI"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "startDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "endDay",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tool": {
+                        "type": "string"
+                      },
+                      "strokes": {
+                        "type": "integer"
+                      },
+                      "potentialStrokes": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "tnd": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "total_strokes": {
+                        "type": "integer"
+                      },
+                      "oapr": {
+                        "type": "integer"
+                      },
+                      "gspm": {
+                        "type": "integer"
+                      },
+                      "color": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/kpi/getHourStrokes?day={day}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "get Hour Strokes",
+        "tags": [
+          "KPI"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "day",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "hour": {
+                        "type": "string"
+                      },
+                      "total_strokes": {
+                        "type": "integer"
+                      },
+                      "potential_strokes": {
+                        "type": "integer"
+                      },
+                      "oapr": {
+                        "type": "integer"
+                      },
+                      "tools": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "formatedHour": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "day"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/machine/getCurrentFailure": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Failure",
+        "tags": [
+          "Machine"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Datatables found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "report": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "createdAt": {
+                          "type": "string"
+                        },
+                        "EndAt": {
+                          "type": "string"
+                        },
+                        "issue": {
+                          "type": "string"
+                        },
+                        "escalationLevel": {
+                          "type": "integer"
+                        },
+                        "report_type": {
+                          "type": "integer"
+                        },
+                        "desc": {
+                          "type": "string"
+                        },
+                        "code": {
+                          "type": "string"
+                        },
+                        "color": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "issueType": {
+                          "type": "string"
+                        },
+                        "extraDowntime": {
+                          "type": "integer"
+                        },
+                        "issue_type": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "escalation": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "level": {
+                          "type": "integer"
+                        },
+                        "limit": {
+                          "type": "integer"
+                        },
+                        "label": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "integer"
+                        },
+                        "color": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/machine/getMachineChecklist": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "get Machine Checklist",
+        "tags": [
+          "Machine"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Checklist",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "machine_id": {
+                  "type": "integer"
+                },
+                "checklist_type": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/machine/checkin": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "get Machine checkin",
+        "tags": [
+          "Machine"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Checklist",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "iot_tag": {
+                  "type": "string"
+                },
+                "schema": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/machine/checkout": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Failure",
+        "tags": [
+          "Machine"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Datatables found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "checkListStatus": {
+                      "type": "string"
+                    },
+                    "initialChecklist": {
+                      "type": "string"
+                    },
+                    "timer": {
+                      "type": "string"
+                    },
+                    "timer_answers": {
+                      "type": "string"
+                    },
+                    "changeOverCheckList": {
+                      "type": "string"
+                    },
+                    "schema": {
+                      "type": "string"
+                    },
+                    "machine": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/machine/updateLog": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "get Machine updateLog",
+        "tags": [
+          "Machine"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Checklist",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "log_id": {
+                  "type": "string"
+                },
+                "comment": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/machine/deleteLog": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "get Machine deleteLog",
+        "tags": [
+          "Machine"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Checklist",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "log_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/objective/getObjective": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "getObjective",
+        "tags": [
+          "objective"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Login",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tool": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Login"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/getOm": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "Report",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "val1": {
+                  "type": "string"
+                },
+                "val2": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "val1",
+                "val2"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/escalationLog": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "escalationLog",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reportId": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/manualEscalation": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "escalationLog",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reportId": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/manualAssist": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "manualAssist",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reportId": {
+                  "type": "integer"
+                },
+                "tadi": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/getReport": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "getReport",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reportId": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/getHistoric": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "getReport",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reportId": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/getLog": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "getLog",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "machine_id": {
+                  "type": "string"
+                },
+                "shift": {
+                  "type": "string"
+                },
+                "day": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/mergeDowntimes": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "mergeDowntimes",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "current": {
+                  "type": "string"
+                },
+                "list": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/splitDowntimes": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "mergeDowntimes",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "list": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/assignFailure": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "assignFailure",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "report_id": {
+                  "type": "string"
+                },
+                "issue_id": {
+                  "type": "string"
+                },
+                "report_type": {
+                  "type": "string"
+                },
+                "loteRollo": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/getWorkOrdersMaximo": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "getWorkOrdersMaximo",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "shift": {
+                  "type": "string"
+                },
+                "day": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/createWorkOrderMaximo": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": false,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "createWorkOrderMaximo",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dtId": {
+                  "type": "number"
+                },
+                "wonum": {
+                  "type": "string"
+                },
+                "workorderid": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "orgid": {
+                  "type": "string"
+                },
+                "siteid": {
+                  "type": "string"
+                },
+                "wopriority": {
+                  "type": "number"
+                },
+                "message": {
+                  "type": "string"
+                },
+                "user": {
+                  "type": "string"
+                },
+                "tadi": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/updateWorkOrderMaximo": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": false,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "updateWorkOrderMaximo",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dtId": {
+                  "type": "number"
+                },
+                "wonum": {
+                  "type": "string"
+                },
+                "workorderid": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                },
+                "tadi": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/existsWorkOrderMaximo": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": false,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "existsWorkOrderMaximo",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "dtId": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/report/getToolCurrentDT": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": false,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "getToolCurrentDT",
+        "tags": [
+          "Report"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Report",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "reportId": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Report"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/sensor_value/get_sensors": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get Sensors",
+        "tags": [
+          "Sensors"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Sensor found",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ID": {
+                    "type": "integer"
+                  },
+                  "DescSensor": {
+                    "type": "string"
+                  },
+                  "SensorTypeID": {
+                    "type": "integer"
+                  },
+                  "AssetID": {
+                    "type": "integer"
+                  },
+                  "MinValue": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "MaxValue": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "CMinValue": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "CMaxValue": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "Reference": {
+                    "type": "string"
+                  },
+                  "DataTag": {
+                    "type": "string"
+                  },
+                  "DataType": {
+                    "type": "string"
+                  },
+                  "Unit": {
+                    "type": "string"
+                  },
+                  "Location": {
+                    "type": "string"
+                  },
+                  "FunctionType": {
+                    "type": "string"
+                  },
+                  "UseCase": {
+                    "type": "string"
+                  },
+                  "HWarning": {
+                    "type": "integer"
+                  },
+                  "HCritical": {
+                    "type": "integer"
+                  },
+                  "CreatedAt": {
+                    "type": "string"
+                  },
+                  "CreatedBy": {
+                    "type": "string"
+                  },
+                  "UpdatedAt": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "UpdatedBy": {
+                    "type": "number",
+                    "format": "float"
+                  },
+                  "Active": {
+                    "type": "boolean"
+                  },
+                  "Value": {
+                    "type": "integer"
+                  },
+                  "dateLastUpdated": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Daily not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/shifts?day={day}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Shift",
+        "tags": [
+          "Shift"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "day",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Shift found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "shifts": {
+                      "type": "object",
+                      "properties": {
+                        "shifts": {
+                          "type": "object",
+                          "properties": {
+                            "1": {
+                              "type": "object",
+                              "properties": {
+                                "Description": {
+                                  "type": "string"
+                                },
+                                "startAt": {
+                                  "type": "string"
+                                },
+                                "endAt": {
+                                  "type": "string"
+                                },
+                                "startAtUTC": {
+                                  "type": "string"
+                                },
+                                "endAtUTC": {
+                                  "type": "string"
+                                },
+                                "duration": {
+                                  "type": "integer"
+                                }
+                              }
+                            },
+                            "2": {
+                              "type": "object",
+                              "properties": {
+                                "Description": {
+                                  "type": "string"
+                                },
+                                "startAt": {
+                                  "type": "string"
+                                },
+                                "endAt": {
+                                  "type": "string"
+                                },
+                                "startAtUTC": {
+                                  "type": "string"
+                                },
+                                "endAtUTC": {
+                                  "type": "string"
+                                },
+                                "duration": {
+                                  "type": "integer"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "rangeShift": {
+                          "type": "object",
+                          "properties": {
+                            "startAt": {
+                              "type": "string"
+                            },
+                            "endAt": {
+                              "type": "string"
+                            },
+                            "startAtUTC": {
+                              "type": "string"
+                            },
+                            "endAtUTC": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "actualShift": {
+                          "type": "object",
+                          "properties": {
+                            "startAt": {
+                              "type": "string"
+                            },
+                            "endAt": {
+                              "type": "string"
+                            },
+                            "startAtUTC": {
+                              "type": "string"
+                            },
+                            "endAtUTC": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "previousShift": {
+                          "type": "object",
+                          "properties": {
+                            "startAt": {
+                              "type": "string"
+                            },
+                            "endAt": {
+                              "type": "string"
+                            },
+                            "startAtUTC": {
+                              "type": "string"
+                            },
+                            "endAtUTC": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "timezone": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/shift/comment": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "Shift comment",
+        "tags": [
+          "Shift"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Forum",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "machine_id": {
+                  "type": "integer"
+                },
+                "comment": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Forum"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/shift/updateLog": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "Shift updateLog",
+        "tags": [
+          "Shift"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Shift",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "log_id": {
+                  "type": "integer"
+                },
+                "comment": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/shift/deleteLog": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "Shift deleteLog",
+        "tags": [
+          "Shift"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Shift",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "log_id": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/tool": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "Get a Tool",
+        "tags": [
+          "Tool"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "ID": {
+                        "type": "integer"
+                      },
+                      "DescTool": {
+                        "type": "string"
+                      },
+                      "ParentCode": {
+                        "type": "string"
+                      },
+                      "DesignSpeed": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ObjectiveID": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "JobNumber": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "CreatedAt": {
+                        "type": "string"
+                      },
+                      "CreatedBy": {
+                        "type": "string"
+                      },
+                      "UpdatedAt": {
+                        "type": "string"
+                      },
+                      "UpdatedBy": {
+                        "type": "string"
+                      },
+                      "Active": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ToolType": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "NoRollo": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "PzPerStroke": {
+                        "type": "number",
+                        "format": "float"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/tools/getByCode?code{code}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "getByCode",
+        "tags": [
+          "Tool"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "code",
+            "in": "header",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Forum"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/tools/getByFilter?{expression}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "getByFilter",
+        "tags": [
+          "Tool"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "expression",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "ID": {
+                        "type": "integer"
+                      },
+                      "DescTool": {
+                        "type": "string"
+                      },
+                      "ParentCode": {
+                        "type": "string"
+                      },
+                      "DesignSpeed": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ObjectiveID": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "JobNumber": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "CreatedAt": {
+                        "type": "string"
+                      },
+                      "CreatedBy": {
+                        "type": "string"
+                      },
+                      "UpdatedAt": {
+                        "type": "string"
+                      },
+                      "UpdatedBy": {
+                        "type": "string"
+                      },
+                      "Active": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ToolType": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "NoRollo": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "PzPerStroke": {
+                        "type": "number",
+                        "format": "float"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    },
+    "/user/profile": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "post": {
+        "summary": "Profile",
+        "tags": [
+          "Auth"
+        ],
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "Profile",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Profile"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/workorders/getLastsByTool/{tool_id}": {
+      "parameters": [
+        {
+          "in": "header",
+          "type": "string",
+          "name": "Authorization",
+          "required": true,
+          "description": "Client token"
+        }
+      ],
+      "get": {
+        "summary": "getLastsByTool",
+        "tags": [
+          "Work Order"
+        ],
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "name": "tool_id",
+            "in": "path",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KPIs found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "success": {
+                  "type": "boolean"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "ID": {
+                        "type": "integer"
+                      },
+                      "DescTool": {
+                        "type": "string"
+                      },
+                      "ParentCode": {
+                        "type": "string"
+                      },
+                      "DesignSpeed": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ObjectiveID": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "JobNumber": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "CreatedAt": {
+                        "type": "string"
+                      },
+                      "CreatedBy": {
+                        "type": "string"
+                      },
+                      "UpdatedAt": {
+                        "type": "string"
+                      },
+                      "UpdatedBy": {
+                        "type": "string"
+                      },
+                      "Active": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "ToolType": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "NoRollo": {
+                        "type": "number",
+                        "format": "float"
+                      },
+                      "PzPerStroke": {
+                        "type": "number",
+                        "format": "float"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "startDay",
+                "endDay"
+              ]
+            }
+          },
+          "404": {
+            "description": "KPIs not found"
+          },
+          "406": {
+            "description": "unsupported accept header"
+          }
+        }
+      }
+    }
+  }
+}

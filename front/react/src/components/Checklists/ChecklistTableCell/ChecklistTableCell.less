@@ -1,0 +1,31 @@
+@import "~styles/colors.less";
+@import "~styles/spacers.less";
+
+.cell {
+  border-left: 1px solid @border-color;
+  height: 52px;
+  display: flex;
+}
+
+.status {
+  border-radius: 50%;
+  margin: auto;
+}
+
+.success {
+  width: @spacer-2x;
+  height: @spacer-2x;
+  background-color: @success;
+}
+
+.alert {
+  width: @spacer-3x;
+  height: @spacer-3x;
+  //background: url('images/alert.png') center no-repeat;
+  background: red;
+  background-size: contain;
+  color: @contrast-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

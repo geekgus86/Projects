@@ -1,0 +1,233 @@
+<section class="container-fluid">
+    <div class="row">
+      <div id="basicContainer" class="col-lg-12">
+
+       
+              
+           
+
+         
+
+
+          <app-date-and-shift [plantName] = 'plantName' [lineName]= 'nameLinea' [services]='lines' [AssetID]="Asset_ID" (event)="onDateShiftChange($event)" ></app-date-and-shift>
+
+          <div class="shifDuration" style="display: flex; align-items: center;">
+            <span translate  >Shift duration</span> &nbsp;
+            <h4 style="font-weight: 300; font-size: 13px; margin-bottom: 0px;" translate>{{ScheduleTime}}</h4>
+          </div>
+          <div style="color: rgba(255, 255, 255, .6); position: fixed; bottom: 0px; right: 0px; z-index: 9999; font-size: 12px; padding: 5px; background-color: rgba(0,0,0,.9);">
+                <span translate>Last refresh</span> {{Hour}}
+            </div>
+      
+
+        
+
+          
+
+
+        <div class="row center-row first-ov-row">
+  
+          
+  
+  
+        <div class="col-lg-12 dark-box-3 spacer-1 wow fadeInLeft">
+          <div class="row">
+            <div class="col-lg-6">
+                <div class="generic-graphic wow fadeInLeft" data-wow-delay=".5s">
+                    <div class="generic-graphic__title-left">
+                      <h1 translate>Overall Equipment Effectiveness</h1>
+                      <span translate>{{oeeCaption}}</span>
+                    </div>
+                   
+                    </div>
+                    <div class="generic-graphic__graphics-container adaptableZoom">
+                     <div class="generic-graphic__graphic wow fadeInLeft" data-wow-delay=".55s">
+                      <h2 class="chart-title">OEE</h2>
+                      <div id="donut-chart-oee"></div>
+                    </div> 
+                    <div class="generic-graphic__graphic wow fadeInLeft" data-wow-delay=".58s">
+                      <h3 class="chart-title">QR</h3>
+                      <div id="donut-chart-qr"></div>
+                    </div>
+                    <div class="generic-graphic__graphic wow fadeInLeft" data-wow-delay=".6s">
+                      <h3 class="chart-title">PR</h3>
+                      <div id="donut-chart-pr"></div>
+                    </div>
+                    <div class="generic-graphic__graphic wow fadeInLeft" data-wow-delay=".65s">
+                      <h3 class="chart-title">OA</h3>
+                      <div id="donut-chart-oa"></div>
+                    </div>
+                    </div>
+                    <div class="generic-graphic wow fadeInLeft" data-wow-delay=".78s">
+                        <div class="generic-graphic__title-left">
+                        <h1  translate>Daily Production Rate</h1>
+                        <span translate>{{dailyProductionRateCaption}}</span>
+                      </div>
+                    </div>
+                      <div class="image-fake wow fadeInLeft" data-wow-delay=".8s">
+                        <div id="chartdiv1" style="width:100%; height:200px;"></div>
+                      </div>
+     
+            </div>
+
+            <div class="col-lg-3">
+
+                <a *ngIf="linkCTM == 0">
+                  <div class="generic-graphic" data-wow-delay=".88s">
+                    <div class="generic-graphic__title-left wow fadeInLeft" data-wow-delay=".85s">
+                      <h1 translate>Cycle times</h1>
+                      <span translate>{{cycleTimeCaption}}</span>
+                    </div>
+                  </div>
+                                
+                    <div class="{{colorCycletimes}}" data-wow-delay=".83s">
+                      <div class="cycleTimesGraphic__value">
+                        <span>{{cycleTime}}</span>
+                        <img class="arrow-i" id="adr"  alt="" [src]="imgCycle">
+                      </div>
+                      <div class="cycleTimesGraphic__target">
+                        <span translate>Target</span>&nbsp;<span>{{goalCycle}}</span>  
+                        <div class="underbar"></div>
+                      </div>
+                    </div>
+                </a> 
+
+                <a *ngIf="linkCTM == 1" routerLink="/{{plantName}}/dashboard/TOPNCYCLETIMES">
+                  <div class="generic-graphic" data-wow-delay=".88s">
+                      <div class="generic-graphic__title-left wow fadeInLeft" data-wow-delay=".85s">
+                        <h1 translate>Cycle times</h1>
+                        <span translate>{{cycleTimeCaption}}</span>
+                      </div>
+                    </div>
+                                  
+                      <div class="{{colorCycletimes}}" data-wow-delay=".83s">
+                        <div class="cycleTimesGraphic__value">
+                          <span>{{cycleTime}}</span>
+                          <img class="arrow-i" id="adr"  alt="" [src]="imgCycle">
+                        </div>
+                        <div class="cycleTimesGraphic__target">
+                          <span translate>Target</span>&nbsp;<span>{{goalCycle}}</span>  
+                          <div class="underbar"></div>
+                        </div>
+                      </div>
+                  </a> 
+
+                  <a *ngIf="linkJPH == 0" >  
+                      <div class="generic-graphic">
+                      <div class="generic-graphic__title-left wow fadeInLeft" data-wow-delay=".85s">
+                        <h1 translate>JPH rates</h1>
+                        <span translate>{{jphCaption}}</span>
+                      </div>
+                    </div>
+                    <!-- <div id="area-2" class="wow fadeInLeft" data-wow-delay=".9s"></div> -->
+                    <div class="jobsPerHourGraphic wow fadeInLeft dark-box-3 {{colorJPH}}" data-wow-delay=".83s">
+                      <div class="jobsPerHourGraphic__value">
+                        <span>{{this.jph}}</span>
+                        <img class="arrow-i" [src]="imgJph" alt="">
+                      </div>
+                      <div class="jobsPerHourGraphic__target">
+                        <span translate>Target</span>&nbsp;<span>{{this.jphGoal}}</span>  
+                        <div class="underbar"></div>
+                      </div>
+                    </div>
+                  </a>
+
+                  <a *ngIf="linkJPH == 1" routerLink="/{{plantName}}/reports/jobsperhour/{{NameArea}}/{{Code}}">  
+                    <div class="generic-graphic">
+                      <div class="generic-graphic__title-left wow fadeInLeft" data-wow-delay=".85s">
+                        <h1 translate>JPH rates</h1>
+                        <span translate>{{jphCaption}}</span>
+                      </div>
+                    </div>
+                    <!-- <div id="area-2" class="wow fadeInLeft" data-wow-delay=".9s"></div> -->
+                    <div class="jobsPerHourGraphic wow fadeInLeft dark-box-3 {{colorJPH}}" data-wow-delay=".83s">
+                      <div class="jobsPerHourGraphic__value">
+                        <span>{{this.jph}}</span>
+                        <img class="arrow-i" [src]="imgJph" alt="">
+                      </div>
+                      <div class="jobsPerHourGraphic__target">
+                        <span translate>Target</span>&nbsp;<span>{{this.jphGoal}}</span>  
+                        <div class="underbar"></div>
+                      </div>
+                    </div>
+                  </a>
+
+                    <div class="generic-graphic rtm-access">
+                    <div class="generic-graphic__title-left wow fadeInLeft" data-wow-delay=".85s">
+                      <h1 translate>
+                        Real Time Monitor</h1>
+                      <span translate>Watch in real time all the stations line status and their current process</span> <br>
+                      <a routerLink="/monitor/{{plantName}}/{{code}}">
+                      <button translate>
+                          Access RTM
+                      </button>
+                       </a> 
+                    </div>
+                  </div>
+                  <!-- <div class="rtm-img">
+                    <img src="assets/images/overview/rtm-stations-layout.png" width="50" alt="">
+                  </div> -->
+            </div>
+
+            <div class="col-lg-3">
+                <div class="generic-graphic wow fadeInLeft" data-wow-delay=".95s">
+                    <div class="generic-graphic__title-left">
+                        <h1 translate>Hour by Hour</h1>
+                        <span translate>{{hourCaption}}</span>
+                      </div>
+                </div>
+                <div class="overview__content--shift-2 wow fadeInLeft" data-wow-delay="1.1s">
+                  <table cellspacing="0" cellpadding="0" class="shift-2 animated">
+                    <tr>
+                    <td>
+                      <table width="100%" cellspacing="0" cellpadding="0" class="shift-indicators">
+                      <tr class="tr-head">
+                        <td><span translate>Hour</span></td>
+                        <td><span translate>Built</span></td>
+                        <td><span translate>Goal</span></td>
+                        <td><span translate>Model</span></td>
+                      </tr>
+                      <tr *ngFor="let value of shiftArray" class="tr-content">
+                        <td>{{ value.time }}</td>
+                        <td class="shift-status onDelay" *ngIf="value.currenttime == 1" [style.border]="'solid white 2px'" [style.background]="value.buildStatus">{{ value.buildvalue }}</td>
+                        <td class="shift-status onDelay" *ngIf="value.currenttime == 1" [style.border]="'solid white 2px'" [style.background]="value.buildStatus">{{ value.goalValue }}</td>
+                        <td class="shift-status onDelay" *ngIf="value.currenttime == 0" [style.background]="value.buildStatus">{{ value.buildvalue }}</td>
+                        <td class="shift-status onDelay" *ngIf="value.currenttime == 0" [style.background]="value.buildStatus">{{ value.goalValue }}</td>
+                        <td>{{ value.model }}</td>
+                      </tr>
+                      </table>
+                    </td>
+                    </tr>
+                  </table>
+                  </div>
+            </div>
+      
+          </div>
+        </div>
+        </div>
+  
+    
+  
+  
+      <div *ngIf="hxhResult">
+          <app-column-chart [objData]= 'DefectsTop5' [objContention]= 'Contention' [objFlowOutsAndScrap]= 'DefectsFlowOutScrap'   [lenguaje] = "lenguaje" 
+                    [flowOutScrapCaption] = 'flowOutScrapCaption' [contentionsCaption] = 'contentionsCaption' [defectsTop5Caption] = 'defectsTop5Caption'></app-column-chart>
+      </div>
+
+      
+        <div class="row" style="margin-top: 50px">
+           
+    
+          <div class="col-lg-4 dark-box-1 spacer-1">
+            
+          </div>
+  
+        </div>
+  
+  
+      </div>
+  
+    </div>
+  
+  </section>
+  

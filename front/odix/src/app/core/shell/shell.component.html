@@ -1,0 +1,42 @@
+<app-header
+    [activeSidebar]="activeSidebar"
+    (ouputActiveSidebar)="onActiveSidebar($event)">
+</app-header>
+
+<app-menu [activeSidebar]="activeSidebar"></app-menu>
+
+<app-loader *ngIf="loading"></app-loader>
+<section class="container-fluid" [hidden]="loading">
+
+    <!-- Only for test -->
+    <!--<button 
+        style="position:fixed; right: 0; top: 45px; z-index: 1;"
+        (click)="isPushable=!isPushable"
+    >
+        Pushable: {{isPushable?'Yes':'No'}}
+    </button>-->
+    <!-- End test -->
+    
+    <div class="row">
+        <!-- CONTENIDO 
+        
+        *ngIf="isPushable" -->
+        <div id="basicContainer" 
+            [ngClass]="{
+                'pushable': !activeSidebar,
+                'col-lg-12': activeSidebar,
+                'col-lg-10': !activeSidebar
+            }"
+        >
+
+            <router-outlet></router-outlet>
+        </div>
+
+        <!--<div id="basicContainer" *ngIf="!isPushable" class="col-lg-12">
+
+            <router-outlet></router-outlet>
+        </div>-->
+
+
+    </div>
+</section>
