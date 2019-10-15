@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Consulta de Estado de cuenta</title>
+</head>
+<body>
+<ui:composition template="/templates/PreInsTemplate.xhtml">
+		<ui:define name="content">
+		
+		<script type="text/javascript">
+			function actionButton(){
+				document.getElementById('container').style.display='none';
+				document.getElementById("envioPago").submit();
+			}
+		</script>
+		 <div id="container" align="center" width="100%">
+	      		<div align="center" style="width:680px">
+	      			<p>Al seleccionar la opción de <b>Anticipo de Colegiatura</b> te recordamos que serás un alumno 
+	      			<b>inscrito con pago Parcial</b> y posteriormente deberás cubrir el monto total de Colegiatura 
+	      			para ser un alumno <b>inscrito</b></p>
+	      			
+	      		</div>
+				
+			
+				<div align="center" style="width:680px">
+					<p>Deberás realizar el pago por la cantidad de $<h:outputLabel id="montoBD" value="#{pagoAnticipoBean.importBD}" /> y podrás hacerlo a través de una 
+					referencia bancaria, banca electrónica o tarjeta de crédito.</p>
+				</div>
+				
+					
+	      		<h:panelGrid columns="2" cellspacing="50px">
+	      		<h:column>
+	      		<h:form>
+	      		<h:commandButton class="footer-button-link" value="Regresar" action="#{pagoAnticipoBean.regresar}"></h:commandButton>
+	      		</h:form>
+	      		</h:column>
+	      		<h:column>
+	      		
+	      		 <form id="envioPago" target="checkFrame" action="#{pagoAnticipoBean.url}" method="post">  
+	      		
+	      		 <h:inputHidden id="matricula" value="#{pagoAnticipoBean.matricula}"></h:inputHidden>
+	      		 <h:inputHidden id="nombre" value="#{pagoAnticipoBean.nombre}"></h:inputHidden>
+	      		 <h:inputHidden id="campus" value="#{pagoAnticipoBean.campus}"></h:inputHidden>
+	      		 <h:inputHidden id="montoInicial" value="#{pagoAnticipoBean.importe}"></h:inputHidden>
+	      		 <h:inputHidden id="cantidad" value="#{pagoAnticipoBean.cantidad}" ></h:inputHidden>
+	      		 <h:inputHidden id="codigoTienda" value="#{pagoAnticipoBean.codigoTienda}" ></h:inputHidden>
+	      		 <h:inputHidden id="llaveTienda" value="#{pagoAnticipoBean.llaveTienda}" ></h:inputHidden>
+	      		 <h:inputHidden id="cveTienda" value="#{pagoAnticipoBean.claveTienda}" ></h:inputHidden>
+	      		 <h:inputHidden id="folioTienda" value="#{pagoAnticipoBean.folioTienda}" ></h:inputHidden>
+	      		 <h:inputHidden id="tipoMoneda" value="#{pagoAnticipoBean.tipoMoneda}" ></h:inputHidden>
+	      		 <h:inputHidden id="servicio" value="#{pagoAnticipoBean.claveServicio}" ></h:inputHidden>
+	      		 <h:inputHidden id="descServicio" value="#{pagoAnticipoBean.nombrePublicacion}" ></h:inputHidden>
+	      		 <h:inputHidden id="tipoTransaccion" value="#{pagoAnticipoBean.tipoTransaccion}" ></h:inputHidden>
+	      		 <h:inputHidden id="idioma" value="#{pagoAnticipoBean.idioma}" ></h:inputHidden>
+	      		 <h:inputHidden id="email" value="#{pagoAnticipoBean.email}" ></h:inputHidden>
+	      		 <h:inputHidden id="urlRegreso" value="#{pagoAnticipoBean.urlRegreso}" ></h:inputHidden>
+	      		 <h:inputHidden id="urlAviso" value="#{pagoAnticipoBean.urlAviso}" ></h:inputHidden>
+	      		 <h:inputHidden id="q" value="1" ></h:inputHidden>
+     		
+	      		<input type="button" value="Pagar" class="footer-button-link"  onclick="actionButton()"/>
+	      			 
+	      		
+	      		</form>
+	      		</h:column>
+	      		</h:panelGrid>
+	      						<h:form>
+				<div align="center" style="width:1000px">
+				<p align="right">
+		      			<h:commandLink value="Tutorial" onclick="window.open('#{horarioMB.src4}','popup','width=1000,height=700,scrollbars=1')"/>
+		      		</p>
+				</div>
+				</h:form>
+				
+				
+			</div>
+			
+		  <iframe id="checkFrame" name="checkFrame" src="" 
+frameborder="0" style="overflow:hidden;height:480px;width:100%;"    height="480px" width="100%" wmode="Opaque">
+		 </iframe>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

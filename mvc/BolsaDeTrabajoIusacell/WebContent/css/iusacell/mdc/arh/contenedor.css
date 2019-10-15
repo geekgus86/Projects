@@ -1,0 +1,149 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+}
+			
+#cabecera {
+	width: 100%;
+	height: 145px;
+	position: absolute;
+	top: 0;
+	background-color: #FFF;
+	overflow: hidden;
+}
+.contenidoPrincipal {
+	background-color: #FFFF;
+}
+#pie {
+	width: 100%;
+	position: absolute;
+	height: 23px;
+	bottom: 0;
+	background-color: #3E1213;
+	overflow: hidden;
+}	
+.barraLateralIzq{
+	background-image:  url('../../../../images/iusacell/mdc/img/head/BarraLateralIzq.png');
+	background-repeat: no-repeat;
+}
+
+.barraLateralDer{
+	background-image:  url('../../../../images/iusacell/mdc/img/head/BarraLateralDer.png');
+	background-repeat: no-repeat;
+}
+
+#pliegueLateralIzq{
+	width: 30px; 
+	position: absolute;
+	background-image:  url('../../../../images/iusacell/mdc/img/head/pliegueLateralIzq.png');
+	bottom: 0;
+	//overflow: hidden;
+}
+
+#pliegueLateralDer{
+	width: 30px;
+	position: absolute;
+	height: 23px;
+	bottom: 0;
+	background-image:  url('../../../../images/iusacell/mdc/img/head/pliegueLateralDer.png');
+	//overflow: hidden;
+}
+
+.content2{
+	clear:both;
+	background-image:url('../../../../images/iusacell/mdc/img/b13.jpg');
+	height: 100%;
+	overflow: auto;
+}
+
+.cssButton{
+  font:  Verdana;
+  font-size: 10pt ;
+  color: #FFF;
+  background-color:#af0a0a;
+	
+}
+
+.fontPsycowin13ptBoldRojo{
+	font-size:13pt;
+	font-weight:bold; 
+	font-family: Verdana;
+	color:#af0a0a;
+}
+
+.texto_8pt_gris {
+    color: #666666;
+    font-family: Verdana;
+    font-size: 8pt;
+    font-weight: normal;
+}
+
+.texto_9pt_gris {
+    color: #666666;
+    font-family: Verdana;
+    font-size: 9pt;
+    font-weight: normal;
+}
+
+.texto_10pt_gris {
+    color: #666666;
+    font-family: Verdana;
+    font-size: 10pt;
+    font-weight: normal;
+}
+
+.texto_10pt_black {
+    color: #000000;
+    font-family: Verdana;
+    font:  Verdana;
+    font-size: 10pt;
+    font-weight:bold;
+}
+
+.texto_10pt_normal {
+    color: #000000;
+    font-family: Verdana;
+    font:  Verdana;
+    font-size: 10pt;
+    font-weight:normal;
+}
+
+.negro_mediano_suenio{ 
+	
+   font-family: Verdana;
+   font: Verdana;   
+   font-size: 11pt;
+   color: #666666;
+   font-weight:bold;
+	
+}
+
+.select, .select:visited{
+	border-style:solid;
+	border-width:1px;
+	border-color:#6E6E6E;
+	background-color: #D4D4D4;
+	color: #000000;
+	font-family:  Verdana;
+    font:  Verdana;
+	font-size: 10pt;
+}
+   option {font: Verdana; font-size: 10pt; color: #000000;
+} 
+option.uno {background-color:#D4D4D4; text-align: left;} 
+option.dos {background-color: #FCFCFC; text-align: left;}
+
+
+.divEntrevista-box:before{
+   content: "";
+   position: fixed;
+   width: 80%;
+   height: 1px;
+   color: #666;
+   z-index: 100;
+   box-shadow: 0px 5px 8px #666;
+}

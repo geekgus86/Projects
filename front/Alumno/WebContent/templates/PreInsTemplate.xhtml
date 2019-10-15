@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+      
+    <h:head>
+        <meta http-equiv="expires" content="-1"></meta>                
+        <meta http-equiv="pragma" content="no-cache"></meta>
+		<meta http-equiv="cache-control" content="no-cache"></meta>
+		<meta http-equiv="Content-Type" content="text/html; CHARSET=ISO-8859-1"></meta>
+        
+        
+        <h:outputScript library="js" name="jquery-2.1.1.min.js"/>
+        <h:outputScript library="js" name="menu.js"/>
+        <h:outputStylesheet library="css" name="menu.css" />
+
+        <title> #{msg.tituloSistema} <ui:insert name="windowTitle"/></title>
+        
+        <script type="text/javascript">
+   var debeSalir = true;
+	var i=0;
+
+   $(document).ready(function () {
+	    $('#navigate').on('mousedown', stopNavigate)
+	        .on('mouseleave', function () {
+ 	        $(window).on('beforeunload', windowBeforeUnload);
+	    });
+		
+		function validaSubmit(){
+		 i=1
+		}
+
+		function stopNavigate(event) {
+		    $(window).off('beforeunload');
+		}
+
+		function windowBeforeUnload() {
+				x=$("#validaClose",divMsg.document).val();
+				m=$("#mensaje",divMsg.document).val();
+				if(x == '0' ){
+				    return m;
+				}			
+		}
+			
+ 		$(window).on('beforeunload', windowBeforeUnload);
+		
+		$(document).on("submit", "form", function (e) {
+	    	$(window).off('beforeunload');
+		    var oForm = $(this);
+		    var formId = oForm.attr("id");
+		    var firstValue = oForm.find("input").first().val();
+		    if(window.location.pathname  == '/Alumno/faces/horario.xhtml'){
+		    	return true;
+		   	} 
+		    return true;
+		})
+	
+	});
+  			
+  function nobackbutton(){
+	   window.location.hash="no-back-button";
+	   window.location.hash="Again-No-back-button" //chrome
+	   window.onhashchange=function(){window.location.hash="no-back-button";}
+	}
+  			
+	
+	function openpopup(){
+		window.open("/Alumno/faces/cierraSesion.xhtml","","width=300,height=338")
+	}
+	      
+	</script>
+        
+    <style>
+    .black_overlay{
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index:1001;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=80);
+    }
+    .white_content {
+        display: none;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+        padding: 16px;
+        border: 16px solid orange;
+        background-color: white;
+        z-index:1002;
+        overflow: auto;
+    }
+</style> 	
+    </h:head>
+    <h:body onload="nobackbutton();">
+   
+       <div id="heading" align="center">
+         <ui:insert name="heading">
+            <ui:include src="/templates/headerPreIns.xhtml"/>
+         </ui:insert>
+      </div>
+      
+      <div>
+      	<table width="100%">
+      		<tbody>
+      			<tr>
+      				<td>
+      					<div id="content">
+				         <ui:insert name="content"/>
+				      </div>
+      				</td>
+      			</tr>
+      			<tr>
+      				<td>
+      					<h:panelGrid rendered="#{controlFlujoMb.muestraComponenteExterno}">
+		      				<iframe id="externalContent" src="">
+		      				</iframe>
+      					</h:panelGrid>
+      				</td>
+      			</tr>
+      		</tbody>
+      	</table>
+      </div>
+    </h:body>
+</html>

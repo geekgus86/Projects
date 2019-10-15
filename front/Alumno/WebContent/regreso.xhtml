@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <f:loadBundle basename="resources.application" var="msg"/>
+
+    <head>
+        <title><h:outputText value="#{msg.welcomeTitle}" /></title>
+    </head>
+
+    <body>
+        <ui:composition template="/templates/principalTemplate.xhtml">
+            <ui:define name="content">
+                <f:metadata>
+                    <f:phaseListener
+                        type="com.sidiAlumno.listener.ValidacionRegresoListener"></f:phaseListener>
+                </f:metadata>
+
+                <div id="encabezadoTituloSeleccion"
+                     style="border-bottom: 0.5px solid #808EA6; text-align: center;">
+                    <h1 class="texto6">
+                        <h:outputText value="regreso de tienda sidi" />
+                    </h1>
+                </div>
+                <div id="todoSeleccion"
+                     style="width: 600px; padding-top: 5px; padding-bottom: 5px; margin-left: auto; margin-right: auto; text-align: center;">
+                    <div id="tarjetasSeleccion"
+                         style="padding-top: 15px; width: 400px; margin-left: auto; margin-right: auto;">
+                        <div id="imprimir">
+
+                            <table class="contenedor1" style="width: 100%">
+                                <thead>
+                                    <tr>
+                                        <th class="colorFondoContenedor1"><h:outputText
+                                                value="Inscripciones"></h:outputText></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br />
+                            <h:outputText styleClass="texto2" value="#{regreso.montoInicial}"></h:outputText>
+                        </div>
+                        <br />
+
+                        <div id="botonesSelecciones">
+
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    //$( document ).ready(function() {setTimeout(function(){$('input[name="finalizar"]').click();},5000);});
+                    function sendForm() {
+                        setTimeout(function() {
+                            document.getElementById("respuesta").submit();
+                        }, 2000);
+                    }
+                </script>
+
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

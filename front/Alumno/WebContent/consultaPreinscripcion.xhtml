@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Consulta Horario</title>
+</head>
+<body>
+<ui:composition template="/templates/PreInsTemplate.xhtml">
+		<ui:define name="content">
+			<div id="container" align="center">
+				<h:panelGrid id="panelContainer" columns="1" name="panelContainer" width="100%">
+					<h:column>
+	      			<iframe id="otroContent" name="otroContent" height="800px" width="100%" scrolling="no" src="#{horarioMB.src}"/>
+					</h:column>
+					<!--  h:column>
+      				<iframe id="horarioContent" name="horarioContent" height="550px" width="100%" scrolling="no" src="#{horarioMB.src2}"/>
+					</h:column-->
+	      		</h:panelGrid>
+			</div>
+			<div align="center">
+			<h:form id="horarioForm"><!-- onclick="window.open("projectDetails.jsp","",'width=700,height=400,top=100,left=100');" -->
+				<!-- <h:commandLink href='JavaScript:void(0)' id="print" class="footer-button-link" value="Imprimir Horario" onclick="signDocument('data', 'signDocumentCallbackID')"/> -->
+<!-- 				<h:commandButton href='JavaScript:void(0)' id="print2" class="footer-button-link" value="Imprimir" onclick="window.open('consPreinscripVistaImprimir.xhtml','','width=1000,height=700,top=10,left=10,scrollbars=1');"/> -->
+				<h:commandButton id="print2" class="footer-button-link" value="Imprimir" action="#{horarioPreinscrMB.goToImpresion}"/>
+			</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

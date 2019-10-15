@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "dtds/log4j.dtd"> 
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="false">
+    
+    
+    <appender name="correoDSI"  class="org.apache.log4j.net.SMTPAppender">  
+        <param name="BufferSize"    value="10"/>  
+        <param name="SMTPHost"      value="smtp.live.com" />  
+        <param name="SMTPUsername"  value="pruebaCorreoDSI@hotmail.com" />  
+        <param name="SMTPPassword"  value="pantalon12345" />  
+        <param name="From"          value="pruebaCorreoDSI@hotmail.com" />  
+        <param name="To"            value="jorge.rugerio14@gmail.com" />  
+        <param name="Subject"       value="Notificación de la aplicación Bolsa de Trabajo Iusacell" />  
+          
+          
+       <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+            <param name="LevelMin" value="ERROR"/>  
+            <param name="LevelMax" value="FATAL"/>  
+        </filter>  
+                          
+            <layout class="org.apache.log4j.PatternLayout">  
+                <param name="ConversionPattern" value="%n%d{yyyy-MM-dd HH:mm:ss} [%-5p] [%l] %n%m%n" />  
+            </layout>  
+    </appender>
+    
+    
+    <logger name="soporteDSI">  
+        <appender-ref ref="correoDSI" />  
+    </logger> 
+    
+    
+</log4j:configuration>

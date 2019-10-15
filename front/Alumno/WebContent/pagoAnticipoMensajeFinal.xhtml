@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Consulta de Estado de cuenta</title>
+</head>
+<body>
+<ui:composition template="/templates/PreInsTemplate.xhtml">
+		<ui:define name="content">
+		<h:form target="_parent">
+			<div id="container" align="center" width="100%">
+					
+					
+					<h:panelGrid id="espacioPagoAnticipoMF1">
+		      			<h:outputText value="&#160;" />		
+		      			<h:outputText value="&#160;" />
+		      		</h:panelGrid>
+			
+					<h:outputText value="Mensaje Final " id="outputPagoAnticipoMF1"></h:outputText>
+					
+					
+					<h:panelGrid id="espacioPagoAnticipoMF2">
+		      			<h:outputText value="&#160;" />		
+		      			<h:outputText value="&#160;" />
+		      		</h:panelGrid>
+		      		
+		      		<h:panelGrid columns="1" cellspacing="50px">
+		      		<h:column>
+		      		<h:commandButton class="footer-button-link" value="Finalizar"></h:commandButton>
+		      		</h:column>
+		      		</h:panelGrid>
+					
+		      				
+			</div>
+		  </h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

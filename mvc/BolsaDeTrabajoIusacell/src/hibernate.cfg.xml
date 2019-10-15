@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+    
+    <property name="hibernate.connection.datasource">jdbc/BolsaTrabIus</property>
+     <property name="show_sql">true</property>
+     <property name="hibernate-dialect">org.hibernate.dialect.Oracle10gDialect</property>
+    <property name="current_session_context_class">thread</property>
+     
+     <mapping class="com.iusa.clases.models.Usuario" />
+     <mapping class="com.iusa.clases.models.DatosPersonales" />
+     <mapping class="com.iusa.clases.models.FormacionAcademica" />
+     <mapping class="com.iusa.clases.models.AuxIdioma" /> 
+     <mapping class="com.iusa.clases.models.Experiencia" />
+     <mapping class="com.iusa.clases.models.TalentoAux" />
+     <mapping class="com.iusa.clases.models.Foto" />
+     <mapping class="com.iusa.clases.models.Postulaciones" />
+     <mapping class="com.iusa.clases.models.Ubicacion" />
+     <mapping class="com.iusa.clases.models.Identidad_aux" />
+     <mapping class="com.iusa.clases.models.SoftwareAux"/>
+     <mapping class="com.iusa.clases.models.AuxHobbie"/>
+     <mapping class="com.iusa.clases.models.Horario"/>
+     <mapping class="com.iusa.clases.models.Salario"/>
+     <mapping class="com.iusa.clases.models.Dispocision"/>
+     <mapping class="com.iusa.clases.models.Habilidad"/>
+     
+     <!-- Promociones Empleado -->
+     <mapping class="iusacell.mdc.arh.entities.ParametrosVO"/>
+     <mapping class="iusacell.mdc.arh.entities.EntrevistaCalidadOpcionesVO"/>
+     <mapping class="iusacell.mdc.arh.entities.EntrevistaCalidadPreguntasVO"/>
+     
+ 
+</session-factory>
+</hibernate-configuration>

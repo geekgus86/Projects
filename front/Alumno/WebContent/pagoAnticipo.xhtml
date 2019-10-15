@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Consulta de Estado de cuenta</title>
+</head>
+<body>
+<ui:composition template="/templates/PreInsTemplate.xhtml">
+		<ui:define name="content">
+		<h:form>
+			<div id="container" align="center" width="100%">
+		      		<div align="center" style="width:680px">
+		      			<br />
+		      			<p>Tu proceso de inscripción puedes comenzarlo con un Anticipo de Pago de Colegiatura o
+		      			 realizando el pago completo de la Colegiatura.</p>
+		      			<br />
+		      			<br />
+		      			<br />
+		      			<p><b>Selecciona una opción:</b></p>
+		      		</div>
+		      		
+		      		<h:panelGrid columns="2" cellspacing="50px">
+		      		<h:column>
+		      		<h:commandButton class="footer-button-link" value="Anticipo colegiatura" action="#{pagoAnticipoBean.validaAdeudo}" ></h:commandButton>
+		      		</h:column>
+		      		<h:column>
+		      		<h:commandButton class="footer-button-link" value="Inscripción" action="#{pagoAnticipoBean.inscripcion}"></h:commandButton>
+		      		</h:column>
+		      		</h:panelGrid>
+				
+					<div align="center" style="width:1000px">
+						<p align="right">
+		      			<h:commandLink value="Tutorial" onclick="window.open('#{horarioMB.src4}','popup','width=1000,height=700,scrollbars=1')"/>
+		      			</p>
+					</div>
+			</div>
+		  </h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

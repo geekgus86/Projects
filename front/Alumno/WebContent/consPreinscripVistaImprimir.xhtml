@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Consulta Horario</title>
+</head>
+<body id="on">
+	<div id="container" align="center">
+		<h:panelGrid id="panelContainer" columns="1" name="panelContainer"
+			width="100%">
+			<h:column>
+				<iframe id="otroContent" name="otroContent" height="800px"
+					width="100%" src="#{horarioMB.src}" scrolling="no"/>
+			</h:column>
+		</h:panelGrid>
+		<div align="center">
+		<h:form id="horarioForm">
+			<h:commandButton id="return" href="JavaScript:void(0)" class="footer-button-link" value="Regresar" action="#{horarioPreinscrMB.goToConsultaHorario}"/>
+			<h:commandButton id="print" href="JavaScript:void(0)" class="footer-button-link" value="Imprimir" onclick="window.print();"/>
+			<h:commandButton id="send" href="JavaScript:void(0)" class="footer-button-link" value="Enviar por Correo" action="#{horarioPreinscrMB.sendMail}"/>
+		</h:form>
+		</div>
+	</div>
+</body>
+</html>

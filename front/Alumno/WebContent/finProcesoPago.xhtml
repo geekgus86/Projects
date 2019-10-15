@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Conclusion Preinscripcion exitosa</title>
+</head>
+<body>
+<ui:composition template="/templates/PreInsTemplate.xhtml">
+		<ui:define name="content">
+		<h:form>
+			<div id="container" align="center" width="100%">
+		      		
+		      		<div align="center" style="width:680px">
+		      			<br />
+		      			<br />
+		      			<br />
+		      			<p>Tu proceso de Preinscripción ha concluido exitosamente.</p>
+		      			<p>Al abrirse el periodo de inscripción deberás ingresar nuevamente al
+						   Sistema de Inscripciones, para realizar y confirmar tu inscripción definitiva, 
+						   para quedar formalmente inscrito al periodo correspondiente.</p>
+		      			<br />
+		      			<br />
+		      			<br />
+		      		</div>
+		      		
+		      		<h:panelGrid columns="2" cellspacing="50px">
+		      		<h:column>
+		      		<h:commandButton class="footer-button-link" value="Finalizar" action="#{sesionMB.cerrarSesion}" ></h:commandButton>
+		      		</h:column>
+		      		</h:panelGrid>
+				
+			</div>
+		  </h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

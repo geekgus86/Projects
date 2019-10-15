@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Boleta de pago</title>
+
+</head>
+<body>
+	<ui:composition template="/templates/principalTemplate.xhtml">
+		<ui:define name="content">
+			<div width="100%" onload="">
+				<IFRAME id="frameBol" name="frameBol" height="600px" width="100%" src="#{boletaPagoMB.src}">
+				</IFRAME>
+			</div>
+			<SCRIPT type="text/javascript">
+				function valida(respuesta) {
+					if(respuesta == 0) {
+						alert("Tu Inscripción solo se considerará realizada hasta concluir esta etapa de Boleta de Pago, por lo que se te recomienda no abandonar la página.");
+					}
+					document.getElementById('validaClose').value = 1;
+					window.location.replace("consultaInscripcion.xhtml");
+				}
+			</SCRIPT>
+			<form id="formBoletaPago" name="formBoletaPago">
+				<h:panelGrid columns="1">
+					<h:column>
+						<input class="footer-button-link" type="button" onclick="valida(#{boletaPagoMB.esCompleto});" style="width: 150px; height: 30px" value="Finalizar" name="finalizar"/>
+					</h:column>
+					<h:column>
+						<h:outputText value="#{boletaPagoMB.fecha}"/>
+					</h:column>
+				</h:panelGrid>
+			</form>
+			<div id="divMsg" align="center">
+				<input type='hidden' id='validaClose' name='validaClose' value='#{boletaPagoMB.permiteSalida}' />
+				<input type='hidden' id='mensaje' name='mensaje' value='Tu Inscripción solo se considerará realizada hasta concluir esta etapa de Boleta de Pago, por lo que se te recomienda no abandonar la página' />
+			</div>
+		</ui:define>
+	</ui:composition>
+	
+</body>
+</html>

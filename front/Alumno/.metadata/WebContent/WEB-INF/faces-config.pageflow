@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14151392741000" configfile="/Alumno/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="menuPasosPrevios.xhtml" x="554" y="946" id="pf141564935476319" referenceLink="//@navigationRule.13/@navigationCase.0/@toViewId|" outlinks="pf141564935476320 pf141564935476321 pf141564935476322 pf141564935476323" inlinks="pf141564935476326 pf141564935476327 pf141565957078445 pf141565957078446 pf141565957078447" path="/menuPasosPrevios.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="horarioInscripcion.xhtml" x="338" y="178" id="pf141564935476328" referenceLink="//@navigationRule.13/@fromViewId|" outlinks="pf141565957078447" inlinks="pf141564935476320" path="/horarioInscripcion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="consultaEdoCuenta.xhtml" x="338" y="562" id="pf141564935476329" referenceLink="//@navigationRule.17/@fromViewId|" outlinks="pf141564935476326 pf14158978026533" inlinks="pf141564935476321 pf14158978026534" path="/consultaEdoCuenta.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="338" y="1714" id="pf141564935476330" referenceLink="//@navigationRule.21/@fromViewId|" outlinks="pf141564935476327 pf141564935476331 pf14177398959900 pf14170415849320 pf14170415849322" inlinks="pf14177402215362" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="menuBoletaPago.xhtml" x="554" y="1714" id="pf141564935476332" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf141564935476333 pf141564935476334 pf141564935476336 pf141565957078448" inlinks="pf141564935476331" path="/menuBoletaPago.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="simulacionHorario.xhtml" x="338" y="946" id="pf141564935476337" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf141565957078445" inlinks="pf141564935476322" path="/simulacionHorario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="actividadesFormativas.xhtml" x="338" y="1330" id="pf141564935476338" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf141565957078446" inlinks="pf141564935476323" path="/actividadesFormativas.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="infoBoletaPago.xhtml" x="770" y="1138" id="pf141564935476339" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" inlinks="pf141564935476333" path="/infoBoletaPago.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="modificaHorario.xhtml" x="770" y="1522" id="pf141564935476340" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf141564935476334" path="/modificaHorario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ayuda.xhtml" x="770" y="1906" id="pf141564935476342" referenceLink="//@navigationRule.10/@navigationCase.0/@toViewId|" inlinks="pf141564935476336" path="/ayuda.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="confirmaInscripcion.xhtml" x="770" y="2290" id="pf141565957078449" referenceLink="//@navigationRule.9/@navigationCase.0/@toViewId|" inlinks="pf141565957078448" path="/confirmaInscripcion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="horario.xhtml" x="473" y="1779" id="pf14158978026536" referenceLink="//@navigationRule.20/@navigationCase.0/@toViewId|" inlinks="pf14170415849320" path="/horario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pagoAnticipo.xhtml" x="338" y="2194" id="pf14158978026537" referenceLink="//@navigationRule.19/@fromViewId|" outlinks="pf14172047103372 pf14177402215362" inlinks="pf14172047103373 pf14177398959900" path="/pagoAnticipo.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="adeudoCuentaHorario.xhtml" x="122" y="562" id="pf14158978026538" referenceLink="//@navigationRule.17/@navigationCase.0/@toViewId|" outlinks="pf14158978026534" inlinks="pf14158978026533" path="/adeudoCuentaHorario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="consultaInscripcion.xhtml" x="516" y="2016" id="pf14170415849333" referenceLink="//@navigationRule.21/@navigationCase.0/@toViewId|" outlinks="pf14183180003250" inlinks="pf14170415849322" path="/consultaInscripcion.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="pagoAnticipoPagar.xhtml" x="122" y="2194" id="pf14172047103384" referenceLink="//@navigationRule.15/@fromViewId|" outlinks="pf14172047103373" inlinks="pf14172047103372" path="/pagoAnticipoPagar.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="consInscripVistaImprimir.xhtml" x="502" y="2172" id="pf14183180003251" inlinks="pf14183180003250" path="/consInscripVistaImprimir.xhtml"/>
+  <links id="pf141564935476320" target="pf141564935476328" source="pf141564935476319" outcome="#{horarioInscripcionBean.goToHorarioInscripcion}" redirect="true"/>
+  <links id="pf141564935476321" target="pf141564935476329" source="pf141564935476319" outcome="estadoCuenta" redirect="true"/>
+  <links id="pf141564935476326" target="pf141564935476319" source="pf141564935476329" outcome="menuPasosPrevios" redirect="true"/>
+  <links id="pf141564935476327" target="pf141564935476319" source="pf141564935476330" outcome="menuPasosPrevios" redirect="true" fromaction="#{controlFlujoMb.goToMenuPasosPrevios}"/>
+  <links id="pf141564935476331" target="pf141564935476332" source="pf141564935476330" outcome="menuBoletaPago" redirect="true" fromaction="#{controlFlujoMb.goToMenuBoletaPago}"/>
+  <links id="pf141564935476322" target="pf141564935476337" source="pf141564935476319" outcome="simulacionHorario" redirect="true"/>
+  <links id="pf141564935476323" target="pf141564935476338" source="pf141564935476319" outcome="#{controlFlujoMb.goToActividadesFormativas}" redirect="true"/>
+  <links id="pf141564935476333" target="pf141564935476339" source="pf141564935476332" outcome="infoBoletaPago" redirect="true"/>
+  <links id="pf141564935476334" target="pf141564935476340" source="pf141564935476332" outcome="modificaHorario" redirect="true"/>
+  <links id="pf141564935476336" target="pf141564935476342" source="pf141564935476332" outcome="ayuda" redirect="true"/>
+  <links id="pf141565957078448" target="pf141565957078449" source="pf141564935476332" outcome="confirmaInscripcion" redirect="true"/>
+  <links id="pf141565957078445" target="pf141564935476319" source="pf141564935476337" outcome="menuPasosPrevios" redirect="true"/>
+  <links id="pf141565957078446" target="pf141564935476319" source="pf141564935476338" outcome="#{controlFlujoMb.goToMenuPasosPrevios}" redirect="true"/>
+  <links id="pf141565957078447" target="pf141564935476319" source="pf141564935476328" outcome="#{controlFlujoMb.goToMenuPasosPrevios}" redirect="true"/>
+  <links id="pf14158978026534" target="pf141564935476329" source="pf14158978026538" outcome="estadoCuenta" redirect="true"/>
+  <links id="pf14158978026533" target="pf14158978026538" source="pf141564935476329" outcome="adeudoCuenta" redirect="true"/>
+  <links id="pf14170415849320" target="pf14158978026536" source="pf141564935476330" outcome="horario" redirect="true" fromaction="#{horarioMB.goToHorario}"/>
+  <links id="pf14170415849322" target="pf14170415849333" source="pf141564935476330" outcome="ConsultaHorario" redirect="true" fromaction="#{horarioMB.goToConsultaHorario}"/>
+  <links id="pf14172047103372" target="pf14172047103384" source="pf14158978026537" outcome="pagarAnticipo" redirect="true"/>
+  <links id="pf14172047103373" target="pf14158978026537" source="pf14172047103384" outcome="regresar" redirect="true"/>
+  <links id="pf14177398959900" target="pf14158978026537" source="pf141564935476330" outcome="pagoAnticipo" redirect="true"/>
+  <links id="pf14177402215362" target="pf141564935476330" source="pf14158978026537" outcome="index" redirect="true" fromaction="#{pagoAnticipoBean.inscripcion}"/>
+  <links id="pf14183180003250" target="pf14183180003251" source="pf14170415849333" outcome="consInscripVistaImprimir" redirect="true" fromaction="#{horarioMB.goToImpresion}"/>
+</pageflow:Pageflow>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Consulta de Estado de cuenta Horario</title>
+</head>
+<body>
+<ui:composition template="/templates/principalTemplate.xhtml">
+		<ui:define name="content">
+		<h:form>
+			<div id="container" align="center" width="100%">
+			
+					<h:panelGrid id="espacioEdoCuenta1">
+		      			<h:outputText value="&#160;" />		
+		      			<h:outputText value="&#160;" />
+		      		</h:panelGrid>
+			
+					<h:outputText value="Por el momento, no es posible realizar tu Horario." id="adeudoCuenta1"></h:outputText>
+					<h:outputText value="Debido a que tu cuenta presenta un adeudo." id="adeudoCuenta2"></h:outputText>
+					<h:outputText value="Te invitamos a realizar tu pago a fin de poder continuar con tu proceso de inscripción" id="adeudoCuenta3"></h:outputText>
+					
+					<h:panelGrid id="espacioEdoCuenta2">
+		      			<h:outputText value="&#160;" />		
+		      			<h:outputText value="&#160;" />
+		      		</h:panelGrid>
+					
+		      		<h:panelGrid columns="1">
+		      		<h:column>
+		      		<h:commandLink value="Consulta tu estado de cuenta" action="#{estadoCuentaBean.goToEstadoCuenta}">
+						<f:param name="accesoMenu" value="adeudo" />
+		      		</h:commandLink>
+		      		</h:column>
+		      		</h:panelGrid>
+			</div>
+		  </h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

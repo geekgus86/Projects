@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Consulta de Estado de cuenta</title>
+</head>
+<body>
+
+	<ui:composition template="/templates/principalTemplate.xhtml">
+		<ui:define name="content">
+			<f:metadata>
+				<f:viewParam name="urlAtras" value="#{estadoCuentaBean.urlAtras}" />
+			</f:metadata>
+			<h:form>
+				<div id="container" align="center">
+					<h:panelGrid rendered="#{estadoCuentaBean.muestraEstadoCuenta}"
+						width="100%">
+						<iframe id="estadoCuentaContent" height="500px"
+							src="#{estadoCuentaBean.src}"> </iframe>
+					</h:panelGrid>
+					<h:panelGrid columns="1"
+						rendered="#{estadoCuentaBean.muestraAcceso eq '1'}">
+						<h:column>
+							<h:commandButton value="Regresar"
+								class="footer-button-link" action="#{estadoCuentaBean.irAtras}" />
+						</h:column>
+					</h:panelGrid>
+					<h:panelGrid columns="1"
+						rendered="#{estadoCuentaBean.muestraAcceso eq '2'}">
+						<h:column>
+							<h:commandButton value="Regresar" class="footer-button-link"
+								action="#{estadoCuentaBean.goToAdeudoCuenta}">
+								<f:param name="accesoMenu" value="normal" />
+							</h:commandButton>
+						</h:column>
+					</h:panelGrid>
+				</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

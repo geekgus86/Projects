@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head></head>
+   <body>
+     <ui:composition>
+      <h:form id="headerForm">
+		<h:panelGroup>
+			<table border="0" width="100%"> 
+				<tbody>
+					<tr valign="middle"> 
+						<td align="left" valign="top" width="30%">
+							<h:graphicImage style="vertical-align:top;" width="220" library="imagenes" name="logo_tec.jpg"/>
+						</td> 
+						<td valign="middle">
+							Bienvenido(a) <b><h:outputText value="#{sesionMB.usuario}"/></b>
+							<br />
+							Matrícula: <b><h:outputText value="#{sesionMB.clavePerfilCompleto}"/></b>
+						</td>
+						<td valign="middle">
+							<b><h:outputText value="#{sesionMB.campus}"/></b>
+							<h:panelGrid columns="3">
+								<h:commandLink value="Cerrar sesión" id="cerrarSesion" action="#{sesionMB.cerrarSesion}"></h:commandLink>
+								<h:outputText value=" | "/>
+								<h:link value="Contacto" onclick="window.open('/sidiweb/ContactosAyuda/alumno','Ayuda','width=900,height=400, status=1,scrollbars=1,resizable=1');return false;"></h:link>
+							</h:panelGrid>
+						</td>
+					</tr>  
+					<tr>
+						<td class="headerAplication" colspan="3"> 
+					         <b>SISTEMA DE INSCRIPCIONES</b> 
+					     </td>
+					</tr> 
+					<tr>
+						<td align="center" colspan="3" >
+								<h:outputText value="Periodo: #{sesionMB.alumno.periodoDesc}" style="padding-right: 20px"/>
+								<h:outputText value="Carrera: #{sesionMB.carrera}" style="padding-right: 20px"/>
+								<h:outputText value="Concentración: #{sesionMB.concentracion}" style="padding-right: 20px"/>
+								<h:outputText value="Modalidad: #{sesionMB.modalidad}"/>
+					     </td>
+					</tr> 
+					<tr>
+						<td colspan="3" align="left" valign="top" width="100%">&nbsp;</td> 
+					</tr>
+					<tr>
+						<h:panelGrid columns="4" width="700px" cellspacing="30px" rendered="#{sesionMB.activoMenu}">
+							<h:column>
+								<h:commandLink action="#{headerBean.goToMenuPasosPrevios}" disabled="#{sesionMB.habilitaActividadesPrevias}" rendered="#{sesionMB.activoPrevios}">
+									<h:panelGrid columns="2" class="button-link" style="background: #{sesionMB.colorActividadesPrevias}" >
+										<h:graphicImage class="statusImage" library="imagenes" name="#{sesionMB.imagenActividadesPrevias}"/>
+										<h:outputText value="Actividades previas"/>
+									</h:panelGrid>
+								</h:commandLink >
+							</h:column>
+							<h:column>
+								<h:commandLink class="button-link" action="#{horarioMB.goToHorario}" disabled="#{sesionMB.habilitaHorario}" rendered="#{sesionMB.activoHorario}">
+									<h:panelGrid columns="2" class="button-link" style="background:#{sesionMB.colorHorario}">
+										<h:graphicImage class="statusImage" library="imagenes" name="#{sesionMB.imagenHorario}"/>
+										<h:outputText value="1 Realizar horario"/>
+									</h:panelGrid>
+								</h:commandLink>
+							</h:column>
+							<h:column>
+								<h:commandLink class="button-link" action="#{headerBean.goToMenuBoletaPago}" disabled="#{sesionMB.habilitaBoletaPago}" rendered="#{sesionMB.activoBoleta}">
+									<h:panelGrid columns="2" class="button-link" style="background: #{sesionMB.colorBoletaPago}">
+										<h:graphicImage class="statusImage" library="imagenes" name="#{sesionMB.imagenBoletaPago}"/>
+										<h:outputText value="2 Boleta de pago"/>
+									</h:panelGrid>
+								</h:commandLink>
+							</h:column>
+							<h:column>
+								<h:commandLink class="button-link" action="#{horarioMB.goToConsultaHorario}"  disabled="#{sesionMB.habilitaConsultaInscrip}" rendered="#{sesionMB.activoConsulta}">
+									<h:panelGrid columns="2" class="button-link" style="background: #{sesionMB.colorConsultaInscrip}">
+										<h:graphicImage class="statusImage" library="imagenes" name="#{sesionMB.imagenConsultaInscrip}"/>
+										<h:outputText value="Consulta de inscripción"/>
+									</h:panelGrid>
+								</h:commandLink>
+							</h:column>
+						</h:panelGrid>
+					</tr>
+				</tbody>
+			</table>
+		</h:panelGroup>
+		</h:form>
+      </ui:composition>
+   </body>
+</html>

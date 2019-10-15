@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true" />
+    
+    <package name="demo-struts" extends="struts-default">
+    		
+        
+    		<result-types>
+           		<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+   			</result-types>
+   			
+   			<interceptors>
+	   			<interceptor name="sesionValida" class="com.iusa.clases.interceptor.LoginInterceptor"></interceptor>
+	   			<interceptor-stack name="mistack">
+	   				<interceptor-ref name="sesionValida" />
+	   			</interceptor-stack>
+	   			
+	   			<interceptor name="nivelValido" class="com.iusa.clases.interceptor.InterceptorLvl"></interceptor>
+	   			<interceptor-stack name="mistack2">
+	   				<interceptor-ref name="nivelValido" />
+	   			</interceptor-stack>
+	   			
+   			</interceptors>	
+   			
+   			
+   			<default-action-ref name="login" />
+   			
+   			
+   			
+   			
+   			
+   			
+   			<global-results>
+    		 <result name="login">accesoDenegado.jsp</result>
+    		 
+			</global-results>
+   			
+   		<action name="login">
+            <result type="tiles">Entrar</result>
+        </action>
+      
+   		
+   		 <action name="CambioDB" class="com.iusa.clases.controllers.CambioDB">
+        	<result name="error">cambio.jsp</result>
+            <result name="success">cambio.jsp</result>
+        </action>
+   		
+        <action name="HomeAdmin" class="com.iusa.clases.controllers.DatosAdmin">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">Homeadmin</result>
+        </action>
+        
+        <action name="WebAdmin" class="com.iusa.clases.controllers.DatosAdmin">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">WebAdmin</result>
+        </action>
+        
+        
+        <action name="PerfilVista" class="com.iusa.clases.controllers.perfilUsuario">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">PerfilVista</result>
+        </action>
+        
+        
+       
+        
+        <action name="Tips" class="com.iusa.clases.controllers.TipsPrincipal">
+         	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">Tips</result>
+        </action>
+        
+        <action name="TipsNuevos" class="com.iusa.clases.controllers.NuevosTips">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">TipsNuevos</result>
+        </action>
+       
+        
+        <action name="TipsEditar" class="com.iusa.clases.controllers.EditarTips">
+            <result type="tiles">TipsEditar</result>
+        </action>
+        
+         <action name="TipsEditarSalvar" class="com.iusa.clases.controllers.SaveEditarTip">
+            <result type="chain">Tips</result>
+        </action>
+        
+        <action name="TipsEliminar" class="com.iusa.clases.controllers.EliminarTip">
+            <result type="tiles">Tips</result>
+        </action>
+        
+        
+         <action name="TipsGuardar" class="com.iusa.clases.controllers.GuardaTips">
+            <result type="chain">Tips</result>
+         </action>
+        
+        <action name="Noticias" class="com.iusa.clases.controllers.NoticiasStart">
+         	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">Noticias</result>
+        </action>
+        
+        
+        
+        
+        
+         <action name="VacanteAdmin" class="com.iusa.clases.controllers.DatosAdmin">
+         	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">Vacanteadmin</result>
+        </action>
+        
+        <action name="VacanteNueva" class="com.iusa.clases.controllers.NuevaVacante">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">Vacantenueva</result>
+        </action>
+        
+        <action name="VacantePred" class="com.iusa.clases.controllers.VacantePredef">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">Vacantepred</result>
+        </action>
+       
+        
+        <action name="VacanteEditar" class="com.iusa.clases.controllers.EditarVacante">
+            <result type="tiles">Vacanteeditar</result>
+        </action>
+        
+         <action name="VacanteEditarSalvar" class="com.iusa.clases.controllers.SaveEditarVacante">
+            <result type="chain">VacanteGeneral</result>
+        </action>
+        
+          <action name="VacanteEditarSalvar2" class="com.iusa.clases.controllers.SaveEditarVacante">
+            
+            <result type="chain">MisVacantes</result>
+        </action>
+        
+        <action name="VacanteEliminar" class="com.iusa.clases.controllers.EliminarVacante">
+            <result type="tiles">Vacantegeneral</result>
+        </action>
+        
+        
+        
+        <action name="VacanteBaja" class="com.iusa.clases.controllers.BajarVacante">
+            <result type="tiles">Vacantegeneral</result>
+        </action>
+        
+        
+        <action name="ConfirmacionVacanteGuardar" class="com.iusa.clases.controllers.ConfirmacionVacante">
+            <result type="tiles">confirmacion1</result>
+         </action>
+         
+        <action name="ConfirmacionVacanteGuardar2" class="com.iusa.clases.controllers.ConfirmacionVacante2">
+            <result type="tiles">confirmacion2</result>
+         </action>
+        
+         <action name="VacanteGuardar" class="com.iusa.clases.controllers.GuardaVacante">
+         	 <result type="redirectAction">
+       			<param name="actionName">ConfirmacionVacanteGuardar</param>
+       			<param name="subidoPor">${subidoPor}</param>
+   			</result>
+         </action>
+         
+          <action name="VacanteGuardarPre" class="com.iusa.clases.controllers.GuardaVacantePred">
+         	 <result type="redirectAction">
+       			<param name="actionName">ConfirmacionVacanteGuardar</param>
+       			<param name="tiles">VacantePred</param>
+   			</result>
+         </action>
+         
+          <action name="VacanteGuardar2" class="com.iusa.clases.controllers.GuardaVacante">
+            <result type="redirectAction">
+       			<param name="actionName">ConfirmacionVacanteGuardar2</param>
+       			<param name="subidoPor">${subidoPor}</param>
+   			</result>
+         </action>
+        
+        <action name="VacanteGeneral" class="com.iusa.clases.controllers.VacAdmins">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+        	<interceptor-ref name="mistack2"></interceptor-ref>
+            <result type="tiles">Vacantegeneral</result>
+        </action>
+ 		
+ 		
+ 		<action name="MisVacantes" class="com.iusa.clases.controllers.MisVacs">
+ 			<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">Misvacantes</result>
+        </action>
+ 		
+ 		       
+        <action name="doLogin" class="com.iusa.clases.controllers.Login">
+         <result name="input" type="tiles">Entrar</result>
+         <result name="error" type="tiles">Entrar</result>
+           <result name ="success" type="chain">HomeAdmin</result>
+         </action>
+         
+         <action name="cerrar" class="com.iusa.clases.controllers.CerrarSesion">
+        	<result type="redirect">/login</result>
+        </action>
+        
+        
+        
+         
+         
+         <action name="UsuariosAdmin" class="com.iusa.clases.controllers.DatosAdmin">
+          <interceptor-ref name="mistack"></interceptor-ref>
+		  <result type="tiles">Adminusuarios</result> 
+		</action>
+         
+    	<action name="NuevoAdmin" class="com.iusa.clases.controllers.DatosAdmin">
+    	  <interceptor-ref name="mistack"></interceptor-ref>
+    	  <interceptor-ref name="mistack2"></interceptor-ref>
+		  <result type="tiles">AdminNuevo</result> 
+		</action>
+		
+		<action name="CrearAdmin" class="com.iusa.clases.controllers.CrearAdmin">
+		  <result type="redirect">Administradores</result> 
+		</action>
+		
+		<action name="devZone" class="com.iusa.clases.controllers.devquery">
+		  <result name="success" type="tiles">Homeadmin</result> 
+		</action>
+		
+		<action name="ModificarAdministradores" class="com.iusa.clases.controllers.CambiarAdmin">
+		  <result type="tiles">AdminMod</result> 
+		 </action>
+		 
+		 <action name="ModificarAdminEXE" class="com.iusa.clases.controllers.ModificarAdmin">
+		  <result type="redirect">Administradores</result> 
+		 </action>
+		 
+		 <action name="Administradores" class="com.iusa.clases.controllers.ListaAdmins">
+		  <interceptor-ref name="mistack"></interceptor-ref>
+		  <result type="tiles">listaAdmins</result> 
+		 </action>
+		 
+		 <action name="EliminarAdmin" class="com.iusa.clases.controllers.EliminarAdmin">
+		  <result type="redirect">Administradores</result> 
+		 </action>
+		 
+		 
+		 
+		 
+		 <action name="Candidatos" class="com.iusa.clases.controllers.Candidatos">
+		 	<interceptor-ref name="mistack"></interceptor-ref>
+		  <result type="tiles">BusquedaCandidatos</result> 
+		 </action>
+		 
+		 
+		 
+		 <action name="ResultadoCandidatos" class="com.iusa.clases.controllers.ResultadoCandidato">
+		  <result type="tiles">ResultadoCandidatos</result> 
+		 </action>
+		 
+		 
+		 
+		 <action name="OpcionesPostulacion" class="com.iusa.clases.controllers.DatosAdmin">
+		  <result type="tiles">OpcionesPostulacion</result> 
+		 </action>
+		 
+		 
+		  <action name="OpcionesMiFiltro" class="com.iusa.clases.controllers.DatosAdmin">
+		  <result type="tiles">OpcionesMiFiltro</result> 
+		 </action>
+    	
+    	<action name="DetallePostulantes" class="com.iusa.clases.controllers.DetallePostulante">
+		  <result type="tiles">DetallesPostulantes</result> 
+		 </action>
+    	
+		 
+		 <action name="PostularCandidato2" class="com.iusa.clases.controllers.PostularCandidato2">
+		 	<result name ="success" type="chain">OpcionesPostulacion</result> 
+		 </action>
+		 
+		 
+		  <action name="ResultadosPostulacion">
+		    <result name ="success" type="chain">OpcionesPostulacion</result>
+		 </action>
+		 
+		 <action name="PostularCandidato" class="com.iusa.clases.controllers.AreaPostulaciones">
+		  <result type="tiles">PostularCandidato</result> 
+		 </action>
+		 
+		 <action name="EliminarCandidato" class="com.iusa.clases.controllers.EliminarCandidato">
+		  <result name ="success" type="chain">ResultadoCandidatos</result> 
+		 </action>
+		 
+		 
+		 
+		 
+		 
+		 <action name="MisPostulantes" class="com.iusa.clases.controllers.MisPostulantes">
+		  <result name ="success" type="tiles">MisPostulantes</result> 
+		 </action>
+		 
+		 
+		 
+		
+		<action name="InFiltro" class="com.iusa.clases.controllers.InPrimerFiltro">
+		  	<result name ="success" type="chain">OpcionesMiFiltro</result> 
+		 </action>
+		 
+		 <action name="VerFiltro" class="com.iusa.clases.controllers.VerPrimerFiltro">
+		  	<result name ="success" type="tiles">VerFiltro</result> 
+		 </action>
+		 
+		  <action name="redirBsq" class="iusacell.red_profesional.admins.action.BusqUsersAction">
+		  	<result name ="success" type="tiles">BusEmp</result> 
+		 </action>
+		 
+		  <action name="busqUser" class="iusacell.red_profesional.admins.action.BusquedaCorreoAction">
+		  	<result name ="success" type="tiles">resEmp</result> 
+		 </action>
+		 
+		 <action name="modUser" class="iusacell.red_profesional.admins.action.ModifUserAction">
+		  	<result name ="success" type="tiles">Adminusuarios</result> 
+		 </action>
+		
+		<action name="InMiFiltro" class="com.iusa.clases.controllers.InMiFiltro">
+		  	<result name ="success" type="chain">VerFiltro</result> 
+		 </action>
+		 
+		 
+		 <action name="VerMiFiltro" class="com.iusa.clases.controllers.VerMiFiltro">
+		  	<result name ="success" type="tiles">VerMiFiltro</result> 
+		 </action>
+		 
+		 
+		 
+		 <action name="Reportes" class="com.iusa.clases.controllers.Reportes">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+        	
+            <result type="tiles">Reportes</result>
+        </action>
+        
+        <action name="Reportes2" class="com.iusa.clases.controllers.Reportes">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+        	
+            <result type="tiles">Reportes2</result>
+        </action>
+        <action name="queryfactor" class="com.iusa.clases.controllers.devquery">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+        	
+            <result type="tiles">Homeadmin</result>
+        </action>
+        
+        
+         <action name="clusterHome" class="com.iusa.clases.controllers.ClusterPrincinpal">
+        	<interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">ClusterHome</result>
+        </action>
+        
+        
+         <action name="scriptWeb" class="com.iusa.clases.controllers.ScriptWeb">
+            <result name ="success" type="tiles">scriptWeb</result>
+        </action>
+        
+        
+    	
+    </package>
+    
+    
+     <package name="testPackage" extends="json-default" namespace="/json">
+     
+     		
+     		
+     		<action name="giveMeJsonData" class="com.iusa.clases.controllers.Vacantes" method="giveMe">
+		     	<result type="json">
+		      		<param name="root">jsonData</param>
+		    	</result>
+   			</action>
+   			
+     		
+     		
+     		
+     		<action name="verificarExisteAdmin" class="com.iusa.clases.controllers.VerificarExisAdmin" method="giveMe">
+		     	<result type="json">
+		      		<param name="root">jsonDataVerifAd</param>
+		    	</result>
+   			</action>
+   			
+     		
+     		<action name="giveMeJsonDataG" class="com.iusa.clases.controllers.VacantesGene" method="giveMe">
+		     	<result type="json">
+		      		<param name="root">jsonData</param>
+		    	</result>
+   			</action>
+   			
+   			
+   			<action name="giveMeMisVacantes" class="com.iusa.clases.controllers.VacantesMias" method="giveMe">
+		     	<result type="json">
+		      		<param name="root">jsonDataMV</param>
+		    	</result>
+   			</action>
+   			
+   			
+   			
+   			<action name="giveMeJsonDataDetalleVac" class="com.iusa.clases.controllers.DetalleVacante" method="giveMe">
+			    <result name="error" type="json">jsonDataDV</result>
+			     <result type="json">
+			      		<param name="root">jsonDataDV</param>
+			     </result>
+		   </action>
+		   
+		   
+		   
+		   <action name="datosPostulante" class="com.iusa.clases.controllers.DatosPostulante" method="giveMe">
+			    <result name="error" type="json">jsonDataDP</result>
+			     <result type="json">
+			      		<param name="root">jsonDataDP</param>
+			     </result>
+		   </action>
+		   
+		   
+		   
+		   <action name="cambiarComentarios" class="com.iusa.clases.controllers.CambiarComentarios" method="giveMe">
+			    <result name="error" type="json">jsonDataDC</result>
+			     <result type="json">
+			      		<param name="root">jsonDataDC</param>
+			     </result>
+		   </action>
+		   
+		   
+		    <action name="verComentarios" class="com.iusa.clases.controllers.VerComentarios" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	</action>
+		   	
+		    
+		    <action name="verDestacadosNa" class="com.iusa.clases.controllers.VerDestacadosNacionales" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	</action>
+		   	
+		    
+		    <action name="verDestacadosRe" class="com.iusa.clases.controllers.VerDestacadosRegionales" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	</action>
+		   	
+		    
+		    <action name="yaEsDestacadaNa" class="com.iusa.clases.controllers.YaEsDestacadaNa" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	</action>
+		   	
+		    
+		    <action name="yaEsDestacadaRe" class="com.iusa.clases.controllers.YaEsDestacadaRe" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	</action>
+		   
+		    <action name="agregarNacional" class="com.iusa.clases.controllers.AgregarNacional" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	</action>
+		   	
+		    
+		     <action name="agregarRegional" class="com.iusa.clases.controllers.AgregarRegional" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	</action>
+		   	
+		     
+		      <action name="quitarNacional" class="com.iusa.clases.controllers.QuitarNacional" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	  </action>
+		   	
+		       <action name="quitarRegional" class="com.iusa.clases.controllers.QuitarRegional" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	   </action>
+		   	   
+		       
+		      <action name="verRegional" class="com.iusa.clases.controllers.VerRegional" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	  </action>
+		   	  
+		   	  
+		   	  <action name="traerVacantesEsp" class="com.iusa.clases.controllers.TraerVacantesEsp" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	  </action>
+		   	  
+		   	  
+		      
+		      <action name="verNacional" class="com.iusa.clases.controllers.VerNacional" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	  </action>
+		    
+		    
+		      
+		       <action name="verUbicacionesCluster" class="com.iusa.clases.controllers.VerUbicacionesClus" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	  </action>
+		   	  
+		       
+		      <action name="guardaUbicacion" class="com.iusa.clases.controllers.GuardaUbiClus" method="giveMe">
+			    <result type="json">
+		      		<param name="root">jsonDataSaveUbi</param>
+		    	</result>
+		   	  </action>
+		      
+		        
+		      <action name="eliminarUbicacion" class="com.iusa.clases.controllers.EliminarUbiClus" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	  </action>
+		   	  
+		         
+		      <action name="verCalificadores" class="com.iusa.clases.controllers.VerCalifCluster" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	  </action>
+		      
+		   
+		      <action name="guardaCalificador" class="com.iusa.clases.controllers.GuardaCalifClus" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	  </action>    
+		   
+		      
+		       <action name="eliminarCalif" class="com.iusa.clases.controllers.EliminarCalifClus" method="giveMe">
+			    <result name="error" type="json">jsonData</result>
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+		   	  </action>
+		  
+		   
+		   
+		    <action name="otroProceso" class="com.iusa.clases.controllers.OtroProceso" method="giveMe">
+			    <result name="error" type="json">jsonDataOP</result>
+			     <result type="json">
+			      		<param name="root">jsonDataOP</param>
+			     </result>
+		   </action>
+		   
+		   
+		   
+		   
+		   
+		   
+		   <action name="numeroVacantes" class="com.iusa.clases.controllers.ReportesVacante" method="giveMe">
+			    <result name="error" type="json">jsonDataRV</result>
+			     <result type="json">
+			      		<param name="root">jsonDataRV</param>
+			     </result>
+		   </action>
+		   
+		   
+		   
+		   
+		   <action name="cambiaRutasVideos" class="com.iusa.clases.controllers.CambiaRutasVideos" method="giveMe">
+			    <result name="error" type="json">jsonDataRR</result>
+			     <result type="json">
+			      		<param name="root">jsonDataRR</param>
+			     </result>
+		   </action>
+		   
+		   
+		   
+		   
+		   <action name="cambiaRutasImagenes" class="com.iusa.clases.controllers.CambiaRutasImagenes" method="giveMe">
+		   		 
+              	<interceptor-ref name="defaultStack"></interceptor-ref>
+              	
+              	<interceptor-ref name="fileUpload">
+           			<param name="allowedTypes">image/jpeg,image/gif,image/png</param>
+             	</interceptor-ref>
+		   
+			    <result name="success" type="redirect">/Noticias</result>
+		   </action>
+		   
+		   
+		   
+		   
+		   <action name="verPostulantes" class="com.iusa.clases.controllers.VerPostulantes" method="giveMe">
+		   		 
+			     <result type="json">
+			      		<param name="root">jsonDataVPR</param>
+			     </result>
+			    
+		   </action>
+		   
+		   
+		   
+		   
+		   <action name="verMunicipio" class="com.iusa.clases.controllers.VerMunicipio" method="giveMe">
+		   		 
+			     <result type="json">
+			      		<param name="root">jsonDataMNP</param>
+			     </result>
+			    
+		   </action>
+		   
+		   
+		    
+		   
+		   <action name="exportarExcel" class="com.iusa.clases.controllers.RecibeExportar" method="giveMe">
+		   		 
+			     <result type="json">
+			      		<param name="root">jsonDataCAE</param>
+			     </result>
+			    
+		   </action>
+		   
+		    
+		    
+		    
+		    <action name="cambiarEstadoAjax" class="com.iusa.clases.controllers.CambioEstadoDinamico" method="giveMe">
+		   		 
+			     <result type="json">
+			      		<param name="root">jsonDataCED</param>
+			     </result>
+			    
+		   </action>
+		   
+		    <action name="cambiarEstadoAjaxAdmin" class="com.iusa.clases.controllers.CambioEstatusAdmin" method="giveMe">
+		   		 
+			     <result type="json">
+			      		<param name="root">jsonDataCED</param>
+			     </result>
+			    
+		   </action>
+		   
+		   
+		   
+		   
+		    <action name="ObtenerPostulantes" class="com.iusa.clases.controllers.ObtenerPostusDinamic" method="giveMe">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		    </action>
+		    
+		    
+		    <action name="filtrarPorVacantePostulante" class="com.iusa.clases.controllers.PostuPorVacDinamico" method="giveMe">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		    </action>
+		   
+		   
+		    
+		    
+		   <action name="filtrarPorVacanteMiFiltro" class="com.iusa.clases.controllers.NuevoFiltroPorVacDinamico" method="giveMe">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		    </action>
+		    
+		   
+		   <action name="busquedaCandiPag" class="com.iusa.clases.controllers.ResultadoBusCandiPag" method="giveMe">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		    </action>
+		   
+		 
+		  
+		  <action name="EliminarCandidatoD" class="com.iusa.clases.controllers.EliminarCandidato" >
+		   		 
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+			    
+		   </action>
+		   
+		   <action name="EliminarMisCandidatos" class="com.iusa.clases.controllers.EliminaCandidaturas" >
+		   		 
+			     <result type="json">
+			      		<param name="root">jsonData</param>
+			     </result>
+			    
+		   </action>
+		   
+		  
+		  <action name="ObtenerHobbies" class="com.iusa.clases.controllers.ObtenerHobbies">
+	          <result type="json">
+	            <param name="root">jsonData</param>
+	          </result>
+    	  </action>
+    	  
+		    <action name="ObtenerEducacion" class="com.iusa.clases.controllers.obtenerEducacion">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		    </action>
+		   
+		   <action name="ObtenerEducacionInfo" class="com.iusa.clases.controllers.ObtenerEducacionInfo">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		    </action>
+		   
+		   <action name="ObtenerTalentos" class="com.iusa.clases.controllers.ObtenerTalentos">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		    </action>
+		<action name="ObtenerHabilidad" class="com.iusa.clases.controllers.ObtenerHabilidad">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		   </action>
+		<action name="ObtenerEmpleo" class="com.iusa.clases.controllers.ObtenerEmpleo">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		    </action>
+		   
+		   <action name="ObtenerEmpleoInfo" class="com.iusa.clases.controllers.ObtenerEmpleoInfo">
+		          <result type="json">
+		            <param name="root">jsonData</param>
+		          </result>
+		    </action>
+		  
+		   	
+     </package>
+      
+</struts>

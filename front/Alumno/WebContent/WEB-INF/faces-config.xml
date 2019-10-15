@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+	<lifecycle>
+		<phase-listener>com.sidiAlumno.general.FiltroGeneral</phase-listener>
+	</lifecycle>
+	<managed-bean>
+		<managed-bean-name>controlFlujoMb</managed-bean-name>
+		<managed-bean-class>flujo.beans.ControlFlujoMb</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>sesionMB</managed-bean-name>
+		<managed-bean-class>sesion.beans.SesionMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>indexRQBean</managed-bean-name>
+		<managed-bean-class>sesion.beans.IndexRQMB</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>horarioInscripcionBean</managed-bean-name>
+		<managed-bean-class>flujo.beans.HorarioInscripcionBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>estadoCuentaBean</managed-bean-name>
+		<managed-bean-class>flujo.beans.ControlEstadoCuentaMb</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pagoAnticipoBean</managed-bean-name>
+		<managed-bean-class>flujo.beans.ControlFlujoPagoAnticipoMb</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>horarioMB</managed-bean-name>
+		<managed-bean-class>flujo.beans.HorarioMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>simulacionHorarioBean</managed-bean-name>
+		<managed-bean-class>flujo.beans.SimulacionHorarioBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>headerBean</managed-bean-name>
+		<managed-bean-class>flujo.beans.HeaderBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>boletaPagoMB</managed-bean-name>
+		<managed-bean-class>flujo.beans.BoletaPagoMB</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<navigation-rule>
+		<display-name>menuPasosPrevios.xhtml</display-name>
+		<from-view-id>/menuPasosPrevios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>#{horarioInscripcionBean.goToHorarioInscripcion}</from-outcome>
+			<to-view-id>/horarioInscripcion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controlFlujoMb.goToMenuPasosPrevios}</from-action>
+			<from-outcome>menuPasosPrevios</from-outcome>
+			<to-view-id>/menuPasosPrevios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{controlFlujoMb.goToMenuBoletaPago}</from-action>
+			<from-outcome>menuBoletaPago</from-outcome>
+			<to-view-id>/menuBoletaPago.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuPasosPrevios.xhtml</display-name>
+		<from-view-id>/menuPasosPrevios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>simulacionHorario</from-outcome>
+			<to-view-id>/simulacionHorario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuPasosPrevios.xhtml</display-name>
+		<from-view-id>/menuPasosPrevios.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>#{controlFlujoMb.goToActividadesFormativas}</from-outcome>
+			<to-view-id>/actividadesFormativas.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuBoletaPago.xhtml</display-name>
+		<from-view-id>/menuBoletaPago.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>infoBoletaPago</from-outcome>
+			<to-view-id>/infoBoletaPago.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuBoletaPago.xhtml</display-name>
+		<from-view-id>/menuBoletaPago.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>modificaHorario</from-outcome>
+			<to-view-id>/modificaHorario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuBoletaPago.xhtml</display-name>
+		<from-view-id>/menuBoletaPago.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>confirmaInscripcion</from-outcome>
+			<to-view-id>/confirmaInscripcion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>menuBoletaPago.xhtml</display-name>
+		<from-view-id>/menuBoletaPago.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>ayuda</from-outcome>
+			<to-view-id>/ayuda.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>simulacionHorario.xhtml</display-name>
+		<from-view-id>/simulacionHorario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>menuPasosPrevios</from-outcome>
+			<to-view-id>/menuPasosPrevios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>actividadesFormativas.xhtml</display-name>
+		<from-view-id>/actividadesFormativas.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>#{controlFlujoMb.goToMenuPasosPrevios}</from-outcome>
+			<to-view-id>/menuPasosPrevios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>horarioInscripcion.xhtml</display-name>
+		<from-view-id>/horarioInscripcion.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>#{controlFlujoMb.goToMenuPasosPrevios}</from-outcome>
+			<to-view-id>/menuPasosPrevios.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>pagoAnticipo.xhtml</display-name>
+		<from-view-id>/pagoAnticipo.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>pagarAnticipo</from-outcome>
+			<to-view-id>/pagoAnticipoPagar.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>pagoAnticipoPagar.xhtml</display-name>
+		<from-view-id>/pagoAnticipoPagar.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>regresar</from-outcome>
+			<to-view-id>/pagoAnticipo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>consultaEdoCuenta.xhtml</display-name>
+		<from-view-id>/consultaEdoCuenta.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>adeudoCuenta</from-outcome>
+			<to-view-id>/adeudoCuentaHorario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>pagoAnticipo</from-outcome>
+			<to-view-id>/pagoAnticipo.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>pagoAnticipo.xhtml</display-name>
+		<from-view-id>/pagoAnticipo.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{pagoAnticipoBean.inscripcion}</from-action>
+			<from-outcome>index</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{horarioMB.goToHorario}</from-action>
+			<from-outcome>horario</from-outcome>
+			<to-view-id>/horario.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>index.xhtml</display-name>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{horarioMB.goToConsultaHorario}</from-action>
+			<from-outcome>ConsultaHorario</from-outcome>
+			<to-view-id>/consultaInscripcion.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>consultaInscripcion.xhtml</display-name>
+		<from-view-id>/consultaInscripcion.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{horarioMB.goToImpresion}</from-action>
+			<from-outcome>consInscripVistaImprimir</from-outcome>
+			<to-view-id>/consInscripVistaImprimir.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

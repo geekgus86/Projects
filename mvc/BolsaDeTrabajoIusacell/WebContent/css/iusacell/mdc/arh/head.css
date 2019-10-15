@@ -1,0 +1,63 @@
+	.barra {
+		width: 100%;  /*rvt 28 Dic 2011*/
+		font-family: Verdana;
+		font-size: 18pts;
+		color: #000000;
+	}
+
+	/* background-image: url('../images/FondoBotonera.jpg'); */
+	.barraUbicacionIzq{
+		background-image:  url('../../../../images/iusacell/mdc/img/head/BarraPosicionIzq.png');
+		background-repeat: no-repeat;
+	    height: 42px;  
+	}
+
+	.barraUbicacionDer{
+		background-image:  url('../../../../images/iusacell/mdc/img/head/BarraPosicionDer.png');
+		background-repeat: no-repeat;
+	    height: 42px;  
+	}
+	
+	.barraUbicacion{
+		background-image:  url('../../../../images/iusacell/mdc/img/head/BarraPosicion.png');
+		/* background-repeat: repeat; */
+	    height: 42px;  
+	}
+	
+	.barraIzq{
+        background-image:  url('../../../../images/iusacell/mdc/img/head/BarraUpLogotipo.png');
+		background-repeat: no-repeat;
+	    height: 103px;
+		cursor:pointer;
+	}
+	.barraCentral{
+        background-image:  url('../../../../images/iusacell/mdc/img/head/BarraUpFoto.png');
+		background-repeat: no-repeat;
+	  
+	}
+	.barraDer{
+	      background-image:  url('../../../../images/iusacell/mdc/img/head/BarraUpFotoR.png');
+		  background-repeat: repeat;
+		 /* background-color:#BDBDBD;*/
+		 /* background: #BDBDBD url(/WEB-INF/iusacell/mdc/img/head/repeticion.png);*/
+	}
+	.fecha {
+		font-family: Verdana;
+		font-size: 9pt;
+		color: #FFFFFF;
+	}		
+	.nombre {
+		font-family: Verdana;
+		font-size: 15pt;
+		color: #858383;
+	}		
+	.puesto {
+		font-family: Verdana;
+		font-size: 9pt;
+		color: #858383;
+	}		
+	.sesion {
+		font-family: Verdana;
+		font-size: 8pt;
+		color: #FFFFFF;
+	}

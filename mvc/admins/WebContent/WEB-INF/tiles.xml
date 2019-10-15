@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+ 
+<tiles-definitions>
+	
+ 	
+  <definition name="Entrar" template="/index.jsp">
+      <put-attribute name="content"   value="/login.jsp"/>
+  </definition>
+  
+  <definition name="Homeadmin" template="/index.jsp">
+      <put-attribute name="content"   value="/admin_home.jsp"/>
+  </definition>
+  
+  <definition name="WebAdmin" template="/index.jsp">
+      <put-attribute name="content"   value="/admin_web.jsp"/>
+  </definition>
+  
+  <definition name="PerfilVista" template="/index.jsp">
+      <put-attribute name="content"   value="/perfilVista.jsp"/>
+  </definition>
+  
+  
+  <definition name="Tips" template="/index.jsp">
+      <put-attribute name="content"   value="/tip_principal.jsp"/>
+  </definition>
+  
+  <definition name="TipsNuevos" template="/index.jsp">
+      <put-attribute name="content"   value="/tip_nuevos.jsp"/>
+  </definition>
+  
+  <definition name="TipsEditar" template="/index.jsp">
+      <put-attribute name="content"   value="/tip_editar.jsp"/>
+  </definition>
+  
+  <definition name="Noticias" template="/index.jsp">
+      <put-attribute name="content"   value="/noticias_banner_video.jsp"/>
+  </definition>
+  
+  
+
+  
+  <definition name="Vacanteadmin" template="/index.jsp">
+      <put-attribute name="content"   value="/adm_vacantes.jsp"/>
+  </definition>
+  
+  <definition name="Vacantenueva" template="/index.jsp">
+      <put-attribute name="content"   value="/nueva_vacante.jsp"/>
+  </definition>
+  
+  
+  <definition name="Vacantepred" template="/index.jsp">
+      <put-attribute name="content"   value="/vacante_predef.jsp"/>
+  </definition>
+  
+  
+  <definition name="Vacanteeditar" template="/index.jsp">
+      <put-attribute name="content"   value="/editar_vacante.jsp"/>
+  </definition>
+  
+  <definition name="Vacantegeneral" template="/index.jsp">
+      <put-attribute name="content"   value="/vacantes_general.jsp"/>
+  </definition>
+  
+  
+  <definition name="confirmacion1" template="/index.jsp">
+      <put-attribute name="content"   value="/confirmacion1.jsp"/>
+  </definition>
+  
+  
+  <definition name="confirmacion2" template="/index.jsp">
+      <put-attribute name="content"   value="/confirmacion2.jsp"/>
+  </definition>
+  
+  
+  <definition name="Misvacantes" template="/index.jsp">
+      <put-attribute name="content"   value="/mis_candidaturas.jsp"/>
+  </definition>
+  
+ 
+  
+  <definition name="Adminusuarios" template="/index.jsp">
+  <put-attribute name="content" value="/adm_usuarios.jsp" /> 
+  </definition>
+  
+  
+  <definition name="listaAdmins" template="/index.jsp">
+  <put-attribute name="content" value="/lista_admins.jsp" /> 
+  </definition>
+  
+  <definition name="AdminNuevo" template="/index.jsp">
+  <put-attribute name="content" value="/nuevo_admin.jsp" /> 
+  </definition>
+  
+  <definition name="AdminMod" template="/index.jsp">
+  <put-attribute name="content" value="/modificarAdmin.jsp" /> 
+  </definition>
+  
+  <definition name="BusquedaCandidatos" template="/index.jsp">
+  <put-attribute name="content" value="/busqueda_candidatos.jsp" /> 
+  </definition>
+  
+  <definition name="ResultadoCandidatos" template="/index.jsp">
+  <put-attribute name="content" value="/resultado_busqueda_candidatos.jsp" /> 
+  </definition>
+
+  <definition name="DetallesPostulantes" template="/index.jsp">
+  <put-attribute name="content" value="/detalle_postulante.jsp" /> 
+  </definition>
+  
+  <definition name="PostularCandidato" template="/index.jsp">
+  <put-attribute name="content" value="/postular_candidato.jsp" /> 
+  </definition>
+  
+  <definition name="OpcionesPostulacion" template="/index.jsp">
+  <put-attribute name="content" value="/depues_postular.jsp" /> 
+  </definition>
+  
+  <definition name="OpcionesMiFiltro" template="/index.jsp">
+  <put-attribute name="content" value="/depues_insert_MiFiltro.jsp" /> 
+  </definition>
+
+   
+  <definition name="MisPostulantes" template="/index.jsp">
+  <put-attribute name="content" value="/ver_postulantes.jsp" /> 
+  </definition>
+  
+
+
+  
+  
+  <definition name="VerFiltro" template="/index.jsp">
+  <put-attribute name="content" value="/ver_primer_filtro.jsp" /> 
+  </definition>
+  
+  <definition name="VerMiFiltro" template="/index.jsp">
+  <put-attribute name="content" value="/ver_mi_filtro.jsp" /> 
+  </definition>
+  
+    <definition name="BusEmp" template="/index.jsp">
+  <put-attribute name="content" value="/admin_users.jsp" /> 
+  </definition>
+   
+     <definition name="resEmp" template="/index.jsp">
+  <put-attribute name="content" value="/result_users.jsp" /> 
+  </definition>
+   
+   <definition name="Reportes" template="/index.jsp">
+  		<put-attribute name="content" value="/ver_reportes.jsp" /> 
+   </definition>
+   
+   <definition name="Reportes2" template="/index.jsp">
+  		<put-attribute name="content" value="/ver_reportes.jsp" /> 
+   </definition>
+   
+   
+    <definition name="ClusterHome" template="/index.jsp">
+  		<put-attribute name="content" value="/cluster_homes.jsp" /> 
+    </definition>
+   
+   
+   
+   <definition name="scriptWeb" template="/index.jsp">
+  	<put-attribute name="content" value="/scriptWeb.jsp" /> 
+   </definition>
+  
+ 
+</tiles-definitions>

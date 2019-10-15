@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<ui:composition template="/templates/principalTemplate.xhtml">
+		<ui:define name="content">
+			<h:form>
+			<h:panelGrid columns="1" class="tableOptions">
+				<h:column>
+					<h:graphicImage library="imagenes" name="info_boleta.png"/>
+					<h:commandLink value="Información de Boleta de pago" action="#{controlFlujoMb.goToInfoBoletaPago}"></h:commandLink>
+				</h:column>
+				<h:column>
+					<h:graphicImage library="imagenes" name="modif_horario.png"/>
+					<h:commandLink value="Modificar horario" action="#{controlFlujoMb.goToModifHorario}"></h:commandLink>
+				</h:column>
+				<h:column>
+					<h:graphicImage library="imagenes" name="confir_inscrip.png"/>
+					<h:commandLink value="Confirmar inscripción" action="#{controlFlujoMb.goToConfirmaInscripcion}"></h:commandLink>
+				</h:column>
+				<h:column>
+					<h:graphicImage library="imagenes" name="help.png"/>
+					<h:commandLink value="Ayuda" action="#{controlFlujoMb.goToAyuda}"></h:commandLink>
+				</h:column>
+			</h:panelGrid>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+	
+</body>
+</html>

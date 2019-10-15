@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+ 
+<tiles-definitions>
+  <definition name="crearCuenta" template="/index.jsp">
+      <put-attribute name="content"   value="/crear_cuenta.jsp"/>
+  </definition>
+  <definition name="Entrar" template="/index.jsp">
+      <put-attribute name="content"   value="/WEB-INF/login.jsp"/>
+  </definition>
+  
+  <definition name="cuentaRapida" template="/index.jsp">
+      <put-attribute name="content"   value="/WEB-INF/cuenta_datos.jsp"/>
+  </definition>
+  
+  <definition name="homeUsuario" template="/index.jsp">
+      <put-attribute name="content"   value="/WEB-INF/perfil.jsp"/>
+  </definition>
+  
+  <definition name="vistaPrevia" template="/index.jsp">
+      <put-attribute name="content"   value="/WEB-INF/perfilVista.jsp"/>
+  </definition>
+  
+  <definition name="opcionesCuenta" template="/index.jsp">
+      <put-attribute name="content"   value="/WEB-INF/opciones.jsp"/>
+  </definition>
+  
+  <definition name="candidaturas" template="/index.jsp">
+      <put-attribute name="content"   value="/WEB-INF/mis_candidaturas.jsp"/>
+  </definition>
+ 
+ <definition name="confirmacion" template="/index.jsp">
+      <put-attribute name="content"   value="/WEB-INF/confirmacion_cuenta.jsp"/>
+  </definition>
+  
+  <definition name="busquedaVacante" template="/index.jsp">
+      <put-attribute name="content"   value="/WEB-INF/busqueda.jsp"/>
+  </definition>
+  
+  <definition name="Datos_personales" template="/index.jsp">
+      <put-attribute name="content"   value="/datos_personales.jsp"/>
+  </definition>
+  
+   <definition name="formacion" template="/index.jsp">
+      <put-attribute name="content"   value="/formacion.jsp"/>
+  </definition>
+  
+  <definition name="idiomas" template="/index.jsp">
+      <put-attribute name="content"   value="/idiomas.jsp"/>
+  </definition>
+  
+  <definition name="conocimientos" template="/index.jsp">
+      <put-attribute name="content"   value="/conocimientos.jsp"/>
+  </definition>
+  
+  <definition name="experiencia" template="/index.jsp">
+      <put-attribute name="content"   value="/experiencia.jsp"/>
+  </definition>
+  
+  <definition name="aspiraciones" template="/index.jsp">
+      <put-attribute name="content"   value="/aspiraciones.jsp"/>
+  </definition>
+  
+  <definition name="talentos" template="/index.jsp">
+      <put-attribute name="content"   value="/talentos.jsp"/>
+  </definition> 
+  
+   <definition name="navegadores" template="/index.jsp">
+      <put-attribute name="content"   value="/navegadores.jsp"/>
+  </definition> 
+ 
+</tiles-definitions>

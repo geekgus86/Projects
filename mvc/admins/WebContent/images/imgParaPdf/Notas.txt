@@ -1,0 +1,4 @@
+NOTAS
+ - Notificar cambios realizados a los iconos
+ - Respetar nombre y orden, en caso de modificar icono completo, ponerle el mismo nombre que    el anterior y notificar cual fue
+ - Hacer las modificaciones necesarias en la imagen de  fondo de la aplicacion, respetando    tamaño y el formato (.png) 

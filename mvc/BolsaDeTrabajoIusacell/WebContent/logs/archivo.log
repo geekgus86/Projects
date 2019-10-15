@@ -1,0 +1,62 @@
+24 ene 2013 - 14:52:36 [DEBUG] hibernate.SQL - SELECT "vacante"."area_experiencia", "vacante"."ubicacion", "vacante"."folio" FROM "vacante" WHERE "vacante"."destacado_nacional" = 1 
+24 ene 2013 - 14:52:37 [DEBUG] hibernate.SQL -  SELECT "videos"."id_video", "videos"."url_video", "videos"."donde_va" FROM "videos"  
+24 ene 2013 - 14:52:37 [DEBUG] hibernate.SQL -  SELECT "tips"."id_tip", "tips"."tip_descripcion", "tips"."tipo_tip" FROM "tips" WHERE "tips"."tipo_tip" LIKE 'Entrevista' 
+24 ene 2013 - 14:52:37 [DEBUG] hibernate.SQL -  SELECT "img_banner"."id_banner", "img_banner"."url_banner" FROM "img_banner"  
+24 ene 2013 - 14:52:37 [DEBUG] hibernate.SQL -  SELECT "tips"."id_tip", "tips"."tip_descripcion", "tips"."tipo_tip" FROM "tips" WHERE "tips"."tipo_tip" LIKE 'Infografia' 
+24 ene 2013 - 14:52:37 [DEBUG] hibernate.SQL - SELECT "usuario"."id_postulante"FROM "usuario"WHERE "usuario"."usuario_nombre"='null'
+24 ene 2013 - 14:52:37 [DEBUG] hibernate.SQL - SELECT "datos_personales"."id_usuario" FROM "datos_personales" WHERE "datos_personales"."id_usuario"='null' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "usuario"."id_postulante" FROM "usuario"WHERE "usuario"."usuario_nombre"='petru' AND "usuario"."password"='1'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "usuario"."id_postulante","usuario"."nombre","usuario"."apellido_paterno","usuario"."apellido_materno","usuario"."correo_electronico","usuario"."area_de_interes","usuario"."telefono","usuario"."nivel_de_estudios","usuario"."area_formacion","usuario"."fecha_nacimiento" FROM "usuario"WHERE "usuario"."usuario_nombre"='petru'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "datos_personales"."rfc","datos_personales"."curp","datos_personales"."sexo","datos_personales"."estado_civil" FROM "datos_personales"WHERE "datos_personales"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "Ubicacion"."calle_numero","Ubicacion"."colonia","Ubicacion"."municipio_delegacion","Ubicacion"."cp","Ubicacion"."ciudad_poblado","Ubicacion"."estado","Ubicacion"."nacionalidad" FROM "Ubicacion"WHERE "Ubicacion"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "formacion_academica"."id_formacion","nivel_academico"."nivel_academico","formacion_academica"."instituto","formacion_academica"."estado_instituto","formacion_academica"."fecha_inicio","formacion_academica"."fecha_fin","formacion_academica"."status","formacion_academica"."pais_instituto"FROM "formacion_academica", "nivel_academico" WHERE "formacion_academica"."id_usuario"='163' AND "nivel_academico"."id_academico"="formacion_academica"."nivel_estudios"
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "idioma_aux"."id_idioma_aux","idioma"."idioma", "idioma_aux"."dominio", "idioma"."id_idioma" FROM "idioma","idioma_aux" WHERE "idioma_aux"."id_usuario"='163' AND "idioma_aux"."id_idioma"="idioma"."id_idioma"
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "identidad"."identidad","identidad"."id_identidad" FROM "identidad"WHERE "identidad"."categoria_identidad"='Persuasion'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "identidad"."identidad","identidad"."id_identidad" FROM "identidad", "identidad_aux" WHERE "identidad"."categoria_identidad"='Persuasion' AND "identidad_aux"."id_identidad"="identidad"."id_identidad" AND "identidad_aux"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "identidad"."identidad","identidad"."id_identidad" FROM "identidad"WHERE "identidad"."categoria_identidad"='Constancia'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "identidad"."identidad","identidad"."id_identidad" FROM "identidad" ,"identidad_aux" WHERE "identidad"."categoria_identidad"='Constancia' AND "identidad_aux"."id_identidad"="identidad"."id_identidad" AND "identidad_aux"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "identidad"."identidad","identidad"."id_identidad" FROM "identidad"WHERE "identidad"."categoria_identidad"='Apego'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "identidad"."identidad","identidad"."id_identidad" FROM "identidad","identidad_aux" WHERE "identidad"."categoria_identidad"='Apego' AND "identidad_aux"."id_identidad"="identidad"."id_identidad" AND "identidad_aux"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "identidad"."identidad","identidad"."id_identidad" FROM "identidad"WHERE "identidad"."categoria_identidad"='Empuje'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "identidad"."identidad","identidad"."id_identidad" FROM "identidad", "identidad_aux" WHERE "identidad"."categoria_identidad"='Empuje' AND "identidad_aux"."id_identidad"="identidad"."id_identidad" AND "identidad_aux"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "talento"."id_talento","talento"."talento","talento"."descripcion" FROM "talento"
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "categoria_software"."categoria","categoria_software"."id_categoria" FROM "categoria_software"
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "categoria_software"."id_categoria","categoria_software"."categoria" FROM "categoria_software","software_aux","software" WHERE "software_aux"."id_usuario"='163' AND "software_aux"."id_software"="software"."id_software" AND "categoria_software"."id_categoria"="software"."categoria" GROUP BY "categoria_software"."categoria","categoria_software"."id_categoria"
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."id_hob","hobbie"."hobbie" FROM "hobbie"
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","hobbie"."id_hob" FROM "hobbie" WHERE "hobbie"."categoria"='Deportes Extremos' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","hobbie"."id_hob" FROM "hobbie" WHERE "hobbie"."categoria"='Deportes' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","hobbie"."id_hob" FROM "hobbie" WHERE "hobbie"."categoria"='Artes Plasticas' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","hobbie"."id_hob" FROM "hobbie" WHERE "hobbie"."categoria"='Entretenimiento' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","hobbie"."id_hob" FROM "hobbie" WHERE "hobbie"."categoria"='Rendimiento' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","hobbie"."id_hob" FROM "hobbie" WHERE "hobbie"."categoria"='Juegos de Mesa' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","hobbie"."id_hob" FROM "hobbie" WHERE "hobbie"."categoria"='Aficiones' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","hobbie"."id_hob" FROM "hobbie" WHERE "hobbie"."categoria"='Pasatiempos' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","hobbie"."id_hob" FROM "hobbie" WHERE "hobbie"."categoria"='Plantas y Animales' 
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "disposicion"."viajar","disposicion"."mudarse"  FROM "disposicion" WHERE  "disposicion"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "salario_deseado"."salario_deseado"  FROM "salario_deseado" WHERE  "salario_deseado"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "horario_preferido"."horario_preferido"  FROM "horario_preferido" WHERE  "horario_preferido"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "habilidad"."id_aux_habilidad","habilidad"."habilidad" FROM "habilidad" WHERE "habilidad"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "foto"."url_foto"FROM "foto"WHERE "foto"."id_usuario"='163'
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "pais"."pais" FROM "pais"
+24 ene 2013 - 15:31:00 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado","estado"."nombre_estado" FROM "estado"
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL -  SELECT "videos"."id_video", "videos"."url_video", "videos"."donde_va" FROM "videos"  
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "usuario"."id_postulante"FROM "usuario"WHERE "usuario"."usuario_nombre"='petru'
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "datos_personales"."id_usuario" FROM "datos_personales" WHERE "datos_personales"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "Ubicacion"."id_usuario" FROM "Ubicacion" WHERE "Ubicacion"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "idioma_aux"."id_usuario" FROM "idioma_aux" WHERE "idioma_aux"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "experiencia"."id_exp" FROM "experiencia" WHERE "experiencia"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "formacion_academica"."id_formacion" FROM "formacion_academica" WHERE "formacion_academica"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "talento_aux"."id_usuario" FROM "talento_aux" WHERE "talento_aux"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "identidad_aux"."id_usuario" FROM "identidad_aux" WHERE "identidad_aux"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "aux_hob"."id_usuario" FROM "aux_hob" WHERE "aux_hob"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "aux_hob"."id_usuario" FROM "aux_hob" WHERE "aux_hob"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "habilidad"."id_usuario" FROM "habilidad" WHERE "habilidad"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "habilidad"."id_usuario" FROM "habilidad" WHERE "habilidad"."id_usuario"='163' 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "usuario"."id_postulante" FROM "usuario"WHERE "usuario"."usuario_nombre"='petru'
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "experiencia"."id_exp","experiencia"."empresa","experiencia"."puesto","experiencia"."fecha_inicio","experiencia"."fecha_fin","experiencia"."sueldo","experiencia"."funciones","experiencia"."trabajo_actual" FROM "experiencia" WHERE "experiencia"."id_usuario"='163' ORDER BY "experiencia"."fecha_inicio"
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "usuario"."id_postulante" FROM "usuario"WHERE "usuario"."usuario_nombre"='petru'
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "formacion_academica"."id_formacion","nivel_academico"."nivel_academico","formacion_academica"."instituto","formacion_academica"."pais_instituto","formacion_academica"."estado_instituto","formacion_academica"."fecha_inicio","formacion_academica"."fecha_fin","formacion_academica"."status","formacion_academica"."estudio_actual" FROM "formacion_academica","nivel_academico" WHERE "formacion_academica"."id_usuario"='163'  AND "nivel_academico"."id_academico"="formacion_academica"."nivel_estudios" 
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "usuario"."id_postulante"FROM "usuario"WHERE "usuario"."usuario_nombre"='petru'
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "usuario"."id_postulante"FROM "usuario"WHERE "usuario"."usuario_nombre"='petru'
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "hobbie"."hobbie","aux_hob"."id_hobbie","aux_hob"."casilla" FROM "hobbie","aux_hob" WHERE "aux_hob"."id_usuario"='163' AND "aux_hob"."id_hobbie"="hobbie"."id_hob"
+24 ene 2013 - 15:31:01 [DEBUG] hibernate.SQL - SELECT "talento"."talento","talento_aux"."porcentaje","talento_aux"."color","talento_aux"."grado" FROM "talento","talento_aux" WHERE "talento"."id_talento"="talento_aux"."id_talento" AND "talento_aux"."id_usuario"='163' 

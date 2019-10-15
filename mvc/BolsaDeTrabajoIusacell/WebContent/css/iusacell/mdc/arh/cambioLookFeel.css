@@ -1,0 +1,1769 @@
+/* inicio: fondo  de la pantalla*/
+body {
+   }
+   
+ /*Cambiarlo en styles css #titulo
+   Cambia el fondo de los titulos de las pantallas
+ */
+#titulo_nuevo {
+	background-color:#666666;
+	width:100%;
+	height:25px;
+	margin:0px;
+	border:0px;
+	padding-left:55px;
+	padding-top:15px;
+	text-align:left;
+	font-size:18px;
+}  
+
+/* INICIO: ESTILOS DE DIVS */
+/* Inicio: recuadro pequeño esquinas  redondeadas para contener componentes en pantalla VERSION PROPUESTA*/
+ .div_gris_min{
+ 
+ 	background-image:url(../../images/menu/cuadro_info2.png);
+	height: 86px;
+	width: 490px;
+	padding-top:5px;
+	padding-left:10px;
+	color:#666666;
+
+ }
+/* fín: recuadro pequeño esquinas  redondeadas para contener componentes en pantalla VERSION PROPUESTA*/
+/* Inicio : recuadro para contenedor de tablas VERSION PROPUESTA    */
+
+.contenedor_tabla{
+    background:#eaeaea;
+    padding: 1px;
+	
+	}
+
+.contenedor_tabla table{
+	padding: 1px;
+	width:100%;
+	
+}
+
+.contenedor_tabla td{
+	color:#333;
+	font-weight:normal;
+text-align:center;
+}
+
+.contenedor_tabla_fortDeb{
+    background:#eaeaea;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border-style:solid;
+	border-width:1px;
+	border-color: #ABABAB;
+}
+
+.contenedor_tabla_fortDeb table{
+	padding: 1px;
+	width:100%;
+}
+
+.contenedor_tabla_fortDeb td{
+	color:#333;
+	font-weight:normal;
+	text-align:left;
+}
+
+.contenedor_tabla_muro{
+    background:#A60807;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border-style:solid;
+	border-width:1px;
+	border-color: #ABABAB;
+}
+
+.contenedor_tabla_muro table{
+	padding: 1px;
+	width:100%;
+}
+
+.contenedor_tabla_muro td{
+	color:#333;
+	font-weight:normal;
+	font-family: Verdana;
+    font:  Verdana; 
+	color: #ffffff !important;
+    font-size: 8pt;
+	text-align:center;
+}
+
+.contenedor_tabla th{
+	color:white;
+
+	font-size:11px;
+	font-weight:bold;
+	text-transform:uppercase;
+	background:#ed2024;
+}
+	
+
+.contenedor_tabla .paginador a{
+	
+	font-weight:bold;
+	color:#ffffff;
+	
+}
+
+.contenedor_tabla_ind{
+    background:#DCDCDA;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border-style:solid;
+	border-width:1px;
+	border-color: #ABABAB;
+}
+
+.contenedor_tabla_ind table{
+	padding: 1px;
+	width:100%;
+}
+
+.contenedor_tabla_ind td{
+	color:#707070;
+	font-weight:normal;
+	text-align:left;
+}
+
+.contenedor_tabla_deta_ind{
+    background:#DCDCDA;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	border-style:solid;
+	border-width:1px;
+	border-color: #ABABAB;
+}
+
+.contenedor_tabla_deta_ind table{
+	padding: 1px;
+	width:100%;
+}
+
+.contenedor_tabla_deta_ind td{
+	color:#707070;
+	font-weight:bold;
+}
+
+.contenedor_tabla_cabecero_ind{
+    background:#FFF;
+}
+
+.contenedor_tabla_cabecero_ind table{
+	padding: 1px;
+	width:100%;
+}
+
+.contenedor_tabla_cabecero_ind td{
+	color:#A60807;
+	font-weight:bold;
+	/*text-align:left;*/
+}
+
+.contenedor_tabla_info_ind{
+    background:#FFF;
+}
+
+.contenedor_tabla_info_ind table{
+	padding: 1px;
+	width:100%;
+}
+
+.contenedor_tabla_info_ind td{
+	color:#707070;
+	
+	font-weight:bold;
+	/*text-align:left;*/
+}	
+ 
+/* Fín : recuadro para contenedor de tablas VERSION PROPUESTA    */
+/* FÍN: ESTILOS DE DIVS */
+
+/* inicio: Manejo de titulos*/
+.titulo {
+
+	font: Verdana; 
+	
+	font-size: 20pt;
+    margin:0px 10px 10px 20px;
+	color: #FFFFFF;
+
+	}
+
+	
+.titulo_blanco_12pt{
+
+	font: Verdana;  
+	font-size: 12pt;
+	margin:0px 10px 10px 30px;
+	color: #FFFFFF;
+font-weight:bold;
+	}	
+	
+.titulo_2 {
+
+	font:  Verdana; 
+	font-size: 15pt;
+	margin:0px 10px 10px 30px;
+	color: #FFFFFF;
+	
+	}
+.ubicacion_estilo_10pt {      /*  Utilizado para mostrar la ubicación en la barra del cabecero*/
+   font: Verdana; 
+	font-size: 10pt;
+	margin:0px 0px 10px 35px;
+	color: #616060;
+	font-weight:bold;	
+	padding-top:5px;
+	}		
+/*Para titulos de Tablas con  11pt
+.titulo_gris_11pt{
+   font:  Verdana ; 
+   font-size: 11pt;
+   color: #666666;
+	}	*/
+/*Para titulos de Tablas con  18pt*/	
+.titulo_negro_15pt {
+   font:  Verdana; 
+   font-size: 15pt;
+   color: #000000;
+	}	
+
+	
+/*Para titulos de columnas con  10pt*/
+.titulo_colum {
+   font-family: Verdana;
+   font:  Verdana; 
+   font-size: 10pt;
+   color: #000000;
+   font-weight: bold;
+   
+	}	
+	
+/*Para titulos de columnas con  10pt*/
+.titulo_colum_fortDebil  {
+   color: #ffffff !important;
+   font-family: Verdana;
+   font:  Verdana; 
+   font-size: 12pt;
+   background-color:#A60807;
+   font-weight: bold;
+   -webkit-box-shadow: #000 0 3px 10px;
+   -moz-box-shadow: #000 0 3px 10px;
+   box-shadow: #000 0 3px 10px;	
+  }		
+  
+.titulo_colum_muro  {
+   color: #ffffff !important;
+   font-family: Verdana;
+   font:  Verdana; 
+   font-size: 8pt;
+   background-color:#A60807;
+   font-weight: bold;
+   -webkit-box-shadow: #000 0 3px 10px;
+   -moz-box-shadow: #000 0 3px 10px;
+   box-shadow: #000 0 3px 10px;	
+  }	  
+
+/*Para titulos de columnas con  10pt*/  
+.titulo_colum_ind {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 7pt;
+   color: #979797;
+   text-align:center;
+   font-weight: normal;
+  
+	}	
+	
+.buscador_ind {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 8pt;
+   color: #979797 !important;
+   font-weight: bold;
+	}		
+
+.titulo_colum_deta_ind {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 7pt;
+   color: #000000 !important;
+   font-weight: bold;
+	}		
+	
+.titulo_colum_borde_ind {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 7pt;
+   color: #979797;
+   text-align:center;
+   font-weight: bold;
+   border-right-style:ridge;
+   border-right-width:1px;
+   border-right-color:#ABABAB;
+   
+	}	
+
+.titulo_colum_borde_deta_ind {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 8pt;
+   color: #979797;
+   text-align:center;
+   font-weight: bold;
+   border-right-style:ridge;
+   border-right-width:1px;
+   border-right-color:#ABABAB;
+   
+	}		
+
+/*Para titulos de columnas con  10pt*/  
+.titulo_colum_cabecero_ind {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 6.5pt;
+   color: #A60708;
+   font-weight: bold;
+   
+	}	
+	
+.titulo_colum_filtro_ind {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 8pt;
+   color: #979797;
+   text-align:left;
+   font-weight: bold;
+  
+	}	
+	
+.titulo_muro{
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 12pt;
+   color: #979797;
+   text-align:center;
+   font-weight: bold;
+  
+	}		
+  
+/*Para texto resultado en columnas  7pt*/
+.titulo_texto {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 7pt;
+   color: #000000;
+    text-align:center;
+   border-right-style:ridge;
+	border-left-style:ridge;
+	border-right-width:1px;
+	border-left-width:1px;
+	border-right-color:#ABABAB;
+	border-left-color:#ABABAB;
+   
+	}	
+
+/*Para texto resultado en columnas  7pt*/
+.titulo_texto_sin_borde {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 7pt;
+   color: #000000;
+    text-align:center;
+	text-align:left;   
+	}	
+	
+.titulo_texto_fortDebil {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 9pt;
+   color: #000000;
+   text-align:left;
+	}		
+	
+.titulo_texto_infPersonal {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 9pt;
+   color: #000000;
+   text-align:left;
+	}		
+	
+.titulo_texto_muro {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 9pt;
+   color: #000000;
+   text-align:center;
+	}	
+	
+.titulo_texto_info_ind {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 8.3px;
+   /*color: #777777;*/
+   color: #707070 !important;
+   /*text-align:left;*/
+   /*font-weight: bold;*/
+   border-right-style:ridge;
+   border-right-width:1px;
+   border-right-color:#ABABAB;
+
+	}
+	
+.titulo_info_ind_bajas {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 8.3px;
+   /*color: #777777;*/
+   color: #FF0000 !important;
+   /*text-align:left;*/
+   font-weight: bold;
+   border-right-style:ridge;
+   border-right-width:1px;
+   border-right-color:#ABABAB;
+
+	}	
+	
+.titulo_cert_rojo {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 8.3px;
+   /*color: #777777;*/
+   color: #FF0000 !important;
+   /*text-align:left;*/
+   font-weight: bold;
+   border-right-style:ridge;
+   border-right-width:1px;
+   border-right-color:#ABABAB;
+	}
+		
+	
+.titulo_cert_amarillo {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 8.3px;
+   /*color: #777777;*/
+   color: #FF9900 !important;
+   /*text-align:left;*/
+   font-weight: bold;
+   border-right-style:ridge;
+   border-right-width:1px;
+   border-right-color:#ABABAB;
+
+	}	
+
+.titulo_info_ind_vacantes {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 8.3px;
+   /*color: #777777;*/
+   color: #0000FF !important;
+   /*text-align:left;*/
+   font-weight: bold;
+   border-right-style:ridge;
+   border-right-width:1px;
+   border-right-color:#ABABAB;
+
+	}
+
+.titulo_rojo_infPersonal {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 10pt;
+   color: #A60807;
+   text-align:left;
+	}	
+	
+/* Fín: Manejo de titulos*/
+/* Inicio: Estilo de combo VERSION PROPUESTA, también se utiliza para darle formato a los componentes textBox   */
+.select, .select:visited{
+	border-style:solid;
+	border-width:1px;
+	border-color:#6E6E6E;     /*#FF0000 ;*/
+	background-color: #D4D4D4;
+	color: #000000;
+	font-family:  Verdana;
+    font:  Verdana;
+	font-size: 10pt;
+}
+   option {font: Verdana; font-size: 10pt; color: #000000;
+} 
+option.uno {background-color:#D4D4D4;} 
+option.dos {background-color: #FCFCFC;}
+
+.select:hover{
+background-color: #666666;
+ color: #FFFFFF;
+border-style:solid;
+	border-width:1px;
+	border-color: #aaaaaa ;
+	
+	background-color: #D4D4D4;
+	
+ 
+ }
+
+/* Fín: Estilo  de combo  VERSION PROPUESTA*/
+
+/* Inicio: Manejo de estilos para botones VERSION PROPUESTA*/
+
+
+ 
+ 
+ /* Fin: Manejo de estilos para botones  VERSION PROPUESTA*/
+
+/* Inicio: Manejo de estilos para grids, renglones y celdas */
+	
+.renglon_1{
+background: url(images/fondo_titulo.png);
+background-repeat: no-repeat;
+height:800px;
+width:800px;
+
+ }
+/*Define  fondo del frame central de la pagina*/
+.frame_central{
+background: url(images/fondos/fondo_1.png);
+
+
+height:500px;
+width:800px;
+
+
+ }	
+
+	.renglon_4 {
+
+	font:  Verdana; 
+	font-size: 10pt;
+	margin:0px 10px 10px 250px;
+	color: #FFFFFF;
+	
+	}
+	/*Para definir colores en los renglones de las listas*/
+	.renglon_A{
+		background-color:#D4D4D4;   /*#F5F5F5;*/
+		filter:alpha(opacity=65);
+		opacity: .5;
+		-moz-opacity: .65;
+	}
+	
+	.renglon_B{
+		background-color: #FCFCFC;
+		filter:alpha(opacity=65);
+		opacity: .65;
+		-moz-opacity: .65;
+	}
+	
+	
+	/* inicio: Para definir colores en los renglones de la lista de seguimiento de bajas */
+	
+	.renglon_A_Seg_Bajas{
+		background-color:#DFDFDF;   
+	}
+	
+	.renglon_B_Seg_Bajas{
+		background-color: #F6F6F6;
+	}
+	
+	.marcoA  span{
+	background-image: transparent  !important;
+		filter:alpha(opacity=99) !important;
+		opacity: .90 !important;
+		-moz-opacity: .90 !important;
+	background: #ffffff !important;
+	}
+	
+	/* fin:  Para definir colores en los renglones de la lista de seguimiento de bajas */
+	
+	.renglon_T{
+	 background-color:#666666; 
+	filter:alpha(opacity=99);
+	opacity: .99;
+   -moz-opacity: .99;
+	}
+	
+	.borde_izq{
+/*	 border-left: 1px solid #000000;*/
+
+	}
+
+/* Fín: Manejo de estilos para grids, renglones y celdas */
+/*Inicio: Para las pantallas de generación de claves  Psycowin*/
+.fontPsycowin28pt{
+	font-weight:bold; 
+	font-family: Verdana;
+	font-size:28pt;
+
+}
+.fontPsycowin22pt{
+	font-size:22pt;
+	font-weight:bold; 
+	font-family: Verdana;
+
+}
+
+.fontPsycowin10pt{
+	font-size:10pt;
+	font-weight:normal; 
+	font-family: Verdana;
+}
+
+.fontPsycowin8pt{
+	font-size:8pt;
+	font-weight:normal; 
+	font-family: Verdana;
+	color:#000000;
+}
+
+.fontPsycowin8pt span{
+	font-size:8pt;
+	font-weight:bold; 
+	font-family: Verdana;
+
+}
+.fontPsycowin8ptBlanco{
+	font-size:8pt;
+	font-weight:normal; 
+	font-family: Verdana;
+	color:#FFFFFF;
+}
+
+.fontPsycowin13ptBoldRojo{
+	font-size:13pt;
+	font-weight:bold; 
+	font-family: Verdana;
+	color:#af0a0a;
+}
+.fontPsycowin10ptBold{
+	font-size:10pt;
+	font-weight:bold; 
+	font-family: Verdana;
+}
+
+.contenGenRedon{
+ -moz-border-radius: 7px; 
+ -webkit-border-radius: 7px; 
+ border-radius:7px;
+  background-color:#BDBDBD;
+
+}
+
+.contenGenRedonClaro{
+ -moz-border-radius: 7px; 
+ -webkit-border-radius: 7px; 
+ border-radius:7px;
+  background-color:#eaeaea;
+
+}
+
+.contenGenRedonGrisObs{
+-moz-border-radius: 7px; 
+ -webkit-border-radius: 7px; 
+ border-radius:7px;
+ border: 1px solid   #BDBDBD;	
+
+
+}
+
+.contenGenRedonRojo{
+ -moz-border-radius: 7px; 
+ -webkit-border-radius: 7px; 
+ border-radius:7px;
+ border: 1px solid   #FF0000;
+ background-color:#eaeaea;
+
+}
+.contenGenRedonGris2{
+ -moz-border-radius: 7px; 
+ -webkit-border-radius: 7px; 
+ border-radius:7px;
+ background-color:#BDBDBD;
+} 
+
+.contenGenRedonNaranja{
+ -moz-border-radius: 7px; 
+ -webkit-border-radius: 7px; 
+ border-radius:7px;
+ background-color:#FFBF00;
+} 
+
+.contenGenRedonVerde{
+ -moz-border-radius: 7px; 
+ -webkit-border-radius: 7px; 
+ border-radius:7px;
+ background-color:#86B404;
+} 
+ 
+.cssDivSuenios{
+	font-family:  Verdana;
+	-moz-border-radius: 7px; 
+    -webkit-border-radius: 7px; 
+    border-radius:7px;
+    background-color:#BDBDBD;
+
+}
+
+
+.cssDivSuenios:hover { /* el efecto hover */
+  background-color:#666666; 
+  color: #FFF;
+  cursor:pointer;
+}
+
+
+
+/* Inicio: Ejemplos*/
+
+.pruebaRed{
+	
+	width: 50px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 30px;
+	padding: 0 25px 0 10px;
+	color: #000000;
+	font:  Verdana;
+	font-size: 10pt;
+	background: #E62727;
+	overflow: solid;
+	
+}
+
+
+.checkBox_Style{
+	
+	color: #000000;
+	font:  Verdana;
+	background-color: #666666;
+	overflow: solid;
+	border-color:#fff000;
+	
+}
+	
+.cssButtonRedInd{
+
+  font:  Verdana;
+  font-size: 10pt ;
+  color: #ffffff;
+  font-weight:bold;
+  background-color:#b00a0a;
+  border:hidden;
+	
+}
+
+.cssButtonInd{
+
+  font:  Verdana;
+  font-size: 10pt ;
+  color: #707070;
+  font-weight:bold;
+  background-color:#dbdbdb;
+  border:hidden;
+	
+}
+
+.cssButtonInd:visited { /* botones genéricos */
+ 
+  font:  Verdana;
+  font-size: 10pt ;
+  color: #ffffff;
+  font-weight:bold;
+  background-color:#b00a0a;
+  border:hidden;
+ }
+
+.cssButtonInd:hover { /* el efecto hover */
+  background-color:#b00a0a; 
+  color: #ffffff;
+}
+.cssButtonInd:active{  /* el efecto click */
+  background-color:#b00a0a; 
+  top: 1px;
+}
+
+
+.fontPsycowin8ptBlanco span{
+	font-size:8pt;
+	font-weight:bold; 
+	font-family: Verdana;
+
+}
+
+.contenGenRedonRojo2{
+ 
+ -moz-border-radius: 7px; 
+ -webkit-border-radius: 7px; 
+ border-radius:7px;
+ background-color:#af0a0a;
+ 
+
+}
+
+
+.fotoMuroFama{
+
+}
+
+.fotoMuroFama:hover { /* el efecto hover */
+  cursor:pointer;
+}
+
+.fontPsycowin6pt{
+	font-size:7pt;
+	font-weight:normal; 
+	font-family: Verdana;
+	color:#000000;
+}
+
+.fontPsycowin5pt{
+	font-size:6pt;
+	font-weight:normal; 
+	font-family: Verdana;
+	color:#000000;
+}
+/* Fín: Ejemplos */
+
+/*estilos para modulo de desarrollo*/
+.titulo_texto_desa {
+	color:#ABABAB; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 14pt;	
+	}	
+.parrafo_texto_desa {
+	color:#ABABAB; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 11pt;	
+	}	
+	
+.parrafo_texto_compuesto {
+	color:#FFFFFF; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 11pt;	
+	}		
+
+.parrafo_texto_compPerf {
+	color:#787878; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 11pt;	
+	}			
+
+.titulo_texto_desa_sub {
+	color:#ABABAB; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 13pt;	
+	}		
+.parrafo_texto_desa_sub {
+	color:#ABABAB; 
+	font-weight:normal; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 8pt;	
+	}	
+	
+.parrafo_texto_desa_resB {
+	color:#404040; 
+	font-weight:normal; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 8pt;	
+	}		
+
+.parrafo_texto_desa_res {
+	color:#ABABAB; 
+	font-weight:bold; 
+	text-align:center; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 7pt;	
+	}	
+	
+.parrafo_texto_desa_ico {
+	color:#ABABAB; 
+	font-weight:normal; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 6.5pt;	
+	}	
+	
+.parrafo_texto_desa span {
+	color:#ABABAB; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 12pt;	
+	}		
+	
+.titulo_texto_desa_sub span  {
+	color:#ABABAB; 
+	font-weight:bold; 
+	 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 14pt;	
+	}		
+
+.tablaTituloDes{
+    font-family: Verdana; 
+    font:Verdana;
+    font-size: 9pt;
+    color:#ffffff; 
+    font-weight:bold;
+    background-color:#404040;
+	text-align:center !important;
+}
+
+.titulo_texto_desa_total {
+	color:#ABABAB; 
+	font-weight:bold; 
+	text-align:center; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 13pt;	
+	}			
+
+.cabecero_column_desa {
+	background-color:#F1F1F1; 
+	color:#ABABAB; 
+	font-weight:bold; 
+	text-align:center; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 8pt;	
+	}	
+
+.titulo_desa_blue {
+	background-color:#00B0F0; 
+	color:#FFFFFF; 
+	font-weight:bold; 
+	text-align:center; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 10pt;	
+	}	
+	
+.titulo_desa_yellow {
+	background-color:#FFC000;
+	color:#FFFFFF; 
+	font-weight:bold; 
+	text-align:center; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 10pt;	
+	}	
+
+.titulo_desa_all_column{
+   background-color:#404040;
+   color: #FFFFFF;
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 9pt;
+   font-weight: bold;
+	}
+
+.titulo_desa_red{
+	background-color:#B00A0A;
+	color:#FFFFFF; 
+	font-weight:bold; 
+	text-align:center; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 8pt;	
+	}		
+	
+.titulo_desa_black{
+	background-color:#000000;
+	color:#FFFFFF; 
+	font-weight:bold; 
+	text-align:center; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 8pt;	
+	}
+
+.titulo_desa_gray{
+	background-color:#F2F2F2;
+	color:#FFFFFF; 
+	font-weight:bold; 
+	text-align:center; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 8pt;	
+	}
+
+.renglon_desa_gray{
+	background-color:#F2F2F2;
+	color:#666666; 
+	font-weight:bold; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 8pt;	
+	}		
+		
+/* inicio cambios desarrollo rvt*/	
+.titulo_tbl_control_des{
+    font-weight:bold; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size:10px;
+	color:#000000;
+}
+
+.encabezado_tbl_control_des{
+    font-family: Verdana; 
+	font: Verdana; 
+	font-size:9px;
+	color:#000000;
+	background-color:#F1F1F1;
+	}	
+
+.encabezado_tbl_control_des span{
+	color:#A4A4A4;
+	
+	}
+
+
+.renglon_A_tbl_control_des{
+	background-color:#FFFFFF;   /*#F5F5F5;*/
+}
+
+.renglon_B_tbl_control_des{
+	background-color: #F1F1F1;
+}
+
+.parrafo_tbl_control_des {
+	color:#000000; 
+	font-weight:normal; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 6pt;	
+	
+}	
+
+.parrafo_tbl_control_des span{
+	color:#A4A4A4;
+
+}
+
+.parrafo_texto_desa_eval {
+	color:#000000; 
+	font-weight:normal; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 7pt;	
+	}	
+
+.parrafo_texto_desa_eval span {
+	color:#000000; 
+	font-weight:bold; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 9pt;	
+	}		
+.titulo_texto_desa_eval {
+	color:#000000; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 13pt;	
+	}			
+	
+.titulo_texto_desa_total_eval {
+	color:#000000; 
+	font-weight:bold; 
+	text-align:center; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 13pt;	
+	}
+	
+.titulo_desa_carrera_gral_10pt {     
+   font: Verdana; 
+   font-family: Verdana; 
+	font-size: 9pt;
+	color: #FFFFFF;
+   font-weight:bold;	
+	}	
+.parrafo_tit_tbl_control_des {
+	color:#000000; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 6pt;	
+	font-weight:bold; 
+}	
+.div_paginador {
+   font:  Verdana;
+   font-family: Verdana; 
+   font-size: 7pt ;
+   color: #FFF;
+   font-weight:bold; 
+   background-color:#af0a0a;
+   cursor:pointer;
+   -moz-border-radius: 7px; 
+   -webkit-border-radius: 7px; 
+   border-radius:7px;
+}
+.div_paginador_text {
+	color:#000000; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 7pt;	
+	font-weight:bold; 
+}	
+.div_paginador:hover { /* el efecto hover */
+  background-color:#666666; 
+  color: #ffffff;
+  
+}
+.parrafo_control_ruta{
+	color:#000000; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 6pt;	
+	font-weight:bold; 
+}	
+/* fin cambios desarrollo rvt*/	
+/* inicio look para input file*/
+.custom-input-file { 
+    overflow: hidden; 
+    position: relative; 
+    cursor: pointer; 
+    color: #fff; 
+    text-align: right; 
+    font-family: Verdana; 
+    font-size: 15px; 
+    width: 400px; 
+    min-height: 15px; 
+} 
+.custom-input-file:hover { 
+        color: #fff; 
+} 
+.custom-input-file .input-file { 
+    margin: 0; 
+    padding: 0;outline:0; 
+    font-size: 10000px; 
+    border: 10000px solid transparent; 
+    opacity: 0; 
+    filter: alpha(opacity=0); 
+    position: absolute; 
+    right: -1000px; 
+    top: -1000px; 
+    cursor: pointer; 
+} 
+.custom-input-file .archivo { 
+    background-color: #fff; 
+    color: #000; 
+    font-size: 12px; 
+    overflow: hidden; 
+} 
+.custom-input-file:hover .archivo { 
+    background-color: #fff; 
+    color: #000;   
+} 
+
+
+
+#izquierda { 
+border: 1px solid #000; 
+border-radius: 5px; 
+float:left; 
+width:300px; 
+min-height: 22px; 
+} 
+
+#derecha { 
+float:left; 
+width:50px; 
+} 
+/* fin look para input file*/
+/*Estilo para el submenu de gestión de talento*/
+.estiloMenuFlotGestion{
+	top:210px;
+	overflow:hidden;			  
+	position:absolute;
+	z-index: 7;
+	-moz-box-shadow: -5px -5px 5px #585858;
+	-webkit-box-shadow: -5px -5px 5px #585858;
+	box-shadow: -5px -5px 5px #585858;
+     -moz-border-radius: 7px; 
+   -webkit-border-radius: 7px; 
+   border-radius:7px;
+   BORDER:1PX SOLID rgba(58,58,58,0.65);
+}
+.estiloMenuFlotGestion table{
+	background-color:rgba(58,58,58,0.65);
+	border: 0px solid #585858; /* #ECEDEE;*/
+         -moz-border-radius: 7px; 
+   -webkit-border-radius: 7px; 
+   border-radius:7px;
+}
+.estiloMenuFlotGestion3{
+    top:210px;
+	overflow:hidden;
+	z-index: 9;
+	position:absolute;
+	margin:0 auto;
+	width:0;
+	height:0;
+	border-color:rgba(58,58,58,0.65) transparent transparent transparent;
+	border-style:solid;
+	border-width:10px;
+	
+}
+/*Estilo para el fondo del  submenu de gestión de talento*/
+.estiloMenuFlotRGestion{
+	background-image: url(../../images/lookfeel/gestionTalento/submenus_Hor.png);   
+	top:180px;
+	overflow:hidden;			  
+	position:absolute;
+	z-index: 6;
+
+}
+/*Estilo para las letras de ARH*/
+.parrafo_texto_arh {
+	color:#787878; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font: Verdana; 
+	font-size: 10pt;	
+	}
+/*Estilo para combo box*/
+.text_big {
+	vertical-align: top;
+	text-align: center;
+	height: 20px;
+    color: #2E2E2E;
+	font:  Verdana;
+    font-family: Verdana;
+	font-size: 10pt;
+	border: 1px solid  #6E6E6E; 
+	border-radius: 1px;
+	background-color: #D4D4D4;
+	border-spacing: 0px;
+} 
+.text_big:hover{
+background-color: #666666 ;
+  color: #FFFFFF;
+}
+
+/*Fondo de tablas look&feel ARH*/
+.contenedor_tabla_gris {
+ 	background-image:url(../../imgs/fon_tab.png);
+ 	background-size:490px 30px;
+	background-position:center;
+	height: 20px;
+	width: 490px;
+	padding-top:5px;
+	padding-left:10px;
+	color:#666666;	
+}
+.contenedor_tabla_SGris {
+	height: 25px;
+	width: 490px;
+	padding-top:5px;
+	padding-left:10px;
+	color:#666666;	
+}
+/*Nuevo estilo  para  tablas arh*/
+/*Para titulos de columnas con  10pt*/
+.titulo_colum_arh{
+   font-family: Verdana;
+   font-size: 10pt;
+   color:#E11F28;
+   font-weight: bold;
+   
+	}	
+.contenedor_tabla_arh{
+    
+    padding: 1px;
+	
+	}
+
+.contenedor_tabla_arh table{
+	padding: 1px;
+	width:100%;
+	
+	
+}
+
+.contenedor_tabla_arh td span{
+	margin-left:20px;	
+	
+}
+#paginadorStilo{
+	text-align: center; 	
+	
+}
+
+
+.titulo_texto_arh_pos {
+	font-family: Verdana; 
+   	font-weight:normal;
+    font: Verdana; 
+    font-size: 7pt;
+	
+     color: #666666;
+    text-align:left;
+    border-right-style:ridge;
+	border-right-width:1px;
+	border-right-color:#ABABAB;
+	
+}	
+
+.titulo_texto_arh_pos_sin_bor {
+   font-family: Verdana; 
+   font: Verdana; 
+   	font-weight:normal;
+   font-size: 7pt;
+    color: #666666;
+    
+	}	
+
+.negro_mediano_arh{ /*, .negro_mediano:visited*/
+	background-image: url(../../images/lookfeel/admonRH/Plantilla_Vacante.jpg);  
+   font-family: Verdana;
+   font: Verdana;   
+   font-size: 11pt;
+   color: #666666;
+	
+}
+
+.negro_mediano_arh span{ /*, .negro_mediano:visited*/
+	
+   font-weight: bold;	
+}
+
+.negro_mediano_arh_titulo{ /*, .negro_mediano:visited*/
+   font-family: Verdana;
+   font: Verdana;   
+   font-size: 11pt;
+   color: #666666;
+   font-weight: bold;	
+	
+}
+
+.negro_mediano_arh_cand_viabl{ /*, .negro_mediano:visited*/
+	font-family: Verdana;
+   font: Verdana;   
+   font-size: 6.5pt;
+   color: #666666;
+	
+}
+
+
+.negro_mediano_arh_cand_viabl span{ /*, .negro_mediano:visited*/
+   font-size: 6.5pt;
+   font-weight: bold;	
+	
+}
+.arh_candidato_viable_encabezado1{
+		font-family: Verdana;
+   font: Verdana;   
+   font-size: 8pt;
+   color: #666666;
+   font-weight: bold;	
+
+}
+.fondo_arh_candidato_viable{ /*, .negro_mediano:visited*/
+	
+   
+background-color:rgba(240,240,241,0.65) ;
+
+}
+
+/* select para  los combos de arh*/
+.selectArh, .selectArh:visited{
+	border-style:solid;
+	border-width:1px;
+	border-color:#6E6E6E;     /*#FF0000 ;*/
+	background-color: #D4D4D4;
+	color: #000000;
+	font-family:  Verdana;
+    font:  Verdana;
+	font-size: 8pt;
+}
+
+.selectArh:hover{
+background-color: #666666;
+ color: #FFFFFF;
+border-style:solid;
+	border-width:1px;
+	border-color: #aaaaaa ;
+	background-color: #D4D4D4;
+}
+
+.negro_mediano_mayus_arh , .negro_mediano_mayus_arh:visited{
+	
+    color: #000000;
+	font:  Verdana;
+    font-family: Verdana;
+	font-size: 10pt;
+	border: 1px solid  #6E6E6E; /* #D4D4D4;   #FF0000;*/
+	background-color: #D4D4D4;
+}
+
+
+.negro_mediano_mayus_arh:hover{
+background-color: #666666 ;
+  color: #FFFFFF;
+}
+
+.pagArh td{
+    /* background:#628651; cambo de look and feel*/
+	 background:#D4D4D4;
+}
+
+/*
+  Incio:Cambios para entrevista por competencia
+
+*/
+
+#titEntrevistaComp{
+ text-align:center;
+ height:4%;
+}
+#preguntasComp{
+ text-align:left;
+ height:5%;
+}
+
+#PregResult{
+   float:left;
+   width:30.5%;
+   margin:1px;
+   height:90%;
+   padding:5px;
+   overflow-x:auto;
+  
+}
+#PregResult li{
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+#divInstrucciones{
+   float:left;
+   width:34%;
+   margin:1px;
+   padding:5px;
+   height:90%;
+   border-right: 1px solid #ABABAB;
+}   
+#divCompetencia{
+   float:left;
+   width:30%;
+   height:90%;
+   margin:1px;
+   padding:5px;
+   border-right: 1px solid #ABABAB;
+   overflow-x:auto;
+   
+}
+#defCompetencia{
+   text-align:justify;
+}
+#divCompetencia li{
+  list-style: none;
+  list-style-type: none;
+  text-decoration: none;
+  
+}
+
+#divContPreg{
+}
+
+
+.flotarIzq{
+float:left;
+ 
+}
+
+
+.flotarDer{
+float:right;
+
+}
+
+.mostrar_preguntas{
+
+}
+.mostrar_preguntas:hover { /* el efecto hover */
+  cursor:pointer;
+}
+/*
+  Fin:Cambios para entrevista por competencia
+
+*/
+
+/*titulo para mensajes*/
+.titulo_rojo_bold {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-size: 11pt;
+   color: #C70000;
+   font-weight:bold;
+	}
+
+/*estilo de desglose*/
+.ac_results {
+	vertical-align: top;
+	text-align: center;
+    color: #2E2E2E;
+	font:  Verdana;
+    font-family: Verdana;
+	font-size: 10pt;
+	border: 1px solid  #6E6E6E; 
+	border-radius: 1px;
+	background-color: #FCFCFC;
+	padding: 0px;
+	overflow: hidden;
+}	
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	height: 25px;
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+    color: #2E2E2E;
+	font:  Verdana;
+    font-family: Verdana;
+	line-height: 16px;
+	overflow: hidden;
+
+}
+
+.ac_loading {
+	background: white url('../../images/ajax_old.gif') right center no-repeat;
+}
+
+.ac_odd {
+	background-color: #D4D4D4;
+}
+
+.ac_over {
+	background-color: #A60807;
+	color: white;
+}
+/* Estilo para texto del módulo de ARH ---RVT*/
+    /* gris*/
+.titulo_texto_arh_pos_sin_bor {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-weight:normal;
+   font-size: 7pt;
+   color: #666666;
+}	
+.texto_arh_gris_8pt {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-weight:normal;
+   font-size: 8pt;
+   color: #666666;
+}	
+
+.texto_arh_gris_9pt {
+   font-family: Verdana; 
+   font: Verdana; 
+   font-weight:normal;
+   font-size: 9pt;
+   color: #666666;
+}
+.texto_arh_gris_bold_9pt{
+   font-family: Verdana;
+   font-size:9pt;
+   color: #666666;
+   font-weight: bold;
+   
+}
+.texto_arh_gris_13pt{
+   font-family: Verdana;
+   font-size:13pt;
+   color: #666666;
+    
+}
+.texto_arh_gris_bold_13pt{
+   font-family: Verdana;
+   font-size:13pt;
+   color: #666666;
+   font-weight: bold;
+    
+}
+.texto_arh_gris_bold_15pt{
+   font-family: Verdana;
+   font-size:15pt;
+   color: #666666;
+   font-weight: bold;
+   
+}
+.texto_arh_gris_15pt{
+   font-family: Verdana;
+   font-size:15pt;
+   color: #666666;
+    
+}
+	/* rojo*/
+.texto_arh_rojo_8pt{
+   font-family: Verdana;
+   font-size:8pt;
+   color:#E11F28;
+   
+   
+}
+.texto_arh_rojo_bold_9pt{
+   font-family: Verdana;
+   font-size:9pt;
+   color:#E11F28;
+   font-weight: bold;
+   
+}
+.texto_arh_rojo_9pt{
+   font-family: Verdana;
+   font-size: 9pt;
+   color:#E11F28;
+}	
+.texto_arh_rojo_bold_12pt{
+   font-family: Verdana;
+   font-size: 12pt;
+   color:#E11F28;
+   font-weight: bold;
+}		
+.texto_arh_rojo_15pt{
+   font-family: Verdana;
+   font-size: 15pt;
+   color:#E11F28;
+}	
+.texto_arh_rojo_bold_15pt{
+   font-family: Verdana;
+   font-size: 15pt;
+   color:#E11F28;
+   font-weight: bold;
+}
+   /* negro*/
+.texto_arh_negro_bold_9pt{
+   font-family: Verdana;
+   font-size:9pt;
+   color:#000000;
+   font-weight: bold;
+}	
+/* Generales  */
+.clear{
+ clear:both;
+
+}
+.capitalizable{
+   text-transform: capitalize; 
+}
+/* Registro completo*/
+#divIdCan{
+  width:10%;
+  
+}
+#divNomCom{
+  width:40%;
+  
+}
+#divDesc{
+  width:30%;
+  
+}
+#divFechReg{
+  width:10%;
+}
+
+#contTitulo{
+  text-align:left;
+}
+#divRegCompleto{
+  float:center;
+  margin:auto;
+  padding:auto;
+ 
+}
+.class_div
+{
+	overflow-y: scroll;
+	border-radius: 7px;
+	border-style:solid;
+	border-width:1px;
+	border-color: #6E6E6E;
+	height:360px;
+}
+ .div_pestania_select{
+	
+	background-color:#A4A4A4;
+	margin:0px;
+	border-style:solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-color: #FFFFFF; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font-size: 10pt;
+	text-align:center;
+	-webkit-box-shadow: #ABABAB 0 3px 10px; 
+	-moz-box-shadow: #ABABAB 0 3px 10px; 
+	box-shadow: #ABABAB 0 3px 10px;
+
+ }
+ .div_pestania_unselect{
+	background-color:#F2F2F2;
+	margin:0px;
+	border-style:solid;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-color: #FFFFFF; 
+	font-weight:bold; 
+	text-align:left; 
+	font-family: Verdana; 
+	font-size: 10pt;
+	text-align:center;
+	-webkit-box-shadow: #ABABAB 0 3px 10px; 
+	-moz-box-shadow: #ABABAB 0 3px 10px; 
+	box-shadow: #ABABAB 0 3px 10px;
+ }
+

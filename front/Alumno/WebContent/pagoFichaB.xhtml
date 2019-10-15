@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+<title>Estatus Ficha pago</title>
+</head>
+<body>
+		<h:form target="_parent">
+			<div id="container" align="center" width="100%">
+		      		
+		      		<div align="center" style="width:680px">
+		      			<br />
+		      			<br />
+		      			<br />
+		      			<p>Con esta ficha de depósito podrás acudir al Banco de tu elección a realizar el pago correspondiente. 
+		      			 Para poder continuar con el proceso e ingresar nuevamente, deberán transcurrir 48 horas para que el 
+		      			 pago pueda ser aplicado.</p>
+		      			<br />
+		      			<br />
+		      			<br />
+		      		</div>
+		      		
+		      		<h:panelGrid columns="2" cellspacing="50px">
+		      		<h:column>
+		      		<h:commandButton class="footer-button-link" value="Regresar" action="#{pagoAnticipoBean.regresaPre}" ></h:commandButton>
+		      		</h:column>
+		      		<h:column>
+		      		<h:commandButton class="footer-button-link" value="Finalizar" action="#{sesionMB.cerrarSesion}"></h:commandButton>
+		      		</h:column>
+		      		</h:panelGrid>
+				
+			</div>
+		  </h:form>
+</body>
+</html>

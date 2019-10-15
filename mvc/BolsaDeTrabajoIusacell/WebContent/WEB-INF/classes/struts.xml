@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.configuration.xml.reload" value="true" />
+   
+    <package name="demo-struts" extends="struts-default" namespace="/">
+    	<result-types>
+           <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+       </result-types>
+        
+        <interceptors>
+   			<interceptor name="sesionValida" class="com.iusa.clases.interceptor.LoginInterceptor"></interceptor>
+   			<interceptor-stack name="mistack">
+   				<interceptor-ref name="sesionValida" />
+   			</interceptor-stack>
+   		</interceptors>
+   		
+   		<default-action-ref name="login" />
+   		
+   		
+   		
+   		<global-results>
+    		 <result name="login">accesoDenegado.jsp</result>
+    		 
+		</global-results>
+		
+         <action name="login" class="com.iusa.clases.controllers.PreLogin">
+            <result type="tiles">Entrar</result>
+        </action>
+         
+        
+        <action name="cerrar" class="com.iusa.clases.controllers.CerrarSesion">
+        	<result type="redirect">/login</result>
+        </action>
+        
+        <action name="CuentaRapida" class="com.iusa.clases.controllers.ListaCuentaRapida">
+            <result type="tiles">cuentaRapida</result>
+        </action>
+        
+        
+        <action name="HomeUsuario">
+            <interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">homeUsuario</result>
+        </action>
+        
+        <action name="Candidaturas" class="com.iusa.clases.controllers.Candidaturas">
+            <interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">candidaturas</result>
+        </action>
+        
+        <action name="doLogin" class="com.iusa.clases.controllers.Login">
+         <result name="input" type="tiles">Entrar</result>
+         <result name="error" type="tiles">Entrar</result>
+           <result name="success" type="redirect">perfilVista</result>
+         </action>
+        
+        <action name="doSerch" class="com.iusa.clases.controllers.Busqueda">
+          <result name="error" type="tiles">busquedaVacante</result>
+          <result type="tiles">busquedaVacante</result>
+        </action>
+        
+        <action name="perfil" class="com.iusa.clases.controllers.perfilUsuario">
+            <interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">homeUsuario</result>
+        </action>
+        
+        <action name="opciones" class="com.iusa.clases.controllers.ListaCuentaRapida">
+            <interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">opcionesCuenta</result>
+        </action>
+        
+        <action name="perfilVista" class="com.iusa.clases.controllers.perfilUsuario">
+            <interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">vistaPrevia</result>
+        </action>
+        
+        <action name="crearCuenta" class="com.iusa.clases.controllers.Cuenta">
+         <result name="input" type="tiles">cuentaRapida</result>
+         <result name="error" type="tiles">cuentaRapida</result>
+   <result type="redirect">Confirmacion</result>
+        </action>
+        
+        <action name="Confirmacion" class="com.iusa.clases.controllers.Confirmacion">
+            <interceptor-ref name="mistack"></interceptor-ref>
+            <result type="tiles">confirmacion</result>
+        </action>
+        
+        <action name="actualizar" class="com.iusa.clases.controllers.ActualizarDatos">
+            <interceptor-ref name="mistack"></interceptor-ref>
+        	<interceptor-ref name="fileUpload">
+             </interceptor-ref>
+               <interceptor-ref name="defaultStack"></interceptor-ref>
+        	<result name="input">actualizar</result>
+        	<result name="success" type="chain">perfil</result>
+        </action>
+         
+         <action name="ActualizarFoto" class="com.iusa.clases.controllers.ActualizarFoto">
+        	<interceptor-ref name="fileUpload">
+        	  <param name="allowedTypes">image/jpeg,image/gif,image/png,image/bmp</param>
+        	  <param name="maximumSize">16777216</param>
+             </interceptor-ref>
+               <interceptor-ref name="defaultStack"></interceptor-ref>
+        	<result name="input" type="redirect">perfil</result>
+        	<result name="success" type="redirect">perfil</result>
+           </action>
+             
+
+        
+        <action name="CorreoPass" class="com.iusa.clases.controllers.CorreoPass">
+            <result type="redirect">login</result>
+        </action>
+       
+       
+     
+        <action name="mejora_la_web">
+            <result>navegadores.jsp</result>
+        </action>
+       
+       <action name="/">
+           <result type="redirectAction">
+                <param name="actionName">login</param>
+           </result>
+       </action>
+
+       
+       <action name="perfilVista.jsp">
+           <result>navegadores.jsp</result>
+       </action>
+       
+       <action name="busqueda.jsp">
+           <result type="redirectAction">
+                <param name="actionName">login</param>
+           </result>
+       </action>
+       
+       <action name="confirmacion_cuenta.jsp">
+           <result type="redirectAction">
+                <param name="actionName">login</param>
+           </result>
+       </action>
+       
+       <action name="cuenta_datos.jsp">
+           <result type="redirectAction">
+                <param name="actionName">login</param>
+           </result>
+       </action>
+       
+       <action name="login.jsp">
+           <result type="redirectAction">
+                <param name="actionName">login</param>
+           </result>
+       </action>
+       
+       <action name="mis_candidaturas.jsp">
+           <result type="redirectAction">
+                <param name="actionName">login</param>
+           </result>
+       </action>
+       
+       <action name="opciones.jsp">
+           <result type="redirectAction">
+                <param name="actionName">login</param>
+           </result>
+       </action>
+       
+       <action name="usu_home.jsp">
+           <result type="redirectAction">
+                <param name="actionName">login</param>
+           </result>
+       </action>
+       
+		<action name="entrevistaCalidad" class="iusacell.mdc.arh.action.EntrevistaCalidad"
+			method="cuestionarioCalidad">
+			<result name="entrevistaCalidad">/WEB-INF/iusacell/mdc/arh/entrevistaCalidad.jsp</result>
+			<result name="entrevistaCalidadFail">/accesoDenegado.jsp</result>
+		</action>
+
+		<action name="obtenerCuestionario" class="iusacell.mdc.arh.action.EntrevistaCalidad"
+			method="obtenerCuestionarioSalida">
+			<result name="entrevistaCalidad">/WEB-INF/iusacell/mdc/arh/entrevistaCalidad.jsp</result>
+			<result name="entrevistaCalidadFail">/accesoDenegado.jsp</result>
+		</action>
+
+		<action name="botonGuardarCuestionarioResp" class="iusacell.mdc.arh.action.EntrevistaCalidad"
+			method="botonGuardarCuestionario">
+			<result name="entrevistaCalidad">/WEB-INF/iusacell/mdc/arh/entrevistaCalidad.jsp</result>
+			<result name="entrevistaCalidadFail">/accesoDenegado.jsp</result>
+		</action>
+
+	</package>
+	
+    <package name="testPackage" extends="json-default" namespace="/json">
+   <action name="giveMeJsonData" class="com.iusa.clases.controllers.DetalleVacante" method="giveMe">
+     <result type="json">
+      <param name="root">jsonData</param>
+     </result>
+   </action>
+   
+   <action name="giveMeJsonDataPostulaciones" class="com.iusa.clases.controllers.Postularme" method="giveMe">
+    <result name="error" type="json">jsonDataP</result>
+     <result type="json">
+      <param name="root">jsonDataP</param>
+     </result>
+   </action>
+   
+ 
+   
+
+   <action name="TraerImagenes" class="com.iusa.clases.controllers.TraerImagenes" method="giveMe">
+     <result type="json">
+      <param name="root">jsonDataTI</param>
+     </result>
+   </action>
+   
+   <action name="TraerVideos" class="com.iusa.clases.controllers.TraeVideos" method="giveMe">
+     <result type="json">
+      <param name="root">jsonDataTV</param>
+     </result>
+   </action>
+   
+   <action name="TraerTips" class="com.iusa.clases.controllers.TraerTips" method="giveMe">
+     <result type="json">
+      <param name="root">jsonDataTT</param>
+     </result>
+   </action>
+   
+   
+
+   
+   
+   
+   <action name="Despostularme" class="com.iusa.clases.controllers.Despostularme" method="giveMe">
+     <result type="json">
+      <param name="root">jsonDataDPS</param>
+     </result>
+   </action>
+   
+   <action name="Destacados" class="com.iusa.clases.controllers.Destacados" method="giveMe">
+     <result type="json">
+      <param name="root">jsonDataDPS</param>
+     </result>
+   </action>
+   
+   <action name="DestacadosUbi" class="com.iusa.clases.controllers.DestacadosUbicacion" method="giveMe">
+     <result type="json">
+      <param name="root">jsonDataUbi</param>
+     </result>
+   </action>
+   
+
+   
+   <action name="jsonCorreo" class="com.iusa.clases.controllers.VerificarCorreoExistente" method="giveMe">
+     <result type="json">
+      <param name="root">jsonData</param>
+     </result>
+   </action>
+   
+    <action name="ActualizarDatosPersonales" class="com.iusa.clases.controllers.ActualizarDatosPersonales">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   <action name="ActualizarUbicacion" class="com.iusa.clases.controllers.ActualizarUbicacion">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+    <action name="GuardarIdentidad" class="com.iusa.clases.controllers.GuardarIdentidad">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+    <action name="ActualizarExperiencia" class="com.iusa.clases.controllers.ActualizarExperiencia">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+    <action name="ActualizarFormacionAcademica" class="com.iusa.clases.controllers.ActualizarFormacionAcademica">
+            <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+        </action>
+    
+    <action name="ActualizarIdiomas" class="com.iusa.clases.controllers.ActualizarIdiomas">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+    <action name="NumeroIdiomas" class="com.iusa.clases.controllers.NumeroIdiomas">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+
+    <action name="ActualizarSoftware" class="com.iusa.clases.controllers.ActualizarSoftware">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+     <action name="ActualizarHobbie" class="com.iusa.clases.controllers.ActualizarHobbie">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+    <action name="ActualizarTalentos" class="com.iusa.clases.controllers.ActualizarTalentos">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+    <action name="ActualizarHabilidad" class="com.iusa.clases.controllers.ActualizarHabilidad">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+  
+    <action name="EliminarHabilidad" class="com.iusa.clases.controllers.EliminarHabilidad">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+    <action name="ModificarAreaDeInteres" class="com.iusa.clases.controllers.ModificarAreaDeInteres">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+    <action name="GuardarSalario" class="com.iusa.clases.controllers.GuardarSalario">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+    <action name="GuardarHorario" class="com.iusa.clases.controllers.GuardarHorario">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+     <action name="GuardarDisposicion" class="com.iusa.clases.controllers.GuardarDisposicion">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    
+   <action name="ObtenerEmpleo" class="com.iusa.clases.controllers.ObtenerEmpleo">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   <action name="ObtenerEmpleoInfo" class="com.iusa.clases.controllers.ObtenerEmpleoInfo">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   
+   <action name="ObtenerSoftware" class="com.iusa.clases.controllers.ObtenerSoftware">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   <action name="ObtenerCatSoftware" class="com.iusa.clases.controllers.ObtenerCatSoftware">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+  
+   <action name="ObtenerHobbies" class="com.iusa.clases.controllers.ObtenerHobbies">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+    <action name="ObtenerEducacion" class="com.iusa.clases.controllers.obtenerEducacion">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   <action name="ObtenerEducacionInfo" class="com.iusa.clases.controllers.ObtenerEducacionInfo">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   <action name="ObtenerTalentos" class="com.iusa.clases.controllers.ObtenerTalentos">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   <action name="ObtenerMunicipio" class="com.iusa.clases.controllers.ObtenerMunicipio">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   <action name="ObtenerHabilidad" class="com.iusa.clases.controllers.ObtenerHabilidad">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+   </action>
+   
+   <action name="ObtenerPorcentaje" class="com.iusa.clases.controllers.PorcentajeCuenta">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   <action name="TraerIdentidad" class="com.iusa.clases.controllers.TraerIdentidad">
+          <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+    </action>
+   
+   <action name="HtmlRender" class="com.iusa.clases.controllers.XhtmlRenderer">
+           <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+        </action>
+   
+   <action name="EliminarCuenta" class="com.iusa.clases.controllers.EliminarCuenta">
+           <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+        </action>
+        
+    <action name="ModificarCuentaDatos" class="com.iusa.clases.controllers.ModificarCuentaDatos">
+           <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+        </action>  
+     <action  name="ObtenerPhoto" class="com.iusa.clases.controllers.ObtenerPhoto">
+           <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+        </action>
+      <action  name="HobbieRepetido" class="com.iusa.clases.controllers.HobbieRepetido">
+           <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+        </action>     
+      
+      <action  name="SoftwareRepetido" class="com.iusa.clases.controllers.SoftwareRepetido">
+           <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+        </action>
+      
+      <action  name="IdiomaRepetido" class="com.iusa.clases.controllers.IdiomaRepetido">
+           <result type="json">
+            <param name="root">jsonData</param>
+          </result>
+        </action>         
+ </package>
+    
+</struts>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<ui:composition template="/templates/principalTemplate.xhtml">
+		<ui:define name="content">
+			<h:form>
+			<h:panelGrid columns="1" class="tableOptions">
+				<h:column>
+					<h:outputText value="Las actividades que puedes realizar antes iniciar tu inscripción son las siguientes:"/>
+				</h:column>
+			</h:panelGrid>
+			<div align="center">
+				<h:panelGrid columns="1" class="tableMenu">
+				<h:column>
+					<h:graphicImage library="imagenes" name="consulta_horario.png"/>
+					<h:commandLink value="Consulta turno de inscripción" action="#{horarioInscripcionBean.goToHorarioInscripcion}"></h:commandLink>
+				</h:column>
+				<h:column>
+					<h:graphicImage library="imagenes" name="similacion_horario.png"/>
+					<h:commandLink value="Simulación de horario" action="#{controlFlujoMb.goToSimulacionHorario}"></h:commandLink>
+				</h:column>
+				<h:column>
+					<h:graphicImage library="imagenes" name="trainingActivities.png"/>
+					<h:commandLink value="Actividades formativas" action="#{controlFlujoMb.goToActividadesFormativas}"></h:commandLink>
+				</h:column>
+				<h:column>
+					<h:graphicImage library="imagenes" name="edo_cuenta.png"/>
+					<h:commandLink value="Consulta estado de cuenta" action="#{estadoCuentaBean.goToEstadoCuenta}">
+						<f:param name="accesoMenu" value="normal" />
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<h:graphicImage library="imagenes" name="help.png"/>
+					<h:commandLink value="Tutorial" action="#{controlFlujoMb.goToTutorial}"/>
+				</h:column>
+				</h:panelGrid>
+			</div>
+			<br/><br/><br/>
+			<div align="center" >
+				<h:commandButton value="Regresar" class="footer-button-link" style="width: 150px; height: 30px" action="#{controlFlujoMb.goToIndex}"/>
+			</div>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+	
+</body>
+</html>

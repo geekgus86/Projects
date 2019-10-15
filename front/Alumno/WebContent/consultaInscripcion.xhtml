@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Consulta Horario</title>
+
+</head>
+<body>
+	<ui:composition template="/templates/principalTemplate.xhtml">
+		<ui:define name="content">
+			<div id="seleccion" align="center">
+				<h:panelGrid id="panelContainer" columns="1" name="panelContainer" width="100%">
+					<h:column>
+	      			<iframe id="otroContent" name="otroContent" height="800px" width="100%" scrolling="no" src="#{horarioMB.src}"/>
+					</h:column>
+					<h:column>
+      				<iframe id="horarioContent" name="horarioContent" height="550px" width="100%" scrolling="no" src="#{horarioMB.src2}"/>
+					</h:column>
+					
+	      		</h:panelGrid>
+			</div>
+			<SCRIPT type="text/javascript">
+				function imprSelec(nombre)  {
+  					var ficha = document.getElementById(nombre);
+  					var ventimp = window.open(' ', 'popimpr');
+  					ventimp.document.write( ficha.innerHTML );
+  					ventimp.document.close();
+  					ventimp.print( );
+  					ventimp.close();
+  				} 
+			</SCRIPT>			
+			<div align="center">
+			<h:form id="horarioForm"><!-- onclick="window.open("projectDetails.jsp","",'width=700,height=400,top=100,left=100');" -->
+				<!-- <h:commandLink href='JavaScript:void(0)' id="print" class="footer-button-link" value="Imprimir Horario" onclick="signDocument('data', 'signDocumentCallbackID')"/> -->
+				<h:commandButton href='JavaScript:void(0)' id="print2" class="footer-button-link" value="Imprimir" onclick="window.open('consInscripVistaImprimir.xhtml','','width=1000,height=700,top=10,left=10,scrollbars=1');"/>
+				<!--<h:commandButton href="javascript:imprSelec('seleccion')" id="print2" class="footer-button-link" value="Imprimir" onclick="javascript:imprSelec('seleccion')"/> -->
+				<!--  <h:commandButton id="pay" class="footer-button-link" value="Pagar" onclick="window.open('#{horarioMB.src3}','popup','width=1000,height=700,scrollbars=1')"/>-->
+				<h:commandButton id="pay" class="footer-button-link" value="Pagar" action="#{estadoCuentaBean.goToEstadoCuenta}">
+					<f:param name="accesoMenu" value="normal" />
+				</h:commandButton>
+				<h:commandButton id="send" class="footer-button-link" value="Enviar por Correo" action="#{horarioMB.sendMail}"/>
+			</h:form>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>

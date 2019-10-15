@@ -1,0 +1,392 @@
+03 ene 2013 - 13:13:19 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'bvazquez@iusacell.com' AND "admins"."cec" = '12345'
+03 ene 2013 - 13:13:20 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 13:13:20 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 14:54:42 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'bvazquez@iusacell.com' AND "admins"."cec" = '12345'
+03 ene 2013 - 14:54:45 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 14:54:45 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 14:55:54 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 14:55:54 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 14:55:56 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+03 ene 2013 - 14:55:56 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 14:55:56 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 14:56:07 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 14:56:07 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 14:56:07 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 14:57:01 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 14:57:01 [DEBUG] hibernate.SQL - select CHIVOPERRO.admin_sec.nextval from dual
+03 ene 2013 - 14:57:02 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+03 ene 2013 - 14:57:02 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+03 ene 2013 - 14:57:02 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 14:57:02 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 14:57:03 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+03 ene 2013 - 14:57:03 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 14:57:03 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 17:52:58 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'bvazquez@iusacell.com' AND "admins"."cec" = '12345'
+03 ene 2013 - 17:53:01 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 17:53:01 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 17:53:31 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 17:53:31 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 17:53:34 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 17:53:34 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 17:53:34 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 17:55:11 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 17:55:16 [DEBUG] hibernate.SQL - select CHIVOPERRO.admin_sec.nextval from dual
+03 ene 2013 - 17:55:21 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+03 ene 2013 - 17:55:24 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+03 ene 2013 - 17:55:24 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 17:55:25 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 17:55:28 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 17:55:29 [DEBUG] hibernate.SQL - select CHIVOPERRO.admin_sec.nextval from dual
+03 ene 2013 - 17:55:29 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+03 ene 2013 - 17:55:30 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+03 ene 2013 - 17:55:30 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 17:55:30 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+03 ene 2013 - 17:56:46 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+03 ene 2013 - 17:56:47 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+03 ene 2013 - 17:56:47 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 12:16:05 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'bvazquez@iusacell.com' AND "admins"."cec" = '12345'
+07 ene 2013 - 12:16:07 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 12:16:07 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 12:39:51 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'bvazquez@iusacell.com' AND "admins"."cec" = '12345'
+07 ene 2013 - 12:39:52 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 12:39:52 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 12:45:25 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'bvazquez@iusacell.com' AND "admins"."cec" = '12345'
+07 ene 2013 - 12:45:25 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 12:45:25 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 12:50:18 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 12:50:18 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 12:57:56 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 12:57:56 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 12:58:49 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 12:58:49 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 12:59:48 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 12:59:48 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:02:01 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 13:02:01 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:02:20 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 13:02:20 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:03:22 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'bvazquez@iusacell.com' 
+07 ene 2013 - 13:03:22 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:06:17 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+07 ene 2013 - 13:06:17 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+07 ene 2013 - 13:06:17 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:06:20 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+07 ene 2013 - 13:06:20 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:08:44 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'calificador@gmail.com' AND "admins"."cec" = '12345'
+07 ene 2013 - 13:08:44 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'calificador@gmail.com' 
+07 ene 2013 - 13:08:44 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:08:47 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'calificador@gmail.com' 
+07 ene 2013 - 13:08:47 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:09:49 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'calificador@gmail.com' 
+07 ene 2013 - 13:09:49 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:21:51 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+07 ene 2013 - 13:21:51 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+07 ene 2013 - 13:21:51 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:22:00 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+07 ene 2013 - 13:22:00 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+07 ene 2013 - 13:22:03 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+07 ene 2013 - 13:22:03 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+07 ene 2013 - 13:22:03 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+14 ene 2013 - 09:45:17 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+14 ene 2013 - 09:45:17 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+14 ene 2013 - 09:45:17 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+16 ene 2013 - 14:32:26 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+16 ene 2013 - 14:32:28 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+16 ene 2013 - 14:32:28 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+16 ene 2013 - 14:49:18 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+16 ene 2013 - 14:49:19 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+16 ene 2013 - 14:49:19 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+16 ene 2013 - 15:39:08 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+16 ene 2013 - 15:39:10 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+16 ene 2013 - 15:39:10 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+16 ene 2013 - 15:59:00 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+16 ene 2013 - 15:59:00 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+16 ene 2013 - 15:59:00 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 17:59:44 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+17 ene 2013 - 17:59:45 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 17:59:45 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 17:59:48 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 17:59:48 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 17:59:52 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+17 ene 2013 - 17:59:52 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 17:59:52 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 18:00:04 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:00:04 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:00:04 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 18:01:21 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:01:21 [DEBUG] hibernate.SQL - select BOLSAIUSACELL.admin_sec.nextval from dual
+17 ene 2013 - 18:01:22 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+17 ene 2013 - 18:01:24 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+17 ene 2013 - 18:01:24 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:01:24 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 18:01:24 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+17 ene 2013 - 18:01:24 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:01:24 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 18:02:32 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+17 ene 2013 - 18:02:32 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:02:32 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 18:05:20 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:05:20 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:05:20 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 18:05:56 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:05:56 [DEBUG] hibernate.SQL - select BOLSAIUSACELL.admin_sec.nextval from dual
+17 ene 2013 - 18:05:56 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+17 ene 2013 - 18:05:56 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+17 ene 2013 - 18:05:56 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:05:56 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+17 ene 2013 - 18:05:56 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+17 ene 2013 - 18:05:56 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+17 ene 2013 - 18:05:56 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 10:49:48 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+18 ene 2013 - 10:49:48 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 10:49:48 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 10:50:26 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 10:50:26 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 10:50:28 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 10:50:28 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 10:50:28 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 10:50:32 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 10:50:32 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 10:50:32 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 10:51:22 [DEBUG] hibernate.SQL - select BOLSAIUSACELL.admin_sec.nextval from dual
+18 ene 2013 - 10:51:23 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+18 ene 2013 - 10:51:23 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 10:51:23 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 10:51:23 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 10:51:23 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 10:51:23 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 10:51:23 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:11:30 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+18 ene 2013 - 11:11:30 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:11:30 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:11:43 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:11:43 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:11:44 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 11:11:44 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:11:44 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:11:47 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:11:47 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:11:47 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:12:32 [DEBUG] hibernate.SQL - select BOLSAIUSACELL.admin_sec.nextval from dual
+18 ene 2013 - 11:12:32 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+18 ene 2013 - 11:12:52 [DEBUG] hibernate.SQL - select BOLSAIUSACELL.admin_sec.nextval from dual
+18 ene 2013 - 11:12:52 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+18 ene 2013 - 11:12:58 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 11:12:58 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:12:58 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:12:58 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 11:12:58 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:12:58 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:41:52 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+18 ene 2013 - 11:41:52 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:41:52 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:41:53 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:41:53 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:41:54 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 11:41:54 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:41:54 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:41:58 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:41:58 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:41:58 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:42:22 [DEBUG] hibernate.SQL - select BOLSAIUSACELL.admin_sec.nextval from dual
+18 ene 2013 - 11:42:22 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+18 ene 2013 - 11:42:42 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 11:42:42 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:42:42 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 11:42:42 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 11:42:42 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 11:42:42 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:26:33 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+18 ene 2013 - 12:26:33 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:26:33 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:27:41 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:27:41 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:27:43 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 12:27:43 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:27:43 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:27:46 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:27:46 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:27:46 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:28:27 [DEBUG] hibernate.SQL - select BOLSAIUSACELL.admin_sec.nextval from dual
+18 ene 2013 - 12:28:27 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+18 ene 2013 - 12:28:53 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 12:28:53 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:28:53 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:28:53 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 12:28:53 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:28:53 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:47:13 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+18 ene 2013 - 12:47:13 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:47:13 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:47:15 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:47:15 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:47:18 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 12:47:18 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:47:18 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:47:21 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:47:21 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:47:21 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+18 ene 2013 - 12:47:53 [DEBUG] hibernate.SQL - select BOLSAIUSACELL.admin_sec.nextval from dual
+18 ene 2013 - 12:47:53 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."admins" ("cec", "email", "nivel", "nombre", "region", "ubicacion", "id_admin") values (?, ?, ?, ?, ?, ?, ?)
+18 ene 2013 - 12:47:53 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+18 ene 2013 - 12:47:53 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+18 ene 2013 - 12:47:53 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 10:42:18 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+28 ene 2013 - 10:42:18 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 10:42:18 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 10:51:36 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 10:51:36 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 10:51:43 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+28 ene 2013 - 10:51:43 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 10:51:43 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 10:51:43 [DEBUG] hibernate.SQL - SELECT Count("vacante"."id_vacante")AS numero FROM "vacante" WHERE "vacante"."destacado" != '0' AND "vacante"."region" = 'null' 
+28 ene 2013 - 10:51:44 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 10:51:44 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:19:54 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+28 ene 2013 - 14:20:02 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:20:02 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:20:02 [DEBUG] hibernate.SQL - SELECT Count("vacante"."id_vacante")AS numero FROM "vacante" WHERE "vacante"."destacado" != '0' AND "vacante"."region" = 'null' 
+28 ene 2013 - 14:20:06 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:20:06 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:21:43 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+28 ene 2013 - 14:21:43 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:21:43 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:21:43 [DEBUG] hibernate.SQL - SELECT Count("vacante"."id_vacante")AS numero FROM "vacante" WHERE "vacante"."destacado" != '0' AND "vacante"."region" = 'null' 
+28 ene 2013 - 14:21:43 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:21:43 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:37:25 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+28 ene 2013 - 14:37:26 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:37:26 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:37:26 [DEBUG] hibernate.SQL - SELECT Count("vacante"."id_vacante")AS numero FROM "vacante" WHERE "vacante"."destacado" != '0' AND "vacante"."region" = 'null' 
+28 ene 2013 - 14:37:26 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:37:26 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:57:22 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+28 ene 2013 - 14:57:22 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:57:22 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:57:25 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:57:25 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:57:26 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+28 ene 2013 - 14:57:26 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:57:26 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:57:26 [DEBUG] hibernate.SQL - SELECT Count("vacante"."id_vacante")AS numero FROM "vacante" WHERE "vacante"."destacado" != '0' AND "vacante"."region" = 'null' 
+28 ene 2013 - 14:57:26 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 14:57:26 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 14:59:49 [DEBUG] hibernate.SQL -  SELECT "municipios"."id_municipio", "municipios"."municipio" FROM "municipios" WHERE "municipios"."id_estado" = '9' ORDER BY "municipios"."municipio" ASC 
+28 ene 2013 - 15:00:02 [DEBUG] hibernate.SQL -  SELECT "municipios"."id_municipio", "municipios"."municipio" FROM "municipios" WHERE "municipios"."id_estado" = '12' ORDER BY "municipios"."municipio" ASC 
+28 ene 2013 - 15:00:39 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 15:00:39 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins"
+28 ene 2013 - 15:00:39 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+28 ene 2013 - 15:00:39 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 15:00:39 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 15:00:40 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 15:00:40 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '0' AND '5'   
+28 ene 2013 - 17:19:18 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+28 ene 2013 - 17:19:18 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 17:19:18 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 17:19:20 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 17:19:20 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 17:19:23 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 17:19:23 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins"
+28 ene 2013 - 17:19:23 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+28 ene 2013 - 17:19:23 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+28 ene 2013 - 17:19:23 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+28 ene 2013 - 17:19:25 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 17:19:26 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '0' AND '5'   
+28 ene 2013 - 17:19:30 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 17:19:30 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '6' AND '10'   
+28 ene 2013 - 17:19:33 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 17:19:33 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '11' AND '15'   
+28 ene 2013 - 17:19:35 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 17:19:35 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '16' AND '20'   
+28 ene 2013 - 17:19:37 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 17:19:37 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '21' AND '25'   
+28 ene 2013 - 17:19:39 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 17:19:39 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '16' AND '20'   
+28 ene 2013 - 17:19:40 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 17:19:40 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '11' AND '15'   
+28 ene 2013 - 17:19:41 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 17:19:41 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '6' AND '10'   
+28 ene 2013 - 17:19:42 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+28 ene 2013 - 17:19:42 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '1' AND '5'   
+31 ene 2013 - 10:23:33 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+31 ene 2013 - 10:23:34 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:23:34 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:23:37 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:23:37 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:23:38 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+31 ene 2013 - 10:23:38 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:23:38 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:23:42 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:23:42 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:23:42 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:36:11 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:36:11 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:36:14 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel" FROM "admins"
+31 ene 2013 - 10:36:14 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:36:14 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:36:20 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel","admins"."ubicacion","admins"."region" FROM "admins" WHERE "admins"."id_admin"='124'
+31 ene 2013 - 10:36:20 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:36:20 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:36:20 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:36:42 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:36:42 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:36:42 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:36:51 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel","admins"."ubicacion","admins"."region" FROM "admins" WHERE "admins"."id_admin"='124'
+31 ene 2013 - 10:36:51 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:36:51 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:36:51 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:38:22 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin","admins"."cec","admins"."nombre","admins"."email","admins"."nivel","admins"."ubicacion","admins"."region" FROM "admins" WHERE "admins"."id_admin"='124'
+31 ene 2013 - 10:38:22 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:38:22 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:38:22 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 10:38:33 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:38:33 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 10:38:33 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 12:09:34 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 12:09:37 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 12:09:37 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 12:12:38 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 12:12:38 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 12:12:38 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 12:13:20 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 12:13:20 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 12:13:20 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 12:44:24 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 12:44:24 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 12:44:25 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+31 ene 2013 - 16:59:54 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+31 ene 2013 - 16:59:55 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+31 ene 2013 - 16:59:55 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" ORDER BY "nombre_estado" 
+01 feb 2013 - 10:51:46 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+01 feb 2013 - 10:51:46 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+01 feb 2013 - 10:51:46 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" ORDER BY "estado"."nombre_estado" 
+01 feb 2013 - 10:59:02 [DEBUG] hibernate.SQL - SELECT "admins"."nombre", "admins"."id_admin" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' AND "admins"."cec" = '12345'
+01 feb 2013 - 10:59:02 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+01 feb 2013 - 10:59:02 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" ORDER BY "estado"."nombre_estado" 
+01 feb 2013 - 10:59:14 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+01 feb 2013 - 10:59:14 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" ORDER BY "estado"."nombre_estado" 
+01 feb 2013 - 10:59:23 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+01 feb 2013 - 10:59:23 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins"
+01 feb 2013 - 10:59:23 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+01 feb 2013 - 10:59:23 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+01 feb 2013 - 10:59:23 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" ORDER BY "estado"."nombre_estado" 
+01 feb 2013 - 10:59:24 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+01 feb 2013 - 10:59:24 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '0' AND '5'   
+01 feb 2013 - 10:59:28 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+01 feb 2013 - 10:59:28 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" 
+01 feb 2013 - 10:59:28 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins" WHERE "admins"."email" = 'dsi@iusacell.com' 
+01 feb 2013 - 10:59:28 [DEBUG] hibernate.SQL - SELECT Count("vacante"."id_vacante")AS numero FROM "vacante" WHERE "vacante"."destacado" != '0' AND "vacante"."region" = 'null' 
+01 feb 2013 - 10:59:30 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+01 feb 2013 - 10:59:30 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" ORDER BY "estado"."nombre_estado" 
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins" WHERE "admins"."id_admin" = '164' 
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - SELECT sec_vac.NEXTVAL  AS NUMSEC FROM DUAL 
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - SELECT sec_vac.CURRVAL AS NUMSEC2 FROM DUAL 
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - select BOLSAIUSACELL.sec_vac.nextval from dual
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - insert into BOLSAIUSACELL."vacante" ("anios_experiencia", "area_experiencia", "conocimientos", "destacado", "destacado_nacional", "edad", "escolaridad", "estado_vacante", "fecha_publicacion", "fecha_vigencia", "folio", "genero_preferencia", "horario", "nombre_vacante", "observaciones", "principales_funciones", "region", "subido_por", "sueldo_vacante", "talentos", "texto_introductorio", "tipo_vacante", "ubicacion", "vacante_esta_en", "id_vacante") values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - SELECT "admins"."id_admin", "admins"."nombre" FROM "admins"
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - SELECT "vacante_tipo"."id_tipo", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" FROM "vacante_tipo"
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - SELECT "admins"."cec", "admins"."nombre", "admins"."email","admins"."nivel", "admins"."ubicacion","admins"."region" FROM "admins"  WHERE "admins"."email" = 'dsi@iusacell.com' 
+01 feb 2013 - 10:59:46 [DEBUG] hibernate.SQL - SELECT "estado"."id_estado", "estado"."nombre_estado" FROM "estado" ORDER BY "estado"."nombre_estado" 
+01 feb 2013 - 10:59:47 [DEBUG] hibernate.SQL -  SELECT Count("vacante"."id_vacante") AS NUMVACS FROM "vacante"  
+01 feb 2013 - 10:59:47 [DEBUG] hibernate.SQL -   SELECT * FROM (SELECT  ROWNUM AS FILAS, "vacante"."id_vacante", "vacante"."nombre_vacante", "vacante"."folio", "vacante"."fecha_publicacion", "vacante"."fecha_vigencia", "vacante"."texto_introductorio", "vacante"."escolaridad", "vacante"."sueldo_vacante", "vacante"."anios_experiencia", "vacante"."conocimientos", "vacante"."talentos", "vacante"."ubicacion", "vacante"."estado_vacante", "vacante"."destacado", "vacante"."area_experiencia", "vacante"."principales_funciones", "vacante"."horario", "vacante"."edad", "vacante"."observaciones", "admins"."nombre", "vacante_tipo"."tipo_vacante", "vacante_tipo"."ubicacion" AS VAC_UBICACION  FROM "vacante" , "admins" , "vacante_tipo" WHERE  "vacante"."subido_por" = "admins"."id_admin" AND "vacante"."tipo_vacante" = "vacante_tipo"."id_tipo" ) WHERE FILAS BETWEEN '0' AND '5'   

@@ -1,0 +1,241 @@
+	body {
+		/* margin: 15px;
+		border: 5px solid #2E80AA;
+		border-top-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		border-top-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+		padding: 10px; */
+	}
+	a, a:link, a:visited, a:active {
+		color: none;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #6699cc;
+	}
+	ul  {
+		list-style-type: none;
+	}
+	font {
+		font-family: sans-serif;
+	}
+	table {
+		font-family: sans-serif;
+	}
+	iframe {
+		width: 100%;
+		min-width: 1200px;
+		frameborder: 0;
+		border: 0;
+	}
+	div {
+		font-family: sans-serif;
+	}
+	td.headerAplication {
+		height: 20px;
+		vertical-align: middle;
+		text-align: center;
+		color: white;
+		background: -webkit-linear-gradient(right, #428BCA, #428BCA); /* For Safari 5.1 to 6.0 */
+	    background: -o-linear-gradient(right, #428BCA, #428BCA); /* For Opera 11.1 to 12.0 */
+	    background: -moz-linear-gradient(right, #428BCA, #428BCA); /* For Firefox 3.6 to 15 */
+	    background: linear-gradient(to right, #428BCA, #428BCA); /* Standard syntax (must be last) */
+	}
+	#menuwrapper {
+		width: 320px;
+		color: #FFFFFF;
+		/* position: absolute; */
+		z-index: 999;
+		background-color: white;
+	}
+	#menuwrapper p {
+		margin:  0;
+		text-align: center;	
+		left: 			
+	}
+	#menuheader, #menufooter {
+		width: inherit;
+	}
+	#menuheader p {
+		padding: 10px 10px 5px 10px;
+		background-color: #003CA6;
+		-webkit-border-radius: 15px 15px 0 0;
+		-moz-border-radius: 15px 15px 0 0;
+		border-radius: 15px 0px 0 0;
+		behavior: url(/sidiweb/js/PIE.htc);
+	}
+	#menu {
+		/*background-color: #003CA6*/
+		/* width: 98%;
+		height: 29%;
+		border-left: 3px solid #003CA6;
+		border-right: 3px solid #003CA6; */
+		position: absolute;
+	}
+	#menucontrol {
+		background-color: #003CA6;
+	}
+	#menufooter p {
+		background-color: #003CA6;
+		-webkit-border-radius: 0 0 15px 15px;
+		-moz-border-radius: 0 0 15px 15px;
+		border-radius: 0 0 0px 15px;
+		behavior: url(/sidiweb/js/PIE.htc);
+	}
+	#options {
+		padding: 8px 0 5px 5px;
+	}
+	.optionItem {
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+		background: #2E80AA;
+		width: 285px;
+		height: 60px;				
+		color: white;
+		behavior: url(/sidiweb/js/PIE.htc);
+	}
+	.optionImage {
+		padding-left: 10px;
+		width: 35px;				
+	}
+	.statusImage {
+		width: 35px;
+		height: 35px;				
+	}
+	.optionImage img {
+		border: 0;
+	}
+	.centerContentStyle  {
+		color: black;
+	}
+	.centerContentStyle ul {
+		list-style-type: circle;
+	}
+	.centerContentStyle ul li {
+		color: black;
+	}
+	.optionDesc {
+		padding-left: 10px;
+	}
+	#innercontent {
+		width: 100%;
+		height: 900px;
+	}
+	.informativo {
+		font-size: 15px;
+	    background: #428BCA;
+	    vertical-align: middle;
+ 	    width: 200px;
+	    /*width: 100%;*/
+	    text-align: center;
+	    color: #FFF;
+	    -webkit-border-radius: 4px;
+	    -moz-border-radius: 4px;
+	    border-radius: 4px;
+	    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+	    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	    -webkit-transition-duration: 0.2s;
+	    -moz-transition-duration: 0.2s;
+	    transition-duration: 0.2s;
+	    -webkit-user-select:none;
+	    -moz-user-select:none;
+	    -ms-user-select:none;
+	    user-select:none;
+	}
+	.button-link {
+		font-size: 15px;
+	    background: #428BCA;
+	    vertical-align: middle;
+ 	    width: 200px;
+	    /*width: 100%;*/
+	    text-align: center;
+	    color: #FFF;
+	    -webkit-border-radius: 4px;
+	    -moz-border-radius: 4px;
+	    border-radius: 4px;
+	    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+	    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	    -webkit-transition-duration: 0.2s;
+	    -moz-transition-duration: 0.2s;
+	    transition-duration: 0.2s;
+	    -webkit-user-select:none;
+	    -moz-user-select:none;
+	    -ms-user-select:none;
+	    user-select:none;
+	}
+	.button-link:hover {
+	    background: #2E80AA;
+	    /* border: solid 1px #2A4E77; */
+	    text-decoration: none;
+	}
+	.button-link:active {
+	    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+	    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+	    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+	    background: #428BCA;
+	}
+	.footer-button-link {
+		font-size: 15px;
+	    background: #EEEEEE;
+	    vertical-align: middle;
+	    width: 160px;
+	    text-align: center;
+	    color: #340000;
+	    -webkit-border-radius: 4px;
+	    -moz-border-radius: 4px;
+	    border-radius: 4px;
+	    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+	    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
+	    -webkit-transition-duration: 0.2s;
+	    -moz-transition-duration: 0.2s;
+	    transition-duration: 0.2s;
+	    -webkit-user-select:none;
+	    -moz-user-select:none;
+	    -ms-user-select:none;
+	    user-select:none;
+	}
+	.footer-button-link:hover {
+	    background: #E6E6E6;
+	    /* border: solid 1px #2A4E77; */
+	    text-decoration: none;
+	}
+	.footer-button-link:active {
+	    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+	    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+	    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+	    background: #EEEEEE;
+	}
+	.tableMenu {
+		width: 300px;
+		padding-bottom: 10px;
+	}
+	.tableMenu td {
+		text-align: left;
+		vertical-align: middle;
+	}
+	.tableMenu td img {
+		padding-right: 10px;
+		width: 45px;
+		height: 45px;
+	}
+	.tableOptions {
+		width: 100%;
+		padding-bottom: 10px;
+	}
+	.tableOptions td {
+		text-align: center;
+		vertical-align: middle;
+	}
+	.tableOptions td img {
+		padding-right: 10px;
+		width: 45px;
+		height: 45px;
+	}

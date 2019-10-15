@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.iusa.clases.models">
+<class name="Usuario" table="usuario">
+<id name="idPostulante" column="id_postulante">
+<generator class="assigned" />
+</id>
+<property name="apellidoPaterno" column="apellido_paterno"/>
+<property name="apellidoMaterno" column="apellido_materno"/>
+<property name="nombre" column="nombre"/>
+<property name="correoElectronico" column="correo_electronico"/>
+<property name="usuarioNombre" column="usuario_nombre"/>
+<property name="password" column="password"/>
+<property name="comoSeEntero" column="como_se_entero"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<f:loadBundle basename="resources.application" var="msg"/>
+
+<head>
+    <title><h:outputText value="#{msg.welcomeTitle}" /></title>
+</head>
+
+<body>
+	<ui:composition template="/templates/principalTemplate.xhtml">
+		<ui:define name="content">
+			<div>
+				<table  class="tableOptions">
+					<tbody>
+						<tr>
+							<td>
+								Bienvenido(a) <b>#{sesionMB.usuario}</b> a tu Proceso de Inscripción #{sesionMB.periodo}.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Recuerda que para completar tu proceso de inscripción debes realizar cada uno de los pasos que a continuación se describen:
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<h:form>
+								<div align="center">
+								<h:panelGrid columns="2" class="tableOptions" style="width: 750px">
+									<h:column>
+										<h:commandLink action="#{controlFlujoMb.goToMenuPasosPrevios}" disabled="true">
+											<h:panelGrid columns="2" class="informativo">
+												<h:graphicImage class="statusImage" library="imagenes" name="statusActPrev_inac.png"/>
+												<h:outputText value="Actividades previas"/>
+											</h:panelGrid>
+										</h:commandLink >
+									</h:column>
+									<h:column>
+										<table>
+											<tbody>
+												<tr>
+													<td>
+														<h:outputText value="Actividades que puedes registrar antes de iniciar tu inscripción."/>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</h:column>
+									<h:column>
+										<h:commandLink class="button-link" disabled="true" action="#{horarioMB.goToHorario}">
+											<h:panelGrid columns="2" class="informativo">
+												<h:graphicImage class="statusImage" library="imagenes" name="statusSelHorario_inac.png"/>
+												<h:outputText value="Realizar horario"/>
+											</h:panelGrid>
+										</h:commandLink>
+									</h:column>
+									<h:column>
+										<table>
+											<tbody>
+												<tr>
+													<td>
+														<h:outputText value="Selección de materias a inscribir y registro administrativo."/>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</h:column>
+									<h:column>
+										<h:commandLink class="button-link" action="#{controlFlujoMb.goToMenuBoletaPago}" disabled="true">
+											<h:panelGrid columns="2" class="informativo">
+												<h:graphicImage class="statusImage" library="imagenes" name="statusBolPago_inac.png"/>
+												<h:outputText value="Boleta de pago"/>
+											</h:panelGrid>
+										</h:commandLink>
+									</h:column>
+									<h:column>
+										<table>
+											<tbody>
+												<tr>
+													<td>
+														<h:outputText value="Confirmar monto a pagar y forma de pago"/>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</h:column>
+									<h:column>
+										<h:commandLink class="button-link" disabled="true">
+											<h:panelGrid columns="2" class="informativo">
+												<h:graphicImage class="statusImage" library="imagenes" name="statusConfInsc_inac.png"/>
+												<h:outputText value="Consulta de inscripción"/>
+											</h:panelGrid>
+										</h:commandLink>
+									</h:column>
+									<h:column>
+										<table>
+											<tbody>
+												<tr>
+													<td>
+														<h:outputText value="Revisar horario definitivo y boleta de pago"/>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</h:column>
+								</h:panelGrid>
+								</div>
+								<br/><br/><br/>
+								<div align="center">
+								<c:if test="#{sesionMB.activoRegreso == true}">
+									<h:column>
+						      		<h:commandButton class="footer-button-link" style="width: 150px; height: 30px" value="Regresar" action="#{pagoAnticipoBean.regresaPre}" ></h:commandButton>
+						      		</h:column>
+						      	</c:if>
+						      		<h:column>
+									<h:commandButton value="Entrar" class="footer-button-link" style="width: 150px; height: 30px" action="#{controlFlujoMb.iniciarAction}"/>
+									</h:column>
+								</div>
+								</h:form>
+					
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</ui:define>
+	</ui:composition>
+</body>
+</html>
